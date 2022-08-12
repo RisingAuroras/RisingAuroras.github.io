@@ -1,0 +1,844 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="kbb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="飞桨AI Studio 强化学习入门每个人都是过去经验的总和，你过去的经验造就了现在的你。—— 心理学                         基于表格型方法求解RLMDP，Q表格          强化概念，TD更新，Sarsa引入强化概念就是用下一个状态的价值更新当前状态的价值（在重复训练之后，下一个状态的价值就会不断强化影响下一个状态的价值）      Sarsa算法的介绍与代码解析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="马克图布">
+<meta property="og:url" content="http://example.com/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%A3%9E%E6%A1%A8AI%20Studio%20%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="马克图布">
+<meta property="og:description" content="飞桨AI Studio 强化学习入门每个人都是过去经验的总和，你过去的经验造就了现在的你。—— 心理学                         基于表格型方法求解RLMDP，Q表格          强化概念，TD更新，Sarsa引入强化概念就是用下一个状态的价值更新当前状态的价值（在重复训练之后，下一个状态的价值就会不断强化影响下一个状态的价值）      Sarsa算法的介绍与代码解析">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312034277.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312037245.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312041035.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312044146.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312046007.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312048002.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312052371.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312054163.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312059699.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312109589.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012105836.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012109893.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012112654.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012116198.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012120998.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012122937.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012123066.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012123924.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012128604.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021649408.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021650764.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021654657.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021656091.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021927377.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021933439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021934508.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021941837.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021942054.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021943635.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021947928.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021949383.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021951893.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021958826.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022000516.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022003562.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022005787.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022010761.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022018740.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022019358.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022022423.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032144691.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032145187.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032150276.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032154657.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032155921.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032158919.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041623407.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041629856.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041631480.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041632262.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041633174.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041634294.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041635309.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041638517.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041639088.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041658943.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041710023.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041709017.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041711744.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041713958.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042003966.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042006031.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042008553.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042008737.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042015617.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042016611.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042020354.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042026309.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042027641.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042028335.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042029463.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042033671.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042034948.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042036689.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042048575.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052155312.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052153032.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052157294.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052158131.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052159782.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052200667.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052203403.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052206839.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052209043.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052211864.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052212407.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052216720.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052217067.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052219878.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204061400573.png">
+<meta property="article:published_time" content="2022-08-12T14:12:38.075Z">
+<meta property="article:modified_time" content="2022-08-10T03:14:51.457Z">
+<meta property="article:author" content="kbb">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312034277.png">
+  
+  
+  
+  <title>马克图布</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"EMuakg8wSFLx6iDBbSiN1680-gzGzoHsz","app_key":"Vc3QmVHkEkWJ12UhiGWdYvhN","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>马克图布</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-08-12 22:12" pubdate>
+          2022年8月12日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          246 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          3 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="飞桨AI-Studio-强化学习入门"><a href="#飞桨AI-Studio-强化学习入门" class="headerlink" title="飞桨AI Studio 强化学习入门"></a>飞桨AI Studio 强化学习入门</h3><p>每个人都是过去经验的总和，你过去的经验造就了现在的你。—— 心理学</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312034277.png" srcset="/img/loading.gif" lazyload alt="image-20220331203447118"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312037245.png" srcset="/img/loading.gif" lazyload alt="image-20220331203723158"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312041035.png" srcset="/img/loading.gif" lazyload alt="image-20220331204101936"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312044146.png" srcset="/img/loading.gif" lazyload alt="image-20220331204456075"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312046007.png" srcset="/img/loading.gif" lazyload alt="image-20220331204629938"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312048002.png" srcset="/img/loading.gif" lazyload alt="image-20220331204814892"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312052371.png" srcset="/img/loading.gif" lazyload alt="image-20220331205223270"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312054163.png" srcset="/img/loading.gif" lazyload alt="image-20220331205446081"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312059699.png" srcset="/img/loading.gif" lazyload alt="image-20220331205951631"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203312109589.png" srcset="/img/loading.gif" lazyload alt="image-20220331210916520"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012105836.png" srcset="/img/loading.gif" lazyload alt="image-20220401210550745"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012109893.png" srcset="/img/loading.gif" lazyload alt="image-20220401210904804"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012112654.png" srcset="/img/loading.gif" lazyload alt="image-20220401211249509"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012116198.png" srcset="/img/loading.gif" lazyload alt="image-20220401211602094"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012120998.png" srcset="/img/loading.gif" lazyload alt="image-20220401212044906"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012122937.png" srcset="/img/loading.gif" lazyload alt="image-20220401212211840"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012123066.png" srcset="/img/loading.gif" lazyload alt="image-20220401212323986"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012123924.png" srcset="/img/loading.gif" lazyload alt="image-20220401212352802"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204012128604.png" srcset="/img/loading.gif" lazyload alt="image-20220401212836501"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021649408.png" srcset="/img/loading.gif" lazyload alt="image-20220402164909264"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021650764.png" srcset="/img/loading.gif" lazyload alt="image-20220402165054624"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021654657.png" srcset="/img/loading.gif" lazyload alt="image-20220402165429563"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021656091.png" srcset="/img/loading.gif" lazyload alt="image-20220402165646003"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021927377.png" srcset="/img/loading.gif" lazyload alt="image-20220402192759264"></p>
+<h4 id="基于表格型方法求解RL"><a href="#基于表格型方法求解RL" class="headerlink" title="基于表格型方法求解RL"></a>基于表格型方法求解RL</h4><h5 id="MDP，Q表格"><a href="#MDP，Q表格" class="headerlink" title="MDP，Q表格"></a>MDP，Q表格</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021933439.png" srcset="/img/loading.gif" lazyload alt="image-20220402193346349"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021934508.png" srcset="/img/loading.gif" lazyload alt="image-20220402193417425"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021941837.png" srcset="/img/loading.gif" lazyload alt="image-20220402194145758"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021942054.png" srcset="/img/loading.gif" lazyload alt="image-20220402194250961"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021943635.png" srcset="/img/loading.gif" lazyload alt="image-20220402194317557"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021947928.png" srcset="/img/loading.gif" lazyload alt="image-20220402194733833"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021949383.png" srcset="/img/loading.gif" lazyload alt="image-20220402194912281"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021951893.png" srcset="/img/loading.gif" lazyload alt="image-20220402195110828"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204021958826.png" srcset="/img/loading.gif" lazyload alt="image-20220402195832741"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022000516.png" srcset="/img/loading.gif" lazyload alt="image-20220402200009448"></p>
+<h5 id="强化概念，TD更新，Sarsa引入"><a href="#强化概念，TD更新，Sarsa引入" class="headerlink" title="强化概念，TD更新，Sarsa引入"></a>强化概念，TD更新，Sarsa引入</h5><p>强化概念就是用下一个状态的价值更新当前状态的价值（在重复训练之后，下一个状态的价值就会不断强化影响下一个状态的价值）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022003562.png" srcset="/img/loading.gif" lazyload alt="image-20220402200313427"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022005787.png" srcset="/img/loading.gif" lazyload alt="image-20220402200503709"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022010761.png" srcset="/img/loading.gif" lazyload alt="image-20220402201054657"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022018740.png" srcset="/img/loading.gif" lazyload alt="image-20220402201825665"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022019358.png" srcset="/img/loading.gif" lazyload alt="image-20220402201925291"></p>
+<h5 id="Sarsa算法的介绍与代码解析"><a href="#Sarsa算法的介绍与代码解析" class="headerlink" title="Sarsa算法的介绍与代码解析"></a>Sarsa算法的介绍与代码解析</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204022022423.png" srcset="/img/loading.gif" lazyload alt="image-20220402202210328"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032144691.png" srcset="/img/loading.gif" lazyload alt="image-20220403214438361"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032145187.png" srcset="/img/loading.gif" lazyload alt="image-20220403214552786"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032150276.png" srcset="/img/loading.gif" lazyload alt="image-20220403215001937"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032154657.png" srcset="/img/loading.gif" lazyload alt="image-20220403215429349"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032155921.png" srcset="/img/loading.gif" lazyload alt="image-20220403215513632"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204032158919.png" srcset="/img/loading.gif" lazyload alt="image-20220403215827630"></p>
+<p><strong>Off-Policy 和 On-Policy区别是什么</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041623407.png" srcset="/img/loading.gif" lazyload alt="image-20220404162323326"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041629856.png" srcset="/img/loading.gif" lazyload alt="image-20220404162940738"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041631480.png" srcset="/img/loading.gif" lazyload alt="image-20220404163114346"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041632262.png" srcset="/img/loading.gif" lazyload alt="image-20220404163239147"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041633174.png" srcset="/img/loading.gif" lazyload alt="image-20220404163324056"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041634294.png" srcset="/img/loading.gif" lazyload alt="image-20220404163450189"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041635309.png" srcset="/img/loading.gif" lazyload alt="image-20220404163515186"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041638517.png" srcset="/img/loading.gif" lazyload alt="image-20220404163809431"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041639088.png" srcset="/img/loading.gif" lazyload alt="image-20220404163917995"></p>
+<h4 id="基于神经网络求解RL"><a href="#基于神经网络求解RL" class="headerlink" title="基于神经网络求解RL"></a>基于神经网络求解RL</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041658943.png" srcset="/img/loading.gif" lazyload alt="image-20220404165852847"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041710023.png" srcset="/img/loading.gif" lazyload alt="image-20220404171020847"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041709017.png" srcset="/img/loading.gif" lazyload alt="image-20220404170942946"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041711744.png" srcset="/img/loading.gif" lazyload alt="image-20220404171118637"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204041713958.png" srcset="/img/loading.gif" lazyload alt="image-20220404171336822"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042003966.png" srcset="/img/loading.gif" lazyload alt="image-20220404200358881"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042006031.png" srcset="/img/loading.gif" lazyload alt="image-20220404200559909"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042008553.png" srcset="/img/loading.gif" lazyload alt="image-20220404200817433"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042008737.png" srcset="/img/loading.gif" lazyload alt="image-20220404200841586"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042015617.png" srcset="/img/loading.gif" lazyload alt="image-20220404201534478"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042016611.png" srcset="/img/loading.gif" lazyload alt="image-20220404201634484"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042020354.png" srcset="/img/loading.gif" lazyload alt="image-20220404202050251"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042026309.png" srcset="/img/loading.gif" lazyload alt="image-20220404202640196"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042027641.png" srcset="/img/loading.gif" lazyload alt="image-20220404202756528"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042028335.png" srcset="/img/loading.gif" lazyload alt="image-20220404202846210"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042029463.png" srcset="/img/loading.gif" lazyload alt="image-20220404202937359"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042033671.png" srcset="/img/loading.gif" lazyload alt="image-20220404203323549"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042034948.png" srcset="/img/loading.gif" lazyload alt="image-20220404203443863"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042036689.png" srcset="/img/loading.gif" lazyload alt="image-20220404203609503"></p>
+<p>留白</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204042048575.png" srcset="/img/loading.gif" lazyload alt="image-20220404204803469"></p>
+<h4 id="随机策略和策略梯度"><a href="#随机策略和策略梯度" class="headerlink" title="随机策略和策略梯度"></a>随机策略和策略梯度</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052155312.png" srcset="/img/loading.gif" lazyload alt="image-20220405215211917"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052153032.png" srcset="/img/loading.gif" lazyload alt="image-20220405215318922"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052157294.png" srcset="/img/loading.gif" lazyload alt="image-20220405215704174"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052158131.png" srcset="/img/loading.gif" lazyload alt="image-20220405215856012"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052159782.png" srcset="/img/loading.gif" lazyload alt="image-20220405215943681"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052200667.png" srcset="/img/loading.gif" lazyload alt="image-20220405220044556"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052203403.png" srcset="/img/loading.gif" lazyload alt="image-20220405220343309"></p>
+<p>智能体的选择是我们可以优化的，环境的转移是我们不能够控制的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052206839.png" srcset="/img/loading.gif" lazyload alt="image-20220405220640738"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052209043.png" srcset="/img/loading.gif" lazyload alt="image-20220405220949953"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052211864.png" srcset="/img/loading.gif" lazyload alt="image-20220405221123772"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052212407.png" srcset="/img/loading.gif" lazyload alt="image-20220405221210300"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052216720.png" srcset="/img/loading.gif" lazyload alt="image-20220405221602644"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052217067.png" srcset="/img/loading.gif" lazyload alt="image-20220405221734970"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204052219878.png" srcset="/img/loading.gif" lazyload alt="image-20220405221953766"></p>
+<h5 id="PlicyGradeint-算法"><a href="#PlicyGradeint-算法" class="headerlink" title="PlicyGradeint 算法"></a>PlicyGradeint 算法</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204061400573.png" srcset="/img/loading.gif" lazyload alt="image-20220406140011420"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2022/08/12/机器学习/飞桨AI Studio 强化学习入门/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>kbb</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年8月12日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"EMuakg8wSFLx6iDBbSiN1680-gzGzoHsz","appKey":"Vc3QmVHkEkWJ12UhiGWdYvhN","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,1041 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="kbb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="《吴恩达机器学习笔记》第一节 关于不知道如何编写无人驾驶直升机的算法程序，让机器自己学习去解决。  机器学习的定义   经验E，性能度量P，任务T 在跳棋程序自我学习时，E是数百万次的下棋训练，P是程序赢的概率，T是进行下棋  主要的两类学习算法  监督学习（supervised learning)：告诉你正确答案，让你设计算法预测 分类问题（classification problem）- -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="马克图布">
+<meta property="og:url" content="http://example.com/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E3%80%8A%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B/index.html">
+<meta property="og:site_name" content="马克图布">
+<meta property="og:description" content="《吴恩达机器学习笔记》第一节 关于不知道如何编写无人驾驶直升机的算法程序，让机器自己学习去解决。  机器学习的定义   经验E，性能度量P，任务T 在跳棋程序自我学习时，E是数百万次的下棋训练，P是程序赢的概率，T是进行下棋  主要的两类学习算法  监督学习（supervised learning)：告诉你正确答案，让你设计算法预测 分类问题（classification problem）- -">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126661.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126841.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126609.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126313.png">
+<meta property="og:image" content="c:/Users/auroras/AppData/Roaming/Typora/typora-user-images/image-20211021161710694.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126992.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222047355.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222043758.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222137924.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222207916.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222208332.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110242216715.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251105335.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251111998.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201121525377.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201121526877.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251204834.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251538536.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110260859420.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112151112928.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112151455095.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112151500714.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112232055234.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112232113846.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112252205741.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201132027690.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201132029980.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201132037202.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201140942750.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141006268.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141020605.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141031949.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141048681.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141050539.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141516788.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141519128.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141527133.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141532922.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201261719680.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281033531.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281040997.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281103240.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281104387.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281110193.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281121445.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281111307.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281137445.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281820210.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281822976.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281830847.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282039648.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282050851.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282128553.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282131000.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201290945558.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201291007682.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201292100471.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201292133066.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201300956548.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201301054412.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201301119357.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201301958627.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201302000983.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201302007357.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201311012831.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081000288.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081005419.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081134056.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081142806.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081436638.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081447236.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081449422.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203091705990.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203091647565.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203091657276.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092009636.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092017515.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092024861.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092105772.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092122572.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092132282.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081556103.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081604882.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081557771.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081627602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081630380.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081636223.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081640134.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202102145609.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202102148080.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111000808.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111012259.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111018926.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111025656.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111035176.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202121950911.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202121955712.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202121957723.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202122012505.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202122122700.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202122128783.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202140948300.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202140949661.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202140959553.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141011222.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141045317.png">
+<meta property="og:image" content="c:/Users/auroras/AppData/Roaming/Typora/typora-user-images/image-20220214105627219.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141104203.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141120393.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141126650.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203042051627.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203051425964.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203051929668.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112312022755.png">
+<meta property="article:published_time" content="2022-08-12T14:12:38.059Z">
+<meta property="article:modified_time" content="2022-07-22T07:57:32.806Z">
+<meta property="article:author" content="kbb">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126661.png">
+  
+  
+  
+  <title>马克图布</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"EMuakg8wSFLx6iDBbSiN1680-gzGzoHsz","app_key":"Vc3QmVHkEkWJ12UhiGWdYvhN","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>马克图布</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-08-12 22:12" pubdate>
+          2022年8月12日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="《吴恩达机器学习笔记》"><a href="#《吴恩达机器学习笔记》" class="headerlink" title="《吴恩达机器学习笔记》"></a>《吴恩达机器学习笔记》</h3><h4 id="第一节"><a href="#第一节" class="headerlink" title="第一节"></a>第一节</h4><ul>
+<li><p><code>关于不知道如何编写无人驾驶直升机的算法程序，让机器自己学习去解决。</code></p>
+</li>
+<li><p>机器学习的定义</p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126661.png" srcset="/img/loading.gif" lazyload alt="image-20211021144834853" style="zoom:50%;" />
+
+<p>经验E，性能度量P，任务T</p>
+<p>在跳棋程序自我学习时，E是数百万次的下棋训练，P是程序赢的概率，T是进行下棋</p>
+</li>
+<li><p>主要的两类学习算法</p>
+<ul>
+<li>监督学习（supervised learning)：告诉你正确答案，让你设计算法预测<ul>
+<li>分类问题（classification problem）- - 预测离散值的输出</li>
+<li>回归问题（regression problem）- - 预测连续值的输出</li>
+</ul>
+</li>
+<li>无监督学习(unsupervised learning)：<ul>
+<li>聚类算法（clustering algorithm）例如百度谷歌新闻，用此来聚集相关主题的新闻</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="第二节"><a href="#第二节" class="headerlink" title="第二节"></a>第二节</h4><ul>
+<li><p>一些有用的符号</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126841.png" srcset="/img/loading.gif" lazyload alt="image-20211021153612645"></p>
+</li>
+<li><p>监督学习流程</p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126609.png" srcset="/img/loading.gif" lazyload alt="image-20211021154904515" style="zoom:50%;" />
+
+<p>h为假设函数</p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126313.png" srcset="/img/loading.gif" lazyload alt="image-20211021155317778" style="zoom:50%;" />
+
+<p><img src="C:\Users\auroras\AppData\Roaming\Typora\typora-user-images\image-20211021161710694.png" srcset="/img/loading.gif" lazyload alt="image-20211021161710694"></p>
+<p>J为代价函数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110212126992.png" srcset="/img/loading.gif" lazyload alt="image-20211021164021139"></p>
+</li>
+<li><p>梯度下降算法</p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222047355.png" srcset="/img/loading.gif" lazyload alt="image-20211022204750310" style="zoom: 67%;" />
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222043758.png" srcset="/img/loading.gif" lazyload alt="image-20211022204326685"></p>
+<p>$\alpha$  代表学习率（learning rate) 控制梯度下降的幅度</p>
+<p>$\theta_0 \ and \  \theta_1$ 同时更新 </p>
+<p>depending on the initial condition, gradient descent may end up at different local optima.（根据初始条件，梯度下降可能会以不同的局部最优值结束。  ）</p>
+</li>
+<li><p>线性回归算法（用直线模型拟合数据）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222137924.png" srcset="/img/loading.gif" lazyload alt="image-20211022213709860"></p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222207916.png" srcset="/img/loading.gif" lazyload alt="image-20211022220749841" style="zoom:50%;" />
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110222208332.png" srcset="/img/loading.gif" lazyload alt="image-20211022220818285"></p>
+</li>
+</ul>
+<h4 id="第三节"><a href="#第三节" class="headerlink" title="第三节"></a>第三节</h4><p>线代一些基础知识</p>
+<h4 id="第四节"><a href="#第四节" class="headerlink" title="第四节"></a>第四节</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110242216715.png" srcset="/img/loading.gif" lazyload alt="image-20211024221644629"></p>
+<ul>
+<li><p>多元梯度下降法</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251105335.png" srcset="/img/loading.gif" lazyload alt="image-20211025110520219"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251111998.png" srcset="/img/loading.gif" lazyload alt="image-20211025111136914"></p>
+<ul>
+<li><p>多元梯度下降法中的一些技巧</p>
+<ol>
+<li><p>特征缩放</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201121525377.png" srcset="/img/loading.gif" lazyload alt="image-20220112152517233"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201121526877.png" srcset="/img/loading.gif" lazyload alt="image-20220112152626821"></p>
+</li>
+<li><p>学习率</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251204834.png" srcset="/img/loading.gif" lazyload alt="image-20211025120448791"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110251538536.png" srcset="/img/loading.gif" lazyload alt="image-20211025153830470"></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>特征与多项式回归</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202110260859420.png" srcset="/img/loading.gif" lazyload alt="image-20211026085858309"></p>
+<p>这时，特征缩放会显得特别重要</p>
+<ul>
+<li><p>正规方程</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112151112928.png" srcset="/img/loading.gif" lazyload alt="image-20211215111243725"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112151455095.png" srcset="/img/loading.gif" lazyload alt="image-20211215145502988"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112151500714.png" srcset="/img/loading.gif" lazyload alt="image-20211215150056625"></p>
+<p>$X\cdot \theta&#x3D;y$</p>
+<p>$X^T\cdot X\cdot \theta&#x3D;X^T\cdot y$</p>
+<p>$\theta&#x3D;(X^TX)^{-1}X^Ty$</p>
+<h4 id="第五节"><a href="#第五节" class="headerlink" title="第五节"></a>第五节</h4><p>代价函数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112232055234.png" srcset="/img/loading.gif" lazyload alt="image-20211223205510965"></p>
+<p> 向量化优化</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112232113846.png" srcset="/img/loading.gif" lazyload alt="image-20211223211316758"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112252205741.png" srcset="/img/loading.gif" lazyload alt="image-20211225220543633"></p>
+<h4 id="第六节"><a href="#第六节" class="headerlink" title="第六节"></a>第六节</h4><p>logistic 回归算法（分类算法）</p>
+<p>​	Logistic 函数 $g(x)&#x3D;\dfrac{1}{1+e^{-z}}$</p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201132027690.png" srcset="/img/loading.gif" lazyload alt="image-20220113202734597" style="zoom:50%;" />
+
+
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201132029980.png" srcset="/img/loading.gif" lazyload alt="image-20220113202931914" style="zoom:50%;" />
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201132037202.png" srcset="/img/loading.gif" lazyload alt="image-20220113203704132" style="zoom:50%;" />
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201140942750.png" srcset="/img/loading.gif" lazyload alt="image-20220114094249611"></p>
+<p>决策边界(decision boundary)是决策函数的属性,不是训练集的属性，我们使用训练集来拟合参数$\theta$ </p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141006268.png" srcset="/img/loading.gif" lazyload alt="image-20220114100638181" style="zoom:50%;" />
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141020605.png" srcset="/img/loading.gif" lazyload alt="image-20220114102020541"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141031949.png" srcset="/img/loading.gif" lazyload alt="image-20220114103133853"></p>
+<p>逻辑回归的代价函数无法使用梯度下降算法来收敛到全局最优（因为很容易使其收敛到局部最优）</p>
+<p>因此需要将代价函数变形，使其可以使用梯度下降算法求解（使其变为凸函数，可以进行凸优化）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141048681.png" srcset="/img/loading.gif" lazyload alt="image-20220114104800605"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141050539.png" srcset="/img/loading.gif" lazyload alt="image-20220114105027482"></p>
+<p>我们可以将分段函数写为一个函数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141516788.png" srcset="/img/loading.gif" lazyload alt="image-20220114151642747"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141519128.png" srcset="/img/loading.gif" lazyload alt="image-20220114151909068"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141527133.png" srcset="/img/loading.gif" lazyload alt="image-20220114152758071"></p>
+<p>虽然最后逻辑回归中梯度下降求解的形式和线性规划中一致，但是$h_\theta$ 函数并不一样。不过特征缩放也可适用于逻辑回归</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201141532922.png" srcset="/img/loading.gif" lazyload alt="image-20220114153203847"></p>
+<p>一些比梯度下降算法更高级的优化算法（收敛更快）：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201261719680.png" srcset="/img/loading.gif" lazyload alt="image-20220126171929560"></p>
+<p>高级算法代码（可以看做加强版的梯度下降）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281033531.png" srcset="/img/loading.gif" lazyload alt="image-20220128103313394"></p>
+<p><strong>代价函数伪代码：</strong></p>
+<p>返回代价函数值和梯度值</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281040997.png" srcset="/img/loading.gif" lazyload alt="image-20220128104015933"></p>
+<p>多类别分类问题 中一对多方法：</p>
+<p>将多分类转化为若干个二分类问题，然后找概率y值最高的一个输出作为结果</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281103240.png" srcset="/img/loading.gif" lazyload alt="image-20220128110346167"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281104387.png" srcset="/img/loading.gif" lazyload alt="image-20220128110434324"></p>
+<h4 id="第七节"><a href="#第七节" class="headerlink" title="第七节"></a>第七节</h4><p><strong>欠拟合（underfitting）high bias</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281110193.png" srcset="/img/loading.gif" lazyload alt="image-20220128111059161"></p>
+<p><strong>过度拟合问题（Overfitting)：</strong></p>
+<p>过多变量并且较少数据时往往出现（高阶多项式）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281121445.png" srcset="/img/loading.gif" lazyload alt="image-20220128112117409"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281111307.png" srcset="/img/loading.gif" lazyload alt="image-20220128111111280"></p>
+<p>解决方法：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281137445.png" srcset="/img/loading.gif" lazyload alt="image-20220128113718389"></p>
+<p><strong>正则化(Regularization):</strong></p>
+<p>加入惩罚，使参数尽量小，简化假设模型（不减少特征）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281820210.png" srcset="/img/loading.gif" lazyload alt="image-20220128182015169"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281822976.png" srcset="/img/loading.gif" lazyload alt="image-20220128182224920"></p>
+<p>例如房屋预测模型，加入正则项，目的是使得$\theta$尽可能的小 </p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201281830847.png" srcset="/img/loading.gif" lazyload alt="image-20220128183043805"></p>
+<p>正则化参数$\lambda$ 作用有两个，一个是作为正则项拟合数据，另一个引入惩罚是为了使$\theta$ 尽可能的小，避免过拟合。</p>
+<p>但是如果$\lambda$ 值太大，那么引入的惩罚过大，导致所有$\theta$都接近为0,会出现欠拟合</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282039648.png" srcset="/img/loading.gif" lazyload alt="image-20220128203938583"></p>
+<p><strong>线性回归的正则化</strong></p>
+<p>梯度下降</p>
+<p>引入$\lambda$进行梯度下降，$1-\alpha\dfrac{\lambda}{m}$   $&lt; 1$ ，（m是一个比较大的数），所以$\theta$会不断缩小  </p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282050851.png" srcset="/img/loading.gif" lazyload alt="image-20220128205003746"></p>
+<p>正规化</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282128553.png" srcset="/img/loading.gif" lazyload alt="image-20220128212825481"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201282131000.png" srcset="/img/loading.gif" lazyload alt="image-20220128213142933"></p>
+<p>Logistic 回归正则化（逻辑回归）：</p>
+<p>公式形式与线性回归一致，但是逻辑回归引入了逻辑函数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201290945558.png" srcset="/img/loading.gif" lazyload alt="image-20220129094530459"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201291007682.png" srcset="/img/loading.gif" lazyload alt="image-20220129100731596"></p>
+<h4 id="第八节-神经网络"><a href="#第八节-神经网络" class="headerlink" title="第八节 神经网络"></a>第八节 神经网络</h4><p>非线性假设</p>
+<p>神经网络：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201292100471.png" srcset="/img/loading.gif" lazyload alt="image-20220129210041315"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201292133066.png" srcset="/img/loading.gif" lazyload alt="image-20220129213315983"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201300956548.png" srcset="/img/loading.gif" lazyload alt="image-20220130095625313"></p>
+<p>前向传播（向量化计算h(x)）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201301054412.png" srcset="/img/loading.gif" lazyload alt="image-20220130105444175"></p>
+<p>神经网络训练自己的特征</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201301119357.png" srcset="/img/loading.gif" lazyload alt="image-20220130111926174"></p>
+<p>逻辑与</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201301958627.png" srcset="/img/loading.gif" lazyload alt="image-20220130195847421"></p>
+<p>或运算</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201302000983.png" srcset="/img/loading.gif" lazyload alt="image-20220130200022919"></p>
+<p>非运算</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201302007357.png" srcset="/img/loading.gif" lazyload alt="image-20220130200757305"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202201311012831.png" srcset="/img/loading.gif" lazyload alt="image-20220131101241701"></p>
+<h4 id="第九节"><a href="#第九节" class="headerlink" title="第九节"></a>第九节</h4><p><strong>代价函数</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081000288.png" srcset="/img/loading.gif" lazyload alt="image-20220208100001146"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081005419.png" srcset="/img/loading.gif" lazyload alt="image-20220208100537324"></p>
+<p><strong>反向传播算法</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081134056.png" srcset="/img/loading.gif" lazyload alt="image-20220208113426931"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081142806.png" srcset="/img/loading.gif" lazyload alt="image-20220208114239689"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081436638.png" srcset="/img/loading.gif" lazyload alt="image-20220208143617504"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081447236.png" srcset="/img/loading.gif" lazyload alt="image-20220208144719135"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081449422.png" srcset="/img/loading.gif" lazyload alt="image-20220208144958299"></p>
+<p>李宏毅解释的反向传播</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203091705990.png" srcset="/img/loading.gif" lazyload alt="image-20220309170545896"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203091647565.png" srcset="/img/loading.gif" lazyload alt="image-20220309164655425"></p>
+<p>显然对于$\partial z &#x2F;\partial w$(z&#x3D;x1$\cdot$w1+x2$\cdot$w2+b ) ，$w_i$的偏微分就是前面的”输入” $x_i$，这就是一个Forward pass 的过程</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203091657276.png" srcset="/img/loading.gif" lazyload alt="image-20220309165707170"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092009636.png" srcset="/img/loading.gif" lazyload alt="image-20220309200910519"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092017515.png" srcset="/img/loading.gif" lazyload alt="image-20220309201704425"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092024861.png" srcset="/img/loading.gif" lazyload alt="image-20220309202412758"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092105772.png" srcset="/img/loading.gif" lazyload alt="image-20220309210528647"></p>
+<p>Backward Pass，就类似于反向建立Neural Network，计算$\partial C&#x2F;\partial z$ </p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092122572.png" srcset="/img/loading.gif" lazyload alt="image-20220309212208461"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203092132282.png" srcset="/img/loading.gif" lazyload alt="image-20220309213234182"></p>
+<p><strong>梯度检测</strong></p>
+<p>为了防止数值上的问题，一般$\theta$ 不会取太小，常取1e-4</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081556103.png" srcset="/img/loading.gif" lazyload alt="image-20220208155653992"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081604882.png" srcset="/img/loading.gif" lazyload alt="image-20220208160443758"></p>
+<p>估算偏导数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081557771.png" srcset="/img/loading.gif" lazyload alt="image-20220208155723681"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081627602.png" srcset="/img/loading.gif" lazyload alt="image-20220208162733480"></p>
+<p><strong>随机初始化</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081630380.png" srcset="/img/loading.gif" lazyload alt="image-20220208163039289"></p>
+<p>零初始化对神经网络是没有意义的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081636223.png" srcset="/img/loading.gif" lazyload alt="image-20220208163655133"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202081640134.png" srcset="/img/loading.gif" lazyload alt="image-20220208164049051"></p>
+<p><strong>如何训练神经网络</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202102145609.png" srcset="/img/loading.gif" lazyload alt="image-20220210214521479"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202102148080.png" srcset="/img/loading.gif" lazyload alt="image-20220210214851974"></p>
+<h4 id="第十节-决定下一步做什么"><a href="#第十节-决定下一步做什么" class="headerlink" title="第十节 决定下一步做什么"></a>第十节 决定下一步做什么</h4><p>无所谓的尝试可能浪费很多时间</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111000808.png" srcset="/img/loading.gif" lazyload alt="image-20220211100013709"></p>
+<p>机器学习诊断法</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111012259.png" srcset="/img/loading.gif" lazyload alt="image-20220211101233178"></p>
+<p><strong>评估假设</strong></p>
+<p>前<code>70%</code>作为训练集，后<code>30%</code>作为测试集</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111018926.png" srcset="/img/loading.gif" lazyload alt="image-20220211101845822"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111025656.png" srcset="/img/loading.gif" lazyload alt="image-20220211102545572"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202111035176.png" srcset="/img/loading.gif" lazyload alt="image-20220211103505072"></p>
+<p><strong>模型的选择、训练、验证、测试</strong></p>
+<p>对于测试集拟合的产生的$\theta$新的数据可能拟合效果不好</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202121950911.png" srcset="/img/loading.gif" lazyload alt="image-20220212195032766"></p>
+<p>划分数据集合为 训练集（train 教科书），交叉验证集（cv 课后 作业），测试集（test 期末考试）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202121955712.png" srcset="/img/loading.gif" lazyload alt="image-20220212195530598"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202121957723.png" srcset="/img/loading.gif" lazyload alt="image-20220212195720648"></p>
+<p>用训练集拟合得到$\theta$ ，然后用交叉验证集来计算 J error（泛化误差），选择最小的一个作为d</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202122012505.png" srcset="/img/loading.gif" lazyload alt="image-20220212201256417"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202122122700.png" srcset="/img/loading.gif" lazyload alt="image-20220212212227608"></p>
+<p><strong>偏差（Bias)与方差(Variance)</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202122128783.png" srcset="/img/loading.gif" lazyload alt="image-20220212212825677"></p>
+<p>正则化与偏差(欠拟合）、方差（过拟合）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202140948300.png" srcset="/img/loading.gif" lazyload alt="image-20220214094837168"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202140949661.png" srcset="/img/loading.gif" lazyload alt="image-20220214094906575"></p>
+<p>用J（包含正则化项）来求theta，然后为了比较lameda对theta的影响，用Jtrain和Jcv绘制曲线（不包含正则化项）。其实训练时用的是J，而Jtrain和Jcv只是用来画线说明问题</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202140959553.png" srcset="/img/loading.gif" lazyload alt="image-20220214095925447"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141011222.png" srcset="/img/loading.gif" lazyload alt="image-20220214101149116"></p>
+<p>学习曲线绘制</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141045317.png" srcset="/img/loading.gif" lazyload alt="image-20220214104559231"></p>
+<p>高偏差</p>
+<p>高偏差下，训练集大小对于 降低 J error 没大作用</p>
+<p><img src="C:/Users/auroras/AppData/Roaming/Typora/typora-user-images/image-20220214105627219.png" srcset="/img/loading.gif" lazyload alt="image-20220214105627219"></p>
+<p>高方差下，增加训练集，对降低J error 是有效的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141104203.png" srcset="/img/loading.gif" lazyload alt="image-20220214110410108"></p>
+<p>根据学习曲线改进学习方法（尽量不做徒劳工作</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141120393.png" srcset="/img/loading.gif" lazyload alt="image-20220214112049277"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202202141126650.png" srcset="/img/loading.gif" lazyload alt="image-20220214112620550"></p>
+<h4 id="第十一节"><a href="#第十一节" class="headerlink" title="第十一节"></a>第十一节</h4><p>误差分析</p>
+<p>不对称性分类的误差评估</p>
+<p>混淆矩阵 &amp; 准确率、精确率、召回率</p>
+<p>高的准确率和召回率可以评价一个算法是不是足够好</p>
+<p>通过F值来判断算法的好坏</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203042051627.png" srcset="/img/loading.gif" lazyload alt="image-20220304205153520"></p>
+<h4 id="第十二节-SVM"><a href="#第十二节-SVM" class="headerlink" title="第十二节 SVM"></a>第十二节 SVM</h4><p>SVM是监督学习算法</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203051425964.png" srcset="/img/loading.gif" lazyload alt="image-20220305142524731"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203051929668.png" srcset="/img/loading.gif" lazyload alt="image-20220305192952595"></p>
+<h4 id="补充的知识点"><a href="#补充的知识点" class="headerlink" title="补充的知识点"></a>补充的知识点</h4><h5 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202112312022755.png" srcset="/img/loading.gif" lazyload alt="image-20211231202240287"></p>
+<h4 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h4><p>线性回归  Linear regression<br>单变量线性回归 Linear regression with one variable</p>
+<p>代价函数  Cost Function<br>平方误差代价函数 Squared error cost function<br>建模误差  Modeling error<br>等高线　　contour plot 、contour figure<br>梯度下降  Gradient descent<br>批处理梯度下降   Batch gradient descent</p>
+<p>学习效率 　Learning rate<br>同步更新 simultaneous update<br>非同步更新 non-simultaneous update</p>
+<p>局部最优  local optimum<br>全局最优  global optimum<br>全局最小值   global minimum<br>局部最小值   local minimum</p>
+<p>微分项    derivative term<br>微积分    calculus<br>导数　　　 derivatives<br>偏导数    partial derivatives<br>负导数    nagative derivative<br>负斜率    nagative slope</p>
+<p>收敛      converge<br>发散      diverge<br>陡峭      steep<br>碗型      bow-shaped function<br>凸函数    convex function</p>
+<p>线性代数   linear algebra<br>迭代算法   iterative algorithm<br>正规方程组   normal equations methods<br>梯度下降的泛化   a generalization of the gradient descent algorithm<br>越过最低点    overshoot the minimum</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2022/08/12/机器学习/《吴恩达机器学习笔记》/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>kbb</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年8月12日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8ETensorFlow%E5%AE%9E%E8%B7%B5%E3%80%8B%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E3%80%8A%E5%88%A9%E7%94%A8Python%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%C2%B7%E7%AC%AC2%E7%89%88%E3%80%8B/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"EMuakg8wSFLx6iDBbSiN1680-gzGzoHsz","appKey":"Vc3QmVHkEkWJ12UhiGWdYvhN","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

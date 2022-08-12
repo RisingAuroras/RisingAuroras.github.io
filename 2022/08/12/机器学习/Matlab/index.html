@@ -16,19 +16,67 @@
   <meta name="author" content="kbb">
   <meta name="keywords" content="">
   
-    <meta name="description" content="title: 测试文章date: 2022-08-12 20:30:51tags:原创 这是一篇测试文章">
+    <meta name="description" content="Matlab常用的数学函数   语法冒号表达式 产生一个行向量  结构矩阵和单元矩阵   算术运算        字符串处理         特殊矩阵    函数文件的定义与调用       匿名函数类似于引用 （起个别名）     绘图     $sin(\frac{1}{x})$     :  fplot(@(x)sin(1.&#x2F;x),[0,0.2],’k’) $g(x)&#x3D;\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="马克图布">
-<meta property="og:url" content="http://example.com/2022/08/12/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:url" content="http://example.com/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Matlab/index.html">
 <meta property="og:site_name" content="马克图布">
-<meta property="og:description" content="title: 测试文章date: 2022-08-12 20:30:51tags:原创 这是一篇测试文章">
+<meta property="og:description" content="Matlab常用的数学函数   语法冒号表达式 产生一个行向量  结构矩阵和单元矩阵   算术运算        字符串处理         特殊矩阵    函数文件的定义与调用       匿名函数类似于引用 （起个别名）     绘图     $sin(\frac{1}{x})$     :  fplot(@(x)sin(1.&#x2F;x),[0,0.2],’k’) $g(x)&#x3D;\">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202208122044625.png">
-<meta property="article:published_time" content="2022-08-12T12:30:51.768Z">
-<meta property="article:modified_time" content="2022-08-12T12:47:03.236Z">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191133410.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191133571.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191134793.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191411356.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191430408.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191444294.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201105277.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201107561.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201109312.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201110874.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201120594.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201123999.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201123999.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201130560.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201131366.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201131987.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201142039.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201143119.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201146875.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201150632.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201151425.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210910995.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210914960.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210923163.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210940232.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311913328.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311915566.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311924889.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311919489.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311920491.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311921852.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311948173.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311950463.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311951308.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311954254.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121611976.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121612625.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121619971.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121703208.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121705110.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191140818.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201127516.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201140716.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210919159.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210919761.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252131791.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252133788.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252140479.png">
+<meta property="og:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252140501.png">
+<meta property="article:published_time" content="2022-08-12T14:12:38.051Z">
+<meta property="article:modified_time" content="2022-01-13T12:27:20.871Z">
 <meta property="article:author" content="kbb">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202208122044625.png">
+<meta name="twitter:image" content="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191133410.png">
   
   
   
@@ -225,7 +273,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-12 20:30" pubdate>
+        <time datetime="2022-08-12 22:12" pubdate>
           2022年8月12日 晚上
         </time>
       </span>
@@ -237,7 +285,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          48 字
+          272 字
         
       </span>
     
@@ -248,7 +296,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -299,9 +347,68 @@
             
               <div class="markdown-body">
                 
-                <p>title: 测试文章<br>date: 2022-08-12 20:30:51<br>tags:原创</p>
-<p>这是一篇测试文章 </p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202208122044625.png" srcset="/img/loading.gif" lazyload alt="image-20220812204459558"></p>
+                <h3 id="Matlab"><a href="#Matlab" class="headerlink" title="Matlab"></a>Matlab</h3><h4 id="常用的数学函数"><a href="#常用的数学函数" class="headerlink" title="常用的数学函数"></a>常用的数学函数</h4><p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191133410.png" srcset="/img/loading.gif" lazyload alt="image-20211219113309256"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191133571.png" srcset="/img/loading.gif" lazyload alt="image-20211219113324497"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191134793.png" srcset="/img/loading.gif" lazyload alt="image-20211219113442756"></p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p><strong>冒号表达式</strong></p>
+<p>产生一个行向量</p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191411356.png" srcset="/img/loading.gif" lazyload alt="image-20211219141127273"></p>
+<p>结构矩阵和单元矩阵</p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191430408.png" srcset="/img/loading.gif" lazyload alt="image-20211219143037339"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191444294.png" srcset="/img/loading.gif" lazyload alt="image-20211219144425177"></p>
+<p><strong>算术运算</strong></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201105277.png" srcset="/img/loading.gif" lazyload alt="image-20211220110522165"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201107561.png" srcset="/img/loading.gif" lazyload alt="image-20211220110756491"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201109312.png" srcset="/img/loading.gif" lazyload alt="image-20211220110945237"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201110874.png" srcset="/img/loading.gif" lazyload alt="image-20211220111023786"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201120594.png" srcset="/img/loading.gif" lazyload alt="image-20211220112014473"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201123999.png" srcset="/img/loading.gif" lazyload alt="image-20211220112306900"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201123999.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>字符串处理</strong></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201130560.png" srcset="/img/loading.gif" lazyload alt="image-20211220113026510"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201131366.png" srcset="/img/loading.gif" lazyload alt="image-20211220113132303"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201131987.png" srcset="/img/loading.gif" lazyload alt="image-20211220113143932"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201142039.png" srcset="/img/loading.gif" lazyload alt="image-20211220114202937"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201143119.png" srcset="/img/loading.gif" lazyload alt="image-20211220114354059"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201146875.png" srcset="/img/loading.gif" lazyload alt="image-20211220114607753"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201150632.png" srcset="/img/loading.gif" lazyload alt="image-20211220115048566"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201151425.png" srcset="/img/loading.gif" lazyload alt="image-20211220115134354"></p>
+<p><strong>特殊矩阵</strong><br><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210910995.png" srcset="/img/loading.gif" lazyload alt="image-20211221091052841"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210914960.png" srcset="/img/loading.gif" lazyload alt="image-20211221091416873"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210923163.png" srcset="/img/loading.gif" lazyload alt="image-20211221092341057"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210940232.png" srcset="/img/loading.gif" lazyload alt="image-20211221094043142"></p>
+<p><strong>函数文件的定义与调用</strong></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311913328.png" srcset="/img/loading.gif" lazyload alt="image-20211231191346088"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311915566.png" srcset="/img/loading.gif" lazyload alt="image-20211231191522468"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311924889.png" srcset="/img/loading.gif" lazyload alt="image-20211231192420797"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311919489.png" srcset="/img/loading.gif" lazyload alt="image-20211231191908360"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311920491.png" srcset="/img/loading.gif" lazyload alt="image-20211231192012402"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311921852.png" srcset="/img/loading.gif" lazyload alt="image-20211231192107737"></p>
+<p>匿名函数类似于引用 （起个别名）</p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311948173.png" srcset="/img/loading.gif" lazyload alt="image-20211231194850074"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311950463.png" srcset="/img/loading.gif" lazyload alt="image-20211231195017307"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311951308.png" srcset="/img/loading.gif" lazyload alt="image-20211231195152232"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112311954254.png" srcset="/img/loading.gif" lazyload alt="image-20211231195422077"></p>
+<h4 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h4><p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121611976.png" srcset="/img/loading.gif" lazyload alt="image-20220112161101911"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121612625.png" srcset="/img/loading.gif" lazyload alt="image-20220112161214556"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121619971.png" srcset="/img/loading.gif" lazyload alt="image-20220112161959860"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121703208.png" srcset="/img/loading.gif" lazyload alt="image-20220112170342134"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202201121705110.png" srcset="/img/loading.gif" lazyload alt="image-20220112170532030"></p>
+<p>$sin(\frac{1}{x})$     :  fplot(@(x)sin(1.&#x2F;x),[0,0.2],’k’)</p>
+<p>$g(x)&#x3D;\dfrac{1}{1+e^{-z}}$ :   fplot(@(x)1.&#x2F;(1+exp(-x)),[-10,10],’r’)</p>
+<h4 id="Exemple"><a href="#Exemple" class="headerlink" title="Exemple"></a>Exemple</h4><p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112191140818.png" srcset="/img/loading.gif" lazyload alt="image-20211219114040725"></p>
+<p>find 返回非零元素的下标</p>
+<p>isprime(x) ：素数为1，非素数为0</p>
+<p>x(k1)输出指定k1位置的数(k1可以为矩阵)</p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201127516.png" srcset="/img/loading.gif" lazyload alt="image-20211220112652391"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112201140716.png" srcset="/img/loading.gif" lazyload alt="image-20211220114019606"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210919159.png" srcset="/img/loading.gif" lazyload alt="image-20211221091942058"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112210919761.png" srcset="/img/loading.gif" lazyload alt="image-20211221091950673"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252131791.png" srcset="/img/loading.gif" lazyload alt="image-20211225213116709"></p>
+<img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252133788.png" srcset="/img/loading.gif" lazyload alt="image-20211225213354727" style="zoom:50%;" />
+
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252140479.png" srcset="/img/loading.gif" lazyload alt="image-20211225214028348"></p>
+<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202112252140501.png" srcset="/img/loading.gif" lazyload alt="image-20211225214037400"></p>
 
                 
               </div>
@@ -320,7 +427,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div></div>
-      <div>http://example.com/2022/08/12/测试文章/</div>
+      <div>http://example.com/2022/08/12/机器学习/Matlab/</div>
     </div>
     <div class="license-meta">
       
@@ -362,9 +469,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/12/%E3%80%8A%E5%88%A9%E7%94%A8Python%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%C2%B7%E7%AC%AC2%E7%89%88%E3%80%8B/" title="利用Python进行数据分析·第2版">
+                      <a href="/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/PyTorch%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">利用Python进行数据分析·第2版</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -372,8 +479,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/12/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2022/08/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Gym%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
