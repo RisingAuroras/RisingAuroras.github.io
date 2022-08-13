@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-13T12:16:00.035Z</updated>
+  <updated>2022-08-13T11:04:35.280Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test1</title>
+    <link href="https://risingauroras.github.io/posts/c8b9/"/>
+    <id>https://risingauroras.github.io/posts/c8b9/</id>
+    <published>2022-08-13T11:01:47.000Z</published>
+    <updated>2022-08-13T11:04:35.280Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>PyTorch官方60分钟教程</title>
@@ -42,22 +55,9 @@
   </entry>
   
   <entry>
-    <title>test1</title>
-    <link href="https://risingauroras.github.io/posts/c8b9/"/>
-    <id>https://risingauroras.github.io/posts/c8b9/</id>
-    <published>2022-08-13T11:01:47.000Z</published>
-    <updated>2022-08-13T11:04:35.280Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="https://risingauroras.github.io/posts/undefined/"/>
-    <id>https://risingauroras.github.io/posts/undefined/</id>
+    <link href="https://risingauroras.github.io/posts/3eeb/"/>
+    <id>https://risingauroras.github.io/posts/3eeb/</id>
     <published>2022-08-12T11:28:51.558Z</published>
     <updated>2022-08-12T12:46:20.063Z</updated>
     
