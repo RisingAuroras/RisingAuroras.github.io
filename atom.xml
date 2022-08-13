@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-12T12:46:20.063Z</updated>
+  <updated>2022-08-13T11:06:49.563Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyTorch官方60分钟教程</title>
+    <link href="https://risingauroras.github.io/posts/0/"/>
+    <id>https://risingauroras.github.io/posts/0/</id>
+    <published>2022-08-13T11:01:47.000Z</published>
+    <updated>2022-08-13T11:06:49.563Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;PyTorch官方教程&quot;&gt;&lt;a href=&quot;#PyTorch官方教程&quot; class=&quot;headerlink&quot; title=&quot;PyTorch官方教程&quot;&gt;&lt;/a&gt;PyTorch官方教程&lt;/h3&gt;&lt;h4 id=&quot;Introduction&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="pytorch 教程" scheme="https://risingauroras.github.io/tags/pytorch-%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test1</title>
+    <link href="https://risingauroras.github.io/posts/c8b9/"/>
+    <id>https://risingauroras.github.io/posts/c8b9/</id>
+    <published>2022-08-13T11:01:47.000Z</published>
+    <updated>2022-08-13T11:04:35.280Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
