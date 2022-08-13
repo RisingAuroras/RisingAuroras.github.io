@@ -670,7 +670,7 @@ loss<span class="token punctuation">.</span>backward<span class="token punctuati
 a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 b <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203101650916.png" alt="image-20220310165013855"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203101650916.png" alt="image-20220310165013855"></p>
 <p>让我们假设“a”和“b”是一个NN的参数，“Q”是误差。 在NN训练中，我们需要误差w.r.t.参数的梯度，即。  </p>
 <p>$\dfrac{\partial Q}{\partial a} = 9a^2$</p>
 <p>$\dfrac{\partial Q}{\partial b} = -2b$</p>
@@ -692,12 +692,12 @@ tensor([True, True])
 </code></pre>
 <p><strong>Optional Reading - Vector Calculus using <code>autograd</code></strong></p>
 <p>数学上，如果你有一个向量值函数  $ \vec{y}=f(\vec{x}) ,$则$ \vec{y}$的梯度关于$ \vec{x}$为雅克比矩阵$ J$</p>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203111501461.png" alt="image-20220311150056368"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203111501461.png" alt="image-20220311150056368"></p>
 <p>一般来说，$torch.autograd$ 是计算矢量雅克比矩阵乘积的引擎，也就是说，给定任意的向量$\vec{v}$，计算乘积$J^{T}\cdot \vec{v}$</p>
 <p>如果 $\vec{v}$是一个标量函数$l=g(\vec{y})$梯度</p>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203111506597.png" alt="image-20220311150628557"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203111506597.png" alt="image-20220311150628557"></p>
 <p>那么根据链式法则，矢量与雅可比矩阵的乘积将是$l$关于$\vec{x}$的梯度</p>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203111507309.png" alt="image-20220311150754266"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203111507309.png" alt="image-20220311150754266"></p>
 <p>向量-雅克比矩阵乘积的特点就是我们在上面例子使用的；<code>external_grad</code> 代表$\vec{v}$.</p>
 <p><strong>Computational Graph</strong></p>
 <p>概念上，autograd在一个由Function对象组成的有向无环图(DAG)中保存数据(tensors)和所有执行的操作(以及产生的新tensors)的记录。在这个DAG中，叶是输入 tensors，根是输出 tensors。 通过从根到叶跟踪这个图，可以使用链式法则自动计算梯度。 </p>
@@ -713,7 +713,7 @@ tensor([True, True])
 <li>利用链式法则，一直传播到leaf tensors。</li>
 </ul>
 <p>下面是我们示例中的DAG的可视化表示。 在图中，箭头指向forward pass的方向。 节点表示前向传递中每个操作的向后函数。 蓝色的叶节点代表 leaf tensors a和b  </p>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203111538322.png" alt="image-20220311153809271"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203111538322.png" alt="image-20220311153809271"></p>
 <p><strong>NOTE</strong></p>
 <p>在PyTorch中，DAGs是动态的,需要注意的重要一点是，图是从头创建的;每次<code>.backward()</code>调用之后，autograd开始填充一个新的图。 这正是允许你在模型中使用控制流语句的原因; 如果需要，您可以在每次迭代中更改形状、大小和操作。  </p>
 <p><strong>Exclusion from the DAG</strong></p>
@@ -754,7 +754,7 @@ optimizer <span class="token operator">=</span> optim<span class="token punctuat
 <p>Now that you had a glimpse of <code>autograd</code>, <code>nn</code> depends on <code>autograd</code> to define models and differentiate them. An <code>nn.Module</code> contains layers, and a method <code>forward(input)</code> that returns the <code>output</code>.</p>
 <p>现在您已经对<code>autograd</code>有了一些了解，nn依赖于<code>autograd</code>来定义模型并区分它们。 一个<code>nn.Module</code>包含层和一个返回输出的<code>forward(input)</code>方法。  </p>
 <p>例如，看看这个分类数字图像的网络:  </p>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203111627134.png" alt="image-20220311162744074"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203111627134.png" alt="image-20220311162744074"></p>
 <p>这是一个简单的前馈网络。它接受输入，一个接一个地通过几个层提供输入，最后给出输出。  </p>
 <p>一个典型的神经网络训练过程如下:  </p>
 <ul>
@@ -951,7 +951,7 @@ optimizer<span class="token punctuation">.</span>step<span class="token punctuat
 <p>这提供了极大的便利，并避免了编写样板代码。  </p>
 <p>For this tutorial, we will use the CIFAR10 dataset. It has the classes: ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, ‘truck’. The images in CIFAR-10 are of size 3x32x32, i.e. 3-channel color images of 32x32 pixels in size.</p>
 <p>在本教程中，我们将使用CIFAR10数据集。 它有类:“飞机”，“汽车”，“鸟”，“猫”，“鹿”，“狗”，“青蛙”，“马”，“船”，“卡车”。 CIFAR-10的图像大小为3x32x32，即32x32像素的3通道彩色图像。  </p>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203121514751.png" alt="image-20220312151450419"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203121514751.png" alt="image-20220312151450419"></p>
 <p>cifar10</p>
 <h5 id="Training-an-image-classifier"><a href="#Training-an-image-classifier" class="headerlink" title="Training an image classifier"></a>Training an image classifier</h5><p>We will do the following steps in order:</p>
 <ol>
@@ -1024,7 +1024,7 @@ imshow<span class="token punctuation">(</span>torchvision<span class="token punc
 <span class="token comment" spellcheck="true"># print labels</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>f<span class="token string">'{classes[labels[j]]:5s}'</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203121537042.png" alt="image-20220312153718966"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203121537042.png" alt="image-20220312153718966"></p>
 <p>Out:</p>
 <pre><code>dog   horse truck ship
 </code></pre>
@@ -1123,7 +1123,7 @@ images<span class="token punctuation">,</span> labels <span class="token operato
 imshow<span class="token punctuation">(</span>torchvision<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>make_grid<span class="token punctuation">(</span>images<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'GroundTruth: '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>f<span class="token string">'{classes[labels[j]]:5s}'</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://gitee.com/k_rookie/gitee-pages-imgs/raw/master/202203121601674.png" alt="image-20220312160110591"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203121601674.png" alt="image-20220312160110591"></p>
 <p>Out:</p>
 <pre><code>GroundTruth:  cat   ship  ship  plane
 </code></pre>
