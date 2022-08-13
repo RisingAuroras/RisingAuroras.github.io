@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>马克图布</title>
+  
+  <subtitle>_马克图布的遗忘录</subtitle>
+  <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://risingauroras.github.io/"/>
+  <updated>2022-08-13T04:58:33.749Z</updated>
+  <id>https://risingauroras.github.io/</id>
+  
+  <author>
+    <name>马克图布</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试文112</title>
+    <link href="https://risingauroras.github.io/2022/08/13/ce-shi-wen-112/"/>
+    <id>https://risingauroras.github.io/2022/08/13/ce-shi-wen-112/</id>
+    <published>2022-08-13T04:58:33.000Z</published>
+    <updated>2022-08-13T04:58:33.749Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>测试文11</title>
+    <link href="https://risingauroras.github.io/2022/08/12/ce-shi-wen-11/"/>
+    <id>https://risingauroras.github.io/2022/08/12/ce-shi-wen-11/</id>
+    <published>2022-08-12T14:25:54.000Z</published>
+    <updated>2022-08-12T14:41:08.798Z</updated>
+    
+    
+    
+    
+    <category term="math" scheme="https://risingauroras.github.io/categories/math/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用Python进行数据分析·第2版</title>
+    <link href="https://risingauroras.github.io/2022/08/12/li-yong-python-jin-xing-shu-ju-fen-xi-di-2-ban/"/>
+    <id>https://risingauroras.github.io/2022/08/12/li-yong-python-jin-xing-shu-ju-fen-xi-di-2-ban/</id>
+    <published>2022-08-12T13:42:10.642Z</published>
+    <updated>2022-08-12T13:45:36.934Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前置-requirements-txt&quot;&gt;&lt;a href=&quot;#前置-requirements-txt&quot; class=&quot;headerlink&quot; title=&quot;前置 requirements.txt&quot;&gt;&lt;/a&gt;前置</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://risingauroras.github.io/2022/08/12/ce-shi-wen-zhang/"/>
+    <id>https://risingauroras.github.io/2022/08/12/ce-shi-wen-zhang/</id>
+    <published>2022-08-12T12:30:51.768Z</published>
+    <updated>2022-08-12T12:47:03.236Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;title: 测试文章&lt;br&gt;date: 2022-08-12 20:30:51&lt;br&gt;tags:原创&lt;/p&gt;
+&lt;p&gt;这是一篇测试文章 &lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://risingauroras.github.io/2022/08/12/hello-world/"/>
+    <id>https://risingauroras.github.io/2022/08/12/hello-world/</id>
+    <published>2022-08-12T11:28:51.558Z</published>
+    <updated>2022-08-12T12:46:20.063Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
