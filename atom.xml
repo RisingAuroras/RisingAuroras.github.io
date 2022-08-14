@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-14T10:55:06.892Z</updated>
+  <updated>2022-08-14T11:18:55.037Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的云音乐APP开发课程笔记</title>
+    <link href="https://risingauroras.github.io/posts/6f25/"/>
+    <id>https://risingauroras.github.io/posts/6f25/</id>
+    <published>2022-08-14T11:13:56.723Z</published>
+    <updated>2022-08-14T11:18:55.037Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;我的云音乐APP开发课程笔记&quot;&gt;&lt;a href=&quot;#我的云音乐APP开发课程笔记&quot; class=&quot;headerlink&quot; title=&quot;我的云音乐APP开发课程笔记&quot;&gt;&lt;/a&gt;我的云音乐APP开发课程笔记&lt;/h3&gt;&lt;h4 id=&quot;项目基本流程&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="android" scheme="https://risingauroras.github.io/categories/android/"/>
+    
+    
+    <category term="音乐app" scheme="https://risingauroras.github.io/tags/%E9%9F%B3%E4%B9%90app/"/>
+    
+  </entry>
   
   <entry>
     <title>【王树森】深度强化学习(DRL)</title>

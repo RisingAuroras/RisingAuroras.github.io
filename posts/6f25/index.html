@@ -1,0 +1,1792 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="我的云音乐APP开发课程笔记, 马克图布">
+    <meta name="description" content="记录我的遗忘">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>我的云音乐APP开发课程笔记 | 马克图布</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/log3.jfif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">马克图布</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/log3.jfif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">马克图布</div>
+        <div class="logo-desc">
+            
+            记录我的遗忘
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">我的云音乐APP开发课程笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9F%B3%E4%B9%90app/">
+                                <span class="chip bg-color">音乐app</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/android/" class="post-category">
+                                android
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="我的云音乐APP开发课程笔记"><a href="#我的云音乐APP开发课程笔记" class="headerlink" title="我的云音乐APP开发课程笔记"></a>我的云音乐APP开发课程笔记</h3><h4 id="项目基本流程"><a href="#项目基本流程" class="headerlink" title="项目基本流程"></a>项目基本流程</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210111152642.png" alt="image-20210111152633872"></p>
+<h4 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210111172955.png" alt="image-20210111172954973"></p>
+<p>AndroidUtilCode是一个校验信息的库 </p>
+<p>Glide是在线加载图片的库</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/wasabeef/glide-transformations">glide-transformations</a>配合Glide进行图片处理(如高斯模糊处理</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hdodenhof/CircleImageView"> CircleImageView</a> 把图片圆形展示并可以设置边界</p>
+<p><a target="_blank" rel="noopener" href="https://realm.io/docs/java/latest/">Realm数据库 </a>的使用</p>
+<p>EventBus 一个Android事件发布/订阅轻量级框架。（类似于广播）</p>
+<ul>
+<li>简化了组件间的通讯。</li>
+<li>分离了事件的发送者和接受者。</li>
+<li>在Activity、Fragment和线程中表现良好。</li>
+<li>避免了复杂的和易错的依赖关系和生命周期问题。</li>
+<li>使得代码更简洁,性能更好。</li>
+<li>更快,更小（约50k的jar包）。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/guolin_blog/article/details/106181780/">permissionx 权限请求框架</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/guolin_blog/category_9262963.html">LitePal</a> ：LitePal是一款开源的Android数据库框架，采用了对象关系映射（ORM）的模式，并将我们平时开发最常用到的一些数据库功能进行了封装，使得不用编写一行SQL语句就可以完成各种建表和增删改查的操作。</p>
+<p>BaseRecyclerViewAdapterHelper  一个非常简单灵活且强大的adapter</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210127232806.png" alt="image-20210127232739722"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210127233047.png" alt="image-20210127233047300"></p>
+<p>​			导入后，在MyApplication  中初始化，模型类要继承RealmObject (在模型中描绘一个数组用RealmList）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210127234716.png" alt="image-20210127234713900"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128092949.png" alt="image-20210128091802070"></p>
+<p>1、</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128093005.png" alt="image-20210128093005272"></p>
+<p>2、</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128094352.png" alt="image-20210128094351897"></p>
+<p>3、</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128094451.png" alt="image-20210128094451116"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128094740.png" alt="image-20210128094740419"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128094829.png" alt="image-20210128094829669"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128094942.png" alt="image-20210128094942881"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128154016.png" alt="image-20210128154011886"></p>
+<p>result 是可以自动更新的模型的集合</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210128162540.png" alt="image-20210128155406298"></p>
+<p>Realm数据迁移</p>
+<p>Realm数据库发生结构性变化（模型或者模型中的字段出现了新增，修改，删除）的时候，我们就需要对数据库进行迁移</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210129000925.png" alt="image-20210129000924363"></p>
+<p>Realm数据库传的是对象引用，只有当不在使用Realm数据库中的数据时，才能close掉。</p>
+<h4 id="零碎的知识点"><a href="#零碎的知识点" class="headerlink" title="零碎的知识点"></a>零碎的知识点</h4><h5 id="UI样式"><a href="#UI样式" class="headerlink" title="UI样式"></a>UI样式</h5><ul>
+<li>顶部存放状态的区域叫做statusBar，关于android中风格样式的设置都在res/value/styles.xml里</li>
+</ul>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210112160308.png" alt="image-20210112160258709" style="zoom:50%;">
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210112160410.png" alt="image-20210112160410203" style="zoom:50%;">
+
+<ul>
+<li><strong>value-v21</strong> ：存放android5.0之后的资源文件</li>
+<li><strong>NavigationBar</strong>(IOS)：顶部导航栏</li>
+</ul>
+<h5 id="自定义控件"><a href="#自定义控件" class="headerlink" title="自定义控件"></a>自定义控件</h5><ol>
+<li><p>现在values文件夹下建一个attrs.xml，然后声明样式,如</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    声明样式--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>declare-styleable</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputView<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--        输入框前图标，format:reference表示接收一个资源文件--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_icon<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>reference<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">&lt;!--        输入框提示内容，format="string"表示接收一个字符串--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_hint<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>string<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">&lt;!--        输入框是否以密文展示--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_password<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>boolean<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>declare-styleable</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>创建布局xml文件，如</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LinearLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>horizontal<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/inputViewHeight<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center_vertical<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+
+    <span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageView</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/iv_icon<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@mipmap/phone<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>EditText</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/et_input<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@null<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>hint</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>用户名<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>paddingRight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/titleSize<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>LinearLayout</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>创建相应类</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cloudmusic<span class="token punctuation">.</span>views<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>Context<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>res<span class="token punctuation">.</span>TypedArray<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>media<span class="token punctuation">.</span>Image<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Build<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>text<span class="token punctuation">.</span>InputType<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>util<span class="token punctuation">.</span>AttributeSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>LayoutInflater<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>View<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>EditText<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>FrameLayout<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>ImageView<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>NonNull<span class="token punctuation">;</span>
+<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Nullable<span class="token punctuation">;</span>
+<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RequiresApi<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cloudmusic<span class="token punctuation">.</span>R<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 1、input_icon: 输入框前面的图标
+ * 2、input_hint: 输入框提示内容
+ * 3、is_password: 输入框的内容是否需要以密文的形式展示
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputView</span> <span class="token keyword">extends</span> <span class="token class-name">FrameLayout</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> inputIcon<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String inputHint<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">boolean</span> isPassword<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> View mView<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> ImageView mIvIcon<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> EditText mEtInput<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> AttributeSet attrs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> AttributeSet attrs<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleAttr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> attrs<span class="token punctuation">,</span> defStyleAttr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@RequiresApi</span><span class="token punctuation">(</span>api <span class="token operator">=</span> Build<span class="token punctuation">.</span>VERSION_CODES<span class="token punctuation">.</span>LOLLIPOP<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> AttributeSet attrs<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleAttr<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleRes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> attrs<span class="token punctuation">,</span> defStyleAttr<span class="token punctuation">,</span> defStyleRes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span>AttributeSet attrs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>attrs <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//        获取自定义属性</span>
+        TypedArray typedArray <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">obtainStyledAttributes</span><span class="token punctuation">(</span>attrs<span class="token punctuation">,</span> R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputIcon <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getResourceId</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_icon<span class="token punctuation">,</span>R<span class="token punctuation">.</span>mipmap<span class="token punctuation">.</span>logo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputHint <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_hint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        isPassword <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getBoolean</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_password<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//释放</span>
+        typedArray<span class="token punctuation">.</span><span class="token function">recycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//绑定layout布局</span>
+        mView <span class="token operator">=</span> LayoutInflater<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>input_view<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mIvIcon <span class="token operator">=</span> mView<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>iv_icon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mEtInput <span class="token operator">=</span> mView<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>et_input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//        布局关联属性</span>
+        mIvIcon<span class="token punctuation">.</span><span class="token function">setImageResource</span><span class="token punctuation">(</span>inputIcon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mEtInput<span class="token punctuation">.</span><span class="token function">setHint</span><span class="token punctuation">(</span>inputHint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mEtInput<span class="token punctuation">.</span><span class="token function">setInputType</span><span class="token punctuation">(</span>isPassword <span class="token operator">?</span> InputType<span class="token punctuation">.</span>TYPE_CLASS_TEXT <span class="token operator">|</span>
+                InputType<span class="token punctuation">.</span>TYPE_TEXT_VARIATION_PASSWORD <span class="token operator">:</span> InputType<span class="token punctuation">.</span>TYPE_CLASS_PHONE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">addView</span><span class="token punctuation">(</span>mView<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//绑定布局</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 返回输入内容
+     * @return
+     */</span>
+    <span class="token keyword">public</span> String <span class="token function">getInputStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> mEtInput<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>最后是调用布局</p>
+<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.example.cloudmusic.views.InputView</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/inputViewHeight<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">app:</span>input_icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@mipmap/phone<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">app:</span>input_hint</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>手机号<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">app:</span>input_password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+</code></pre>
+</li>
+</ol>
+<h5 id="样式复用方法"><a href="#样式复用方法" class="headerlink" title="样式复用方法"></a>样式复用方法</h5><ul>
+<li><p><code>include</code> 引入</p>
+</li>
+<li><p>自定义<code>view</code></p>
+</li>
+<li><p>在<code>style.xml</code>里定义一个<code>style</code></p>
+<pre class=" language-xml"><code class="language-xml">
+<span class="token comment" spellcheck="true">&lt;!--    分割线样式--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>line<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+        &lt;item name=<span class="token string">"android:layout_height"</span>><span class="token number">1</span>dp&lt;/item>
+        &lt;item name=<span class="token string">"android:layout_width"</span>>match_parent&lt;/item>
+        &lt;item name=<span class="token string">"android:background"</span>>@color/lineColor&lt;/item>
+        &lt;item name=<span class="token string">"android:layout_margin"</span>>@dimen/marginSize&lt;/item>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>​	使用</p>
+<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span><span class="token style-attr language-css"><span class="token attr-name">
+        <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/line</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+</li>
+</ul>
+<h5 id="按钮或者文本框点击高亮"><a href="#按钮或者文本框点击高亮" class="headerlink" title="按钮或者文本框点击高亮"></a>按钮或者文本框点击高亮</h5><pre class=" language-xml"><code class="language-xml">   &lt;TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/itemHeight"
+        android:layout_marginTop="@dimen/marginSize"
+        android:text="修改密码"
+        android:textSize="@dimen/infoSize"
+        android:paddingLeft="@dimen/marginSize"
+        android:gravity="center_vertical"
+        android:onClick="onChangeClick"
+        android:background="@drawable/item_commit_select" <span class="token comment" spellcheck="true">&lt;!--关键所在--></span>
+        />
+
+    &lt;Button
+        style="@style/commitBtn"<span class="token comment" spellcheck="true">&lt;!--在styles.xml定义全局样式--></span>
+        android:text="退出登录"
+        android:layout_marginTop="@dimen/marginSize"
+        android:onClick="onLogoutClick"
+        />
+
+
+<span class="token comment" spellcheck="true">&lt;!--styles.xml--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- Base application theme. --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AppTheme<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light.DarkActionBar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- Customize your theme here. --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>colorPrimary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@color/colorPrimary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>colorPrimaryDark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@color/mainColor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>colorAccent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@color/colorAccent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:windowAnimationStyle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@style/AnimationActivity<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    &lt;item name="android:statusBarColor">也可以修改statusBar颜色，优先级比PrimaryDark高&lt;/item>--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+   
+
+<span class="token comment" spellcheck="true">&lt;!--    登录按钮--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>commitBtn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+        &lt;item name=<span class="token string">"android:layout_height"</span>>@dimen/btnHeight&lt;/item>
+        &lt;item name=<span class="token string">"android:layout_width"</span>>match_parent&lt;/item>
+        &lt;item name=<span class="token string">"android:textColor"</span>>@<span class="token property">android</span><span class="token punctuation">:</span>color/white&lt;/item>
+        &lt;item name=<span class="token string">"android:textSize"</span>>@dimen/titleSize&lt;/item>
+        &lt;item name=<span class="token string">"android:layout_marginLeft"</span>>@dimen/marginSize&lt;/item>
+        &lt;item name=<span class="token string">"android:layout_marginRight"</span>>@dimen/marginSize&lt;/item>
+        &lt;item name=<span class="token string">"android:layout_gravity"</span>>center&lt;/item>
+        &lt;item name=<span class="token string">"android:background"</span>>@drawable/btn_commit_select&lt;/item>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>在res/drawable下创建item_commit_select.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selector</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    View高亮--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_focused</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_pressed</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_selected</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    View默认--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_n<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selector</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>然后创建commit_item_h.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shape</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rectangle<span class="token punctuation">"</span></span>
+    <span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    实体颜色--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>solid</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/itemColorH<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    弧度--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>corners</span> <span class="token attr-name"><span class="token namespace">android:</span>radius</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/radius<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shape</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>创建commit_item_n.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shape</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rectangle<span class="token punctuation">"</span></span>
+    <span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    实体颜色--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>solid</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@android:color/white<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    弧度--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>corners</span> <span class="token attr-name"><span class="token namespace">android:</span>radius</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/radius<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shape</span><span class="token punctuation">></span></span>
+</code></pre>
+<h5 id="Activity-过度动画分类"><a href="#Activity-过度动画分类" class="headerlink" title="Activity 过度动画分类"></a>Activity 过度动画分类</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210113191026.png" alt="image-20210113191009060"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210113191057.png" alt="image-20210113191057060"></p>
+<p><strong>定义全局动画效果</strong></p>
+<ol>
+<li><p>修改styles.xml中的 &lt;style name=”AppTheme （增加<code>&lt;item name="android:windowAnimationStyle"&gt;@style/AnimationActivity&lt;/item&gt;</code>)，记得如果创建了<code>values-v21</code> 文件下，就要更新下其下的styles.xml</p>
+</li>
+<li><p>在styles.xml中增加活动动画样式</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AnimationActivity<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@android:style/Animation.Activity<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--        描述四个动画效果--></span>
+        <span class="token comment" spellcheck="true">&lt;!--打开Activity时，新进入的activity执行的动画（接受一个动画资源文件）--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityOpenEnterAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/open_enter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--打开Activity时，原Activity执行的动画--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityOpenExitAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/open_exit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--退出Activity时，退出的Activity执行动画 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityCloseExitAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/close_exit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--退出Activity时，重新显示的Activity执行动画 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityCloseEnterAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/close_enter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>在res下添加文件夹<code>anim</code>，然后在anim文件夹下，新建四个动画资源文件</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--open_enter.xml--></span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    从右向左的动画--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>translate</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--open_exit.xml--></span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--    以中心为源点缩放--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scale</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+
+
+<span class="token comment" spellcheck="true">&lt;!--close_exit.xml--></span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>translate</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--close_enter.xml--></span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scale</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+</ol>
+<h5 id="任务和返回栈-Task栈"><a href="#任务和返回栈-Task栈" class="headerlink" title="任务和返回栈(Task栈)"></a>任务和返回栈(Task栈)</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210114144100.png" alt="image-20210114144048003"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210114144140.png" alt="image-20210114144140590"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210114144426.png" alt="image-20210114144426534"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210114144549.png" alt="image-20210114144549275"></p>
+<h5 id="理解运行原理"><a href="#理解运行原理" class="headerlink" title="理解运行原理"></a>理解运行原理</h5><p>如果理解系统运行的原理，一些看似很复杂的功能可能很简单的就能够实现了。</p>
+<p>如，使得ImageView宽和高相同(重写onMeasure，并使得super参数相同，都为widthMeasureSpec)</p>
+<h5 id="RecycleView分割线原理"><a href="#RecycleView分割线原理" class="headerlink" title="RecycleView分割线原理"></a>RecycleView分割线原理</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210116164543.png" alt="image-20210116164532360"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210116164616.png" alt="image-20210116164616541"></p>
+<h5 id="通过Service-播放音乐"><a href="#通过Service-播放音乐" class="headerlink" title="通过Service 播放音乐"></a>通过Service 播放音乐</h5><h4 id="Android项目常见用法"><a href="#Android项目常见用法" class="headerlink" title="Android项目常见用法"></a>Android项目常见用法</h4><ul>
+<li><p>创建MyApplication继承自Application，并且在AndroidManifest.xml中加入android:name=”MyApplication”</p>
+</li>
+<li><p>创建BaseActivity 继承自Activity，并且让所有活动继承它，方便管理活动生命周期</p>
+</li>
+<li><p>使用Timer进程初始页的等待及跳转</p>
+<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
+     * 初始化 ，睡眠3s
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mTimer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mTimer<span class="token punctuation">.</span><span class="token function">schedule</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TimerTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//                Log.e("WelcomeActivity","当前线程为" + Thread.currentThread());</span>
+                <span class="token function">toLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//跳转到登录页</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>ScrollView 和 RecyclerView一起使用时，自定义RecyclerView高度</p>
+</li>
+<li><p>利用Android提供的startAnimation来自定义动画</p>
+</li>
+<li><p>MediaPlayer来播放音乐</p>
+</li>
+<li><p>自动登录状态（利用SharedPreferences）</p>
+</li>
+<li></li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210129153146.png" alt="image-20210129152932443"></p>
+<h4 id="疑问-x2F-待开发"><a href="#疑问-x2F-待开发" class="headerlink" title="疑问/待开发"></a>疑问/待开发</h4><ol>
+<li>怎么样使得圆盘静止的时候保持现状</li>
+<li>上一首和下一首和暂停</li>
+<li>通知栏仿照网易云</li>
+<li>后台搭建</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">马克图布</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://risingauroras.github.io/posts/6f25/">https://risingauroras.github.io/posts/6f25/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">马克图布</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%9F%B3%E4%B9%90app/">
+                                    <span class="chip bg-color">音乐app</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.iohttps://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'rq8NIIMaU9s4hlhozChVSkCo-9Nh9j0Va',
+        appKey: 'J9SyUPeeBACIilhmoO49Jt20',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+        enableQQ: true,
+        emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+        // 表情title和图片映射
+        emojiMaps: {
+        "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+        "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+        "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+        "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+            // ... 更多表情
+        },
+        requiredFields: ['nick','mail'], //设置必填项
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/6f25/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="我的云音乐APP开发课程笔记">
+                        
+                        <span class="card-title">我的云音乐APP开发课程笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            我的云音乐APP开发课程笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/android/" class="post-category">
+                                    android
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9F%B3%E4%B9%90app/">
+                        <span class="chip bg-color">音乐app</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/d1a2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="【王树森】深度强化学习(DRL)">
+                        
+                        <span class="card-title">【王树森】深度强化学习(DRL)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Gym入门使用教程
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    强化学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">马克图布</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/RisingAuroras" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:auroras.k6@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/js/matery.js"></script>
+	<script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
