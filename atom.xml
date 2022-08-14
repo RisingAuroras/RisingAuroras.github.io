@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-14T08:29:55.610Z</updated>
+  <updated>2022-08-14T10:55:06.892Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【王树森】深度强化学习(DRL)</title>
+    <link href="https://risingauroras.github.io/posts/d1a2/"/>
+    <id>https://risingauroras.github.io/posts/d1a2/</id>
+    <published>2022-08-14T10:54:02.299Z</published>
+    <updated>2022-08-14T10:55:06.892Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;【王树森】深度强化学习-DRL&quot;&gt;&lt;a href=&quot;#【王树森】深度强化学习-DRL&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Gym入门使用教程</title>
+    <link href="https://risingauroras.github.io/posts/e28d/"/>
+    <id>https://risingauroras.github.io/posts/e28d/</id>
+    <published>2022-08-14T10:46:24.731Z</published>
+    <updated>2022-08-14T10:47:53.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Gym入门使用教程&quot;&gt;&lt;a href=&quot;#Gym入门使用教程&quot; class=&quot;headerlink&quot; title=&quot;Gym入门使用教程&quot;&gt;&lt;/a&gt;Gym入门使用教程&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="gym" scheme="https://risingauroras.github.io/tags/gym/"/>
+    
+  </entry>
+  
+  <entry>
     <title>资源一览</title>
     <link href="https://risingauroras.github.io/posts/29ff/"/>
     <id>https://risingauroras.github.io/posts/29ff/</id>
     <published>2022-08-14T07:51:43.000Z</published>
-    <updated>2022-08-14T08:29:55.610Z</updated>
+    <updated>2022-08-14T10:35:55.705Z</updated>
     
     
       
@@ -115,7 +167,7 @@
     <link href="https://risingauroras.github.io/posts/c8b9/"/>
     <id>https://risingauroras.github.io/posts/c8b9/</id>
     <published>2022-08-11T11:01:47.000Z</published>
-    <updated>2022-08-13T13:28:34.150Z</updated>
+    <updated>2022-08-14T10:53:33.365Z</updated>
     
     
     
