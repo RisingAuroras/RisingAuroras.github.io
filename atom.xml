@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-13T13:34:42.669Z</updated>
+  <updated>2022-08-14T08:28:28.680Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>资源一览</title>
+    <link href="https://risingauroras.github.io/posts/29ff/"/>
+    <id>https://risingauroras.github.io/posts/29ff/</id>
+    <published>2022-08-14T07:51:43.000Z</published>
+    <updated>2022-08-14T08:28:28.680Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Github-Hexo-建立博客参考网址：&quot;&gt;&lt;a href=&quot;#Github-Hexo-建立博客参考网址：&quot; class=&quot;headerlink&quot; title=&quot;Github + Hexo 建立博客参考网址：&quot;&gt;&lt;/a&gt;Github + Hexo</summary>
+        
+      
+    
+    
+    
+    <category term="实用" scheme="https://risingauroras.github.io/categories/%E5%AE%9E%E7%94%A8/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>b站土堆PyTorch深度学习快速入门教程</title>
