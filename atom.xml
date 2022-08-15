@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-14T12:08:16.505Z</updated>
+  <updated>2022-08-15T14:09:46.375Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android知识杂记</title>
+    <link href="https://risingauroras.github.io/posts/3d59/"/>
+    <id>https://risingauroras.github.io/posts/3d59/</id>
+    <published>2022-08-15T13:56:29.000Z</published>
+    <updated>2022-08-15T14:09:46.375Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Android-命名规范&quot;&gt;&lt;a href=&quot;#Android-命名规范&quot; class=&quot;headerlink&quot; title=&quot;Android 命名规范&quot;&gt;&lt;/a&gt;Android</summary>
+        
+      
+    
+    
+    
+    <category term="android" scheme="https://risingauroras.github.io/categories/android/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>重新梳理Android权限管理</title>
@@ -123,7 +146,7 @@
     <link href="https://risingauroras.github.io/posts/29ff/"/>
     <id>https://risingauroras.github.io/posts/29ff/</id>
     <published>2022-08-14T07:51:43.000Z</published>
-    <updated>2022-08-14T12:01:43.015Z</updated>
+    <updated>2022-08-14T14:17:27.694Z</updated>
     
     
       

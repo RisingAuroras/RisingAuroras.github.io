@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>android知识杂记</title>
+      <link href="/posts/3d59/"/>
+      <url>/posts/3d59/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Android-命名规范"><a href="#Android-命名规范" class="headerlink" title="Android 命名规范"></a>Android 命名规范</h2><p><strong>一、Layout命名</strong></p><pre class=" language-txt"><code class="language-txt">1. contentview命名：activity_功能模块.xm 例如：activity_main.xml、activity_more.xml2. Dialog命名：dialog_描述.xml 例如：dialog_hint.xml3. PopupWindow命名：ppw_描述.xml 例如：ppw_info.xml_4. _列表项命名：listitem_描述.xml 例如：listitem_city.xml5. 包含项：include_模块.xml 例如：include_head.xml、include_bottom.xml</code></pre><p><strong>二、图片命名</strong></p><pre class=" language-txt"><code class="language-txt">前缀_{模块}_描述 例如：bg_main.png、ic_main_search.png</code></pre><p><strong>三、 控件命名</strong></p><p><code>命名模式为：view缩写_模块名称_view的逻辑名称</code></p><table><thead><tr><th>控件</th><th>缩写前缀</th></tr></thead><tbody><tr><td>TextView</td><td>tv</td></tr><tr><td>EditTextet</td><td>et</td></tr><tr><td>ImageView</td><td>iv</td></tr><tr><td>Button/RadioButton/ImageButton</td><td>btn/rb/ib</td></tr><tr><td>RelativeLayout/LinearLayout/FrameLayout</td><td>rl/ll/fl</td></tr><tr><td>ListView</td><td>lv</td></tr><tr><td>WebView</td><td>wv</td></tr><tr><td>CheckBox</td><td>cb</td></tr><tr><td>ProgressBar</td><td>pb</td></tr><tr><td>RecyclerView</td><td>rv</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> android </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>重新梳理Android权限管理</title>
       <link href="/posts/8462/"/>
       <url>/posts/8462/</url>
