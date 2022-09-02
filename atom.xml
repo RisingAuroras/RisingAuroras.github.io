@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-08-15T14:09:46.375Z</updated>
+  <updated>2022-09-02T09:40:23.503Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python标准库之argparse</title>
+    <link href="https://risingauroras.github.io/posts/68cb/"/>
+    <id>https://risingauroras.github.io/posts/68cb/</id>
+    <published>2022-09-02T09:12:29.000Z</published>
+    <updated>2022-09-02T09:40:23.503Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://docs.python.org/zh-cn/3/howto/argparse.html&quot;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;位置参数介绍¶&quot;&gt;&lt;a href=&quot;#位置参数介绍¶&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://risingauroras.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>android知识杂记</title>
@@ -146,7 +172,7 @@
     <link href="https://risingauroras.github.io/posts/29ff/"/>
     <id>https://risingauroras.github.io/posts/29ff/</id>
     <published>2022-08-14T07:51:43.000Z</published>
-    <updated>2022-08-14T14:17:27.694Z</updated>
+    <updated>2022-08-24T12:48:20.870Z</updated>
     
     
       

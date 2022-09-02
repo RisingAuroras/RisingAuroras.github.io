@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="android知识杂记, 马克图布">
+    <meta name="keywords" content="Python标准库之argparse, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>android知识杂记 | 马克图布</title>
+    <title>Python标准库之argparse | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">android知识杂记</h1>
+                    <h1 class="description center-align post-title">Python标准库之argparse</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/android/" class="post-category">
-                                android
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -391,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-15
+                    2022-09-02
                 </div>
                 
 
@@ -400,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    153
+                    908
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -427,66 +431,130 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Android-命名规范"><a href="#Android-命名规范" class="headerlink" title="Android 命名规范"></a>Android 命名规范</h2><p><strong>一、Layout命名</strong></p>
-<pre class=" language-txt"><code class="language-txt">1. contentview命名：activity_功能模块.xm 例如：activity_main.xml、activity_more.xml
-2. Dialog命名：dialog_描述.xml 例如：dialog_hint.xml
-3. PopupWindow命名：ppw_描述.xml 例如：ppw_info.xml_
-4. _列表项命名：listitem_描述.xml 例如：listitem_city.xml
-5. 包含项：include_模块.xml 例如：include_head.xml、include_bottom.xml
+                <p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html">官方文档地址</a></p>
+<h3 id="位置参数介绍¶"><a href="#位置参数介绍¶" class="headerlink" title="位置参数介绍¶"></a>位置参数介绍<a href="null">¶</a></h3><p><code>add_argument()</code> 方法，该方法用于指定程序能够接受哪些命令行选项</p>
+<p><code>type</code>表示输入参数的类型</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">,</span>
+                    type<span class="token operator">=</span>int<span class="token punctuation">)</span>
+args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
 </code></pre>
-<p><strong>二、图片命名</strong></p>
-<pre class=" language-txt"><code class="language-txt">前缀_{模块}_描述 例如：bg_main.png、ic_main_search.png
+<p>以下是该代码的运行结果：</p>
+<pre class=" language-shell"><code class="language-shell">$ python3 prog.py 4
+16
+$ python3 prog.py four
+usage: prog.py [-h] square
+prog.py: error: argument square: invalid int value: 'four'
 </code></pre>
-<p><strong>三、 控件命名</strong></p>
-<p><code>命名模式为：view缩写_模块名称_view的逻辑名称</code></p>
-<table>
-<thead>
-<tr>
-<th>控件</th>
-<th>缩写前缀</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>TextView</td>
-<td>tv</td>
-</tr>
-<tr>
-<td>EditTextet</td>
-<td>et</td>
-</tr>
-<tr>
-<td>ImageView</td>
-<td>iv</td>
-</tr>
-<tr>
-<td>Button/RadioButton/ImageButton</td>
-<td>btn/rb/ib</td>
-</tr>
-<tr>
-<td>RelativeLayout/LinearLayout/FrameLayout</td>
-<td>rl/ll/fl</td>
-</tr>
-<tr>
-<td>ListView</td>
-<td>lv</td>
-</tr>
-<tr>
-<td>WebView</td>
-<td>wv</td>
-</tr>
-<tr>
-<td>CheckBox</td>
-<td>cb</td>
-</tr>
-<tr>
-<td>ProgressBar</td>
-<td>pb</td>
-</tr>
-<tr>
-<td>RecyclerView</td>
-<td>rv</td>
-</tr>
-</tbody></table>
+<p>当这个程序在收到错误的无效的输入时，它甚至能在执行计算之前先退出，还能显示很有帮助的错误信息。</p>
+<h3 id="可选参数介绍¶"><a href="#可选参数介绍¶" class="headerlink" title="可选参数介绍¶"></a>可选参数介绍<a href="javascript::null">¶</a></h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbosity"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
+args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbosity<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>输出：</p>
+<pre class=" language-shell"><code class="language-shell">$ python3 prog.py --verbosity 1
+verbosity turned on
+$ python3 prog.py
+$ python3 prog.py --help
+usage: prog.py [-h] [--verbosity VERBOSITY]
+
+options:
+  -h, --help            show this help message and exit
+  --verbosity VERBOSITY
+                        increase output verbosity
+$ python3 prog.py --verbosity
+usage: prog.py [-h] [--verbosity VERBOSITY]
+prog.py: error: argument --verbosity: expected one argument
+</code></pre>
+<p>程序运行情况如下：</p>
+<ul>
+<li>这一程序被设计为当指定 <code>--verbosity</code> 选项时显示某些东西，否则不显示。</li>
+<li>不添加这一选项时程序没有提示任何错误而退出，表明这一选项确实是可选的。注意，如果一个可选参数没有被使用时，相关变量被赋值为 <code>None</code>，在此例中是 <code>args.verbosity</code>，这也就是为什么它在 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/compound_stmts.html#if"><code>if</code></a> 语句中被当作逻辑假。</li>
+<li>帮助信息有点不同。</li>
+<li>使用 <code>--verbosity</code> 选项时，必须指定一个值，但可以是任何值。</li>
+</ul>
+<p>上述例子接受任何整数值作为 <code>--verbosity</code> 的参数，但对于我们的简单程序而言，只有两个值有实际意义：<code>True</code> 或者 <code>False</code>。让我们据此修改代码：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbose"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
+                    action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>输出：</p>
+<pre class=" language-shell"><code class="language-shell">$ python3 prog.py --verbose
+verbosity turned on
+$ python3 prog.py --verbose 1
+usage: prog.py [-h] [--verbose]
+prog.py: error: unrecognized arguments: 1
+$ python3 prog.py --help
+usage: prog.py [-h] [--verbose]
+
+options:
+  -h, --help  show this help message and exit
+  --verbose   increase output verbosity
+</code></pre>
+<p>程序运行情况如下：</p>
+<ul>
+<li>现在，这一选项更多地是一个标志，而非需要接受一个值的什么东西。我们甚至改变了选项的名字来符合这一思路。注意我们现在指定了一个新的关键词 <code>action</code>，并赋值为 <code>"store_true"</code>。这意味着，当这一选项存在时，为 <code>args.verbose</code> 赋值为 <code>True</code>。没有指定时则隐含地赋值为 <code>False</code>。</li>
+<li>当你为其指定一个值时，它会报错，符合作为标志的真正的精神。</li>
+<li>留意不同的帮助文字。</li>
+</ul>
+<h3 id="短选项¶"><a href="#短选项¶" class="headerlink" title="短选项¶"></a>短选项<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html#short-options">¶</a></h3><p>如果你熟悉命令行的用法，你会发现我还没讲到这一选项的短版本。这也很简单：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
+                    action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>效果就像这样：</p>
+<pre class=" language-shell"><code class="language-shell">$ python3 prog.py -v
+verbosity turned on
+$ python3 prog.py --help
+usage: prog.py [-h] [-v]
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose  increase output verbosity
+</code></pre>
+<p>可以注意到，这一新的能力也反映在帮助文本里。</p>
+<h3 id="结合位置参数和可选参数¶"><a href="#结合位置参数和可选参数¶" class="headerlink" title="结合位置参数和可选参数¶"></a>结合位置参数和可选参数<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html#combining-positional-and-optional-arguments">¶</a></h3><p>我们的程序变得越来越复杂了：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> type<span class="token operator">=</span>int<span class="token punctuation">,</span>
+                    help<span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">,</span>
+                    help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
+args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+answer <span class="token operator">=</span> args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span>
+<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"the square of {args.square} equals {answer}"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span>
+</code></pre>
+<p>输出：</p>
+<pre class=" language-shell"><code class="language-shell">$ python3 prog.py
+usage: prog.py [-h] [-v] square
+prog.py: error: the following arguments are required: square
+$ python3 prog.py 4
+16
+$ python3 prog.py 4 --verbose
+the square of 4 equals 16
+$ python3 prog.py --verbose 4
+the square of 4 equals 16
+</code></pre>
+<ul>
+<li>我们带回了一个位置参数，结果发生了报错。</li>
+<li>注意顺序无关紧要。</li>
+</ul>
 
                 
             </div>
@@ -513,7 +581,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/3d59/">https://risingauroras.github.io/posts/3d59/</a>
+                    <a href="https://risingauroras.github.io/posts/68cb/">https://risingauroras.github.io/posts/68cb/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +618,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -909,9 +981,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/68cb/">
                     <div class="card-image">
@@ -929,9 +1002,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -944,6 +1017,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -962,13 +1036,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/8462/">
+                <a href="/posts/3d59/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="重新梳理Android权限管理">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="android知识杂记">
                         
-                        <span class="card-title">重新梳理Android权限管理</span>
+                        <span class="card-title">android知识杂记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -979,7 +1053,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-15
                             </span>
                         <span class="publish-author">
                             
@@ -992,14 +1066,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
                 </div>
                 
             </div>
