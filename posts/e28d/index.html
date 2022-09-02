@@ -28,10 +28,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -430,6 +430,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -438,51 +441,49 @@
                 <h1 id="Gym入门使用教程"><a href="#Gym入门使用教程" class="headerlink" title="Gym入门使用教程"></a>Gym入门使用教程</h1><p><a target="_blank" rel="noopener" href="https://www.gymlibrary.ml/">官方文档</a></p>
 <h2 id="一，激活environment-查看环境基本信息"><a href="#一，激活environment-查看环境基本信息" class="headerlink" title="一，激活environment,查看环境基本信息"></a>一，激活environment,查看环境基本信息</h2><p>env.observation_space 得到state信息，是一个Box类，<br>env.observation_space.shape 得到state的shape<br>env.action_space 得到action的信息，是一个Discrete类<br>env.action_space.n 得到action的个数</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202208081541607.png" alt="image-20220808154138526"></p>
-<pre class=" language-python3"><code class="language-python3">import gym,time
-import random
-import numpy as np
-#初始化环境这里选择三个不同类别的环境
-env1 = gym.make('LunarLander-v2')
-env2 = gym.make('Pong-v0')
-env3 = gym.make('CartPole-v0')
-#查看环境状态
-#可以看到观察环境空间状态信息，主要是环境相关矩阵，一般是一个box类
-print(env1.observation_space, type(env1.observation_space))
-print(env2.observation_space, type(env2.observation_space))
-print(env3.observation_space, type(env3.observation_space))
-#返回的是离散action空间的值
-print(env1.action_space, type(env1.action_space))
-print(env2.action_space, type(env2.action_space))
-print(env3.action_space, type(env3.action_space))
-#LunarLander-v2的state shape和action space大小
-print(env1.observation_space.shape, env1.action_space.n)
-#Pong-v0的state shape和action space大小
-print(env2.observation_space.shape, env2.action_space.n)
-</code></pre>
-<h2 id="二，使用reset初始化environment-查看state信息（换个游戏场景）"><a href="#二，使用reset初始化environment-查看state信息（换个游戏场景）" class="headerlink" title="二，使用reset初始化environment,查看state信息（换个游戏场景）"></a>二，使用reset初始化environment,查看state信息（换个游戏场景）</h2><pre class=" language-python3"><code class="language-python3">state1 = env1.reset()
-state2 = env2.reset()
-state3 =env3.reset()
-</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gym<span class="token punctuation">,</span>time
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token comment">#初始化环境这里选择三个不同类别的环境</span>
+env1 <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'LunarLander-v2'</span><span class="token punctuation">)</span>
+env2 <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'Pong-v0'</span><span class="token punctuation">)</span>
+env3 <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'CartPole-v0'</span><span class="token punctuation">)</span>
+<span class="token comment">#查看环境状态</span>
+<span class="token comment">#可以看到观察环境空间状态信息，主要是环境相关矩阵，一般是一个box类</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env1<span class="token punctuation">.</span>observation_space<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>env1<span class="token punctuation">.</span>observation_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env2<span class="token punctuation">.</span>observation_space<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>env2<span class="token punctuation">.</span>observation_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env3<span class="token punctuation">.</span>observation_space<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>env3<span class="token punctuation">.</span>observation_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#返回的是离散action空间的值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env1<span class="token punctuation">.</span>action_space<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>env1<span class="token punctuation">.</span>action_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env2<span class="token punctuation">.</span>action_space<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>env2<span class="token punctuation">.</span>action_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env3<span class="token punctuation">.</span>action_space<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>env3<span class="token punctuation">.</span>action_space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#LunarLander-v2的state shape和action space大小</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env1<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> env1<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>n<span class="token punctuation">)</span>
+<span class="token comment">#Pong-v0的state shape和action space大小</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>env2<span class="token punctuation">.</span>observation_space<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> env2<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二，使用reset初始化environment-查看state信息（换个游戏场景）"><a href="#二，使用reset初始化environment-查看state信息（换个游戏场景）" class="headerlink" title="二，使用reset初始化environment,查看state信息（换个游戏场景）"></a>二，使用reset初始化environment,查看state信息（换个游戏场景）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">state1 <span class="token operator">=</span> env1<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+state2 <span class="token operator">=</span> env2<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+state3 <span class="token operator">=</span>env3<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="三，执行action并使用render可视化"><a href="#三，执行action并使用render可视化" class="headerlink" title="三，执行action并使用render可视化"></a>三，执行action并使用render可视化</h2><p>这里主要使用env.setp来执行，输入值为一个action的序号。返回值为new state,action reward,action terminal bool 和一个其他信息</p>
-<pre class=" language-python"><code class="language-python">state <span class="token operator">=</span> env1<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">state <span class="token operator">=</span> env1<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
 env1<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span>
 new_state<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> info <span class="token operator">=</span> env1<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> info<span class="token punctuation">)</span>
-</code></pre>
-<h2 id="四，如何执行完一个episodic"><a href="#四，如何执行完一个episodic" class="headerlink" title="四，如何执行完一个episodic"></a>四，如何执行完一个episodic</h2><pre class=" language-python"><code class="language-python">env <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'CartPole-v0'</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span> i_episode <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    observation <span class="token operator">=</span> env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#初始化环境每次迭代</span>
-    <span class="token keyword">for</span> t <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        env<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#显示</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四，如何执行完一个episodic"><a href="#四，如何执行完一个episodic" class="headerlink" title="四，如何执行完一个episodic"></a>四，如何执行完一个episodic</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">env <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'CartPole-v0'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i_episode <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    observation <span class="token operator">=</span> env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#初始化环境每次迭代</span>
+    <span class="token keyword">for</span> t <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        env<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#显示</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>observation<span class="token punctuation">)</span>
-        action <span class="token operator">=</span> env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#随机选择action</span>
+        action <span class="token operator">=</span> env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#随机选择action</span>
         observation<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> done<span class="token punctuation">,</span> info <span class="token operator">=</span> env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
         <span class="token keyword">if</span> done<span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Episode finished after {} timesteps"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>t<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Episode finished after {} timesteps"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>t<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token keyword">break</span>
-env<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-
+env<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>

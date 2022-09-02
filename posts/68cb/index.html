@@ -28,10 +28,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -426,6 +426,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -434,43 +437,43 @@
                 <p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html">官方文档地址</a></p>
 <h3 id="位置参数介绍¶"><a href="#位置参数介绍¶" class="headerlink" title="位置参数介绍¶"></a>位置参数介绍<a href="null">¶</a></h3><p><code>add_argument()</code> 方法，该方法用于指定程序能够接受哪些命令行选项</p>
 <p><code>type</code>表示输入参数的类型</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
 parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">,</span>
-                    type<span class="token operator">=</span>int<span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">,</span>
+                    <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span>
 args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
-</code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>以下是该代码的运行结果：</p>
-<pre class=" language-shell"><code class="language-shell">$ python3 prog.py 4
-16
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py <span class="token number">4</span>
+<span class="token number">16</span>
 $ python3 prog.py four
-usage: prog.py [-h] square
-prog.py: error: argument square: invalid int value: 'four'
-</code></pre>
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> square
+prog.py: error: argument square: invalid int value: <span class="token string">'four'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>当这个程序在收到错误的无效的输入时，它甚至能在执行计算之前先退出，还能显示很有帮助的错误信息。</p>
-<h3 id="可选参数介绍¶"><a href="#可选参数介绍¶" class="headerlink" title="可选参数介绍¶"></a>可选参数介绍<a href="javascript::null">¶</a></h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+<h3 id="可选参数介绍¶"><a href="#可选参数介绍¶" class="headerlink" title="可选参数介绍¶"></a>可选参数介绍<a href="javascript::null">¶</a></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
 parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbosity"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbosity"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
 args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> args<span class="token punctuation">.</span>verbosity<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span>
-</code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>输出：</p>
-<pre class=" language-shell"><code class="language-shell">$ python3 prog.py --verbosity 1
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py --verbosity <span class="token number">1</span>
 verbosity turned on
 $ python3 prog.py
 $ python3 prog.py --help
-usage: prog.py [-h] [--verbosity VERBOSITY]
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbosity VERBOSITY<span class="token punctuation">]</span>
 
 options:
-  -h, --help            show this help message and exit
+  -h, --help            show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
   --verbosity VERBOSITY
                         increase output verbosity
 $ python3 prog.py --verbosity
-usage: prog.py [-h] [--verbosity VERBOSITY]
-prog.py: error: argument --verbosity: expected one argument
-</code></pre>
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbosity VERBOSITY<span class="token punctuation">]</span>
+prog.py: error: argument --verbosity: expected one argument<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>程序运行情况如下：</p>
 <ul>
 <li>这一程序被设计为当指定 <code>--verbosity</code> 选项时显示某些东西，否则不显示。</li>
@@ -479,27 +482,27 @@ prog.py: error: argument --verbosity: expected one argument
 <li>使用 <code>--verbosity</code> 选项时，必须指定一个值，但可以是任何值。</li>
 </ul>
 <p>上述例子接受任何整数值作为 <code>--verbosity</code> 的参数，但对于我们的简单程序而言，只有两个值有实际意义：<code>True</code> 或者 <code>False</code>。让我们据此修改代码：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
 parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbose"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbose"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
                     action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
 args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span>
-</code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>输出：</p>
-<pre class=" language-shell"><code class="language-shell">$ python3 prog.py --verbose
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py --verbose
 verbosity turned on
-$ python3 prog.py --verbose 1
-usage: prog.py [-h] [--verbose]
-prog.py: error: unrecognized arguments: 1
+$ python3 prog.py --verbose <span class="token number">1</span>
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbose<span class="token punctuation">]</span>
+prog.py: error: unrecognized arguments: <span class="token number">1</span>
 $ python3 prog.py --help
-usage: prog.py [-h] [--verbose]
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbose<span class="token punctuation">]</span>
 
 options:
-  -h, --help  show this help message and exit
-  --verbose   increase output verbosity
-</code></pre>
+  -h, --help  show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
+  --verbose   increase output verbosity<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>程序运行情况如下：</p>
 <ul>
 <li>现在，这一选项更多地是一个标志，而非需要接受一个值的什么东西。我们甚至改变了选项的名字来符合这一思路。注意我们现在指定了一个新的关键词 <code>action</code>，并赋值为 <code>"store_true"</code>。这意味着，当这一选项存在时，为 <code>args.verbose</code> 赋值为 <code>True</code>。没有指定时则隐含地赋值为 <code>False</code>。</li>
@@ -507,50 +510,50 @@ options:
 <li>留意不同的帮助文字。</li>
 </ul>
 <h3 id="短选项¶"><a href="#短选项¶" class="headerlink" title="短选项¶"></a>短选项<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html#short-options">¶</a></h3><p>如果你熟悉命令行的用法，你会发现我还没讲到这一选项的短版本。这也很简单：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
 parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
                     action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
 args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span>
-</code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>效果就像这样：</p>
-<pre class=" language-shell"><code class="language-shell">$ python3 prog.py -v
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py -v
 verbosity turned on
 $ python3 prog.py --help
-usage: prog.py [-h] [-v]
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>-v<span class="token punctuation">]</span>
 
 options:
-  -h, --help     show this help message and exit
-  -v, --verbose  increase output verbosity
-</code></pre>
+  -h, --help     show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
+  -v, --verbose  increase output verbosity<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>可以注意到，这一新的能力也反映在帮助文本里。</p>
 <h3 id="结合位置参数和可选参数¶"><a href="#结合位置参数和可选参数¶" class="headerlink" title="结合位置参数和可选参数¶"></a>结合位置参数和可选参数<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html#combining-positional-and-optional-arguments">¶</a></h3><p>我们的程序变得越来越复杂了：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
 parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> type<span class="token operator">=</span>int<span class="token punctuation">,</span>
-                    help<span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span>
+                    <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">)</span>
 parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">,</span>
-                    help<span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
+                    <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
 args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
 answer <span class="token operator">=</span> args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span>
 <span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"the square of {args.square} equals {answer}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"the square of </span><span class="token interpolation"><span class="token punctuation">{</span>args<span class="token punctuation">.</span>square<span class="token punctuation">}</span></span><span class="token string"> equals </span><span class="token interpolation"><span class="token punctuation">{</span>answer<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 <span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span>
-</code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>输出：</p>
-<pre class=" language-shell"><code class="language-shell">$ python3 prog.py
-usage: prog.py [-h] [-v] square
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py
+usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>-v<span class="token punctuation">]</span> square
 prog.py: error: the following arguments are required: square
-$ python3 prog.py 4
-16
-$ python3 prog.py 4 --verbose
-the square of 4 equals 16
-$ python3 prog.py --verbose 4
-the square of 4 equals 16
-</code></pre>
+$ python3 prog.py <span class="token number">4</span>
+<span class="token number">16</span>
+$ python3 prog.py <span class="token number">4</span> --verbose
+the square of <span class="token number">4</span> equals <span class="token number">16</span>
+$ python3 prog.py --verbose <span class="token number">4</span>
+the square of <span class="token number">4</span> equals <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>我们带回了一个位置参数，结果发生了报错。</li>
 <li>注意顺序无关紧要。</li>

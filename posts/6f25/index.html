@@ -28,10 +28,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -425,6 +425,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/prism/prism.css">
         
 
         
@@ -484,72 +487,72 @@
 </ul>
 <h5 id="自定义控件"><a href="#自定义控件" class="headerlink" title="自定义控件"></a>自定义控件</h5><ol>
 <li><p>现在values文件夹下建一个attrs.xml，然后声明样式,如</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    声明样式--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>declare-styleable</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputView<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--        输入框前图标，format:reference表示接收一个资源文件--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_icon<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>reference<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--        输入框提示内容，format="string"表示接收一个字符串--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_hint<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>string<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--        输入框是否以密文展示--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_password<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>boolean<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>declare-styleable</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
-</code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    声明样式--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>declare-styleable</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inputView<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--        输入框前图标，format:reference表示接收一个资源文件--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input_icon<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>reference<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!--        输入框提示内容，format="string"表示接收一个字符串--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input_hint<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>string<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!--        输入框是否以密文展示--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attr</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input_password<span class="token punctuation">"</span></span> <span class="token attr-name">format</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>boolean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>declare-styleable</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 </li>
 <li><p>创建布局xml文件，如</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LinearLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>horizontal<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/inputViewHeight<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center_vertical<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LinearLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>horizontal<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/inputViewHeight<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center_vertical<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
 
-    <span class="token punctuation">></span></span>
+    <span class="token punctuation">&gt;</span></span>
 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageView</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/iv_icon<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@mipmap/phone<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@+id/iv_icon<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@mipmap/phone<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>EditText</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/et_input<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@null<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>hint</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>用户名<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>paddingRight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/titleSize<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>LinearLayout</span><span class="token punctuation">></span></span>
-</code></pre>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@+id/et_input<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@null<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>hint</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>用户名<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>paddingRight</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/titleSize<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>LinearLayout</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>创建相应类</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cloudmusic<span class="token punctuation">.</span>views<span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cloudmusic<span class="token punctuation">.</span>views</span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>Context<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>res<span class="token punctuation">.</span>TypedArray<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>media<span class="token punctuation">.</span>Image<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Build<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>text<span class="token punctuation">.</span>InputType<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>util<span class="token punctuation">.</span>AttributeSet<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>LayoutInflater<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>View<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>EditText<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>FrameLayout<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>ImageView<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>content<span class="token punctuation">.</span></span><span class="token class-name">Context</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>res<span class="token punctuation">.</span></span><span class="token class-name">TypedArray</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>media<span class="token punctuation">.</span></span><span class="token class-name">Image</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>os<span class="token punctuation">.</span></span><span class="token class-name">Build</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>text<span class="token punctuation">.</span></span><span class="token class-name">InputType</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">AttributeSet</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>view<span class="token punctuation">.</span></span><span class="token class-name">LayoutInflater</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>view<span class="token punctuation">.</span></span><span class="token class-name">View</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span></span><span class="token class-name">EditText</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span></span><span class="token class-name">FrameLayout</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span></span><span class="token class-name">ImageView</span></span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>NonNull<span class="token punctuation">;</span>
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Nullable<span class="token punctuation">;</span>
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RequiresApi<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">NonNull</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Nullable</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RequiresApi</span></span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cloudmusic<span class="token punctuation">.</span>R<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cloudmusic<span class="token punctuation">.</span></span><span class="token class-name">R</span></span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">/**
+<span class="token comment">/**
  * 1、input_icon: 输入框前面的图标
  * 2、input_hint: 输入框提示内容
  * 3、is_password: 输入框的内容是否需要以密文的形式展示
@@ -557,80 +560,78 @@
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InputView</span> <span class="token keyword">extends</span> <span class="token class-name">FrameLayout</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> <span class="token keyword">int</span> inputIcon<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String inputHint<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> inputHint<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">boolean</span> isPassword<span class="token punctuation">;</span>
 
-    <span class="token keyword">private</span> View mView<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> ImageView mIvIcon<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> EditText mEtInput<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">View</span> mView<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">ImageView</span> mIvIcon<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">EditText</span> mEtInput<span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> <span class="token class-name">Context</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> AttributeSet attrs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> <span class="token class-name">Context</span> context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> <span class="token class-name">AttributeSet</span> attrs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> AttributeSet attrs<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleAttr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> <span class="token class-name">Context</span> context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> <span class="token class-name">AttributeSet</span> attrs<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleAttr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> attrs<span class="token punctuation">,</span> defStyleAttr<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token annotation punctuation">@RequiresApi</span><span class="token punctuation">(</span>api <span class="token operator">=</span> Build<span class="token punctuation">.</span>VERSION_CODES<span class="token punctuation">.</span>LOLLIPOP<span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token function">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> Context context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> AttributeSet attrs<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleAttr<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleRes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequiresApi</span><span class="token punctuation">(</span>api <span class="token operator">=</span> <span class="token class-name">Build</span><span class="token punctuation">.</span>VERSION_CODES<span class="token punctuation">.</span>LOLLIPOP<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">InputView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> <span class="token class-name">Context</span> context<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> <span class="token class-name">AttributeSet</span> attrs<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleAttr<span class="token punctuation">,</span> <span class="token keyword">int</span> defStyleRes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> attrs<span class="token punctuation">,</span> defStyleAttr<span class="token punctuation">,</span> defStyleRes<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">init</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>Context context<span class="token punctuation">,</span>AttributeSet attrs<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>attrs <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//        获取自定义属性</span>
-        TypedArray typedArray <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">obtainStyledAttributes</span><span class="token punctuation">(</span>attrs<span class="token punctuation">,</span> R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        inputIcon <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getResourceId</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_icon<span class="token punctuation">,</span>R<span class="token punctuation">.</span>mipmap<span class="token punctuation">.</span>logo<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        inputHint <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_hint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        isPassword <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getBoolean</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_password<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token class-name">Context</span> context<span class="token punctuation">,</span><span class="token class-name">AttributeSet</span> attrs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>attrs <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token comment">//        获取自定义属性</span>
+        <span class="token class-name">TypedArray</span> typedArray <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">obtainStyledAttributes</span><span class="token punctuation">(</span>attrs<span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputIcon <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getResourceId</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_icon<span class="token punctuation">,</span><span class="token class-name">R</span><span class="token punctuation">.</span>mipmap<span class="token punctuation">.</span>logo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputHint <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_hint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        isPassword <span class="token operator">=</span> typedArray<span class="token punctuation">.</span><span class="token function">getBoolean</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>styleable<span class="token punctuation">.</span>inputView_input_password<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">//释放</span>
+        <span class="token comment">//释放</span>
         typedArray<span class="token punctuation">.</span><span class="token function">recycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">//绑定layout布局</span>
-        mView <span class="token operator">=</span> LayoutInflater<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>input_view<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mIvIcon <span class="token operator">=</span> mView<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>iv_icon<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mEtInput <span class="token operator">=</span> mView<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>et_input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//绑定layout布局</span>
+        mView <span class="token operator">=</span> <span class="token class-name">LayoutInflater</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>layout<span class="token punctuation">.</span>input_view<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mIvIcon <span class="token operator">=</span> mView<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>id<span class="token punctuation">.</span>iv_icon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mEtInput <span class="token operator">=</span> mView<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>id<span class="token punctuation">.</span>et_input<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">//        布局关联属性</span>
+<span class="token comment">//        布局关联属性</span>
         mIvIcon<span class="token punctuation">.</span><span class="token function">setImageResource</span><span class="token punctuation">(</span>inputIcon<span class="token punctuation">)</span><span class="token punctuation">;</span>
         mEtInput<span class="token punctuation">.</span><span class="token function">setHint</span><span class="token punctuation">(</span>inputHint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mEtInput<span class="token punctuation">.</span><span class="token function">setInputType</span><span class="token punctuation">(</span>isPassword <span class="token operator">?</span> InputType<span class="token punctuation">.</span>TYPE_CLASS_TEXT <span class="token operator">|</span>
-                InputType<span class="token punctuation">.</span>TYPE_TEXT_VARIATION_PASSWORD <span class="token operator">:</span> InputType<span class="token punctuation">.</span>TYPE_CLASS_PHONE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mEtInput<span class="token punctuation">.</span><span class="token function">setInputType</span><span class="token punctuation">(</span>isPassword <span class="token operator">?</span> <span class="token class-name">InputType</span><span class="token punctuation">.</span>TYPE_CLASS_TEXT <span class="token operator">|</span>
+                <span class="token class-name">InputType</span><span class="token punctuation">.</span>TYPE_TEXT_VARIATION_PASSWORD <span class="token operator">:</span> <span class="token class-name">InputType</span><span class="token punctuation">.</span>TYPE_CLASS_PHONE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token function">addView</span><span class="token punctuation">(</span>mView<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//绑定布局</span>
+        <span class="token function">addView</span><span class="token punctuation">(</span>mView<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//绑定布局</span>
 
     <span class="token punctuation">}</span>
 
-    <span class="token comment" spellcheck="true">/**
+    <span class="token comment">/**
      * 返回输入内容
      * @return
      */</span>
-    <span class="token keyword">public</span> String <span class="token function">getInputStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getInputStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> mEtInput<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>最后是调用布局</p>
-<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.example.cloudmusic.views.InputView</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/inputViewHeight<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">app:</span>input_icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@mipmap/phone<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">app:</span>input_hint</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>手机号<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">app:</span>input_password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
-</code></pre>
-</li>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.example.cloudmusic.views.InputView</span>
+       <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/inputViewHeight<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">app:</span>input_icon</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@mipmap/phone<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">app:</span>input_hint</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>手机号<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">app:</span>input_password</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+       <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h5 id="样式复用方法"><a href="#样式复用方法" class="headerlink" title="样式复用方法"></a>样式复用方法</h5><ul>
 <li><p><code>include</code> 引入</p>
@@ -638,103 +639,105 @@
 <li><p>自定义<code>view</code></p>
 </li>
 <li><p>在<code>style.xml</code>里定义一个<code>style</code></p>
-<pre class=" language-xml"><code class="language-xml">
-<span class="token comment" spellcheck="true">&lt;!--    分割线样式--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>line<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-        &lt;item name=<span class="token string">"android:layout_height"</span>><span class="token number">1</span>dp&lt;/item>
-        &lt;item name=<span class="token string">"android:layout_width"</span>>match_parent&lt;/item>
-        &lt;item name=<span class="token string">"android:background"</span>>@color/lineColor&lt;/item>
-        &lt;item name=<span class="token string">"android:layout_margin"</span>>@dimen/marginSize&lt;/item>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-</code></pre>
-<p>​	使用</p>
-<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span><span class="token style-attr language-css"><span class="token attr-name">
-        <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/line</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-</code></pre>
-</li>
-</ul>
-<h5 id="按钮或者文本框点击高亮"><a href="#按钮或者文本框点击高亮" class="headerlink" title="按钮或者文本框点击高亮"></a>按钮或者文本框点击高亮</h5><pre class=" language-xml"><code class="language-xml">   &lt;TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/itemHeight"
-        android:layout_marginTop="@dimen/marginSize"
-        android:text="修改密码"
-        android:textSize="@dimen/infoSize"
-        android:paddingLeft="@dimen/marginSize"
-        android:gravity="center_vertical"
-        android:onClick="onChangeClick"
-        android:background="@drawable/item_commit_select" <span class="token comment" spellcheck="true">&lt;!--关键所在--></span>
-        />
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">
+<span class="token comment">&lt;!--    分割线样式--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>line<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        &lt;item name=<span class="token string">"android:layout_height"</span>&gt;1dp&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:layout_width"</span>&gt;match_parent&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:background"</span>&gt;@color/lineColor&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:layout_margin"</span>&gt;@dimen/marginSize&lt;/item&gt;
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    &lt;Button
-        style="@style/commitBtn"<span class="token comment" spellcheck="true">&lt;!--在styles.xml定义全局样式--></span>
+<p>​	使用</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span>
+       <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css">@style/line</span><span class="token punctuation">"</span></span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h5 id="按钮或者文本框点击高亮"><a href="#按钮或者文本框点击高亮" class="headerlink" title="按钮或者文本框点击高亮"></a>按钮或者文本框点击高亮</h5><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/itemHeight<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>修改密码<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/infoSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>paddingLeft</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/marginSize<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center_vertical<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>onClick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onChangeClick<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@drawable/item_commit_select<span class="token punctuation">"</span></span> <span class="token attr-name">&lt;!--关键所在--</span><span class="token punctuation">&gt;</span></span>
+        /&gt;
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span>
+        <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css">@style/commitBtn</span><span class="token punctuation">"</span></span></span><span class="token attr-name">&lt;!--在styles.xml定义全局样式--</span><span class="token punctuation">&gt;</span></span>
         android:text="退出登录"
         android:layout_marginTop="@dimen/marginSize"
         android:onClick="onLogoutClick"
-        />
+        /&gt;
 
 
-<span class="token comment" spellcheck="true">&lt;!--styles.xml--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- Base application theme. --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AppTheme<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light.DarkActionBar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!-- Customize your theme here. --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>colorPrimary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@color/colorPrimary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>colorPrimaryDark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@color/mainColor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>colorAccent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@color/colorAccent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:windowAnimationStyle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@style/AnimationActivity<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    &lt;item name="android:statusBarColor">也可以修改statusBar颜色，优先级比PrimaryDark高&lt;/item>--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--styles.xml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- Base application theme. --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>AppTheme<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Theme.AppCompat.Light.DarkActionBar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        &lt;!-- Customize your theme here. --&gt;
+        &lt;item name=<span class="token string">"colorPrimary"</span>&gt;@color/colorPrimary&lt;/item&gt;
+        &lt;item name=<span class="token string">"colorPrimaryDark"</span>&gt;@color/mainColor&lt;/item&gt;
+        &lt;item name=<span class="token string">"colorAccent"</span>&gt;@color/colorAccent&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:windowAnimationStyle"</span>&gt;@style/AnimationActivity&lt;/item&gt;
+&lt;!--    &lt;item name=<span class="token string">"android:statusBarColor"</span>&gt;也可以修改statusBar颜色，优先级比PrimaryDark高&lt;/item&gt;--&gt;
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
    
 
-<span class="token comment" spellcheck="true">&lt;!--    登录按钮--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>commitBtn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-        &lt;item name=<span class="token string">"android:layout_height"</span>>@dimen/btnHeight&lt;/item>
-        &lt;item name=<span class="token string">"android:layout_width"</span>>match_parent&lt;/item>
-        &lt;item name=<span class="token string">"android:textColor"</span>>@<span class="token property">android</span><span class="token punctuation">:</span>color/white&lt;/item>
-        &lt;item name=<span class="token string">"android:textSize"</span>>@dimen/titleSize&lt;/item>
-        &lt;item name=<span class="token string">"android:layout_marginLeft"</span>>@dimen/marginSize&lt;/item>
-        &lt;item name=<span class="token string">"android:layout_marginRight"</span>>@dimen/marginSize&lt;/item>
-        &lt;item name=<span class="token string">"android:layout_gravity"</span>>center&lt;/item>
-        &lt;item name=<span class="token string">"android:background"</span>>@drawable/btn_commit_select&lt;/item>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token comment">&lt;!--    登录按钮--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>commitBtn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        &lt;item name=<span class="token string">"android:layout_height"</span>&gt;@dimen/btnHeight&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:layout_width"</span>&gt;match_parent&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:textColor"</span>&gt;@<span class="token property">android</span><span class="token punctuation">:</span>color/white&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:textSize"</span>&gt;@dimen/titleSize&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:layout_marginLeft"</span>&gt;@dimen/marginSize&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:layout_marginRight"</span>&gt;@dimen/marginSize&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:layout_gravity"</span>&gt;center&lt;/item&gt;
+        &lt;item name=<span class="token string">"android:background"</span>&gt;@drawable/btn_commit_select&lt;/item&gt;
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>在res/drawable下创建item_commit_select.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selector</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    View高亮--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_focused</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_pressed</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_selected</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    View默认--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/commit_item_n<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selector</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    View高亮--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_focused</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_pressed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>state_selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@drawable/commit_item_h<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!--    View默认--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name"><span class="token namespace">android:</span>drawable</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@drawable/commit_item_n<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selector</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selector</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>然后创建commit_item_h.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shape</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rectangle<span class="token punctuation">"</span></span>
-    <span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    实体颜色--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>solid</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/itemColorH<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    弧度--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>corners</span> <span class="token attr-name"><span class="token namespace">android:</span>radius</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/radius<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shape</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rectangle<span class="token punctuation">"</span></span>
+    <span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    实体颜色--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>solid</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@color/itemColorH<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!--    弧度--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>corners</span> <span class="token attr-name"><span class="token namespace">android:</span>radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/radius<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shape</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shape</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>创建commit_item_n.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shape</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rectangle<span class="token punctuation">"</span></span>
-    <span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    实体颜色--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>solid</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@android:color/white<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    弧度--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>corners</span> <span class="token attr-name"><span class="token namespace">android:</span>radius</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@dimen/radius<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shape</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rectangle<span class="token punctuation">"</span></span>
+    <span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    实体颜色--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>solid</span> <span class="token attr-name"><span class="token namespace">android:</span>color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@android:color/white<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!--    弧度--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>corners</span> <span class="token attr-name"><span class="token namespace">android:</span>radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@dimen/radius<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shape</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shape</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h5 id="Activity-过度动画分类"><a href="#Activity-过度动画分类" class="headerlink" title="Activity 过度动画分类"></a>Activity 过度动画分类</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210113191026.png" alt="image-20210113191009060"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210113191057.png" alt="image-20210113191057060"></p>
 <p><strong>定义全局动画效果</strong></p>
@@ -742,68 +745,67 @@
 <li><p>修改styles.xml中的 &lt;style name=”AppTheme （增加<code>&lt;item name="android:windowAnimationStyle"&gt;@style/AnimationActivity&lt;/item&gt;</code>)，记得如果创建了<code>values-v21</code> 文件下，就要更新下其下的styles.xml</p>
 </li>
 <li><p>在styles.xml中增加活动动画样式</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AnimationActivity<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@android:style/Animation.Activity<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--        描述四个动画效果--></span>
-        <span class="token comment" spellcheck="true">&lt;!--打开Activity时，新进入的activity执行的动画（接受一个动画资源文件）--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityOpenEnterAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/open_enter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--打开Activity时，原Activity执行的动画--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityOpenExitAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/open_exit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--退出Activity时，退出的Activity执行动画 --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityCloseExitAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/close_exit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--退出Activity时，重新显示的Activity执行动画 --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android:activityCloseEnterAnimation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>@anim/close_enter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-</code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>AnimationActivity<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@android:style/Animation.Activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+&lt;!--        描述四个动画效果--&gt;
+        &lt;!--打开Activity时，新进入的activity执行的动画（接受一个动画资源文件）--&gt;
+        &lt;item name=<span class="token string">"android:activityOpenEnterAnimation"</span>&gt;@anim/open_enter&lt;/item&gt;
+        &lt;!--打开Activity时，原Activity执行的动画--&gt;
+        &lt;item name=<span class="token string">"android:activityOpenExitAnimation"</span>&gt;@anim/open_exit&lt;/item&gt;
+        &lt;!--退出Activity时，退出的Activity执行动画 --&gt;
+        &lt;item name=<span class="token string">"android:activityCloseExitAnimation"</span>&gt;@anim/close_exit&lt;/item&gt;
+        &lt;!--退出Activity时，重新显示的Activity执行动画 --&gt;
+        &lt;item name=<span class="token string">"android:activityCloseEnterAnimation"</span>&gt;@anim/close_enter&lt;/item&gt;
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>在res下添加文件夹<code>anim</code>，然后在anim文件夹下，新建四个动画资源文件</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--open_enter.xml--></span>
-<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    从右向左的动画--></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--open_enter.xml--&gt;</span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    从右向左的动画--&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>translate</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>fromXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>toXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0%<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXDelta</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXDelta</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token comment" spellcheck="true">&lt;!--open_exit.xml--></span>
-<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    以中心为源点缩放--></span>
+<span class="token comment">&lt;!--open_exit.xml--&gt;</span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    以中心为源点缩放--&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scale</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>fromXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>fromYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>toXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>toYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromYScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toYScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">&gt;</span></span>
 
 
-<span class="token comment" spellcheck="true">&lt;!--close_exit.xml--></span>
-<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--close_exit.xml--&gt;</span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>translate</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>fromXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0%<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>toXDelta</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXDelta</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXDelta</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token comment" spellcheck="true">&lt;!--close_enter.xml--></span>
-<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--close_enter.xml--&gt;</span>
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scale</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>fromXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>fromYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>toXScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>toYScale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
-        <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
-</code></pre>
-</li>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromXScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>fromYScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.8dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toXScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>toYScale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>duration</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@integer/anim_duration<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h5 id="任务和返回栈-Task栈"><a href="#任务和返回栈-Task栈" class="headerlink" title="任务和返回栈(Task栈)"></a>任务和返回栈(Task栈)</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210114144100.png" alt="image-20210114144048003"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/20210114144140.png" alt="image-20210114144140590"></p>
@@ -819,7 +821,7 @@
 <li><p>创建BaseActivity 继承自Activity，并且让所有活动继承它，方便管理活动生命周期</p>
 </li>
 <li><p>使用Timer进程初始页的等待及跳转</p>
-<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">    <span class="token comment">/**
      * 初始化 ，睡眠3s
      */</span>
     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -827,12 +829,11 @@
         mTimer<span class="token punctuation">.</span><span class="token function">schedule</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TimerTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token annotation punctuation">@Override</span>
             <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment" spellcheck="true">//                Log.e("WelcomeActivity","当前线程为" + Thread.currentThread());</span>
-                <span class="token function">toLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//跳转到登录页</span>
+<span class="token comment">//                Log.e("WelcomeActivity","当前线程为" + Thread.currentThread());</span>
+                <span class="token function">toLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//跳转到登录页</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>ScrollView 和 RecyclerView一起使用时，自定义RecyclerView高度</p>
 </li>
