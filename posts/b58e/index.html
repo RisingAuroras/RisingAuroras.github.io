@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python标准库之argparse, 马克图布">
+    <meta name="keywords" content="常见的激活函数, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python标准库之argparse | 马克图布</title>
+    <title>常见的激活函数 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python标准库之argparse</h1>
+                    <h1 class="description center-align post-title">常见的激活函数</h1>
                 </div>
             </div>
         </div>
@@ -370,8 +370,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                <span class="chip bg-color">转载</span>
                             </a>
                         
                     </div>
@@ -395,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-02
+                    2022-09-05
                 </div>
                 
 
@@ -404,7 +404,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    908
+                    1.1k
                 </div>
                 
 
@@ -434,130 +434,137 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html">官方文档地址</a></p>
-<h3 id="位置参数介绍¶"><a href="#位置参数介绍¶" class="headerlink" title="位置参数介绍¶"></a>位置参数介绍<a href="null">¶</a></h3><p><code>add_argument()</code> 方法，该方法用于指定程序能够接受哪些命令行选项</p>
-<p><code>type</code>表示输入参数的类型</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">,</span>
-                    <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span>
-args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p>本文转载自<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/Jinliang-Xu">徐金良</a>，文章<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63775557">地址</a></p>
+<h2 id="1-非线性激活函数的必要性"><a href="#1-非线性激活函数的必要性" class="headerlink" title="1. 非线性激活函数的必要性"></a>1. 非线性激活函数的必要性</h2><p>如果使用线性激活函数（恒等激励函数），那么神经网络仅是将输入线性组合再输出，在这种情况下，深层（多个隐藏层）神经网络与只有一个隐藏层的神经网络没有任何区别，不如去掉多个隐藏层。</p>
+<p>证明如下：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050942950.png" alt="image-20220905094211913"></p>
+<p>如上公式，两层使用线性激活函数的神经网络，可以简化成单层的神经网络，对于多个隐藏层的神经网络同样如此。因此，想要使神经网络的多个隐藏层有意义，需要使用非线性激活函数，也就是说想要神经网络学习到有意思的东西只能使用非线性激活函数。</p>
+<p>下面将介绍各个激活函数</p>
+<h2 id="2-sigmoid（logistic回归使用的激活函数）"><a href="#2-sigmoid（logistic回归使用的激活函数）" class="headerlink" title="2. sigmoid（logistic回归使用的激活函数）"></a>2. sigmoid（logistic回归使用的激活函数）</h2><p><strong>公式：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050942867.png" alt="image-20220905094242835"></p>
+<p><strong>绘制函数图像代码：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
 
-<p>以下是该代码的运行结果：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py <span class="token number">4</span>
-<span class="token number">16</span>
-$ python3 prog.py four
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> square
-prog.py: error: argument square: invalid int value: <span class="token string">'four'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#函数</span>
+g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<p>当这个程序在收到错误的无效的输入时，它甚至能在执行计算之前先退出，还能显示很有帮助的错误信息。</p>
-<h3 id="可选参数介绍¶"><a href="#可选参数介绍¶" class="headerlink" title="可选参数介绍¶"></a>可选参数介绍<a href="javascript::null">¶</a></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbosity"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
-args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbosity<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
+stop<span class="token operator">=</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的终点值</span>
+step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
+num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
+y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
 
-<p>输出：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py --verbosity <span class="token number">1</span>
-verbosity turned on
-$ python3 prog.py
-$ python3 prog.py --help
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbosity VERBOSITY<span class="token punctuation">]</span>
+fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'sigmoid'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
 
-options:
-  -h, --help            show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
-  --verbosity VERBOSITY
-                        increase output verbosity
-$ python3 prog.py --verbosity
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbosity VERBOSITY<span class="token punctuation">]</span>
-prog.py: error: argument --verbosity: expected one argument<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注#注意：不会显示后来再定义的旁注</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>程序运行情况如下：</p>
+<p><strong>函数图像：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943571.png" alt="image-20220905094303529"></p>
+<p>由图像可知，sigmoid函数的值域为（0，1）</p>
+<p><strong>导数：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943714.png" alt="image-20220905094316676"></p>
+<h2 id="3-tanh"><a href="#3-tanh" class="headerlink" title="3. tanh"></a>3. tanh</h2><p>tanh是双曲函数中的一个，tanh()为双曲正切。在数学中，双曲正切“tanh”是由基本双曲函数双曲正弦和双曲余弦推导而来。其实$tanh(x)=2<em>sigmoid(2</em>x)-1$,它解决了Sigmoid函数的不以0为中心输出问题，然而，梯度消失的问题和幂运算的问题仍然存在。</p>
+<p><strong>公式：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943911.png" alt="image-20220905094334886"></p>
+<p><strong>特点</strong></p>
 <ul>
-<li>这一程序被设计为当指定 <code>--verbosity</code> 选项时显示某些东西，否则不显示。</li>
-<li>不添加这一选项时程序没有提示任何错误而退出，表明这一选项确实是可选的。注意，如果一个可选参数没有被使用时，相关变量被赋值为 <code>None</code>，在此例中是 <code>args.verbosity</code>，这也就是为什么它在 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/compound_stmts.html#if"><code>if</code></a> 语句中被当作逻辑假。</li>
-<li>帮助信息有点不同。</li>
-<li>使用 <code>--verbosity</code> 选项时，必须指定一个值，但可以是任何值。</li>
+<li>函数：y=tanh x；</li>
+<li>定义域：R</li>
+<li>值域：(-1,1)。</li>
+<li>y=tanh x是一个奇函数，其函数图像为过原点并且穿越Ⅰ、Ⅲ象限的严格单调递增曲线，其图像被限制在两水平渐近线y=1和y=-1之间。</li>
 </ul>
-<p>上述例子接受任何整数值作为 <code>--verbosity</code> 的参数，但对于我们的简单程序而言，只有两个值有实际意义：<code>True</code> 或者 <code>False</code>。让我们据此修改代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--verbose"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
-                    action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
-args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>绘制函数图像代码：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
 
-<p>输出：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py --verbose
-verbosity turned on
-$ python3 prog.py --verbose <span class="token number">1</span>
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbose<span class="token punctuation">]</span>
-prog.py: error: unrecognized arguments: <span class="token number">1</span>
-$ python3 prog.py --help
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>--verbose<span class="token punctuation">]</span>
+<span class="token comment">#函数</span>
+g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token operator">-</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-options:
-  -h, --help  show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
-  --verbose   increase output verbosity<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
+stop<span class="token operator">=</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的终点值</span>
+step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
+num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
+y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
 
-<p>程序运行情况如下：</p>
-<ul>
-<li>现在，这一选项更多地是一个标志，而非需要接受一个值的什么东西。我们甚至改变了选项的名字来符合这一思路。注意我们现在指定了一个新的关键词 <code>action</code>，并赋值为 <code>"store_true"</code>。这意味着，当这一选项存在时，为 <code>args.verbose</code> 赋值为 <code>True</code>。没有指定时则隐含地赋值为 <code>False</code>。</li>
-<li>当你为其指定一个值时，它会报错，符合作为标志的真正的精神。</li>
-<li>留意不同的帮助文字。</li>
-</ul>
-<h3 id="短选项¶"><a href="#短选项¶" class="headerlink" title="短选项¶"></a>短选项<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html#short-options">¶</a></h3><p>如果你熟悉命令行的用法，你会发现我还没讲到这一选项的短版本。这也很简单：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">,</span>
-                    action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
-args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"verbosity turned on"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'tanh'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
 
-<p>效果就像这样：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py -v
-verbosity turned on
-$ python3 prog.py --help
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>-v<span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-options:
-  -h, --help     show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
-  -v, --verbose  increase output verbosity<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>函数图像：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943369.png" alt="image-20220905094354321"></p>
+<p>由图像可知，tanh函数是sigmoid函数向下平移和收缩后的结果。</p>
+<p><strong>导数：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050944673.png" alt="image-20220905094411642"></p>
+<p>sigmoid和tanh激活函数有共同的缺点：即在z很大或很小时，梯度几乎为零，因此使用梯度下降优化算法更新网络很慢。</p>
+<h2 id="4-relu-修正线性单元"><a href="#4-relu-修正线性单元" class="headerlink" title="4. relu(修正线性单元)"></a>4. relu(修正线性单元)</h2><p><strong>公式：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050944268.png" alt="image-20220905094447237"></p>
+<p><strong>绘制函数图像代码：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
 
-<p>可以注意到，这一新的能力也反映在帮助文本里。</p>
-<h3 id="结合位置参数和可选参数¶"><a href="#结合位置参数和可选参数¶" class="headerlink" title="结合位置参数和可选参数¶"></a>结合位置参数和可选参数<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/howto/argparse.html#combining-positional-and-optional-arguments">¶</a></h3><p>我们的程序变得越来越复杂了：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span>
-                    <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">)</span>
-parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbose"</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">,</span>
-                    <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>
-args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-answer <span class="token operator">=</span> args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span>
-<span class="token keyword">if</span> args<span class="token punctuation">.</span>verbose<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"the square of </span><span class="token interpolation"><span class="token punctuation">{</span>args<span class="token punctuation">.</span>square<span class="token punctuation">}</span></span><span class="token string"> equals </span><span class="token interpolation"><span class="token punctuation">{</span>answer<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#函数</span>
+g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span>np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>z<span class="token punctuation">)</span>
 
-<p>输出：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ python3 prog.py
-usage: prog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>-v<span class="token punctuation">]</span> square
-prog.py: error: the following arguments are required: square
-$ python3 prog.py <span class="token number">4</span>
-<span class="token number">16</span>
-$ python3 prog.py <span class="token number">4</span> --verbose
-the square of <span class="token number">4</span> equals <span class="token number">16</span>
-$ python3 prog.py --verbose <span class="token number">4</span>
-the square of <span class="token number">4</span> equals <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
+stop<span class="token operator">=</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的终点值</span>
+step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
+num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
+y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
 
-<ul>
-<li>我们带回了一个位置参数，结果发生了报错。</li>
-<li>注意顺序无关紧要。</li>
-</ul>
+fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
+
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>函数图像：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050945618.png" alt="image-20220905094526578"></p>
+<p><strong>导数：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050945897.png" alt="image-20220905094535861"></p>
+<p>由于sigmoid和tanh存在上述的缺点，因此relu激活函数成为了大多数神经网络的默认选择。</p>
+<p>但是relu也存在缺点：即在$z$小于0时，斜率即导数为0，因此引申出下面的leaky relu函数，但是实际上leaky relu使用的并不多。</p>
+<h2 id="5-Leaky-relu"><a href="#5-Leaky-relu" class="headerlink" title="5. Leaky relu"></a>5. Leaky relu</h2><p><strong>公式：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050945881.png" alt="image-20220905094556856"></p>
+<p><strong>绘制函数图像代码：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+
+<span class="token comment">#函数</span>
+g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span>np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token operator">*</span>z<span class="token punctuation">,</span>z<span class="token punctuation">)</span>
+
+start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">100</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
+stop<span class="token operator">=</span><span class="token number">50</span> <span class="token comment">#输入需要绘制的终点值</span>
+step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
+num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
+y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
+
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>函数图像：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050946652.png" alt="image-20220905094615609"></p>
+<p><strong>导数：</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050946803.png" alt="image-20220905094623775"></p>
 
                 
             </div>
@@ -584,7 +591,7 @@ the square of <span class="token number">4</span> equals <span class="token numb
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/68cb/">https://risingauroras.github.io/posts/68cb/</a>
+                    <a href="https://risingauroras.github.io/posts/b58e/">https://risingauroras.github.io/posts/b58e/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -622,8 +629,8 @@ the square of <span class="token number">4</span> equals <span class="token numb
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                    <span class="chip bg-color">转载</span>
                                 </a>
                             
                         </div>
@@ -984,9 +991,10 @@ the square of <span class="token number">4</span> equals <span class="token numb
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/b58e/">
                     <div class="card-image">
@@ -1004,9 +1012,9 @@ the square of <span class="token number">4</span> equals <span class="token numb
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1019,6 +1027,7 @@ the square of <span class="token number">4</span> equals <span class="token numb
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1037,13 +1046,13 @@ the square of <span class="token number">4</span> equals <span class="token numb
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3d59/">
+                <a href="/posts/68cb/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="android知识杂记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="Python标准库之argparse">
                         
-                        <span class="card-title">android知识杂记</span>
+                        <span class="card-title">Python标准库之argparse</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1054,19 +1063,27 @@ the square of <span class="token number">4</span> equals <span class="token numb
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/android/" class="post-category">
-                                    android
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
