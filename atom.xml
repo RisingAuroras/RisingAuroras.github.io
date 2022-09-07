@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-07T01:52:11.919Z</updated>
+  <updated>2022-09-07T01:57:15.655Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://risingauroras.github.io/posts/0/"/>
-    <id>https://risingauroras.github.io/posts/0/</id>
+    <title>Python&amp;机器学习工具</title>
+    <link href="https://risingauroras.github.io/posts/8089/"/>
+    <id>https://risingauroras.github.io/posts/8089/</id>
     <published>2022-09-06T02:14:07.984Z</published>
-    <updated>2022-09-07T01:52:11.919Z</updated>
+    <updated>2022-09-07T01:57:15.655Z</updated>
     
     
       
@@ -34,6 +34,10 @@
     
     
     
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://risingauroras.github.io/tags/python/"/>
     
   </entry>
   
@@ -192,7 +196,7 @@
     <link href="https://risingauroras.github.io/posts/e28d/"/>
     <id>https://risingauroras.github.io/posts/e28d/</id>
     <published>2022-08-14T10:46:24.731Z</published>
-    <updated>2022-09-05T02:11:53.982Z</updated>
+    <updated>2022-09-07T01:59:11.084Z</updated>
     
     
       

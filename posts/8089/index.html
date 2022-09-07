@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="常见的激活函数, 马克图布">
+    <meta name="keywords" content="Python&amp;机器学习工具, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>常见的激活函数 | 马克图布</title>
+    <title>Python&amp;机器学习工具 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">常见的激活函数</h1>
+                    <h1 class="description center-align post-title">Python&amp;机器学习工具</h1>
                 </div>
             </div>
         </div>
@@ -370,8 +370,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                                <span class="chip bg-color">转载</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -395,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-05
+                    2022-09-06
                 </div>
                 
 
@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -434,137 +434,114 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文转载自<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/Jinliang-Xu">徐金良</a>，文章<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63775557">地址</a></p>
-<h2 id="1-非线性激活函数的必要性"><a href="#1-非线性激活函数的必要性" class="headerlink" title="1. 非线性激活函数的必要性"></a>1. 非线性激活函数的必要性</h2><p>如果使用线性激活函数（恒等激励函数），那么神经网络仅是将输入线性组合再输出，在这种情况下，深层（多个隐藏层）神经网络与只有一个隐藏层的神经网络没有任何区别，不如去掉多个隐藏层。</p>
-<p>证明如下：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050942950.png" alt="image-20220905094211913"></p>
-<p>如上公式，两层使用线性激活函数的神经网络，可以简化成单层的神经网络，对于多个隐藏层的神经网络同样如此。因此，想要使神经网络的多个隐藏层有意义，需要使用非线性激活函数，也就是说想要神经网络学习到有意思的东西只能使用非线性激活函数。</p>
-<p>下面将介绍各个激活函数</p>
-<h2 id="2-sigmoid（logistic回归使用的激活函数）"><a href="#2-sigmoid（logistic回归使用的激活函数）" class="headerlink" title="2. sigmoid（logistic回归使用的激活函数）"></a>2. sigmoid（logistic回归使用的激活函数）</h2><p><strong>公式：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050942867.png" alt="image-20220905094242835"></p>
-<p><strong>绘制函数图像代码：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
+                <h1 id="Python-amp-机器学习工具"><a href="#Python-amp-机器学习工具" class="headerlink" title="Python&amp;机器学习工具"></a>Python&amp;机器学习工具</h1><h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p><strong>axis</strong></p>
+<p>“axis=0表示跨行，axis=1表示跨列，作为方法动作的副词”</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209061015661.png" alt="image-20220906101507580"></p>
+<p><strong>squeeze()函数</strong></p>
+<p>函数原型：<code>numpy.squeeze(a, axis=None)</code><br>函数功能：把数组中shape中为1的维度去掉。默认删除a数组中所有shape中为1的维度，axis指定要删除的维度，axis=0表示第0维，若是该维度的shape不为1，则会报错。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">]</span>    <span class="token comment"># shape为2*1*2</span>
+<span class="token comment"># 删除中间为1的维度后</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token punctuation">]</span>  <span class="token comment"># 看起来就像是将“穿”的夹层多余的衣服（括号）脱掉一层</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>我们会在PyTorch中使用使用squeeze()和unsqueeze()进行降维和升维的步骤。</p>
+<p>unsqueeze()函数的功能是在tensor的某个维度上添加一个维数为1的维度，这个功能用view()函数也可以实现。这一功能尤其在神经网络输入单个样本时很有用，由于pytorch神经网络要求的输入都是mini-batch型的，维度为[batch_size, channels, w, h]，而一个样本的维度为[c, w, h]，此时用unsqueeze()增加一个维度变为[1, c, w, h]就很方便了。</p>
+<p><strong>expand_dims()</strong></p>
+<p>这个东西的主要作用，就是增加一个维度。</p>
+<p>现在我们假设有一个数组A，数组A是一个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%B8%A4%E8%A1%8C%E4%B8%89%E5%88%97&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:377793892%7D">两行三列</a>的矩阵。大小我们记成（2,3）。</p>
+<p>先明白一个常识，计算机中计数，一般是从0开始的。</p>
+<p>所以（2,3）这个两行三列的矩阵，</p>
+<p>它的第“0”维，就是这个“2”行；第“1”维，就是这个“3”列。</p>
+<p>这个函数的作用，就是在第“axis”维，加一个维度出来，原先的“维”，推到右边去。</p>
+<p>比如我们设置axis为0，那<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=A%E7%9F%A9%E9%98%B5&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:377793892%7D">A矩阵</a>的大小就变成了（1,2,3），就从2<em>3的二维矩阵变成了一个1</em>2 <em>3的三维矩阵。如果设置<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=axis&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:377793892%7D">axis</a>为1，矩阵大小就变成了（2,1,3），变成了一个2</em>1*3的三维矩阵。axis为2的时候，就变成（2,3,1)啦。</p>
+<p>那么，说了这么多，矩阵的形式变了，那么矩阵里面的数字怎么变的呢？</p>
+<p>举个例子：</p>
+<p>假设现在矩阵是2*3的矩阵，六个数字</p>
+<p>1 2 3</p>
+<p>4 5 6</p>
+<p>初中和高中所学的平面直角坐标系和空间直角坐标系还记得吗？</p>
+<p>我们设置axis为0，矩阵从2<em>3的二维矩阵变成了1*****2</em>3的三维矩阵。</p>
+<p>我们假设原来是一个二维平面，横坐标为x，纵坐标为y, 2*3的矩阵在这个XOY平面上。此时就是一个二维矩阵，（根本就没有z轴）</p>
+<p>而变换以后，现在变成了三维矩阵，变成了一个空间直角坐标系，，有x，y，z三个轴。</p>
+<p>原先的2*3的矩阵从XOY平面移动到了YOZ平面</p>
+<p>（我们把原先的矩阵当成一个平摊在桌面上的纸片，变换以后，相当于给它立起来了），然后原先的X轴的“厚度”为1，此时虽然形式还是原来的数字，但是多了一个轴。</p>
+<p>那如果设置axis为1呢？</p>
+<p>就是从XOY面的矩阵，给它立起来到XOZ平面，在Y轴的厚度为1。</p>
+<p>设置axis为2，就是从XOY面的矩阵，还是放在XOY面上。但是这时候多了一个z轴，（相当于这个操作之后可以在桌面的纸片上面，叠加新的纸片了）</p>
+<p>——————————————————————————————————</p>
+<p>这时候我们再看矩阵</p>
+<p>1 2 3</p>
+<p>4 5 6</p>
+<p>原先A[0][0]对应1,A[0][1]对应2,A[0][2]对应3,A[1][0]对应4……</p>
+<p>如果设置axis为0，这时候矩阵从XOY平面移动到了YOZ平面，X轴只有一个值</p>
+<p>那么,变换后的矩阵A’的第一个维度，只有一个值，就只能是0</p>
+<p>A’[0][0][0]是1，A[0][0][1]是2，A[0][0][2]是3</p>
+<p>A’[0][1][0]是4，A[0][1][1]是5，A[0][1][2]是6</p>
+<p>A’[0][0]不指定第三维，那么就是[1,2,3]</p>
+<p>A’[0][1]不指定第三维，就是[4,5,6]</p>
+<p>那A[1][0][0]……呢？不好意思，没有，因为第一维只能取一个数，就是0。</p>
+<p>axis为1,2都同理。</p>
+<p>可能说的有点啰嗦了。</p>
+<p>如果是三维矩阵变成四维矩阵，那就不好直接想象样子了。但是道理是一样的。</p>
+<h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p>绘制 $f(x)=3<em>x^2+7</em>x-9$的图像</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
 
-<span class="token comment">#函数</span>
-g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token comment">#x取值范围</span>
+y <span class="token operator">=</span> <span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">7</span><span class="token operator">*</span>x<span class="token operator">-</span><span class="token number">9</span> <span class="token comment"># y函数</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token comment">#以x为取值范围标定横坐标，y为纵坐标</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.sans-serif'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'SimHei'</span><span class="token punctuation">]</span><span class="token comment">#解析中文字体</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"x的取值"</span><span class="token punctuation">)</span><span class="token comment">#x的轴标签</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"y的值"</span><span class="token punctuation">)</span><span class="token comment">#y的轴标签</span>
+plt<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"我是曲线"</span><span class="token punctuation">)</span><span class="token comment">#曲线名称（标定位置）</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"我是图例"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">#图例名称</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
-stop<span class="token operator">=</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的终点值</span>
-step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
-num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
-y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209070940243.png" alt="函数图像"></p>
+<p>绘制学习曲线</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">plot_learning_curve</span><span class="token punctuation">(</span>loss_record<span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">''' Plot learning curve of your DNN (train &amp; dev loss) '''</span>
+    total_steps <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>loss_record<span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    x_1 <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span>total_steps<span class="token punctuation">)</span> <span class="token comment"># train曲线 x点集范围</span>
+    x_2 <span class="token operator">=</span> x_1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token builtin">len</span><span class="token punctuation">(</span>loss_record<span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token builtin">len</span><span class="token punctuation">(</span>loss_record<span class="token punctuation">[</span><span class="token string">'dev'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment"># dev曲线 x点集范围 </span>
+    figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 图像大小</span>
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_1<span class="token punctuation">,</span> loss_record<span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'tab:red'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'train'</span><span class="token punctuation">)</span> <span class="token comment"># 绘制train曲线</span>
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_2<span class="token punctuation">,</span> loss_record<span class="token punctuation">[</span><span class="token string">'dev'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'tab:cyan'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'dev'</span><span class="token punctuation">)</span><span class="token comment"># 绘制dev曲线</span>
+    plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">5.</span><span class="token punctuation">)</span> <span class="token comment"># 限制 y轴取值范围</span>
+    plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Training steps'</span><span class="token punctuation">)</span><span class="token comment"># x轴名称</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'MSE loss'</span><span class="token punctuation">)</span><span class="token comment"># y轴名称</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Learning curve of {}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment"># 图标题</span>
+    plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'sigmoid'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209070946142.png" alt="image-20220907094610100"></p>
+<p>绘制预测曲线拟合程度</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">plot_pred</span><span class="token punctuation">(</span>dv_set<span class="token punctuation">,</span> model<span class="token punctuation">,</span> device<span class="token punctuation">,</span> lim<span class="token operator">=</span><span class="token number">35.</span><span class="token punctuation">,</span> preds<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> targets<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">''' Plot prediction of your DNN '''</span>
+    
+    <span class="token keyword">if</span> preds <span class="token keyword">is</span> <span class="token boolean">None</span> <span class="token keyword">or</span> targets <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span> <span class="token comment"># test</span>
+        model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        preds<span class="token punctuation">,</span> targets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> dv_set<span class="token punctuation">:</span>
+            x<span class="token punctuation">,</span> y <span class="token operator">=</span> x<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span><span class="token punctuation">,</span> y<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+            <span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                pred <span class="token operator">=</span> model<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+                preds<span class="token punctuation">.</span>append<span class="token punctuation">(</span>pred<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>cpu<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                targets<span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>cpu<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        preds <span class="token operator">=</span> torch<span class="token punctuation">.</span>cat<span class="token punctuation">(</span>preds<span class="token punctuation">,</span> dim<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        targets <span class="token operator">=</span> torch<span class="token punctuation">.</span>cat<span class="token punctuation">(</span>targets<span class="token punctuation">,</span> dim<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注#注意：不会显示后来再定义的旁注</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>targets<span class="token punctuation">,</span> preds<span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token comment"># 绘制点图</span>
+    plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> lim<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> lim<span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> lim<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> lim<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'ground truth value'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'predicted value'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Ground Truth v.s. Prediction'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>函数图像：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943571.png" alt="image-20220905094303529"></p>
-<p>由图像可知，sigmoid函数的值域为（0，1）</p>
-<p><strong>导数：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943714.png" alt="image-20220905094316676"></p>
-<h2 id="3-tanh"><a href="#3-tanh" class="headerlink" title="3. tanh"></a>3. tanh</h2><p>tanh是双曲函数中的一个，tanh()为双曲正切。在数学中，双曲正切“tanh”是由基本双曲函数双曲正弦和双曲余弦推导而来。其实$$tanh(x)=2<em>sigmoid(2</em>x)-1$$,它解决了Sigmoid函数的不以0为中心输出问题，然而，梯度消失的问题和幂运算的问题仍然存在。</p>
-<p><strong>公式：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943911.png" alt="image-20220905094334886"></p>
-<p><strong>特点</strong></p>
-<ul>
-<li>函数：y=tanh x；</li>
-<li>定义域：R</li>
-<li>值域：(-1,1)。</li>
-<li>y=tanh x是一个奇函数，其函数图像为过原点并且穿越Ⅰ、Ⅲ象限的严格单调递增曲线，其图像被限制在两水平渐近线y=1和y=-1之间。</li>
-</ul>
-<p><strong>绘制函数图像代码：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
-
-<span class="token comment">#函数</span>
-g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token operator">-</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
-stop<span class="token operator">=</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的终点值</span>
-step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
-num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
-y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-
-fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'tanh'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
-
-plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>函数图像：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943369.png" alt="image-20220905094354321"></p>
-<p>由图像可知，tanh函数是sigmoid函数向下平移和收缩后的结果。</p>
-<p><strong>导数：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050944673.png" alt="image-20220905094411642"></p>
-<p>sigmoid和tanh激活函数有共同的缺点：即在z很大或很小时，梯度几乎为零，因此使用梯度下降优化算法更新网络很慢。</p>
-<h2 id="4-relu-修正线性单元"><a href="#4-relu-修正线性单元" class="headerlink" title="4. relu(修正线性单元)"></a>4. relu(修正线性单元)</h2><p><strong>公式：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050944268.png" alt="image-20220905094447237"></p>
-<p><strong>绘制函数图像代码：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
-
-<span class="token comment">#函数</span>
-g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span>np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>z<span class="token punctuation">)</span>
-
-start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
-stop<span class="token operator">=</span><span class="token number">10</span> <span class="token comment">#输入需要绘制的终点值</span>
-step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
-num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
-y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-
-fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
-
-plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>函数图像：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050945618.png" alt="image-20220905094526578"></p>
-<p><strong>导数：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050945897.png" alt="image-20220905094535861"></p>
-<p>由于sigmoid和tanh存在上述的缺点，因此relu激活函数成为了大多数神经网络的默认选择。</p>
-<p>但是relu也存在缺点：即在$z$小于0时，斜率即导数为0，因此引申出下面的leaky relu函数，但是实际上leaky relu使用的并不多。</p>
-<h2 id="5-Leaky-relu"><a href="#5-Leaky-relu" class="headerlink" title="5. Leaky relu"></a>5. Leaky relu</h2><p><strong>公式：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050945881.png" alt="image-20220905094556856"></p>
-<p><strong>绘制函数图像代码：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入相关库</span>
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
-
-<span class="token comment">#函数</span>
-g<span class="token operator">=</span><span class="token keyword">lambda</span> z<span class="token punctuation">:</span>np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token operator">*</span>z<span class="token punctuation">,</span>z<span class="token punctuation">)</span>
-
-start<span class="token operator">=</span><span class="token operator">-</span><span class="token number">100</span> <span class="token comment">#输入需要绘制的起始值（从左到右）</span>
-stop<span class="token operator">=</span><span class="token number">50</span> <span class="token comment">#输入需要绘制的终点值</span>
-step<span class="token operator">=</span><span class="token number">0.01</span><span class="token comment">#输入步长</span>
-num<span class="token operator">=</span><span class="token punctuation">(</span>stop<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">/</span>step <span class="token comment">#计算点的个数</span>
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span>stop<span class="token punctuation">,</span>num<span class="token punctuation">)</span>
-y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-
-fig<span class="token operator">=</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#显示网格</span>
-
-plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#显示旁注</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span>fig<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>函数图像：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050946652.png" alt="image-20220905094615609"></p>
-<p><strong>导数：</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050946803.png" alt="image-20220905094623775"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209070950422.png" alt="image-20220907095057378"></p>
 
                 
             </div>
@@ -591,7 +568,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/b58e/">https://risingauroras.github.io/posts/b58e/</a>
+                    <a href="https://risingauroras.github.io/posts/8089/">https://risingauroras.github.io/posts/8089/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -629,8 +606,8 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                                    <span class="chip bg-color">转载</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -991,9 +968,10 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/8089/">
                     <div class="card-image">
@@ -1011,9 +989,9 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1026,6 +1004,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1044,13 +1023,13 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/68cb/">
+                <a href="/posts/b58e/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="Python标准库之argparse">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="常见的激活函数">
                         
-                        <span class="card-title">Python标准库之argparse</span>
+                        <span class="card-title">常见的激活函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1061,7 +1040,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-05
                             </span>
                         <span class="publish-author">
                             
@@ -1078,8 +1057,8 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                        <span class="chip bg-color">转载</span>
                     </a>
                     
                 </div>
