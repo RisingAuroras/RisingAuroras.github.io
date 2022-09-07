@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -482,6 +482,16 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
 <p>axis为1,2都同理。</p>
 <p>可能说的有点啰嗦了。</p>
 <p>如果是三维矩阵变成四维矩阵，那就不好直接想象样子了。但是道理是一样的。</p>
+<p><strong>random</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">e <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># Create an array filled with random values</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+[[0.44790028 0.50508009]
+ [0.99214661 0.3657341 ]]
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p>绘制 $f(x)=3 *x^2+7 *x-9$的图像</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
