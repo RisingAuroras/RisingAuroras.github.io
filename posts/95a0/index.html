@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -467,7 +467,7 @@ torch<span class="token punctuation">.</span>cuda<span class="token punctuation"
 <p><em><strong>尝试能不能想起这些代码的意思吧，可不要为python版本而烦恼啦</strong></em></p>
 </li>
 </ul>
-<h4 id="pyTorch加载数据"><a href="#pyTorch加载数据" class="headerlink" title="pyTorch加载数据"></a>pyTorch加载数据</h4><p>Dataset类  &amp; Dataloader</p>
+<h2 id="pyTorch加载数据"><a href="#pyTorch加载数据" class="headerlink" title="pyTorch加载数据"></a>pyTorch加载数据</h2><p>Dataset类  &amp; Dataloader</p>
 <ul>
 <li><p>Dataset 是一个抽象类</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> Dataset
@@ -568,7 +568,7 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
     img_resize <span class="token operator">=</span> trans_totensor<span class="token punctuation">(</span>img_resize<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>img_resize<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="torchvision中的数据集的使用"><a href="#torchvision中的数据集的使用" class="headerlink" title="torchvision中的数据集的使用"></a>torchvision中的数据集的使用</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torchvision
+<h2 id="torchvision中的数据集的使用"><a href="#torchvision中的数据集的使用" class="headerlink" title="torchvision中的数据集的使用"></a>torchvision中的数据集的使用</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torchvision
 <span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
 
 dataset_transform <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span>
@@ -595,7 +595,7 @@ writer <span class="token operator">=</span> SummaryWriter<span class="token pun
     writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"test_set"</span><span class="token punctuation">,</span>img<span class="token punctuation">,</span>i<span class="token punctuation">)</span>
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="DataLoader的使用"><a href="#DataLoader的使用" class="headerlink" title="DataLoader的使用"></a>DataLoader的使用</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
+<h2 id="DataLoader的使用"><a href="#DataLoader的使用" class="headerlink" title="DataLoader的使用"></a>DataLoader的使用</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torchvision
 
 <span class="token comment"># 准备测试数据集</span>
@@ -622,7 +622,7 @@ step <span class="token operator">=</span> <span class="token number">0</span>
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203191948366.png" alt="image-20220319194835192"></p>
-<h4 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h4><h5 id="基本骨架"><a href="#基本骨架" class="headerlink" title="基本骨架"></a>基本骨架</h5><p><strong>nn.module的使用</strong></p>
+<h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><h3 id="基本骨架"><a href="#基本骨架" class="headerlink" title="基本骨架"></a>基本骨架</h3><p><strong>nn.module的使用</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torch
 <span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
@@ -740,7 +740,7 @@ writer<span class="token punctuation">.</span>add_graph<span class="token punctu
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203211700259.png" alt="image-20220321170039145"></p>
-<h5 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203201633012.png" alt="image-20220320163300882"></p>
+<h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203201633012.png" alt="image-20220320163300882"></p>
 <p>torch.nn.functional参数</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203201557870.png" alt="image-20220320155715797"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203201555703.png" alt="image-20220320155544646"></p>
@@ -832,7 +832,7 @@ writer <span class="token operator">=</span> SummaryWriter<span class="token pun
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203202056668.png" alt="image-20220320205629536"></p>
-<h5 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h5><p>池化的作用就是在减少特征的同时保留明显的特征（不影响channel)，减少训练时的 数据量</p>
+<h3 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h3><p>池化的作用就是在减少特征的同时保留明显的特征（不影响channel)，减少训练时的 数据量</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203210928655.png" alt="image-20220321092754526"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torch
@@ -890,7 +890,7 @@ writer <span class="token operator">=</span> SummaryWriter<span class="token pun
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="C:/Users/auroras/AppData/Roaming/Typora/typora-user-images/image-20220321094234126.png" alt="image-20220321094234126"></p>
-<h5 id="非线性激活"><a href="#非线性激活" class="headerlink" title="非线性激活"></a>非线性激活</h5><p>非线性变换的主要目的就是为我们的网络中引入一些非线性特征，非线性越多的话，才能训练出符合曲线和特征的模型（更强的泛化能力）</p>
+<h3 id="非线性激活"><a href="#非线性激活" class="headerlink" title="非线性激活"></a>非线性激活</h3><p>非线性变换的主要目的就是为我们的网络中引入一些非线性特征，非线性越多的话，才能训练出符合曲线和特征的模型（更强的泛化能力）</p>
 <p>常见的激活函数</p>
 <ul>
 <li>ReLu</li>
@@ -957,7 +957,7 @@ writer <span class="token operator">=</span> SummaryWriter<span class="token pun
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203211025339.png" alt="image-20220321102538175"></p>
-<h5 id="线性层（全连接层）"><a href="#线性层（全连接层）" class="headerlink" title="线性层（全连接层）"></a>线性层（全连接层）</h5><p>在CNN中，全连接常出现在最后几层，用于对于前面设计的特征做加权和，比如mnist，前面的卷积和池化相当于做特征工程，后面的全连接相当于做特征加权。（卷积相当于全连接的有意弱化，按照局部视野的启发，把局部之外的弱影响直接抹为0影响，还做了一点强制，不同的局部所使用的参数居然一致。弱化使参数变少，节省计算量，又专攻局部不贪多求全，强制进一步减少参数。在RNN中，全连接用来把embedding空间拉到隐层空间，把隐层空间转回label空间等。</p>
+<h3 id="线性层（全连接层）"><a href="#线性层（全连接层）" class="headerlink" title="线性层（全连接层）"></a>线性层（全连接层）</h3><p>在CNN中，全连接常出现在最后几层，用于对于前面设计的特征做加权和，比如mnist，前面的卷积和池化相当于做特征工程，后面的全连接相当于做特征加权。（卷积相当于全连接的有意弱化，按照局部视野的启发，把局部之外的弱影响直接抹为0影响，还做了一点强制，不同的局部所使用的参数居然一致。弱化使参数变少，节省计算量，又专攻局部不贪多求全，强制进一步减少参数。在RNN中，全连接用来把embedding空间拉到隐层空间，把隐层空间转回label空间等。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torch
 <span class="token keyword">import</span> torchvision
@@ -987,7 +987,7 @@ step <span class="token operator">=</span> <span class="token number">0</span>
     output <span class="token operator">=</span> myNN<span class="token punctuation">(</span>output<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment"># torch.Size([1, 1, 1, 10])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="损失函数和反向传播"><a href="#损失函数和反向传播" class="headerlink" title="损失函数和反向传播"></a>损失函数和反向传播</h5><p>计算Loss的作用：</p>
+<h3 id="损失函数和反向传播"><a href="#损失函数和反向传播" class="headerlink" title="损失函数和反向传播"></a>损失函数和反向传播</h3><p>计算Loss的作用：</p>
 <ol>
 <li>计算实际输出和目标之间的差距</li>
 <li>为我们更新输出提供一定的依据（反向传播）</li>
@@ -1107,7 +1107,7 @@ loss <span class="token operator">=</span> nn<span class="token punctuation">.</
     result_loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>result_loss<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h5><p>根据梯度进行调整参数，已达到误差降低的目的</p>
+<h3 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h3><p>根据梯度进行调整参数，已达到误差降低的目的</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torch
 <span class="token keyword">import</span> torchvision
@@ -1167,7 +1167,7 @@ tensor(281.4933, grad_fn=&lt;AddBackward0&gt;)
 
 
 
-<h5 id="现有的网络模型及修改"><a href="#现有的网络模型及修改" class="headerlink" title="现有的网络模型及修改"></a>现有的网络模型及修改</h5><p>vgg16</p>
+<h3 id="现有的网络模型及修改"><a href="#现有的网络模型及修改" class="headerlink" title="现有的网络模型及修改"></a>现有的网络模型及修改</h3><p>vgg16</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torchvision
 
@@ -1239,7 +1239,7 @@ VGG(
 '''</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="网络模型的保存和读取"><a href="#网络模型的保存和读取" class="headerlink" title="网络模型的保存和读取"></a>网络模型的保存和读取</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
+<h3 id="网络模型的保存和读取"><a href="#网络模型的保存和读取" class="headerlink" title="网络模型的保存和读取"></a>网络模型的保存和读取</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#encoding=utf-8</span>
 <span class="token keyword">import</span> torch
 <span class="token keyword">import</span> torchvision
 
@@ -1258,7 +1258,7 @@ model2 <span class="token operator">=</span> torchvision<span class="token punct
 model2<span class="token punctuation">.</span>load_state_dict<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>model2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="完整的模型训练套路"><a href="#完整的模型训练套路" class="headerlink" title="完整的模型训练套路"></a>完整的模型训练套路</h5><p><strong><code>MyNN.py</code></strong> —— 自己搭建的神经网络</p>
+<h3 id="完整的模型训练套路"><a href="#完整的模型训练套路" class="headerlink" title="完整的模型训练套路"></a>完整的模型训练套路</h3><p><strong><code>MyNN.py</code></strong> —— 自己搭建的神经网络</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
 <span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
 <span class="token keyword">from</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">import</span> Sequential
@@ -1419,7 +1419,7 @@ accuracy <span class="token operator">=</span> <span class="token punctuation">(
 rate <span class="token operator">=</span> accuracy<span class="token operator">/</span><span class="token number">2.0</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正确率为：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>rate<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 正确率为：0.5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="利用GPU训练"><a href="#利用GPU训练" class="headerlink" title="利用GPU训练"></a>利用GPU训练</h5><p>两种GPU训练方式</p>
+<h3 id="利用GPU训练"><a href="#利用GPU训练" class="headerlink" title="利用GPU训练"></a>利用GPU训练</h3><p>两种GPU训练方式</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203222019977.png" alt="image-20220322201935900"></p>
 <ol>
 <li>```python<br>if torch.cuda.is_available():<br>myNN = myNN.cuda()#网络，loss函数，数据都可以进行GPU加速<pre class="line-numbers language-none"><code class="language-none">
@@ -1428,7 +1428,7 @@ rate <span class="token operator">=</span> accuracy<span class="token operator">
    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
    myNN = myNN.to(device)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h5 id="完整的模型验证套路"><a href="#完整的模型验证套路" class="headerlink" title="完整的模型验证套路"></a>完整的模型验证套路</h5><p>利用已经训练好的模型，然后给它提供输入</p>
+<h3 id="完整的模型验证套路"><a href="#完整的模型验证套路" class="headerlink" title="完整的模型验证套路"></a>完整的模型验证套路</h3><p>利用已经训练好的模型，然后给它提供输入</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203222134934.png" alt="image-20220322213454881"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203222123519.png" alt="image-20220322212321439"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203222044930.png" alt="image-20220322204422802"></p>
@@ -1474,20 +1474,20 @@ model<span class="token punctuation">.</span><span class="token builtin">eval</s
 <span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="补充知识："><a href="#补充知识：" class="headerlink" title="补充知识："></a>补充知识：</h4><h5 id="argmax"><a href="#argmax" class="headerlink" title="argmax"></a>argmax</h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203230918784.png" alt="image-20220323091847492"></p>
+<h2 id="补充知识："><a href="#补充知识：" class="headerlink" title="补充知识："></a>补充知识：</h2><h3 id="argmax"><a href="#argmax" class="headerlink" title="argmax"></a>argmax</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203230918784.png" alt="image-20220323091847492"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203230918247.png" alt="image-20220323091858002"></p>
-<h5 id="Softmax-概率"><a href="#Softmax-概率" class="headerlink" title="Softmax(概率)"></a>Softmax(概率)</h5><p>在机器学习领域，多分类算法需要从一组可能的结果中找出概率最高的那个，正需要使用 max 函数。而为了能进行优化，用于描述问题的函数必须是可微分的，这样 softmax 就是一个非常合适的选择了。</p>
+<h3 id="Softmax-概率"><a href="#Softmax-概率" class="headerlink" title="Softmax(概率)"></a>Softmax(概率)</h3><p>在机器学习领域，多分类算法需要从一组可能的结果中找出概率最高的那个，正需要使用 max 函数。而为了能进行优化，用于描述问题的函数必须是可微分的，这样 softmax 就是一个非常合适的选择了。</p>
 <p><strong>softmax用于多分类过程中</strong>，它将多个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%A5%9E%E7%BB%8F%E5%85%83&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:240869755%7D">神经元</a>的输出，映射到（0,1）区间内，可以看成概率来理解，从而来进行多分类！</p>
 <p>假设我们有一个数组，V，Vi表示V中的第i个元素，那么这个元素的softmax值就是</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203230928515.png" alt="image-20220323092856464"></p>
-<h5 id="one-hot编码"><a href="#one-hot编码" class="headerlink" title="one-hot编码"></a>one-hot编码</h5><p><strong>定义</strong></p>
+<h3 id="one-hot编码"><a href="#one-hot编码" class="headerlink" title="one-hot编码"></a>one-hot编码</h3><p><strong>定义</strong></p>
 <p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%8B%AC%E7%83%AD%E7%BC%96%E7%A0%81&amp;spm=1001.2101.3001.7020">独热编码</a>即 One-Hot 编码，又称一位有效编码。其方法是使用 N位 状态寄存器来对 N个状态 进行编码，每个状态都有它独立的寄存器位，并且在任意时候，其中<strong>只有一位有效</strong>。</p>
 <p><strong>为什么需要one-hot编码？</strong></p>
 <p>one hot编码是将类别变量转换为机器学习算法易于利用的一种形式的过程。</p>
 <p>上面的 hello world 相当于多分类的问题（27分类），每个样本只对应于一个类别（即只在对应的特征处值为1，其余地方值为0），而我们的分类结果，得到的往往是隶属于某个类别的概率，这样在进行损失函数（例如交叉熵损失）或准确率计算时，变得非常方便</p>
 <p><strong>one-hot编码的缺陷</strong></p>
 <p>one-hot编码要求每个类别之间相互独立，如果之间存在某种连续型的关系，或许使用distributed respresentation（分布式）更加合适</p>
-<h5 id="torch-manual-seed"><a href="#torch-manual-seed" class="headerlink" title="torch.manual_seed()"></a>torch.manual_seed()</h5><p><strong>使用 ：</strong></p>
+<h3 id="torch-manual-seed"><a href="#torch-manual-seed" class="headerlink" title="torch.manual_seed()"></a>torch.manual_seed()</h3><p><strong>使用 ：</strong></p>
 <p>为<strong>CPU</strong>中设置种子，生成随机数：</p>
 <p><strong>torch.manual_seed(number)</strong></p>
 <p>为<strong>特定GPU</strong>设置种子，生成随机数：</p>
@@ -1510,7 +1510,7 @@ model<span class="token punctuation">.</span><span class="token builtin">eval</s
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h5><p>数据数组去除第一行和第一列data = np.array(data[1:])[:, 1:]</p>
+<h3 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h3><p>数据数组去除第一行和第一列data = np.array(data[1:])[:, 1:]</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
