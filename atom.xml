@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-09T09:30:37.152Z</updated>
+  <updated>2022-09-09T13:15:58.184Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《吴恩达机器学习笔记》</title>
+    <link href="https://risingauroras.github.io/posts/9958/"/>
+    <id>https://risingauroras.github.io/posts/9958/</id>
+    <published>2022-09-09T13:13:06.704Z</published>
+    <updated>2022-09-09T13:15:58.184Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;《吴恩达机器学习笔记》&quot;&gt;&lt;a href=&quot;#《吴恩达机器学习笔记》&quot; class=&quot;headerlink&quot; title=&quot;《吴恩达机器学习笔记》&quot;&gt;&lt;/a&gt;《吴恩达机器学习笔记》&lt;/h2&gt;&lt;h3 id=&quot;第一节&quot;&gt;&lt;a href=&quot;#第一节&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Python&amp;机器学习工具</title>
     <link href="https://risingauroras.github.io/posts/8089/"/>
     <id>https://risingauroras.github.io/posts/8089/</id>
     <published>2022-09-06T02:14:07.984Z</published>
-    <updated>2022-09-09T09:30:37.152Z</updated>
+    <updated>2022-09-09T09:33:42.144Z</updated>
     
     
       
