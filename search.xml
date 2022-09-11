@@ -11,6 +11,14 @@
         <content type="html"><![CDATA[<h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol><li><p>网络输出离散动作概率的时候，一般加一层<code>softmax</code>层，保证输出的离散动作概率和为1；输出连续动作概率的时候，一般加一层<code>tanh</code>吗，因为<code>tanh</code>范围是[-1,1]，我们可以根据实际需要，将输出进行缩放。</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209110920372.png" alt="image-20220911092035223"></p></li><li></li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+          <category> 强化学习 </category>
+          
+      </categories>
+      
       
     </entry>
     
