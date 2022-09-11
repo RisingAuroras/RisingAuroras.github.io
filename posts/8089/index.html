@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    8 分
                 </div>
                 
 
@@ -483,6 +483,12 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
 <p>可能说的有点啰嗦了。</p>
 <p>如果是三维矩阵变成四维矩阵，那就不好直接想象样子了。但是道理是一样的。</p>
 <p><strong>random</strong></p>
+<p><code>seed()</code></p>
+<p>可以通过输入int或arrat_like来使得随机的结果固定;使实验可重复，对于同一个seed，生成的随机数相同</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">numpy<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span>seed<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>random()</code></p>
+<p>生成指定维度的[0,1)间的随机数</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">e <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># Create an array filled with random values</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">'''
@@ -490,8 +496,37 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
  [0.99214661 0.3657341 ]]
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><code>rand(d0,d1...dn) </code></p>
+<p>通过本函数可以返回一个或一组服从“0~1”均匀分布的随机样本值。随机样本取值范围是[0,1)，不包括1。  应用：在深度学习的Dropout正则化方法中，可以用于生成dropout随机向量（dl），例如（keep_prob表示保留神经元的比例）：</p>
+<p>==dl = np.random.rand(al.shape[0],al.shape[1]) &lt; keep_prob==</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>out:</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">array([[0.27388623, 0.26940718, 0.13914399],
+       [0.79281929, 0.82086991, 0.18488757],
+       [0.09359689, 0.08408097, 0.36463413],
+       [0.02924776, 0.81743324, 0.26361082]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>randn()</code></p>
+<p>randn函数返回一个或一组样本，具有[标准正态分布]。</p>
+<p><code>numpy.random.randint(low, high=None, size=None, dtype=’l’)</code></p>
+<ul>
+<li>从区间[low,high）返回随机整数</li>
+<li>参数：low为最小值，high为最大值，size为数组维度大小，dtype为数据类型，默认的数据类型是np.int</li>
+<li>high没有填写时，默认生成随机数的范围是[0，low)</li>
+</ul>
+<p><code>choice(a, size=None, replace=True, p=None)</code></p>
+<ul>
+<li>从给定的一位数组中生成一个随机样本</li>
+<li>a要求输入一维数组类似数据或者是一个int；size是生成的数组纬度，要求数字或元组；replace为布尔型，决定样本是否有替换；p为样本出现概率</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span><span class="token operator">/</span>p是一个<span class="token builtin">list</span><span class="token punctuation">,</span>p的size 必须与a的size一致，p中每个元素对应了a中每个元素被选择的概率
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>list_tmp<span class="token punctuation">,</span>size <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>p <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><strong>tile()</strong></p>
 <img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209091649941.png" alt="image-20220909164953161" style="zoom: 50%;">
+
+
 
 <h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p>绘制两条简单的曲线</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
