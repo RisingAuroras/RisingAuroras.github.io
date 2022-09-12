@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>常用命令</title>
+      <link href="/posts/f446/"/>
+      <url>/posts/f446/</url>
+      
+        <content type="html"><![CDATA[<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 更新发送到github</span>hexo clhexo g<span class="token function">ssh</span> -T git@github.comhexo d<span class="token comment"># 新建文章</span>hexo new post 文章名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>训练小tricks</title>
       <link href="/posts/3815/"/>
       <url>/posts/3815/</url>
       
-        <content type="html"><![CDATA[<h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol><li><p>网络输出离散动作概率的时候，一般加一层<code>softmax</code>层，保证输出的离散动作概率和为1；输出连续动作概率的时候，一般加一层<code>tanh</code>吗，因为<code>tanh</code>范围是[-1,1]，我们可以根据实际需要，将输出进行缩放。</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209110920372.png" alt="image-20220911092035223"></p></li><li></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol><li><p>网络输出离散动作概率的时候，一般加一层<code>softmax</code>层，保证输出的离散动作概率和为1；输出连续动作概率的时候，一般加一层<code>tanh</code>层，因为<code>tanh</code>范围是[-1,1]，我们可以根据实际需要，将输出进行缩放。</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209110920372.png" alt="image-20220911092035223"></p></li><li></li></ol>]]></content>
       
       
       <categories>

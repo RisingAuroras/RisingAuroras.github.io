@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-11T04:08:53.305Z</updated>
+  <updated>2022-09-12T02:26:20.706Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常用命令</title>
+    <link href="https://risingauroras.github.io/posts/f446/"/>
+    <id>https://risingauroras.github.io/posts/f446/</id>
+    <published>2022-09-12T02:23:54.000Z</published>
+    <updated>2022-09-12T02:26:20.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot; class=&quot;headerlink&quot; title=&quot;hexo&quot;&gt;&lt;/a&gt;hexo&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="实用" scheme="https://risingauroras.github.io/categories/%E5%AE%9E%E7%94%A8/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>训练小tricks</title>
     <link href="https://risingauroras.github.io/posts/3815/"/>
     <id>https://risingauroras.github.io/posts/3815/</id>
     <published>2022-09-11T01:13:59.000Z</published>
-    <updated>2022-09-11T04:08:53.305Z</updated>
+    <updated>2022-09-11T06:19:50.800Z</updated>
     
     
       
