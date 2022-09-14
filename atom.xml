@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-12T07:57:10.104Z</updated>
+  <updated>2022-09-13T02:29:45.976Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《统计学习方法》学习笔记</title>
+    <link href="https://risingauroras.github.io/posts/b54a/"/>
+    <id>https://risingauroras.github.io/posts/b54a/</id>
+    <published>2022-09-13T01:47:12.000Z</published>
+    <updated>2022-09-13T02:29:45.976Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;第二章-感知机&quot;&gt;&lt;a href=&quot;#第二章-感知机&quot; class=&quot;headerlink&quot; title=&quot;第二章 感知机&quot;&gt;&lt;/a&gt;第二章 感知机&lt;/h2&gt;&lt;h3 id=&quot;感知机学习算法&quot;&gt;&lt;a href=&quot;#感知机学习算法&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>精读论文系列</title>
+    <link href="https://risingauroras.github.io/posts/e9ae/"/>
+    <id>https://risingauroras.github.io/posts/e9ae/</id>
+    <published>2022-09-12T10:35:50.000Z</published>
+    <updated>2022-09-12T13:48:12.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;RL经典&quot;&gt;&lt;a href=&quot;#RL经典&quot; class=&quot;headerlink&quot; title=&quot;RL经典&quot;&gt;&lt;/a&gt;RL经典&lt;/h2&gt;&lt;h3 id=&quot;Playing-Atari-with-Deep-Reinforcement-Learning&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="学术" scheme="https://risingauroras.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+    <category term="论文" scheme="https://risingauroras.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用命令</title>
     <link href="https://risingauroras.github.io/posts/f446/"/>
     <id>https://risingauroras.github.io/posts/f446/</id>
     <published>2022-09-12T02:23:54.000Z</published>
-    <updated>2022-09-12T07:57:10.104Z</updated>
+    <updated>2022-09-12T09:35:57.174Z</updated>
     
     
       
@@ -92,7 +140,7 @@
     <link href="https://risingauroras.github.io/posts/8089/"/>
     <id>https://risingauroras.github.io/posts/8089/</id>
     <published>2022-09-06T02:14:07.984Z</published>
-    <updated>2022-09-11T01:05:42.367Z</updated>
+    <updated>2022-09-14T06:15:57.117Z</updated>
     
     
       

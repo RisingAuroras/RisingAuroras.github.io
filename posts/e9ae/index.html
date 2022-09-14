@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="常用命令, 马克图布">
+    <meta name="keywords" content="精读论文系列, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>常用命令 | 马克图布</title>
+    <title>精读论文系列 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">常用命令</h1>
+                    <h1 class="description center-align post-title">精读论文系列</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%BA%E6%96%87/">
+                                <span class="chip bg-color">论文</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                实用
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF/" class="post-category">
+                                学术
                             </a>
                         
                     </div>
@@ -400,7 +404,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    140
+                    89
                 </div>
                 
 
@@ -430,31 +434,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 更新发送到github</span>
-hexo cl
-hexo g
-<span class="token function">ssh</span> -T git@github.com
-hexo d
-
-<span class="token comment"># 新建文章</span>
-hexo new post 文章名
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="启动停止"><a href="#启动停止" class="headerlink" title="启动停止"></a>启动停止</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">net stop mysql
-net start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#   注意，如果是连接到另外的机器上，则需要加入一个参数-h机器IP</span>
-mysql （-h）-u 用户名 -p 用户密码 <span class="token comment"># mysql -u root -p 123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看被占用端口8080的pid，netstat -ano |findstr “端口号”</span>
-<span class="token function">netstat</span> -aon<span class="token operator">|</span>findstr <span class="token string">"8080"</span>
-<span class="token comment"># 根据pid 查看进程名称 ，tasklist |findstr “进程id号”</span>
-tasklist <span class="token operator">|</span>findstr “22752"
-<span class="token comment"># 杀掉进程</span>
-taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h2 id="RL经典"><a href="#RL经典" class="headerlink" title="RL经典"></a>RL经典</h2><h3 id="Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="Playing Atari with Deep Reinforcement Learning"></a><em>Playing Atari with Deep Reinforcement Learning</em></h3><p><strong>Abstract</strong></p>
+<p>用dqn训练Arcade 2600种游戏，在其中6个游戏中超越之前所有的算法，在其中三个游戏中超过人类专家。</p>
+<p><strong>Introduction</strong></p>
+<p>网络结构，卷积神经网络提取原始像素特征</p>
+<p>应用算法，Q-learning变体————DQN</p>
+<p>优化器，SGD</p>
+<p>技巧，经验回放(experience replay mechanism)</p>
+<p><strong>Background</strong></p>
 
                 
             </div>
@@ -481,7 +468,7 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/f446/">https://risingauroras.github.io/posts/f446/</a>
+                    <a href="https://risingauroras.github.io/posts/e9ae/">https://risingauroras.github.io/posts/e9ae/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,7 +505,11 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E8%AE%BA%E6%96%87/">
+                                    <span class="chip bg-color">论文</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -881,12 +872,13 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/e9ae/">
+                <a href="/posts/b54a/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="精读论文系列">
                         
-                        <span class="card-title">精读论文系列</span>
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/24.jpg" class="responsive-img" alt="《统计学习方法》学习笔记">
+                        
+                        <span class="card-title">《统计学习方法》学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -897,27 +889,19 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E6%9C%AF/" class="post-category">
-                                    学术
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">论文</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -929,13 +913,13 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3815/">
+                <a href="/posts/f446/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="训练小tricks">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="常用命令">
                         
-                        <span class="card-title">训练小tricks</span>
+                        <span class="card-title">常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -946,18 +930,14 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    强化学习
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
+                                    实用
                                 </a>
                             
                             
