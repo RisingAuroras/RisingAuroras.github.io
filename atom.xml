@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-13T02:29:45.976Z</updated>
+  <updated>2022-09-17T06:25:09.237Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解</title>
+    <link href="https://risingauroras.github.io/posts/8e6/"/>
+    <id>https://risingauroras.github.io/posts/8e6/</id>
+    <published>2022-09-17T03:17:01.000Z</published>
+    <updated>2022-09-17T06:25:09.237Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;写在开头：本文转自&lt;a href=&quot;https://blog.csdn.net/u011508640&quot;&gt;nebulaf91&lt;/a&gt;，文章&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《统计学习方法》学习笔记</title>
     <link href="https://risingauroras.github.io/posts/b54a/"/>
     <id>https://risingauroras.github.io/posts/b54a/</id>
     <published>2022-09-13T01:47:12.000Z</published>
-    <updated>2022-09-13T02:29:45.976Z</updated>
+    <updated>2022-09-15T15:17:19.684Z</updated>
     
     
       
@@ -44,7 +69,7 @@
     <link href="https://risingauroras.github.io/posts/e9ae/"/>
     <id>https://risingauroras.github.io/posts/e9ae/</id>
     <published>2022-09-12T10:35:50.000Z</published>
-    <updated>2022-09-12T13:48:12.507Z</updated>
+    <updated>2022-09-17T16:12:18.279Z</updated>
     
     
       
@@ -140,7 +165,7 @@
     <link href="https://risingauroras.github.io/posts/8089/"/>
     <id>https://risingauroras.github.io/posts/8089/</id>
     <published>2022-09-06T02:14:07.984Z</published>
-    <updated>2022-09-14T06:15:57.117Z</updated>
+    <updated>2022-09-14T11:20:21.765Z</updated>
     
     
       
