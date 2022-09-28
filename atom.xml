@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-17T16:12:50.722Z</updated>
+  <updated>2022-09-27T12:02:28.462Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见分布的数学期望以及方差公式</title>
+    <link href="https://risingauroras.github.io/posts/d498/"/>
+    <id>https://risingauroras.github.io/posts/d498/</id>
+    <published>2022-09-27T11:09:32.000Z</published>
+    <updated>2022-09-27T12:02:28.462Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;转载自&lt;a href=&quot;https://blog.csdn.net/sodacoco&quot;&gt;二喵君&lt;/a&gt;，文章&lt;a href=&quot;https://blog.csdn.net/sodacoco/article/details/89041910&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>求和求乘累加累乘符号运算法则</title>
+    <link href="https://risingauroras.github.io/posts/67ff/"/>
+    <id>https://risingauroras.github.io/posts/67ff/</id>
+    <published>2022-09-21T03:51:01.000Z</published>
+    <updated>2022-09-21T08:41:18.780Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文转载自&lt;a href=&quot;https://www.it610.com/article/1304682095108460544.htm&quot;&gt;&lt;strong&gt;kyle1314608&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;累加符&quot;&gt;&lt;a href=&quot;#累加符&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解</title>
@@ -69,7 +117,7 @@
     <link href="https://risingauroras.github.io/posts/e9ae/"/>
     <id>https://risingauroras.github.io/posts/e9ae/</id>
     <published>2022-09-12T10:35:50.000Z</published>
-    <updated>2022-09-18T01:58:06.868Z</updated>
+    <updated>2022-09-19T12:16:51.322Z</updated>
     
     
       
@@ -165,7 +213,7 @@
     <link href="https://risingauroras.github.io/posts/8089/"/>
     <id>https://risingauroras.github.io/posts/8089/</id>
     <published>2022-09-06T02:14:07.984Z</published>
-    <updated>2022-09-14T11:20:21.765Z</updated>
+    <updated>2022-09-28T10:09:53.780Z</updated>
     
     
       
@@ -452,19 +500,6 @@
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
         
       
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test1</title>
-    <link href="https://risingauroras.github.io/posts/c8b9/"/>
-    <id>https://risingauroras.github.io/posts/c8b9/</id>
-    <published>2022-08-11T11:01:47.000Z</published>
-    <updated>2022-08-14T10:53:33.365Z</updated>
-    
     
     
     

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="精读论文系列, 马克图布">
+    <meta name="keywords" content="求和求乘累加累乘符号运算法则, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>精读论文系列 | 马克图布</title>
+    <title>求和求乘累加累乘符号运算法则 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/25.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">精读论文系列</h1>
+                    <h1 class="description center-align post-title">求和求乘累加累乘符号运算法则</h1>
                 </div>
             </div>
         </div>
@@ -370,8 +370,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BA%E6%96%87/">
-                                <span class="chip bg-color">论文</span>
+                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                <span class="chip bg-color">转载</span>
                             </a>
                         
                     </div>
@@ -382,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E6%9C%AF/" class="post-category">
-                                学术
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
+                                数学基础
                             </a>
                         
                     </div>
@@ -395,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-12
+                    2022-09-21
                 </div>
                 
 
@@ -404,7 +404,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    321
+                    11
                 </div>
                 
 
@@ -434,26 +434,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="RL经典"><a href="#RL经典" class="headerlink" title="RL经典"></a>RL经典</h2><h3 id="Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="Playing Atari with Deep Reinforcement Learning"></a><em>Playing Atari with Deep Reinforcement Learning</em></h3><p><strong>Abstract</strong></p>
-<p>用dqn训练Arcade 2600种游戏，在其中6个游戏中超越之前所有的算法，在其中三个游戏中超过人类专家。</p>
-<p><strong>Introduction</strong></p>
-<p>网络结构，卷积神经网络提取原始像素特征</p>
-<p>应用算法，Q-learning变体————DQN</p>
-<p>优化器，SGD</p>
-<p>技巧，经验回放(experience replay mechanism)</p>
-<p><strong>Background</strong></p>
-<p>目标是让智能体选择动作与模拟器交互从而最大化未来的奖励，做了一个假设是未来的奖励会以每步$\gamma$ 进行折扣，并定义时间t的回报为</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209180929917.png" alt="image-20220916130409930"></p>
-<p>其中$T$是游戏终止的时长</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209180011033.png" alt="image-20220918001109987"></p>
-<p><strong>$\epsilon $-greedy strategy</strong>:follows the greedy strategy with probability 1 − $\epsilon $ and selects a<br>random action with probability  $\epsilon $ .</p>
-<p><strong>Deep Reinforcement Learning</strong></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209181713009.png" alt="image-20220918171315928"></p>
-<p>相比Q-Learning算法的优点：</p>
-<p>(1)每一步经验可能更新许多权重，这增加了数据利用率</p>
-<p>(2打断了数据之间的关联性，减小方差，获得更好的训练效果</p>
-<p>(3)第三，在学习策略时，当前参数决定了训练参数的下一个数据样本。 例如，如果最大化动作是向左移动，那么训练样本将由左侧的样本支配,如果最大化动作然后切换到右侧，那么训练分布也将切换。</p>
-<p><strong>Preprocessing and Model Architecture</strong></p>
+                <p>本文转载自<a target="_blank" rel="noopener" href="https://www.it610.com/article/1304682095108460544.htm"><strong>kyle1314608</strong></a></p>
+<h2 id="累加符"><a href="#累加符" class="headerlink" title="累加符"></a>累加符</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211635398.png" alt="image-20220921163547310" style="zoom:67%;">
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211636201.png" alt="image-20220921163655149" style="zoom:50%;">
+
+<h2 id="累乘"><a href="#累乘" class="headerlink" title="累乘"></a>累乘</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211639295.png" alt="image-20220921163951254" style="zoom:50%;">
 
                 
             </div>
@@ -480,7 +466,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/e9ae/">https://risingauroras.github.io/posts/e9ae/</a>
+                    <a href="https://risingauroras.github.io/posts/67ff/">https://risingauroras.github.io/posts/67ff/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,8 +504,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BA%E6%96%87/">
-                                    <span class="chip bg-color">论文</span>
+                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                    <span class="chip bg-color">转载</span>
                                 </a>
                             
                         </div>
@@ -884,13 +870,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/b54a/">
+                <a href="/posts/d498/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/24.jpg" class="responsive-img" alt="《统计学习方法》学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="常见分布的数学期望以及方差公式">
                         
-                        <span class="card-title">《统计学习方法》学习笔记</span>
+                        <span class="card-title">常见分布的数学期望以及方差公式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -901,16 +887,12 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-27
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马克图布
                             
                         </span>
                     </div>
@@ -925,36 +907,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/f446/">
+                <a href="/posts/8e6/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="常用命令">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解">
                         
-                        <span class="card-title">常用命令</span>
+                        <span class="card-title">详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            最大似然估计（Maximum likelihood estimation, 简称MLE）和最大后验概率估计（Maximum a posteriori estimation, 简称MAP）是很常用的两种参数估计方法，如果不理解这两种方法的思路，很容易弄混它们。下文将详细说明MLE和MAP的思路与区别。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                    实用
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    数学基础
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                        <span class="chip bg-color">转载</span>
+                    </a>
+                    
                 </div>
                 
             </div>
