@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-27T12:02:28.462Z</updated>
+  <updated>2022-09-29T05:25:56.523Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>线性代数</title>
+    <link href="https://risingauroras.github.io/posts/6e55/"/>
+    <id>https://risingauroras.github.io/posts/6e55/</id>
+    <published>2022-09-29T05:24:43.000Z</published>
+    <updated>2022-09-29T05:25:56.523Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;正定-x2F-负定、半正定-x2F-半负定&quot;&gt;&lt;a href=&quot;#正定-x2F-负定、半正定-x2F-半负定&quot; class=&quot;headerlink&quot; title=&quot;正定/负定、半正定/半负定&quot;&gt;&lt;/a&gt;正定/负定、半正定/半负定&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>矩阵、向量的导数运算</title>
+    <link href="https://risingauroras.github.io/posts/cbab/"/>
+    <id>https://risingauroras.github.io/posts/cbab/</id>
+    <published>2022-09-28T11:14:47.000Z</published>
+    <updated>2022-09-28T11:55:55.532Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;向量对向量求导&quot;&gt;&lt;a href=&quot;#向量对向量求导&quot; class=&quot;headerlink&quot; title=&quot;向量对向量求导&quot;&gt;&lt;/a&gt;向量对向量求导&lt;/h2&gt;&lt;p&gt;本文转自&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>常见分布的数学期望以及方差公式</title>
     <link href="https://risingauroras.github.io/posts/d498/"/>
     <id>https://risingauroras.github.io/posts/d498/</id>
     <published>2022-09-27T11:09:32.000Z</published>
-    <updated>2022-09-27T12:02:28.462Z</updated>
+    <updated>2022-09-28T11:55:25.308Z</updated>
     
     
       
@@ -35,6 +81,8 @@
     
     
     
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
     
   </entry>
   
@@ -43,7 +91,7 @@
     <link href="https://risingauroras.github.io/posts/67ff/"/>
     <id>https://risingauroras.github.io/posts/67ff/</id>
     <published>2022-09-21T03:51:01.000Z</published>
-    <updated>2022-09-21T08:41:18.780Z</updated>
+    <updated>2022-09-28T10:10:53.985Z</updated>
     
     
       
@@ -457,52 +505,6 @@
     
     
     <category term="pytorch 教程" scheme="https://risingauroras.github.io/tags/pytorch-%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyTorch官方60分钟教程</title>
-    <link href="https://risingauroras.github.io/posts/0/"/>
-    <id>https://risingauroras.github.io/posts/0/</id>
-    <published>2022-08-13T11:01:47.000Z</published>
-    <updated>2022-08-13T12:16:00.035Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;PyTorch官方教程&quot;&gt;&lt;a href=&quot;#PyTorch官方教程&quot; class=&quot;headerlink&quot; title=&quot;PyTorch官方教程&quot;&gt;&lt;/a&gt;PyTorch官方教程&lt;/h3&gt;&lt;h4 id=&quot;Introduction&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="pytorch 教程" scheme="https://risingauroras.github.io/tags/pytorch-%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://risingauroras.github.io/posts/3eeb/"/>
-    <id>https://risingauroras.github.io/posts/3eeb/</id>
-    <published>2022-08-12T11:28:51.558Z</published>
-    <updated>2022-08-13T12:34:53.511Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

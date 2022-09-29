@@ -4,12 +4,56 @@
   
     
     <entry>
+      <title>线性代数</title>
+      <link href="/posts/6e55/"/>
+      <url>/posts/6e55/</url>
+      
+        <content type="html"><![CDATA[<h2 id="正定-x2F-负定、半正定-x2F-半负定"><a href="#正定-x2F-负定、半正定-x2F-半负定" class="headerlink" title="正定/负定、半正定/半负定"></a>正定/负定、半正定/半负定</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209291325923.png" alt="image-20220929132549827"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学基础 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>矩阵、向量的导数运算</title>
+      <link href="/posts/cbab/"/>
+      <url>/posts/cbab/</url>
+      
+        <content type="html"><![CDATA[<h2 id="向量对向量求导"><a href="#向量对向量求导" class="headerlink" title="向量对向量求导"></a>向量对向量求导</h2><p>本文转自<a href="https://www.zhihu.com/people/cui-dong-lin-29">Eastzero</a>，文章<a href="https://zhuanlan.zhihu.com/p/449988999">地址</a></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916392.png"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916002.png" alt="image-20220928191615942"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916089.png" alt="image-20220928191645023"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281917414.png" alt="image-20220928191723348"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281917823.png" alt="image-20220928191741772"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学基础 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常见分布的数学期望以及方差公式</title>
       <link href="/posts/d498/"/>
       <url>/posts/d498/</url>
       
         <content type="html"><![CDATA[<p>转载自<a href="https://blog.csdn.net/sodacoco">二喵君</a>，文章<a href="https://blog.csdn.net/sodacoco/article/details/89041910">地址</a></p><h2 id="一、通用公式【数学期望】"><a href="#一、通用公式【数学期望】" class="headerlink" title="一、通用公式【数学期望】"></a>一、通用公式【数学期望】</h2><h3 id="1》求解数学期望"><a href="#1》求解数学期望" class="headerlink" title="1》求解数学期望"></a>1》求解数学期望</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271911407.png" alt="image-20220927191116301"></p><h3 id="2》数学期望的性质"><a href="#2》数学期望的性质" class="headerlink" title="2》数学期望的性质"></a>2》数学期望的性质</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271911603.png" alt="image-20220927191145554"></p><h2 id="二、常用分布的期望与方差"><a href="#二、常用分布的期望与方差" class="headerlink" title="二、常用分布的期望与方差"></a>二、常用分布的期望与方差</h2><h3 id="1》精简版："><a href="#1》精简版：" class="headerlink" title="1》精简版："></a>1》精简版：</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271917879.png" alt="image-20220927191710841"></p><h3 id="2》叨叨版："><a href="#2》叨叨版：" class="headerlink" title="2》叨叨版："></a>2》叨叨版：</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271917942.png" alt="image-20220927191732888"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271936816.png" alt="image-20220927193635756"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271933878.png" alt="image-20220927193329830"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271936531.png" alt="image-20220927193655480"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271937538.png" alt="image-20220927193712485"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271937145.png" alt="image-20220927193741088"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271937838.png" alt="image-20220927193748789"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209271938096.png" alt="image-20220927193838044"></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 数学基础 </category>
+          
+      </categories>
       
       
     </entry>
