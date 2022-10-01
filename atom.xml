@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-09-29T05:25:56.523Z</updated>
+  <updated>2022-10-01T14:34:32.966Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习题目</title>
+    <link href="https://risingauroras.github.io/posts/53f5/"/>
+    <id>https://risingauroras.github.io/posts/53f5/</id>
+    <published>2022-10-01T14:22:47.000Z</published>
+    <updated>2022-10-01T14:34:32.966Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;机器学习&quot;&gt;&lt;a href=&quot;#机器学习&quot; class=&quot;headerlink&quot; title=&quot;机器学习&quot;&gt;&lt;/a&gt;机器学习&lt;/h2&gt;&lt;h3 id=&quot;简单线性回归&quot;&gt;&lt;a href=&quot;#简单线性回归&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>线性代数</title>
     <link href="https://risingauroras.github.io/posts/6e55/"/>
     <id>https://risingauroras.github.io/posts/6e55/</id>
     <published>2022-09-29T05:24:43.000Z</published>
-    <updated>2022-09-29T05:25:56.523Z</updated>
+    <updated>2022-09-29T05:26:40.166Z</updated>
     
     
       
@@ -44,7 +67,7 @@
     <link href="https://risingauroras.github.io/posts/cbab/"/>
     <id>https://risingauroras.github.io/posts/cbab/</id>
     <published>2022-09-28T11:14:47.000Z</published>
-    <updated>2022-09-28T11:55:55.532Z</updated>
+    <updated>2022-09-29T05:26:07.424Z</updated>
     
     
       
@@ -478,33 +501,6 @@
     
     <category term="实用" scheme="https://risingauroras.github.io/categories/%E5%AE%9E%E7%94%A8/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>b站土堆PyTorch深度学习快速入门教程</title>
-    <link href="https://risingauroras.github.io/posts/95a0/"/>
-    <id>https://risingauroras.github.io/posts/95a0/</id>
-    <published>2022-08-13T13:30:26.884Z</published>
-    <updated>2022-09-09T13:21:21.722Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/&quot;&gt;anaconda&lt;/a&gt; package工具包&lt;/p&gt;
-&lt;p&gt;Anaconda（&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="pytorch 教程" scheme="https://risingauroras.github.io/tags/pytorch-%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

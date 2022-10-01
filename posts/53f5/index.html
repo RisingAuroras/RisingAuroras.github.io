@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="线性代数, 马克图布">
+    <meta name="keywords" content="机器学习题目, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>线性代数 | 马克图布</title>
+    <title>机器学习题目 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">线性代数</h1>
+                    <h1 class="description center-align post-title">机器学习题目</h1>
                 </div>
             </div>
         </div>
@@ -378,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
-                                数学基础
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-29
+                    2022-10-01
                 </div>
                 
 
@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10
+                    169
                 </div>
                 
 
@@ -430,7 +430,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="正定-x2F-负定、半正定-x2F-半负定"><a href="#正定-x2F-负定、半正定-x2F-半负定" class="headerlink" title="正定/负定、半正定/半负定"></a>正定/负定、半正定/半负定</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209291325923.png" alt="image-20220929132549827"></p>
+                <h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><h3 id="简单线性回归"><a href="#简单线性回归" class="headerlink" title="简单线性回归"></a>简单线性回归</h3><h4 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210012225247.png" alt="image-20221001222532119"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210012225852.png" alt="image-20221001222552770"></p>
+<p>代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pandas<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'temperature_dataset.csv'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+iterations <span class="token operator">=</span> <span class="token number">20</span>
+lr <span class="token operator">=</span> <span class="token number">0.0001</span>
+m_train <span class="token operator">=</span> <span class="token number">3000</span>
+
+m_all <span class="token operator">=</span> np<span class="token punctuation">.</span>shape<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+d <span class="token operator">=</span> np<span class="token punctuation">.</span>shape<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span>
+m_test <span class="token operator">=</span> m_all <span class="token operator">-</span> m_train
+
+x_train <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>m_train<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>T
+x_test <span class="token operator">=</span> data<span class="token punctuation">[</span>m_train<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>T
+y_train <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>m_train<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+y_test <span class="token operator">=</span> data<span class="token punctuation">[</span>m_train<span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+w <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> <span class="token number">0</span>
+v <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m_train<span class="token punctuation">)</span><span class="token punctuation">)</span>
+costs_saved <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+total_loss <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>iterations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    y_hat <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>w<span class="token punctuation">.</span>T<span class="token punctuation">,</span>x_train<span class="token punctuation">)</span> <span class="token operator">+</span> b<span class="token operator">*</span>v
+    e <span class="token operator">=</span> y_hat <span class="token operator">-</span> y_train
+    b <span class="token operator">=</span> b <span class="token operator">-</span> <span class="token number">2.</span><span class="token operator">*</span>lr<span class="token operator">*</span>np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>v<span class="token punctuation">,</span>e<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token operator">/</span>m_train
+    w <span class="token operator">=</span> w <span class="token operator">-</span> <span class="token number">2.</span><span class="token operator">*</span>lr<span class="token operator">*</span>np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span>e<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token operator">/</span>m_train
+    total_loss<span class="token punctuation">.</span>append<span class="token punctuation">(</span>np<span class="token punctuation">.</span><span class="token builtin">abs</span><span class="token punctuation">(</span><span class="token punctuation">(</span>y_hat<span class="token operator">-</span>y_train<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    costs <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>e<span class="token punctuation">,</span>e<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token operator">/</span>m_train
+    costs_saved<span class="token punctuation">.</span>append<span class="token punctuation">(</span>costs<span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>total_loss<span class="token punctuation">)</span>
+<span class="token comment"># plt.plot(range(1,np.size(costs_saved)+1),costs_saved,'r-o',linewidth=2,markersize=5)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'costs'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'iterations'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -457,7 +495,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/6e55/">https://risingauroras.github.io/posts/6e55/</a>
+                    <a href="https://risingauroras.github.io/posts/53f5/">https://risingauroras.github.io/posts/53f5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -853,9 +891,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/53f5/">
                     <div class="card-image">
@@ -873,9 +912,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -888,6 +927,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -898,13 +938,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/cbab/">
+                <a href="/posts/6e55/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="矩阵、向量的导数运算">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="线性代数">
                         
-                        <span class="card-title">矩阵、向量的导数运算</span>
+                        <span class="card-title">线性代数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -915,7 +955,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-29
                             </span>
                         <span class="publish-author">
                             
