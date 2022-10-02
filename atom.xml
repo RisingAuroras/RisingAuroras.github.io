@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-10-01T14:34:32.966Z</updated>
+  <updated>2022-10-02T03:03:22.216Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>矩阵理论-1范数、2范数、无穷范数的通俗理解</title>
+    <link href="https://risingauroras.github.io/posts/9ac0/"/>
+    <id>https://risingauroras.github.io/posts/9ac0/</id>
+    <published>2022-10-02T02:56:19.000Z</published>
+    <updated>2022-10-02T03:03:22.216Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文转自&lt;a href=&quot;https://www.zhihu.com/people/tiaopig&quot;&gt;调皮连续波&lt;/a&gt;，文章&lt;a href=&quot;https://zhuanlan.zhihu.com/p/111762323&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>机器学习题目</title>
     <link href="https://risingauroras.github.io/posts/53f5/"/>
     <id>https://risingauroras.github.io/posts/53f5/</id>
     <published>2022-10-01T14:22:47.000Z</published>
-    <updated>2022-10-01T14:34:32.966Z</updated>
+    <updated>2022-10-01T14:55:34.640Z</updated>
     
     
       
@@ -44,7 +68,7 @@
     <link href="https://risingauroras.github.io/posts/6e55/"/>
     <id>https://risingauroras.github.io/posts/6e55/</id>
     <published>2022-09-29T05:24:43.000Z</published>
-    <updated>2022-09-29T05:26:40.166Z</updated>
+    <updated>2022-10-02T02:41:59.107Z</updated>
     
     
       
@@ -67,7 +91,7 @@
     <link href="https://risingauroras.github.io/posts/cbab/"/>
     <id>https://risingauroras.github.io/posts/cbab/</id>
     <published>2022-09-28T11:14:47.000Z</published>
-    <updated>2022-09-29T05:26:07.424Z</updated>
+    <updated>2022-10-02T03:09:20.878Z</updated>
     
     
       
@@ -114,7 +138,7 @@
     <link href="https://risingauroras.github.io/posts/67ff/"/>
     <id>https://risingauroras.github.io/posts/67ff/</id>
     <published>2022-09-21T03:51:01.000Z</published>
-    <updated>2022-09-28T10:10:53.985Z</updated>
+    <updated>2022-10-02T03:10:07.115Z</updated>
     
     
       
@@ -478,29 +502,6 @@
     
     
     <category term="gym" scheme="https://risingauroras.github.io/tags/gym/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>资源一览</title>
-    <link href="https://risingauroras.github.io/posts/29ff/"/>
-    <id>https://risingauroras.github.io/posts/29ff/</id>
-    <published>2022-08-14T07:51:43.000Z</published>
-    <updated>2022-09-11T04:06:16.057Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Github-Hexo-建立博客参考网址：&quot;&gt;&lt;a href=&quot;#Github-Hexo-建立博客参考网址：&quot; class=&quot;headerlink&quot; title=&quot;Github + Hexo 建立博客参考网址：&quot;&gt;&lt;/a&gt;Github + Hexo</summary>
-        
-      
-    
-    
-    
-    <category term="实用" scheme="https://risingauroras.github.io/categories/%E5%AE%9E%E7%94%A8/"/>
-    
     
   </entry>
   

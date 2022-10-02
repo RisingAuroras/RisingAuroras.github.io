@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>矩阵理论-1范数、2范数、无穷范数的通俗理解</title>
+      <link href="/posts/9ac0/"/>
+      <url>/posts/9ac0/</url>
+      
+        <content type="html"><![CDATA[<p>本文转自<a href="https://www.zhihu.com/people/tiaopig">调皮连续波</a>，文章<a href="https://zhuanlan.zhihu.com/p/111762323">地址</a></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h2><p>很多人学完了矩阵理论或者数值分析，脑海里还是蒙的，有些比较基础的东西至今还没有一个深刻的理解，就比如矩阵理论中1范数、2范数，以及无穷范数代表什么含义呢？</p><h2 id="范数的理解"><a href="#范数的理解" class="headerlink" title="范数的理解"></a><strong>范数的理解</strong></h2><p>我们来讲个故事，保证大家能够明白，这里主要是以向量范数为例。假设小花要选男朋友，她想在小强和小刚之间选。</p><p>第1种情况，小花的选择标准只有一个，即身高。</p><p>那么，小强的身高是1.7米，小刚的身高是1.8米，所以她会选小刚（这里假如女孩子喜欢高一点的男孩子）。</p><p>第2种情况，小花的择偶标准有两个，即身高和月收入。</p><p>假如小强的月收入为2万，小刚为1万。那么在小花的眼中，小强={1.7，2}，小刚={1.8，1}。</p><p>可是，这怎么比呢？</p><p>于是，小花想出了一个办法，更方便度量，就是综合收入和身高的平均值，她的办法是画出坐标系，看最终谁的点离原点点更远。</p><p>所以通过勾股定理，可以求得小强更远，所以她选择了小强。</p><p>换句话也就是说，范数可以等于点到坐标零点的距离。</p><p>是不是很清新，是不是很明了？</p><p>所以通俗的说，范数就是为了方便度量而定义出的一个概念，主要就是面对复杂空间和多维数组时，选取出一个统一的量化标准，以方便度量和比较。请务必记住，范数是人为定义的一种度量方法。</p><p>那么，如果一个向量里元素更多。例如，小花的择偶标准里再加上性格评分，以及身体素质评分，就变成了（1.7, 2.0, 4.0, 5.8 ）这样形式的向量，维度又增加了。</p><p>所以，我们还可以定义更多的统一度量标准。</p><h2 id="1范数、2范数、无穷范数（向量范数）"><a href="#1范数、2范数、无穷范数（向量范数）" class="headerlink" title="1范数、2范数、无穷范数（向量范数）"></a><strong>1范数、2范数、无穷范数（向量范数）</strong></h2><p>这三种不同的范数都是不同的度量方法。</p><p>（0范数，向量中非零元素的个数，这里不解释）</p><p><strong>1范数</strong>：所有元素绝对值的和。</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210021059605.png" alt="image-20221002105910548"></p><p><strong>2范数</strong>：所有元素平方和的开方。</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210021059835.png" alt="image-20221002105920787"></p><p><strong>无穷范数</strong>：所有元素中绝对值最大的。。<strong>负无穷范数</strong>：所有元素中绝对值最小的</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210021101431.png" alt="image-20221002110103388"></p><p>《武林外传》里一段台词用来解释这几个范数或许是最生动的了。</p><p>佟湘玉有一天在同福客栈说：“额滴神呐，展堂，你说隔壁的赛貂蝉有什么好。”</p><p>老白：“她没没你温柔，没你贤惠，没你大气，没你端庄。”</p><p>佟湘玉：“那为啥你们总往她那跑呢?”老白：“因为他的相貌是满分啊”。</p><p>看到没有？</p><p>如果用2范数来衡量赛貂蝉和佟湘玉，那么可以说佟湘玉并不占下风，但是压不住人家赛貂蝉有一个满分啊，也就是说，从无穷范数的角度来看，赛貂蝉的稳稳超过佟湘玉的。</p><p>再看一个辩题“当今社会更需要通才还是专才”。通才是1范数2范数比较大，而专才就是无穷范数比较大。</p><p>是不是一下子就整明白了，最后，记住，范数是比较向量/矩阵是否“优秀”的一种标准而已。为了加深印象大家还可以使用MATLAB去编程计算一下。</p><p>最后我们讲一下范数对于数学的意义，范数其实就是从数学本质上描述了“什么叫空间”，它不再是我们日常生活对话里的“空间”了。它从更深刻的角度来洞察我们这个世界，下次你一看到空间，你一给你家装修，搞空间艺术，你是不是马上就会想到，我们搞的是范数2空间。</p><p>我们可以想象一下会不会在那么一个平行宇宙，那里的人搞空间艺术，要考虑的却是范数3的空间呢？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学基础 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>机器学习题目</title>
       <link href="/posts/53f5/"/>
       <url>/posts/53f5/</url>
@@ -27,7 +46,7 @@
       <link href="/posts/6e55/"/>
       <url>/posts/6e55/</url>
       
-        <content type="html"><![CDATA[<h2 id="正定-x2F-负定、半正定-x2F-半负定"><a href="#正定-x2F-负定、半正定-x2F-半负定" class="headerlink" title="正定/负定、半正定/半负定"></a>正定/负定、半正定/半负定</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209291325923.png" alt="image-20220929132549827"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="正定-x2F-负定、半正定-x2F-半负定"><a href="#正定-x2F-负定、半正定-x2F-半负定" class="headerlink" title="正定/负定、半正定/半负定"></a>正定/负定、半正定/半负定</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209291325923.png" alt="image-20220929132549827"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210021008855.png" alt="image-20221002100833813"></p>]]></content>
       
       
       <categories>
@@ -46,7 +65,7 @@
       <link href="/posts/cbab/"/>
       <url>/posts/cbab/</url>
       
-        <content type="html"><![CDATA[<h2 id="向量对向量求导"><a href="#向量对向量求导" class="headerlink" title="向量对向量求导"></a>向量对向量求导</h2><p>本文转自<a href="https://www.zhihu.com/people/cui-dong-lin-29">Eastzero</a>，文章<a href="https://zhuanlan.zhihu.com/p/449988999">地址</a></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916392.png"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916002.png" alt="image-20220928191615942"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916089.png" alt="image-20220928191645023"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281917414.png" alt="image-20220928191723348"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281917823.png" alt="image-20220928191741772"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="向量对向量求导"><a href="#向量对向量求导" class="headerlink" title="向量对向量求导"></a>向量对向量求导</h2><p>本文转自<a href="https://www.zhihu.com/people/cui-dong-lin-29">Eastzero</a>，文章<a href="https://zhuanlan.zhihu.com/p/449988999">地址</a></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916392.png"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916002.png" alt="image-20220928191615942"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281916089.png" alt="image-20220928191645023"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281917414.png" alt="image-20220928191723348"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209281917823.png" alt="image-20220928191741772"></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210020953053.png" alt="image-20221002095315983"></p></li><li><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210020953250.png" alt="image-20221002095329214"></p></li><li><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210020955863.png" alt="image-20221002095544819"></p></li><li><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210020958354.png" alt="image-20221002095837303" style="zoom: 80%;"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210020959701.png" alt="image-20221002095908656" style="zoom:80%;"></li><li></li></ol>]]></content>
       
       
       <categories>
@@ -84,7 +103,7 @@
       <link href="/posts/67ff/"/>
       <url>/posts/67ff/</url>
       
-        <content type="html"><![CDATA[<p>本文转载自<a href="https://www.it610.com/article/1304682095108460544.htm"><strong>kyle1314608</strong></a></p><h2 id="累加符"><a href="#累加符" class="headerlink" title="累加符"></a>累加符</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211635398.png" alt="image-20220921163547310" style="zoom:67%;"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211636201.png" alt="image-20220921163655149" style="zoom:50%;"><h2 id="累乘"><a href="#累乘" class="headerlink" title="累乘"></a>累乘</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211639295.png" alt="image-20220921163951254" style="zoom:50%;">]]></content>
+        <content type="html"><![CDATA[<p>本文转载自<a href="https://www.it610.com/article/1304682095108460544.htm"><strong>kyle1314608</strong></a></p><h2 id="累加符"><a href="#累加符" class="headerlink" title="累加符"></a>累加符</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211635398.png" alt="image-20220921163547310" style="zoom:67%;"><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210021109542.png" alt="image-20221002110942491"></p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211636201.png" alt="image-20220921163655149" style="zoom:50%;"><h2 id="累乘"><a href="#累乘" class="headerlink" title="累乘"></a>累乘</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209211639295.png" alt="image-20220921163951254" style="zoom:50%;">]]></content>
       
       
       <categories>
