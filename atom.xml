@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-10-02T03:03:22.216Z</updated>
+  <updated>2022-10-05T14:39:53.173Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>深度学习</title>
+    <link href="https://risingauroras.github.io/posts/bd81/"/>
+    <id>https://risingauroras.github.io/posts/bd81/</id>
+    <published>2022-10-05T13:18:03.000Z</published>
+    <updated>2022-10-05T14:39:53.173Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一次卷积后特征图大小&quot;&gt;&lt;a href=&quot;#一次卷积后特征图大小&quot; class=&quot;headerlink&quot; title=&quot;一次卷积后特征图大小&quot;&gt;&lt;/a&gt;一次卷积后特征图大小&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>矩阵理论-1范数、2范数、无穷范数的通俗理解</title>
     <link href="https://risingauroras.github.io/posts/9ac0/"/>
     <id>https://risingauroras.github.io/posts/9ac0/</id>
     <published>2022-10-02T02:56:19.000Z</published>
-    <updated>2022-10-02T03:03:22.216Z</updated>
+    <updated>2022-10-02T10:48:25.519Z</updated>
     
     
       
@@ -45,7 +68,7 @@
     <link href="https://risingauroras.github.io/posts/53f5/"/>
     <id>https://risingauroras.github.io/posts/53f5/</id>
     <published>2022-10-01T14:22:47.000Z</published>
-    <updated>2022-10-01T14:55:34.640Z</updated>
+    <updated>2022-10-06T14:43:10.685Z</updated>
     
     
       
@@ -68,7 +91,7 @@
     <link href="https://risingauroras.github.io/posts/6e55/"/>
     <id>https://risingauroras.github.io/posts/6e55/</id>
     <published>2022-09-29T05:24:43.000Z</published>
-    <updated>2022-10-02T02:41:59.107Z</updated>
+    <updated>2022-10-05T15:08:09.014Z</updated>
     
     
       
@@ -475,33 +498,6 @@
     
     <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Gym入门使用教程</title>
-    <link href="https://risingauroras.github.io/posts/e28d/"/>
-    <id>https://risingauroras.github.io/posts/e28d/</id>
-    <published>2022-08-14T10:46:24.731Z</published>
-    <updated>2022-09-07T14:19:29.299Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Gym入门使用教程&quot;&gt;&lt;a href=&quot;#Gym入门使用教程&quot; class=&quot;headerlink&quot; title=&quot;Gym入门使用教程&quot;&gt;&lt;/a&gt;Gym入门使用教程&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;The Gym interface is simple,</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="gym" scheme="https://risingauroras.github.io/tags/gym/"/>
     
   </entry>
   
