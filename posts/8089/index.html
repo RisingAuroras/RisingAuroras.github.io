@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    12 分
                 </div>
                 
 
@@ -434,7 +434,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Python-amp-机器学习工具"><a href="#Python-amp-机器学习工具" class="headerlink" title="Python&amp;机器学习工具"></a>Python&amp;机器学习工具</h1><h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p><strong>axis</strong></p>
+                <h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p><strong>axis</strong></p>
 <p>“axis=0表示跨行，axis=1表示跨列，作为方法动作的副词”</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209061015661.png" alt="image-20220906101507580"></p>
 <p><strong>squeeze()函数</strong></p>
@@ -526,9 +526,53 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <p><strong>tile()</strong></p>
 <img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209091649941.png" alt="image-20220909164953161" style="zoom: 50%;">
 
+<p><strong>std()</strong></p>
+<p>计算标准差</p>
+<p>因此，想要正确调用，必须使ddof=1：</p>
+<p><code>ddof : int, optional </code><br>Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> ddof<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token number">1.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><strong>广播（broadcasting）</strong></p>
 <p>在Numpy中，如果参与运算的两个数组或者矩阵的形状不同，则解释器将双方的各个维数右对齐，并开始从右至左依次比较对应的两个维数是否相等。如果只存在<code>“相等“</code>、<code>”不相等但有一方为1“</code>，<code>”有一方没有对应的维数</code>“这三种情况，则进行广播，否则报错。</p>
 <p>例如，一方的维数为6x3x5,另一方的维数是3x1，则进行广播，运算的结果为一个6x3x5大小的数组。再例如，一方为行向量，维数为1xm，另一方为标量b，维数为1x1，则进行广播，广播的结果是将标量b拉伸为与前一方形状相同的1xm维行向量，其中的元素都是标量b的副本，然后再进行运算。</p>
+<p><strong>numpy.where–将条件逻辑表述为数组运算</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">result <span class="token operator">=</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>cond<span class="token punctuation">,</span> xarr<span class="token punctuation">,</span> yarr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>np.where的第二个和第三个参数不必是数组，它们都可以是标量值。在数据分析工作中，where通常用于根据另一个数组而产生一个新的数组。假设有一个由随机数据组成的矩阵，你希望将所有正值替换为2，将所有负值替换为－2。若利用np.where，则会非常简单：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">172</span><span class="token punctuation">]</span><span class="token punctuation">:</span> arr <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+In <span class="token punctuation">[</span><span class="token number">173</span><span class="token punctuation">]</span><span class="token punctuation">:</span> arr
+Out<span class="token punctuation">[</span><span class="token number">173</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.5031</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6223</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.9212</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.7262</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">0.2229</span><span class="token punctuation">,</span>  <span class="token number">0.0513</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.1577</span><span class="token punctuation">,</span>  <span class="token number">0.8167</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">0.4336</span><span class="token punctuation">,</span>  <span class="token number">1.0107</span><span class="token punctuation">,</span>  <span class="token number">1.8249</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.9975</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">0.8506</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1316</span><span class="token punctuation">,</span>  <span class="token number">0.9124</span><span class="token punctuation">,</span>  <span class="token number">0.1882</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+In <span class="token punctuation">[</span><span class="token number">174</span><span class="token punctuation">]</span><span class="token punctuation">:</span> arr <span class="token operator">&gt;</span> <span class="token number">0</span>
+Out<span class="token punctuation">[</span><span class="token number">174</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">bool</span><span class="token punctuation">)</span>
+
+In <span class="token punctuation">[</span><span class="token number">175</span><span class="token punctuation">]</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>arr <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">[</span><span class="token number">175</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用np.where，可以将标量和数组结合起来。例如，我可用常数2替换arr中所有正的值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">176</span><span class="token punctuation">]</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>arr <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span> <span class="token comment"># set only positive values to 2</span>
+Out<span class="token punctuation">[</span><span class="token number">176</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.5031</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6223</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.9212</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.7262</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.1577</span><span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.9975</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">2.</span>    <span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1316</span><span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p>绘制两条简单的曲线</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
