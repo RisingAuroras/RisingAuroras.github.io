@@ -498,7 +498,10 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
 
 <p><code>rand(d0,d1...dn) </code></p>
 <p>通过本函数可以返回一个或一组服从“0~1”均匀分布的随机样本值。随机样本取值范围是[0,1)，不包括1。  应用：在深度学习的Dropout正则化方法中，可以用于生成dropout随机向量（dl），例如（keep_prob表示保留神经元的比例）：</p>
-<p>==dl = np.random.rand(al.shape[0],al.shape[1]) &lt; keep_prob==</p>
+<p><label style="color:red">红色</label>字体</p>
+<blockquote>
+<p>dl = np.random.rand(al.shape[0],al.shape[1]) &lt; keep_prob</p>
+</blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>out:</p>
