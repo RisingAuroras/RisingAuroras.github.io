@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>机器学习笔记</title>
+      <link href="/posts/b739/"/>
+      <url>/posts/b739/</url>
+      
+        <content type="html"><![CDATA[<h2 id="逻辑回归交叉熵损失函数梯度推导过程"><a href="#逻辑回归交叉熵损失函数梯度推导过程" class="headerlink" title="逻辑回归交叉熵损失函数梯度推导过程"></a>逻辑回归交叉熵损失函数梯度推导过程</h2><p>见<a href="https://blog.csdn.net/Cjjkstra">Cjjkstra</a></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210110007801.png" alt="image-20221011000753692"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210110008616.png" alt="image-20221011000803552"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210110008880.png" alt="image-20221011000825818"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>概率论与数理统计</title>
+      <link href="/posts/1a70/"/>
+      <url>/posts/1a70/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h2><h3 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101953872.png" alt="image-20221010195355790"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102000946.png" alt="image-20221010200055899"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101958903.png" alt="image-20221010195854856"></p><h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102000652.png" alt="image-20221010200011572"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102001267.png" alt="image-20221010200120214"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102002452.png" alt="image-20221010200208397"></p><h2 id="特征函数"><a href="#特征函数" class="headerlink" title="特征函数"></a>特征函数</h2><p>（1）用来证明分布的可加性</p><p>（2）特征函数用来求k阶矩</p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101637324.png" alt="image-20221010163725268"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101639652.png" alt="image-20221010163950587"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101641947.png" alt="image-20221010164125881"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101641768.png" alt="image-20221010164150693"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101642270.png" alt="image-20221010164205204"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101642996.png" alt="image-20221010164230925"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101643438.png" alt="image-20221010164315377"></p><h2 id="常见分布"><a href="#常见分布" class="headerlink" title="常见分布"></a>常见分布</h2><h3 id="伽马-Gamma-分布"><a href="#伽马-Gamma-分布" class="headerlink" title="伽马(Gamma)分布"></a>伽马(Gamma)分布</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101632381.png" alt="image-20221010163255291"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101530751.png" alt="image-20221010153050660"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101532052.png" alt="image-20221010153217983"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101533436.png" alt="image-20221010153344363"></p><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101538883.png" alt="image-20221010153853820"></p><hr><p>参考：</p><p><a href="https://www.zhihu.com/people/liu-li-94-49">学弱猹</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学基础 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TED原声跟读笔记</title>
+      <link href="/posts/b7ac/"/>
+      <url>/posts/b7ac/</url>
+      
+        <content type="html"><![CDATA[<p>来自B站<a href="https://space.bilibili.com/1705931273">TED阅读笔记</a></p><h2 id="第103集-层次高的人，都懂得延迟满足"><a href="#第103集-层次高的人，都懂得延迟满足" class="headerlink" title="第103集 层次高的人，都懂得延迟满足"></a>第103集 层次高的人，都懂得延迟满足</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091706194.png" alt="image-20221009170601097" style="zoom: 67%;"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091706953.png" alt="image-20221009170625854" style="zoom: 67%;"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091708750.png" alt="image-20221009170815664" style="zoom: 67%;"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091709718.png" alt="image-20221009170901631" style="zoom: 67%;">]]></content>
+      
+      
+      <categories>
+          
+          <category> 英语 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类问题可以使用MSE作为损失函数吗</title>
       <link href="/posts/5e96/"/>
       <url>/posts/5e96/</url>

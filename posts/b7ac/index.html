@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类问题可以使用MSE作为损失函数吗, 马克图布">
+    <meta name="keywords" content="TED原声跟读笔记, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类问题可以使用MSE作为损失函数吗 | 马克图布</title>
+    <title>TED原声跟读笔记 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">分类问题可以使用MSE作为损失函数吗</h1>
+                    <h1 class="description center-align post-title">TED原声跟读笔记</h1>
                 </div>
             </div>
         </div>
@@ -378,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
+                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
+                                英语
                             </a>
                         
                     </div>
@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-08
+                    2022-10-09
                 </div>
                 
 
@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    803
+                    23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -430,22 +430,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013385018?type=blog">转自</a>，文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013385018/article/details/115355701">地址</a></p>
-<h2 id="一、从损失函数公式本身来说"><a href="#一、从损失函数公式本身来说" class="headerlink" title="一、从损失函数公式本身来说"></a>一、从损失函数公式本身来说</h2><h3 id="1-从损失函数公式的物理含义来说"><a href="#1-从损失函数公式的物理含义来说" class="headerlink" title="1. 从损失函数公式的物理含义来说"></a>1. 从损失函数公式的物理含义来说</h3><p>MSE衡量的是预测值和目标值的欧式距离。<br>而交叉熵是一个信息论的概念，交叉熵能够衡量同一个随机变量中的两个不同概率分布的差异程度，在机器学习中就表示为真实概率分布与预测概率分布之间的差异。交叉熵的值越小，模型预测效果就越好。<br>所以交叉熵本质上是概率问题，表征真实概率分布与预测概率分布差异，和几何上的欧氏距离无关，在回归中才有欧氏距离的说法，</p>
-<p>而在分类问题中label的值大小在欧氏空间中是没有意义的。所以分类问题不能用mse作为损失函数。	</p>
-<h3 id="2-强行使用的话，可能带来的后果"><a href="#2-强行使用的话，可能带来的后果" class="headerlink" title="2. 强行使用的话，可能带来的后果"></a>2. 强行使用的话，可能带来的后果</h3><p>MSE（均方误差）对于每一个输出的结果都非常看重(让正确分类变大的同时，也让错误分类变得平均)，而交叉熵只对正确分类的结果看重。<br>例如：在一个三分类模型中，模型的输出结果为（a,b,c)，而真实的输出结果为(1,0,0)，那么MSE与cross-entropy相对应的损失函数的值如下：<br>MSE：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210080015069.png" alt="image-20221008001501011"></p>
-<p>cross-entropy：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210080015301.png" alt="image-20221008001510256"></p>
-<p>从上述的公式可以看出，交叉熵的损失函数只和分类正确的预测结果有关系，而MSE的损失函数还和错误的分类有关系，该分类函数除了让正确的分类尽量变大，还会让错误的分类变得平均，但实际在分类问题中这个调整是没有必要的。但是对于回归问题来说，这样的考虑就显得很重要了。所以，回归问题熵使用交叉上并不合适。</p>
-<h2 id="二、从优化求解角度来说"><a href="#二、从优化求解角度来说" class="headerlink" title="二、从优化求解角度来说"></a>二、从优化求解角度来说</h2><h3 id="1-非凸有多个极值点，不合适做损失函数"><a href="#1-非凸有多个极值点，不合适做损失函数" class="headerlink" title="1. 非凸有多个极值点，不合适做损失函数"></a>1. 非凸有多个极值点，不合适做损失函数</h3><p>分类问题是逻辑回归，必须有激活函数这个非线性单元在，比如sigmoid（也可以是其他非线性激活函数），而如果还用mse做损失函数的话：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210080016894.png" alt="image-20221008001642841"></p>
-<p>mse已经是非凸函数了，有多个极值点，所以不适用做损失函数了。</p>
-<h3 id="2-求解过程中可能梯度消失-不是主要原因"><a href="#2-求解过程中可能梯度消失-不是主要原因" class="headerlink" title="2.求解过程中可能梯度消失(不是主要原因)"></a>2.求解过程中可能梯度消失(不是主要原因)</h3><p>mse作为损失函数，求导的时候都会有对激活函数的求导连乘运算，对于sigmoid、tanh，有很大区域导数为0的。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210080017097.png" alt="image-20221008001720027"></p>
-<p>该激活函数的输入很可能直接就在平坦区域，那么导数就几乎是0，梯度就几乎不会被反向传递，梯度直接消失了。所以mse做损失函数的时候最后一层不能用sigmoid做激活函数，其他层可以用sigmoid做激活函数。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210080017116.png" alt="image-20221008001733060"></p>
-<p>当然，用其他损失函数只能保证在第一步不会直接死掉，反向传播如果激活函数和归一化做得不好，同样会梯度消失。所以从梯度这个原因说mse不好不是很正确。</p>
+                <p>来自B站<a target="_blank" rel="noopener" href="https://space.bilibili.com/1705931273">TED阅读笔记</a></p>
+<h2 id="第103集-层次高的人，都懂得延迟满足"><a href="#第103集-层次高的人，都懂得延迟满足" class="headerlink" title="第103集 层次高的人，都懂得延迟满足"></a>第103集 层次高的人，都懂得延迟满足</h2><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091706194.png" alt="image-20221009170601097" style="zoom: 67%;">
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091706953.png" alt="image-20221009170625854" style="zoom: 67%;">
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091708750.png" alt="image-20221009170815664" style="zoom: 67%;">
+
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210091709718.png" alt="image-20221009170901631" style="zoom: 67%;">
 
                 
             </div>
@@ -472,7 +464,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/5e96/">https://risingauroras.github.io/posts/5e96/</a>
+                    <a href="https://risingauroras.github.io/posts/b7ac/">https://risingauroras.github.io/posts/b7ac/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -872,13 +864,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/b7ac/">
+                <a href="/posts/1a70/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="TED原声跟读笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="概率论与数理统计">
                         
-                        <span class="card-title">TED原声跟读笔记</span>
+                        <span class="card-title">概率论与数理统计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -889,14 +881,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
-                                    英语
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    数学基础
                                 </a>
                             
                             
@@ -913,13 +905,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/bd81/">
+                <a href="/posts/5e96/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="深度学习">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="分类问题可以使用MSE作为损失函数吗">
                         
-                        <span class="card-title">深度学习</span>
+                        <span class="card-title">分类问题可以使用MSE作为损失函数吗</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -930,7 +922,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-08
                             </span>
                         <span class="publish-author">
                             

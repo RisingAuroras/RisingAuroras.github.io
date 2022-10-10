@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-10-07T16:18:34.682Z</updated>
+  <updated>2022-10-10T16:09:00.550Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,81 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习笔记</title>
+    <link href="https://risingauroras.github.io/posts/b739/"/>
+    <id>https://risingauroras.github.io/posts/b739/</id>
+    <published>2022-10-10T16:06:34.000Z</published>
+    <updated>2022-10-10T16:09:00.550Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;逻辑回归交叉熵损失函数梯度推导过程&quot;&gt;&lt;a href=&quot;#逻辑回归交叉熵损失函数梯度推导过程&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归交叉熵损失函数梯度推导过程&quot;&gt;&lt;/a&gt;逻辑回归交叉熵损失函数梯度推导过程&lt;/h2&gt;&lt;p&gt;见&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>概率论与数理统计</title>
+    <link href="https://risingauroras.github.io/posts/1a70/"/>
+    <id>https://risingauroras.github.io/posts/1a70/</id>
+    <published>2022-10-10T07:27:22.000Z</published>
+    <updated>2022-10-10T13:51:02.589Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数字特征&quot;&gt;&lt;a href=&quot;#数字特征&quot; class=&quot;headerlink&quot; title=&quot;数字特征&quot;&gt;&lt;/a&gt;数字特征&lt;/h2&gt;&lt;h3 id=&quot;数学期望&quot;&gt;&lt;a href=&quot;#数学期望&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TED原声跟读笔记</title>
+    <link href="https://risingauroras.github.io/posts/b7ac/"/>
+    <id>https://risingauroras.github.io/posts/b7ac/</id>
+    <published>2022-10-09T09:03:25.000Z</published>
+    <updated>2022-10-09T09:09:36.390Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;来自B站&lt;a href=&quot;https://space.bilibili.com/1705931273&quot;&gt;TED阅读笔记&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第103集-层次高的人，都懂得延迟满足&quot;&gt;&lt;a href=&quot;#第103集-层次高的人，都懂得延迟满足&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="英语" scheme="https://risingauroras.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>分类问题可以使用MSE作为损失函数吗</title>
     <link href="https://risingauroras.github.io/posts/5e96/"/>
     <id>https://risingauroras.github.io/posts/5e96/</id>
     <published>2022-10-07T16:09:48.000Z</published>
-    <updated>2022-10-07T16:18:34.682Z</updated>
+    <updated>2022-10-07T16:22:40.280Z</updated>
     
     
       
@@ -423,79 +493,6 @@
     
     
     <category term="python" scheme="https://risingauroras.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>android知识杂记</title>
-    <link href="https://risingauroras.github.io/posts/3d59/"/>
-    <id>https://risingauroras.github.io/posts/3d59/</id>
-    <published>2022-08-15T13:56:29.000Z</published>
-    <updated>2022-08-15T14:19:03.821Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Android-命名规范&quot;&gt;&lt;a href=&quot;#Android-命名规范&quot; class=&quot;headerlink&quot; title=&quot;Android 命名规范&quot;&gt;&lt;/a&gt;Android</summary>
-        
-      
-    
-    
-    
-    <category term="android" scheme="https://risingauroras.github.io/categories/android/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>重新梳理Android权限管理</title>
-    <link href="https://risingauroras.github.io/posts/8462/"/>
-    <id>https://risingauroras.github.io/posts/8462/</id>
-    <published>2022-08-14T12:03:58.328Z</published>
-    <updated>2022-08-14T12:08:16.505Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;重新梳理Android权限管理&quot;&gt;&lt;a href=&quot;#重新梳理Android权限管理&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="android" scheme="https://risingauroras.github.io/categories/android/"/>
-    
-    
-    <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的云音乐APP开发课程笔记</title>
-    <link href="https://risingauroras.github.io/posts/6f25/"/>
-    <id>https://risingauroras.github.io/posts/6f25/</id>
-    <published>2022-08-14T11:13:56.723Z</published>
-    <updated>2022-08-14T11:18:55.037Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;我的云音乐APP开发课程笔记&quot;&gt;&lt;a href=&quot;#我的云音乐APP开发课程笔记&quot; class=&quot;headerlink&quot; title=&quot;我的云音乐APP开发课程笔记&quot;&gt;&lt;/a&gt;我的云音乐APP开发课程笔记&lt;/h3&gt;&lt;h4 id=&quot;项目基本流程&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="android" scheme="https://risingauroras.github.io/categories/android/"/>
-    
-    
-    <category term="音乐app" scheme="https://risingauroras.github.io/tags/%E9%9F%B3%E4%B9%90app/"/>
     
   </entry>
   
