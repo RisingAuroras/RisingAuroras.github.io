@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-10-23T16:23:43.743Z</updated>
+  <updated>2022-10-29T14:04:29.108Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://risingauroras.github.io/posts/935d/"/>
     <id>https://risingauroras.github.io/posts/935d/</id>
     <published>2022-10-23T14:18:15.455Z</published>
-    <updated>2022-10-23T16:23:43.743Z</updated>
+    <updated>2022-10-29T14:04:29.108Z</updated>
     
     
       
@@ -34,6 +34,8 @@
       
     
     
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
