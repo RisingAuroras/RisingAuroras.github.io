@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-10-10T16:30:57.070Z</updated>
+  <updated>2022-10-23T16:23:43.743Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常见不等式、等式与基础理论</title>
+    <link href="https://risingauroras.github.io/posts/935d/"/>
+    <id>https://risingauroras.github.io/posts/935d/</id>
+    <published>2022-10-23T14:18:15.455Z</published>
+    <updated>2022-10-23T16:23:43.743Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;常见不等式放缩&quot;&gt;&lt;a href=&quot;#常见不等式放缩&quot; class=&quot;headerlink&quot; title=&quot;常见不等式放缩&quot;&gt;&lt;/a&gt;常见不等式放缩&lt;/h2&gt;&lt;p&gt;  一：  一些重要恒等式 &lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>机器学习笔记</title>
     <link href="https://risingauroras.github.io/posts/b739/"/>
     <id>https://risingauroras.github.io/posts/b739/</id>
     <published>2022-10-10T16:06:34.000Z</published>
-    <updated>2022-10-10T16:30:57.070Z</updated>
+    <updated>2022-10-29T11:38:48.578Z</updated>
     
     
       
@@ -184,7 +206,7 @@
     <link href="https://risingauroras.github.io/posts/6e55/"/>
     <id>https://risingauroras.github.io/posts/6e55/</id>
     <published>2022-09-29T05:24:43.000Z</published>
-    <updated>2022-10-05T15:08:09.014Z</updated>
+    <updated>2022-10-29T13:05:40.640Z</updated>
     
     
       
@@ -467,32 +489,6 @@
     
     
     <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python标准库之argparse</title>
-    <link href="https://risingauroras.github.io/posts/68cb/"/>
-    <id>https://risingauroras.github.io/posts/68cb/</id>
-    <published>2022-09-02T09:12:29.000Z</published>
-    <updated>2022-09-02T09:50:17.477Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://docs.python.org/zh-cn/3/howto/argparse.html&quot;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;位置参数介绍¶&quot;&gt;&lt;a href=&quot;#位置参数介绍¶&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="python" scheme="https://risingauroras.github.io/tags/python/"/>
     
   </entry>
   
