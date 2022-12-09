@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    336
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -434,7 +434,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h2><h3 id="Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="Playing Atari with Deep Reinforcement Learning"></a><em>Playing Atari with Deep Reinforcement Learning</em></h3><p><strong>Abstract</strong></p>
+                <h2 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h2><h3 id="Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="Playing Atari with Deep Reinforcement Learning"></a><em>Playing Atari with Deep Reinforcement Learning</em></h3><p>tag:dqn</p>
+<p><strong>Abstract</strong></p>
 <p>用dqn训练Arcade 2600种游戏，在其中6个游戏中超越之前所有的算法，在其中三个游戏中超过人类专家。</p>
 <p><strong>Introduction</strong></p>
 <p>网络结构，卷积神经网络提取原始像素特征</p>
@@ -454,7 +455,50 @@
 <p>(2打断了数据之间的关联性，减小方差，获得更好的训练效果</p>
 <p>(3)第三，在学习策略时，当前参数决定了训练参数的下一个数据样本。 例如，如果最大化动作是向左移动，那么训练样本将由左侧的样本支配,如果最大化动作然后切换到右侧，那么训练分布也将切换。</p>
 <p><strong>Preprocessing and Model Architecture</strong></p>
-<h3 id="基于深度强化学习的组合优化研究进展"><a href="#基于深度强化学习的组合优化研究进展" class="headerlink" title="基于深度强化学习的组合优化研究进展"></a>基于深度强化学习的组合优化研究进展</h3>
+<h3 id="CONTINUOUS-CONTROL-WITH-DEEP-REINFORCEMENT-LEARNING"><a href="#CONTINUOUS-CONTROL-WITH-DEEP-REINFORCEMENT-LEARNING" class="headerlink" title="CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING"></a>CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING</h3><p>tag:  <code> ddpg，model-free, off-policy，actor-critic</code></p>
+<h4 id="1-INTRODUCTION"><a href="#1-INTRODUCTION" class="headerlink" title="1 INTRODUCTION"></a><strong>1 INTRODUCTION</strong></h4><p>DQN的出现时强化学习领域一个大的进展，它用深度神经网络来近似最优价值动作函数，通过动作价值函数来寻找价值最大的动作，但是它的缺点是不适合应用在连续控制上，尽管可以通过将动作离散化，但是也会面临高维灾难：即动作的数量会随着自由度的增加呈现指数型增长。</p>
+<p>这篇论文是基于 deterministic policy gradient (DPG) algorithm，DPG中对于具有挑战性的问题，这种带有神经函数近似器的actor-critic朴素应用是不稳定的。本文将actor-critic算法与DQN中的一些方法结合起来使用，</p>
+<p>dqn能够stable and robust（稳定和鲁棒）的训练价值网络，归因于两个创新：</p>
+<p>1.经验回放。建立一个缓冲区：replay buffer ，从replay buffer中采样用off-policy方式训练网络会减小样本间的相关性</p>
+<p>2.为了缓解高估问题（TD算法中），在用TD算法训练网络不是用Q Network，而是用一个target Q network来训练。</p>
+<p>本文同样使用了Batch Normalization	</p>
+<h4 id="2-BACKGROUND"><a href="#2-BACKGROUND" class="headerlink" title="2 BACKGROUND"></a><strong>2 BACKGROUND</strong></h4><p>$J=\mathbb{E}_{r_i, s_i \sim E, a_i \sim \pi}\left[R_1\right]$</p>
+<p>$R_t=\sum_{i=t}^T \gamma^{(i-t)} r\left(s_i, a_i\right)$</p>
+<p>$Q^\pi\left(s_t, a_t\right)=\mathbb{E}<em>{r</em>{i \geq t}, s_{i&gt;t} \sim E, a_{i&gt;t} \sim \pi}\left[R_t \mid s_t, a_t\right]$</p>
+<p>$\left(s_t, a_t, r_t, s_{t+1}\right)$</p>
+<p>序列:At each timestep t the agent receives an observation xt, takes an action at and receives a scalar reward rt.</p>
+<p>Here, we assumed the environment is fully-observed so st = xt.</p>
+<p>An agent’s behavior is defined by a policy, π, which maps states to a probability distribution over the actions π : S → P(A).We model it as a ==Markov decision process（MDP）== with a state space S, action space A = $ \mathbb{R}^N$, an initial state distribution p(s1), transition dynamics p(st+1|st,at), and reward function r(st, at).</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212072147716.png" alt="image-20221207214740667"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212072151123.png" alt="image-20221207215157080"></p>
+<p>Bellman equation:</p>
+<p>$Q^\pi\left(s_t, a_t\right)=\mathbb{E}<em>{r_t, s</em>{t+1} \sim E}\left[r\left(s_t, a_t\right)+\gamma \mathbb{E}<em>{a</em>{t+1} \sim \pi}\left[Q^\pi\left(s_{t+1}, a_{t+1}\right)\right]\right]$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212072202325.png" alt="image-20221207220245275"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212072252446.png" alt="image-20221207225239409"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212072300945.png" alt="image-20221207230017892"></p>
+<h4 id="3-ALGORITHM"><a href="#3-ALGORITHM" class="headerlink" title="3 ALGORITHM"></a><strong>3 ALGORITHM</strong></h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212072332222.png" alt="image-20221207233245160"></p>
+<p>遇到挑战：</p>
+<p>1.假设 独立同分布。when using neural networks for reinforcement learning is that most optimization algorithms assume that the samples are independently and identically distributed。Obviously, when the samples are generated from exploring sequentially in an environment this assumption no longer holds（显然，当样本是在一个环境中连续探索产生的时，这个假设就不再成立了）</p>
+<p>Additionally, to make efficient use of hardware optimizations, it is essential to learn in mini-<br>batches, rather than online.</p>
+<p>解决方法：经验回放。设置一个replay buffer（replay buffer是一个容量为$R$的高速缓存）。 根据探索策略从环境中采样转换，并将元组$\left(s_t, a_t, r_t, s_{t+1}\right)$存储在replay buffer 中。当buffer容量满时，就丢弃最	旧的样本，At each timestep the actor and critic are updated by sampling a minibatch ==uniformly==from the buffer.</p>
+<p>Because DDPG is an off-policy algorithm, the replay buffer can be large, allowing the algorithm to benefit from learning across a set of uncorrelated transitions.<strong>（？）</strong></p>
+<p>2.高估问题。用神经网络直接实现Q学习（方程4）在许多环境中被证明是不稳定的。使用target network，不过改进是用soft target network。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212081113762.png" alt="image-20221208111329689"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212081113692.png" alt="image-20221208111342650"></p>
+<p>$\theta^{\prime} \leftarrow \tau \theta+(1-\tau)\theta^{\prime}$</p>
+<p>采用部分更新和软更新的方式能大大提高训练稳定性，但是也会因此产生训练缓慢的问题，不过在实际中训练的稳定性的重要性可以忽略掉这一点。</p>
+<p>3.不同特征含义有不同的含义，变化范围不一样，很难找到一个泛化的超参数。解决方法，BN。将每个维度分别就行归一化，用均值和方差。在测试的时候，是维护一个均值和方差的平均。</p>
+<p>4.A major challenge of learning in continuous action spaces is <code>exploration</code>.An advantage of <code>off- policies</code> algorithms such as DDPG is that we can treat the problem of exploration <code>independently</code><br>from the learning algorithm.</p>
+<p>We constructed an exploration policy µ by adding noise sampled from a noise process N to our actor policy $\mu^{\prime}\left(s_t\right)=\mu\left(s_t \mid \theta_t^\mu\right)+\mathcal{N}$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212081527001.png" alt="image-20221208152734908"></p>
+<h4 id="4-RESULTS"><a href="#4-RESULTS" class="headerlink" title="4 RESULTS"></a>4 RESULTS</h4><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212081531924.png" alt="image-20221208153123842"></p>
+<p>BN（浅灰色）的原始DPG算法（Minibatch NFQCA）</p>
+<p>带target network（深灰色）的原始DPG算法</p>
+<p>以target network和BN（绿色）、</p>
+<p>target network仅像素输入（蓝色）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212081654036.png" alt="image-20221208165445923"></p>
+<h4 id="6-CONCLUSION"><a href="#6-CONCLUSION" class="headerlink" title="6 CONCLUSION"></a>6 CONCLUSION</h4><p>The work combines insights from recent advances in deep learning and reinforcement learning, resulting in an algorithm that robustly solves challenging problems across a variety of domains with continuous action spaces, even when using raw pixels for observations</p>
+
                 
             </div>
             <hr/>

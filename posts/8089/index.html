@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
 
@@ -524,6 +524,48 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
 <li>参数：low为最小值，high为最大值，size为数组维度大小，dtype为数据类型，默认的数据类型是np.int</li>
 <li>high没有填写时，默认生成随机数的范围是[0，low)</li>
 </ul>
+<p><code>np.random.normal(mu, sigma, size)</code></p>
+<p>随机生成服从正太分布的随机数。</p>
+<p>$\mu$为均值</p>
+<p>$\sigma$为标准差</p>
+<p>$size$: int or tuple of ints, optional。输出形状。如果给定的形状是，例如，(m, n, k)，那么将绘制m x n x k的样本。默认为无，在这种情况下，将返回一个单一的值。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># coding=utf-8</span>
+<span class="token triple-quoted-string string">'''
+作者：采石工
+来源：知乎
+'''</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> numpy<span class="token punctuation">.</span>linalg <span class="token keyword">import</span> cholesky
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+sampleNo <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+<span class="token comment"># 一维正态分布</span>
+<span class="token comment"># 下面三种方式是等效的</span>
+mu <span class="token operator">=</span> <span class="token number">3</span>
+sigma <span class="token operator">=</span> <span class="token number">0.1</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+s <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>mu<span class="token punctuation">,</span> sigma<span class="token punctuation">,</span> sampleNo <span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">141</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> normed<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+s <span class="token operator">=</span> sigma <span class="token operator">*</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>sampleNo <span class="token punctuation">)</span> <span class="token operator">+</span> mu
+plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">142</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> normed<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+s <span class="token operator">=</span> sigma <span class="token operator">*</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>standard_normal<span class="token punctuation">(</span>sampleNo <span class="token punctuation">)</span> <span class="token operator">+</span> mu
+plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">143</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> normed<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment"># 二维正态分布</span>
+mu <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+Sigma <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+R <span class="token operator">=</span> cholesky<span class="token punctuation">(</span>Sigma<span class="token punctuation">)</span>
+s <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>sampleNo<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> R<span class="token punctuation">)</span> <span class="token operator">+</span> mu
+plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">144</span><span class="token punctuation">)</span>
+<span class="token comment"># 注意绘制的是散点图，而不是直方图</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'+'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>choice(a, size=None, replace=True, p=None)</code></p>
 <ul>
 <li>从给定的一位数组中生成一个随机样本</li>
