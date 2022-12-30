@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    12 分
                 </div>
                 
 
@@ -434,7 +434,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h2><h3 id="Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="Playing Atari with Deep Reinforcement Learning"></a><em>Playing Atari with Deep Reinforcement Learning</em></h3><p>tag:dqn</p>
+                <h2 id="如何读论文？"><a href="#如何读论文？" class="headerlink" title="如何读论文？"></a>如何读论文？</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1H44y1t75x/?spm_id_from=333.788&amp;vd_source=2ffed29a08d7c0e5407d996c2c4915a8">视频链接</a></p>
+<p>绝大部分文章结构</p>
+<p>1.title -&gt; 2.abstract -&gt; 3.introduction -&gt; 4.method -&gt; 5. experiment -&gt; 6.conclusion</p>
+<p>读论文是要快速找到适合自己的文章，然后进行精读</p>
+<p>方法：怎么样花三遍读一篇论文。</p>
+<p>第一遍：（海选）</p>
+<p>需要关注论文的标题和摘要，读完摘要之后直接跳到论文结论部分。也可以看一下文章中的图和表，知道论文的工作是在做什么，方法看上去怎么样，结果怎么样。整个过程大概十几分钟的时间，看适不适合自己，决定是不是要继续往下读。</p>
+<p>第二遍：（精选）</p>
+<p>对整个文章过一遍，知道文章具体在做什么东西，不用太过关注文章的细节，比如公式证明什么的，可以先忽略掉。但是对于每一张图和表，它的每一个字你都要知道他是在做什么，它的x轴，y轴你都要知道是什么意思；明白作者提出的方法和别人的方法是怎么对比的，之间的差距有多大。对于一些引用的重要文献可以圈出来（比如是在哪篇论文的基础上）。决定要不要继续往下精读，如果你感觉文章太难，可以去读一下这边论文引用的一些文章。如果是不需要了解那么深，不需要完全搞懂论文，可以不读第三遍。</p>
+<p>第三遍：（精读）</p>
+<p>这一遍要知道每一句话在说什么，每一段在说什么。多思考，多脑补。</p>
+<h2 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h2><h3 id="Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="Playing Atari with Deep Reinforcement Learning"></a><em>Playing Atari with Deep Reinforcement Learning</em></h3><p><code>tag:dqn</code></p>
 <p><strong>Abstract</strong></p>
 <p>用dqn训练Arcade 2600种游戏，在其中6个游戏中超越之前所有的算法，在其中三个游戏中超过人类专家。</p>
 <p><strong>Introduction</strong></p>
@@ -498,7 +509,40 @@
 <p>target network仅像素输入（蓝色）</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212081654036.png" alt="image-20221208165445923"></p>
 <h4 id="6-CONCLUSION"><a href="#6-CONCLUSION" class="headerlink" title="6 CONCLUSION"></a>6 CONCLUSION</h4><p>The work combines insights from recent advances in deep learning and reinforcement learning, resulting in an algorithm that robustly solves challenging problems across a variety of domains with continuous action spaces, even when using raw pixels for observations</p>
-
+<h3 id="Cross-Domain-Adaptive-Transfer-Reinforcement-Learning-Based-on-State-Action-Correspondence"><a href="#Cross-Domain-Adaptive-Transfer-Reinforcement-Learning-Based-on-State-Action-Correspondence" class="headerlink" title="Cross-Domain Adaptive Transfer Reinforcement Learning Based on State-Action Correspondence"></a>Cross-Domain Adaptive Transfer Reinforcement Learning Based on State-Action Correspondence</h3><p>tag:<code>transfer RL</code></p>
+<h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>以往的工作大多考虑具有相同状态-动作空间的任务之间的TL，而在具有不同状态-动作空间的领域之间的迁移则相对较少。此外，这种现有的跨域传输方法只允许从单个源策略进行传输，留下了如何从多个源策略进行最佳传输的重要问题。本文提出了一种新的框架<code>Cross-domain Adaptive Transfer (CAT)</code>来加速DRL。CAT学习每个源任务到目标任务的状态-动作对应关系，并自适应地将多个源任务策略的知识转移到目标策略。实验结果表明，在多个连续动作控制任务上，CAT算法能显著地加快学习速度，优于其他跨域迁移算法。项目的代码发布在<a target="_blank" rel="noopener" href="https://github.com/tju-drl-lab/transfer-andmulti-task-restruction-learning%E7%9A%84%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2%E4%B8%8B%E3%80%82">https://github.com/tju-drl-lab/transfer-andmulti-task-restruction-learning的项目页面下。</a></p>
+<h4 id="1-INTRODUCTION-1"><a href="#1-INTRODUCTION-1" class="headerlink" title="1 INTRODUCTION"></a>1 INTRODUCTION</h4><p>尽管DRL在很多领域都获得了成功，但是仍然面临着采样效率低下的问题，需要与环境进行大量交互。迁移学习(TL)作为一种利用先验知识加速学习过程的技术，已成为显著降低样本复杂度的研究方向之一。</p>
+<p>RL中迁移的一个主要分支侧重于利用来自预先训练的源任务策略的外部知识，我们称之为策略转移（policy transfer）。这些方法要么通过模仿学习从源策略中提取知识，或者基于对目标环境的源策略的评估重用源策略进行探索。然而，所有这些方法都需要相同的假设，即源任务与目标任务共享相同的状态-动作空间，以便可以直接模仿或重用源策略。</p>
+<p>训练state encoder</p>
+<p>本文解决了学习从具有不同状态-动作空间的多个任务转移的更困难的情况。</p>
+<p>我们提出了一种新的跨域自适应传输框架(CAT)，它可以自适应地传输具有不同状态-动作空间的多个源策略</p>
+<p>与以往的工作不同，我们不需要配对数据来学习状态-动作对应关系，也不需要学习训练不足的状态对应关系，相反，CAT通过使用源策略轨迹的状态编码器、动作编码器和反向状态编码器来学习从每个源域到目标域的状态-动作对应关系。由于无法访问源环境以获取更多信息，因此我们不需要反向操作编码器来获取源环境上的操作。此外，CAT评估目标任务上的每个源策略，并了解每个源策略对目标策略的帮助程度，然后使用性能作为度量来确定何时以及哪些源策略应该被转移</p>
+<p>主要贡献：</p>
+<ul>
+<li>本文提出的转移框架CAT由Agent模块、自适应模块和修正模块三个主要部分组成，以解决具有不同状态-动作空间的多源策略的自适应知识转移问题。</li>
+<li>CAT使用修正模块和代理模块学习更充分训练的状态嵌入和动作嵌入，作为后续传输过程的基础。</li>
+<li>CAT使用自适应模块生成的自适应加权因子将来自源策略网络的知识与目标策略网络相结合。</li>
+<li>CAT算法与已有的DRL算法很容易结合，实验结果表明，在不同状态-动作空间的连续控制任务中，CAT算法有效地加速了RL算法，并优于其他相关的转移算法。</li>
+</ul>
+<h4 id="2-BACKGROUND-1"><a href="#2-BACKGROUND-1" class="headerlink" title="2 BACKGROUND"></a>2 BACKGROUND</h4><p>策略梯度(PG)算法。 策略梯度法被广泛应用于直接优化以θ为参数的策略π。 近程政策优化(PPO，Schulman et al.[2017])是目前最高效的PG方法之一。</p>
+<p>同域迁移学习问题，</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212241343202.png" alt="image-20221224134341111"></p>
+<p>跨域迁移学习</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212241344801.png" alt="image-20221224134432769"></p>
+<p>这篇论文考虑了多个源任务与一个目标任务之间的跨域转移问题。</p>
+<p>我们通常假设MDP之间有一些高层次的共性（例如，四足、六足和八足机器人可能有质量相似的步态）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212241348866.png" alt="image-20221224134846837"></p>
+<h4 id="3-METHODOLOGY"><a href="#3-METHODOLOGY" class="headerlink" title="3 METHODOLOGY"></a>3 METHODOLOGY</h4><p>在本节中，我们首先介绍我们的整个框架和每个组件。 然后，我们描述了如何学习状态和动作嵌入，以及如何自适应地将多个跨域源策略转移到目标任务。 最后，我们详细描述了CAT与一种特定的DRL算法PPO[Schulman et al.，2017]的结合</p>
+<p><strong>3.1 FRAMEWORK OVERVIEW</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212241542598.png" alt="image-20221224154210522"></p>
+<p>Correction Module</p>
+<p>The goal of the correction module is to learn embeddings to distill knowledge<br>from multiple source policies into the target task.</p>
+<p>Self-Adaptation Module</p>
+<p><strong>3.2 LEARNING STATE-ACTION CORRESPONDENCE</strong></p>
+<p><strong>3.3 ADAPTIVE POLICY TRANSFER</strong></p>
+<p><strong>3.4 CAT-PPO</strong></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212291200593.png" alt="image-20221229120025531"></p>
+<h4 id="4-EXPERIMENTS"><a href="#4-EXPERIMENTS" class="headerlink" title="4 EXPERIMENTS"></a>4 EXPERIMENTS</h4>
                 
             </div>
             <hr/>

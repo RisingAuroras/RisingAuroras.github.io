@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2022-11-02T05:23:17.845Z</updated>
+  <updated>2022-12-26T15:03:53.167Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论文中的数学概念</title>
+    <link href="https://risingauroras.github.io/posts/bf25/"/>
+    <id>https://risingauroras.github.io/posts/bf25/</id>
+    <published>2022-12-26T04:38:51.000Z</published>
+    <updated>2022-12-26T15:03:53.167Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;名词&quot;&gt;&lt;a href=&quot;#名词&quot; class=&quot;headerlink&quot; title=&quot;名词&quot;&gt;&lt;/a&gt;名词&lt;/h2&gt;&lt;h3 id=&quot;欧式空间与黎曼空间&quot;&gt;&lt;a href=&quot;#欧式空间与黎曼空间&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>多分类：从逻辑回归到Softmax回归</title>
@@ -390,14 +413,14 @@
     <link href="https://risingauroras.github.io/posts/e9ae/"/>
     <id>https://risingauroras.github.io/posts/e9ae/</id>
     <published>2022-09-12T10:35:50.000Z</published>
-    <updated>2022-12-08T16:03:00.134Z</updated>
+    <updated>2022-12-29T08:29:46.077Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;RL&quot;&gt;&lt;a href=&quot;#RL&quot; class=&quot;headerlink&quot; title=&quot;RL&quot;&gt;&lt;/a&gt;RL&lt;/h2&gt;&lt;h3 id=&quot;Playing-Atari-with-Deep-Reinforcement-Learning&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;如何读论文？&quot;&gt;&lt;a href=&quot;#如何读论文？&quot; class=&quot;headerlink&quot; title=&quot;如何读论文？&quot;&gt;&lt;/a&gt;如何读论文？&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
         
       
     
@@ -438,14 +461,14 @@
     <link href="https://risingauroras.github.io/posts/3815/"/>
     <id>https://risingauroras.github.io/posts/3815/</id>
     <published>2022-09-11T01:13:59.000Z</published>
-    <updated>2022-09-11T06:19:50.800Z</updated>
+    <updated>2022-12-30T08:09:37.386Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;网络结构&quot;&gt;&lt;a href=&quot;#网络结构&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;h3 id=&quot;linux-服务器守护线程——tmux&quot;&gt;&lt;a href=&quot;#linux-服务器守护线程——tmux&quot;</summary>
         
       
     
@@ -454,29 +477,6 @@
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>《吴恩达机器学习笔记》</title>
-    <link href="https://risingauroras.github.io/posts/9958/"/>
-    <id>https://risingauroras.github.io/posts/9958/</id>
-    <published>2022-09-09T13:13:06.704Z</published>
-    <updated>2022-09-10T02:39:00.210Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;《吴恩达机器学习笔记》&quot;&gt;&lt;a href=&quot;#《吴恩达机器学习笔记》&quot; class=&quot;headerlink&quot; title=&quot;《吴恩达机器学习笔记》&quot;&gt;&lt;/a&gt;《吴恩达机器学习笔记》&lt;/h2&gt;&lt;h3 id=&quot;第一节&quot;&gt;&lt;a href=&quot;#第一节&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>

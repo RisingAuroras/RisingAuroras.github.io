@@ -411,7 +411,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    29 分
                 </div>
                 
 
@@ -445,7 +445,16 @@ conda activate pytorch <span class="token comment"># 切换到此环境</span>
 conda install pytorch torchvision torchaudio cudatoolkit<span class="token operator">=</span><span class="token number">11.3</span> <span class="token operator">-</span>c pytorch <span class="token comment"># 在这个环境安装</span>
 python
 <span class="token keyword">import</span> torch
-torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#输出应为True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#输出应为True</span>
+
+
+<span class="token keyword">or</span>
+
+<span class="token comment">#在linux中激活conda环境</span>
+<span class="token comment"># 激活 anaconda 环境</span>
+ source activate
+<span class="token comment"># 退出 anaconda 环境</span>
+ source deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/nn.html">官方文档</a></p>
 </li>

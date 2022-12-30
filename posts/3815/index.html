@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    81
+                    760
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -434,7 +434,141 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol>
+                <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="linux-服务器守护线程——tmux"><a href="#linux-服务器守护线程——tmux" class="headerlink" title="linux 服务器守护线程——tmux"></a>linux 服务器守护线程——tmux</h3><p>$HOME : echo $HOME = ‘/data/kangbaobin’【是Linux中的一个环境变量，表示用户初次登陆时的起始目录名】</p>
+<p>Xshell断开连接后仍保持服务器程序执行</p>
+<p>先安装tmux：</p>
+<p>root用户安装仅需一行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> tmux<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>非root用户</p>
+<p>1、下载与解压</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -c https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a.tar.gz
+<span class="token function">wget</span> -c https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz
+<span class="token function">wget</span> -c https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>解压指令如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> -xzvf tmux-3.0a.tar.gz
+<span class="token function">tar</span> -xzvf libevent-2.1.11-stable.tar.gz
+<span class="token function">tar</span> -xzvf ncurses-6.2.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>2、安装</p>
+<p>libevent会安在 /data/kangbaobin/tmux/tmux_depend / lib</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span>  libevent-2.1.11-stable
+ 
+<span class="token comment">#       $HOME/data/kangbaobin/tmux/tmux_depend 是我的安装路径，大家可以修改</span>
+ 
+./configure --prefix<span class="token operator">=</span><span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend --disable-shared
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>ncurses会安在 /data/kangbaobin/tmux/tmux_depend / include</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span>  ncurses-6.2
+./configure --prefix<span class="token operator">=</span><span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>安装tmux </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span>  tmux-3.0a
+./configure <span class="token assign-left variable">CFLAGS</span><span class="token operator">=</span><span class="token string">"-I<span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/include -I/<span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/include/ncurses"</span> <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span><span class="token string">"-L/<span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/lib -L/<span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/include/ncurses -L/<span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/include"</span>
+<span class="token function">make</span>
+<span class="token function">cp</span> tmux  <span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3、设置环境变量（此步骤建议手动添加到bashrc文件中）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$HOME</span>/data/kangbaobin/tmux/tmux_depend/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>tmux常用命令</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">1）新建会话，比如新创建一个会话以"ccc"命名
+ 
+[root@Centos6 ~]# tmux new -s ccc
+ 
+加上参数-d，表示在后台新建会话
+ 
+root@bobo:~# tmux new -s shibo -d
+ 
+root@bobo:~# tmux ls
+ 
+shibo: 1 windows (created Tue Oct  2 19:22:32 2018) [135x35]
+ 
+ 
+ 
+2）查看创建得所有会话
+ 
+[root@Centos6 ~]# tmux ls
+ 
+0: 1 windows (created Wed Aug 30 17:58:20 2017) [112x22](attached)    #这里的attached表示该会话是当前会话
+ 
+aaa: 2 windows (created Wed Aug 30 16:54:33 2017) [112x22]
+ 
+ccc: 1 windows (created Wed Aug 30 17:01:05 2017) [112x22]
+ 
+   
+ 
+3）登录一个已知会话。即从终端环境进入会话。
+ 
+第一个参数a也可以写成attach。后面的aaa是会话名称。
+ 
+[root@Centos6 ~]# tmux a -t aaa 
+ 
+　　
+ 
+4）退出会话不是关闭：
+ 
+登到某一个会话后，先按键ctrl+b启动快捷键，再按d，这样就会退出该会话，但不会关闭会话。
+ 
+如果直接ctrl + d，就会在退出会话的通话也关闭了该会话！
+ 
+   
+ 
+5）关闭会话（销毁会话）
+ 
+[root@Centos6 ~]# tmux ls
+ 
+aaa: 2 windows (created Wed Aug 30 16:54:33 2017) [112x22]
+ 
+bbb: 1 windows (created Wed Aug 30 19:02:09 2017) [112x22]
+ 
+   
+ 
+[root@Centos6 ~]# tmux kill-session -t bbb
+ 
+   
+ 
+[root@Centos6 ~]# tmux ls
+ 
+aaa: 2 windows (created Wed Aug 30 16:54:33 2017) [112x22]
+ 
+  
+ 
+6）重命名会话
+ 
+[root@Centos6 ~]# tmux ls  
+ 
+wangshibo: 1 windows (created Sun Sep 30 10:17:00 2018) [136x29] (attached)
+ 
+  
+ 
+[root@Centos6 ~]# tmux rename -t wangshibo kevin
+ 
+  
+ 
+[root@Centos6 ~]# tmux ls
+ 
+kevin: 1 windows (created Sun Sep 30 10:17:00 2018) [136x29] (attached)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol>
 <li><p>网络输出离散动作概率的时候，一般加一层<code>softmax</code>层，保证输出的离散动作概率和为1；输出连续动作概率的时候，一般加一层<code>tanh</code>层，因为<code>tanh</code>范围是[-1,1]，我们可以根据实际需要，将输出进行缩放。</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209110920372.png" alt="image-20220911092035223"></p>
 </li>
