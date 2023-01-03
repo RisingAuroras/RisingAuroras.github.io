@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-01-03T03:04:15.812Z</updated>
+  <updated>2023-01-03T11:48:36.265Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://risingauroras.github.io/posts/6040/"/>
     <id>https://risingauroras.github.io/posts/6040/</id>
     <published>2023-01-01T14:00:22.000Z</published>
-    <updated>2023-01-03T03:04:15.812Z</updated>
+    <updated>2023-01-03T11:48:36.265Z</updated>
     
     
       
@@ -34,6 +34,8 @@
     
     
     
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
     
   </entry>
   
@@ -42,7 +44,7 @@
     <link href="https://risingauroras.github.io/posts/7280/"/>
     <id>https://risingauroras.github.io/posts/7280/</id>
     <published>2023-01-01T08:28:59.000Z</published>
-    <updated>2023-01-01T13:37:46.669Z</updated>
+    <updated>2023-01-03T03:04:37.398Z</updated>
     
     
       
@@ -59,6 +61,30 @@
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>信息熵</title>
+    <link href="https://risingauroras.github.io/posts/1618/"/>
+    <id>https://risingauroras.github.io/posts/1618/</id>
+    <published>2023-01-01T08:12:20.000Z</published>
+    <updated>2023-01-03T12:01:58.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/304499706&quot;&gt;本文地址&lt;/a&gt;，转载自&lt;a href=&quot;https://www.zhihu.com/people/nan-de-4-89&quot;&gt;LR-bee&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
@@ -452,31 +478,6 @@
     
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>精读论文系列</title>
-    <link href="https://risingauroras.github.io/posts/e9ae/"/>
-    <id>https://risingauroras.github.io/posts/e9ae/</id>
-    <published>2022-09-12T10:35:50.000Z</published>
-    <updated>2022-12-29T08:29:46.077Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;如何读论文？&quot;&gt;&lt;a href=&quot;#如何读论文？&quot; class=&quot;headerlink&quot; title=&quot;如何读论文？&quot;&gt;&lt;/a&gt;如何读论文？&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="学术" scheme="https://risingauroras.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-    <category term="论文" scheme="https://risingauroras.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
