@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    15 分
                 </div>
                 
 
@@ -547,7 +547,11 @@
 <p>To address such a challenge, the recent works <em>(Fujimoto et al., 2019; Laroche et al., 2019; Jaques et al., 2019; Wu et al., 2019; Kumar et al., 2019, 2020; Agarwal et al., 2020b; Yu et al., 2020; Kidambi et al., 2020; Wang et al., 2020c; Siegel et al., 2020; Nair et al., 2020; Liu et al., 2020)</em> demonstrate the empirical success of various algorithms, which fall into two (possibly overlapping) categories: ==(i) regularized policy-based approaches==and ==(ii) pessimistic value-based approaches==. Specifically, (i) regularizes (or equivalently, constrains) the policy to avoid visiting the states and actions that are less covered by the dataset, while (ii) penalizes the (action- or state-) value function on such states and actions.</p>
 <p>In offline/batch reinforcement learning (RL), the predominant class of approaches with most      success have been “==support constraint==” methods, ==where trained policies are encouraged to remain    within the support of the provided offline dataset==.However, support constraints correspond to an overly <code>pessimistic assumption that actions outside the provided data may lead to worst-case outcomes.</code></p>
 <p>Offline RL的解决思路无外乎就是“悲观”二字，也就要想办法对OOD action进行低估，不要让策略走到没见到过的动作上去。为了实现这种悲观，实际的算法大体分为两种思路：一种是把OOD action的值直接拉低，代表性的方法就是CQL；另一种是让被训练的策略和采样策略不要差得太远，这类方法有AWAC，TD3+BC等。</p>
-<h4 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h4><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
+<p>Stackelberg Game，即斯塔克伯格博弈，是一个两阶段的完全信息动态博弈，博弈的time是序贯的。主要思想是双方都是根据对方可能的策略来选择自己的策略以保证自己在对方策略下的利益最大化，从而达到纳什均衡。在该博弈模型中，先作出决策的一方被称为leader，在leader之后，剩余的players根据leader的决策进行决策，被称为followers，然后leader再根据followers的决策对自己的决策进行调整，如此往复，直到达到纳什均衡。</p>
+<p>深度离线强化学习（deep offline RL）可以通过利用深度神经网络和巨大的离线数据集，在没有任何环境交互的情况下训练强大的agent，但是训练得到的offline RL agents可能是次优的，因为offline datasets可能是次优的，另外，agent部署的环境可能与生成offline datasets的环境不同，这就需要一个在线微调（online fine-tuning）过程，agent通过在线收集更多的样本来改进。</p>
+<p>但是使用传统的off-policy RL算法微调offline RL agent比较困难，因为存在distribution shift，agent会遇见offline dataset中没有的state-action，即out-of-distribution (OOD) online samples，Q函数在这样的state-action上无法给出准确的估计，导致严重的bootstrap error，从而使策略在任意方向上更新，破坏了offline RL获得的良好初始策略</p>
+<h4 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h4><p>mark：3.2. Relative Pessimism and Robust Policy Improvement</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
 <li>what is Pessimistic method in RL?</li>
 <li>what is OOD Action?</li>
 <li></li>

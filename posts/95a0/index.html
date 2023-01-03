@@ -1432,10 +1432,12 @@ rate <span class="token operator">=</span> accuracy<span class="token operator">
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203222019977.png" alt="image-20220322201935900"></p>
 <ol>
 <li>```python<br>if torch.cuda.is_available():<br>myNN = myNN.cuda()#网络，loss函数，数据都可以进行GPU加速<pre class="line-numbers language-none"><code class="language-none">
+   
+   
 2. ```python
    #定义训练的设备
    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-   myNN = myNN.to(device)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+   myNN = myNN.to(device)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h3 id="完整的模型验证套路"><a href="#完整的模型验证套路" class="headerlink" title="完整的模型验证套路"></a>完整的模型验证套路</h3><p>利用已经训练好的模型，然后给它提供输入</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202203222134934.png" alt="image-20220322213454881"></p>

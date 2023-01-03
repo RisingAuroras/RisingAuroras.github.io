@@ -44,7 +44,7 @@
     <link href="https://risingauroras.github.io/posts/7280/"/>
     <id>https://risingauroras.github.io/posts/7280/</id>
     <published>2023-01-01T08:28:59.000Z</published>
-    <updated>2023-01-03T03:04:37.398Z</updated>
+    <updated>2023-01-03T13:44:56.658Z</updated>
     
     
       
@@ -60,7 +60,7 @@
     
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
@@ -90,18 +90,18 @@
   </entry>
   
   <entry>
-    <title>论文中的数学概念</title>
+    <title>论文储备知识</title>
     <link href="https://risingauroras.github.io/posts/bf25/"/>
     <id>https://risingauroras.github.io/posts/bf25/</id>
     <published>2022-12-26T04:38:51.000Z</published>
-    <updated>2022-12-30T08:09:58.864Z</updated>
+    <updated>2023-01-03T13:47:52.951Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;名词&quot;&gt;&lt;a href=&quot;#名词&quot; class=&quot;headerlink&quot; title=&quot;名词&quot;&gt;&lt;/a&gt;名词&lt;/h2&gt;&lt;h3 id=&quot;欧式空间与黎曼空间&quot;&gt;&lt;a href=&quot;#欧式空间与黎曼空间&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;实验&quot;&gt;&lt;a href=&quot;#实验&quot; class=&quot;headerlink&quot; title=&quot;实验&quot;&gt;&lt;/a&gt;实验&lt;/h2&gt;&lt;h3 id=&quot;消融实验&quot;&gt;&lt;a href=&quot;#消融实验&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -109,6 +109,8 @@
     
     <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
     
+    
+    <category term="论文" scheme="https://risingauroras.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
@@ -268,24 +270,26 @@
   </entry>
   
   <entry>
-    <title>深度学习</title>
+    <title>深度学习笔记</title>
     <link href="https://risingauroras.github.io/posts/bd81/"/>
     <id>https://risingauroras.github.io/posts/bd81/</id>
     <published>2022-10-05T13:18:03.000Z</published>
-    <updated>2022-10-06T14:54:01.572Z</updated>
+    <updated>2023-01-03T13:45:04.227Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;一次卷积后特征图大小&quot;&gt;&lt;a href=&quot;#一次卷积后特征图大小&quot; class=&quot;headerlink&quot; title=&quot;一次卷积后特征图大小&quot;&gt;&lt;/a&gt;一次卷积后特征图大小&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h2 id=&quot;卷积&quot;&gt;&lt;a href=&quot;#卷积&quot; class=&quot;headerlink&quot; title=&quot;卷积&quot;&gt;&lt;/a&gt;卷积&lt;/h2&gt;&lt;h3 id=&quot;1x1卷积核的作用&quot;&gt;&lt;a href=&quot;#1x1卷积核的作用&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
