@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="论文中的数学概念, 马克图布">
+    <meta name="keywords" content="动手学强化学习, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>论文中的数学概念 | 马克图布</title>
+    <title>动手学强化学习 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/27.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">论文中的数学概念</h1>
+                    <h1 class="description center-align post-title">动手学强化学习</h1>
                 </div>
             </div>
         </div>
@@ -375,15 +375,6 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
-                                数学基础
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -391,7 +382,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-26
+                    2023-01-01
                 </div>
                 
 
@@ -400,7 +391,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    83
+                    485
                 </div>
                 
 
@@ -430,20 +421,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><h3 id="欧式空间与黎曼空间"><a href="#欧式空间与黎曼空间" class="headerlink" title="欧式空间与黎曼空间"></a>欧式空间与黎曼空间</h3><h3 id="fisher-information-matric"><a href="#fisher-information-matric" class="headerlink" title="fisher information matric"></a>fisher information matric</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261533475.png" alt="image-20221226153305350"></p>
-<p>用极大似然估计进行参数估计</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261534792.png" alt="image-20221226153449729"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261536508.png" alt="image-20221226153641447"></p>
-<p>证明：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261557223.png" alt="image-20221226155753160"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261609517.png" alt="image-20221226160945489"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261610608.png" alt="image-20221226161002560"></p>
-<h3 id="KL散度"><a href="#KL散度" class="headerlink" title="KL散度"></a>KL散度</h3><p>用来衡量两个分布之间的距离（在黎曼空间上；欧式空间不适合衡量两个分布之间的距离），又被称为相对熵</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261622489.png" alt="image-20221226162205430"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261627139.png" alt="image-20221226162707092"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261627694.png" alt="image-20221226162749623"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202212261629904.png" alt="image-20221226162922841"></p>
-<h3 id="自然策略梯度法"><a href="#自然策略梯度法" class="headerlink" title="自然策略梯度法"></a>自然策略梯度法</h3>
+                <h2 id="重要性采样"><a href="#重要性采样" class="headerlink" title="重要性采样"></a>重要性采样</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031020762.jpeg" alt="img"></p>
+<p>TRPO（PPO同理）的objective给出过程中也用到了importance sampling的思想，可以参考TRPO论文。但它们的确是on-policy算法。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031035361.png" alt="image-20230103103549296"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031042929.png" alt="image-20230103104250852"></p>
+<p>无偏估计，但是方差可能会出现很大的情况</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031048067.png" alt="image-20230103104849984"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031053310.png" alt="image-20230103105350225"></p>
+<h2 id="信任区域策略优化TRPO"><a href="#信任区域策略优化TRPO" class="headerlink" title="信任区域策略优化TRPO"></a>信任区域策略优化TRPO</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012201212.jpeg" alt="img"></p>
+<p>TRPO（以及PPO）算法都是on-policy的算法。On-policy是指，采样使用的policy就是要更新的policy。在TRPO中，用来更新policy的样本都是由当前policy生成的，更新完就丢弃了，所以是on policy的。TRPO的思想是通过局部优化一个近似$\R(\pi)$的下界函数，从而保证每次策略的改进并最终得到最优策略。</p>
+<p>策略梯度算法回顾</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012202777.png" alt="image-20230101220237693"></p>
+<p>策略梯度算法的缺点</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012224178.png" alt="image-20230101222404108"></p>
+<p>TRPO</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012233141.png" alt="image-20230101223314061"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012242620.png" alt="image-20230101224221536"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012247024.png" alt="image-20230101224722953"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012300304.png" alt="image-20230101230021213"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012309931.png" alt="image-20230101230946859"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012315983.png" alt="image-20230101231516833"></p>
+<p>通过不断改进$L(\theta)-C\cdot KL$,走到其曲线最顶端$\theta’$,然后在从$\theta’$所在横轴坐标处在$J(\theta’)$上构建新的$L(\theta)$,然后不断更新。</p>
+<p>这里C是等于where后面的那个值，D_KL表示KL散度。这里相当是是给出$J(\theta’)$的下界，表示我们策略是一直在往好的地方改进的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012320121.png" alt="image-20230101232039041"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012328232.png" alt="image-20230101232817159"></p>
+<h2 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h2><p>PPO算法按照同策略（on policy）模式更新时，每次更新参数$\theta$的目的是在旧参数$\theta_{old}$的$\epsilon$领域中找到尽可能接近最优解的参数，所以每轮更新参数$\theta$时会用同一批数据更新多次，然后赋值给$\theta_{old}$，详见PPO算法论文或本课程的代码实现。</p>
+<p>截断式优化目标意在用截断操作达到限制新旧策略的差异程度。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021044447.jpeg" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021043932.png" alt="image-20230102104350782"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021053111.png" alt="image-20230102105310029"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021055541.png" alt="image-20230102105517465"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021057047.png" alt="image-20230102105709971"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021059447.png" alt="image-20230102105912366"></p>
+<p>代码实现：</p>
+<h2 id="知识Tips"><a href="#知识Tips" class="headerlink" title="知识Tips"></a>知识Tips</h2><ul>
+<li>深度强化学习可以分类为基于价值的方法、基于随机策略的方法和基于确定性策略的方法，其中基于确定性策略的方法包括了确定性策略梯度（DPG）和深度确定性策略梯度（DDPG）</li>
+<li></li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -469,7 +484,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/bf25/">https://risingauroras.github.io/posts/bf25/</a>
+                    <a href="https://risingauroras.github.io/posts/6040/">https://risingauroras.github.io/posts/6040/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -865,9 +880,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/6040/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/27.jpg" class="responsive-img" alt="动手学强化学习">
+                        
+                        <span class="card-title">动手学强化学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马克图布
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/7280/">
                     <div class="card-image">
@@ -885,9 +939,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -900,43 +954,6 @@
                                     数学基础
                                 </a>
                             
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/c0a8/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/27.jpg" class="responsive-img" alt="多分类：从逻辑回归到Softmax回归">
-                        
-                        <span class="card-title">多分类：从逻辑回归到Softmax回归</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            马克图布
                             
                         </span>
                     </div>
