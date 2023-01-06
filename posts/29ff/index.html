@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    755
+                    881
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -438,11 +438,32 @@ https://zhuanlan.zhihu.com/p/89662757
 #Jupyter远程服务器
 https://zhuanlan.zhihu.com/p/409159969
 # Pycharm连接远程服务器
-https://blog.csdn.net/weixin_43799388/article/details/124759054<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+https://blog.csdn.net/weixin_43799388/article/details/124759054
+#环境搭建之更换软件源汇总(Ubuntu/pip/Anaconda/Docker等)
+https://miaotony.xyz/2020/09/25/Server_ChangeSource/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h2 id="强化学习入门"><a href="#强化学习入门" class="headerlink" title="强化学习入门"></a>强化学习入门</h2><p>入门</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p>工具/环境</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">#anaconda配置清华源
+https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
+#最后，执行
+conda config --set ssl_verify False
+
+#mujoco安装
+#1.windows
+https://blog.csdn.net/Cactus_mao/article/details/126455269
+#2.linux
+https://zhuanlan.zhihu.com/p/486957504
+#报错的话添加前置依赖
+sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
+sudo apt-get install libglew-dev glew-utils
+
+#D4RL数据集简介、安装及错误解决
+https://blog.csdn.net/gsww404/article/details/123802410
+https://blog.csdn.net/captainAAAjohn/article/details/123024952<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>入门</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">https://www.bilibili.com/video/BV1yv411i7xd?p=13&amp;vd_source=2ffed29a08d7c0e5407d996c2c4915a8 | Lesson4-1-随机策略与策略梯度_哔哩哔哩_bilibili
 https://github.com/RisingAuroras/PARL/tree/develop/examples/QuickStart | PARL/examples/QuickStart at develop · RisingAuroras/PARL
 https://zhuanlan.zhihu.com/p/157657872 | PARL强化学习公开课学习笔记（五）连续动作空间求解RL（DDPG） - 知乎

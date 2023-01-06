@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    17 分
                 </div>
                 
 
@@ -552,8 +552,14 @@
 <p>但是使用传统的off-policy RL算法微调offline RL agent比较困难，因为存在distribution shift，agent会遇见offline dataset中没有的state-action，即out-of-distribution (OOD) online samples，Q函数在这样的state-action上无法给出准确的估计，导致严重的bootstrap error，从而使策略在任意方向上更新，破坏了offline RL获得的良好初始策略</p>
 <h4 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h4><p>mark：3.2. Relative Pessimism and Robust Policy Improvement</p>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
-<li>what is Pessimistic method in RL?</li>
-<li>what is OOD Action?</li>
+<li><p>what is Pessimistic method in RL?</p>
+<p>In reinforcement learning, the pessimistic method is an algorithm that learns the worst-case value of each state or action, rather than the expected value. This approach can be useful in situations where the consequences of making a mistake can be very severe, and it is important to be conservative in decision-making.</p>
+<p>One way to implement the pessimistic method is to use a modified version of the Bellman equation, which is used to compute the value of each state or action in a Markov decision process. In the pessimistic version of the equation, the minimum value of the next state or action is used, rather than the expected value. This leads the algorithm to prefer actions that minimize the worst-case outcome, rather than actions that maximize the expected reward.</p>
+<p>The pessimistic method can be contrasted with the optimistic method, which learns the best-case value of each state or action, and the average method, which learns the expected value. Each of these approaches has its own strengths and weaknesses, and which one is best will depend on the specific problem being solved and the goals of the decision-maker.</p>
+</li>
+<li><p>what is OOD Action?</p>
+<p>Out-of-Distribution (OOD) action in reinforcement learning (RL) refers to actions that the agent may take that are not part of the training distribution of actions. These actions can occur when the agent is operating in a different environment or context than it was trained on, or when the agent is asked to perform a task that it has not seen before. OOD actions can be challenging for an RL agent to handle, as they may not be well-suited to the current task or may lead to unexpected outcomes. One way to mitigate the risk of OOD actions is to train the RL agent on a diverse set of tasks and environments, so that it has a greater range of experience to draw upon when making decisions.</p>
+</li>
 <li></li>
 </ol>
 

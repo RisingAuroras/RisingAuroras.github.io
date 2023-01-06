@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    485
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -430,7 +430,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="重要性采样"><a href="#重要性采样" class="headerlink" title="重要性采样"></a>重要性采样</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031020762.jpeg" alt="img"></p>
+                <h2 id="强化学习简介"><a href="#强化学习简介" class="headerlink" title="强化学习简介"></a>强化学习简介</h2><p>强化学习里面一直以来就是value based和policy based两路方法，它们各有优劣。</p>
+<p>Value based 方法强调让机器知道什么state或者state-action pair是好的，什么是坏的。例如Q-learning训练的优化目标是最小化一个TD error：</p>
+<p>这个优化目标很清晰，就是让当前Q函数估计更准。但是这个优化目标并不对应任何策略的目标。</p>
+<p>我们强化学习的总目标是给出一个policy，使之能在环境里面很好的完成序列决策任务。</p>
+<p>Policy based 方法则正好直接朝着这么目标去优化策略的参数：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301040002870.png" alt="image-20230104000205843"></p>
+<p>所以Berkeley和OpenAI的人（PPO和TRPO的作者）一般喜欢强调policy based 方法更加直接在优化最终的目标。</p>
+<p>当然，我们也要知道value based 方法其实往往更方便学习，毕竟其优化目标就是一个TD error，相比policy based方法的目标要容易优化得多。</p>
+<p>所以如果我们希望算法能尽快达到一个比较好的效果，可以直接用value based 方法。而如果有足够的时间和算力去训练，那么推荐使用 policy based 方法。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032315632.png" alt="image-20230103231516559"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032321541.png" alt="image-20230103232141470"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032325880.png" alt="image-20230103232516797"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032327286.png" alt="image-20230103232710218"></p>
+<p>随机策略输出是条件概率分布</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032336777.png" alt="image-20230103233614708"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032341993.png" alt="image-20230103234113921"></p>
+<p>环境最重要得两个部分：状态转移概率，奖励函数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032347810.png" alt="image-20230103234716734"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032349567.png" alt="image-20230103234904499"></p>
+<p>如下行走策略$\pi$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032349534.png" alt="image-20230103234918465"></p>
+<p>对于上面给出的$\pi$的状态价值函数如下</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032349551.png" alt="image-20230103234944473"></p>
+<p>强化学习可分为基于model-base或者model-free的强化学习</p>
+<p>model-base：知道环境信息，可以自己模拟</p>
+<p>model-free：不知道环境信息，需要大量采样</p>
+<p>Model-based RL最终效果还是会受到环境model本身精度不够的影响，导致最终效果往往不如model-free RL。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032355659.png" alt="image-20230103235510598"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032356206.png" alt="image-20230103235642128"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032359779.png" alt="image-20230103235922705"></p>
+<h2 id="探索与利用"><a href="#探索与利用" class="headerlink" title="探索与利用"></a>探索与利用</h2><p>Epsilon greedy在RL里面是做探索的方法。其实RL领域也有不少其他的做探索的方法，只是专门在做探索，所以就不仅仅是UCB或者TS这种MAB的经典方法了。这个你搜索RL exploration methods就有不少工作。</p>
+<p>例如，在树结构博弈环境里面UCB叫UCT (Upper Confidence bounds applied to Trees)。这方面很有名。David Silver的论文还拿了ICML的10年最佳论文奖：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041349733.jpeg" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041041946.png" alt="image-20230104104147805"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041049700.png" alt="image-20230104104933586"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041053433.png" alt="image-20230104105322310"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041056949.png" alt="image-20230104105657814"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041059742.png" alt="image-20230104105931625"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041100701.png" alt="image-20230104110053600"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041104163.png" alt="image-20230104110416048"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041112051.png" alt="image-20230104111211907"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041114673.png" alt="image-20230104111400561"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041115004.png" alt="image-20230104111543909"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041117013.png" alt="image-20230104111701915"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041118334.png" alt="image-20230104111821206"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041120836.png" alt="image-20230104112028715"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041148818.png" alt="image-20230104114815700"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041150269.png" alt="image-20230104115043142"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041154799.png" alt="image-20230104115412662"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041157600.png" alt="image-20230104115707475"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041158232.png" alt="image-20230104115803096"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041205261.png" alt="image-20230104120523146"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041208972.png" alt="image-20230104120823873"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041344120.png" alt="image-20230104134424027"></p>
+<h2 id="重要性采样"><a href="#重要性采样" class="headerlink" title="重要性采样"></a>重要性采样</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031020762.jpeg" alt="img"></p>
 <p>TRPO（PPO同理）的objective给出过程中也用到了importance sampling的思想，可以参考TRPO论文。但它们的确是on-policy算法。</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031035361.png" alt="image-20230103103549296"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031042929.png" alt="image-20230103104250852"></p>
@@ -463,6 +516,22 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021057047.png" alt="image-20230102105709971"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021059447.png" alt="image-20230102105912366"></p>
 <p>代码实现：</p>
+<h2 id="Offline-RL-离线强化学习"><a href="#Offline-RL-离线强化学习" class="headerlink" title="Offline RL(离线强化学习)"></a>Offline RL(离线强化学习)</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041604042.png" alt="image-20230104160406673"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041608715.png" alt="image-20230104160839619"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041612897.png" alt="image-20230104161235815"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041625962.png" alt="image-20230104162528790"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041712658.png" alt="image-20230104171225562"></p>
+<p>BCQ</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041718081.png" alt="image-20230104171818998"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041723893.png" alt="image-20230104172337711"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041726755.png" alt="image-20230104172635675"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041739631.png" alt="image-20230104173925537"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041746336.png" alt="image-20230104174639232"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041747049.png" alt="image-20230104174755920"></p>
+<p>==CQL==</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041800832.png" alt="image-20230104180059729"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041802959.png" alt="image-20230104180214860"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041802492.png" alt="image-20230104180232377"></p>
 <h2 id="知识Tips"><a href="#知识Tips" class="headerlink" title="知识Tips"></a>知识Tips</h2><ul>
 <li>深度强化学习可以分类为基于价值的方法、基于随机策略的方法和基于确定性策略的方法，其中基于确定性策略的方法包括了确定性策略梯度（DPG）和深度确定性策略梯度（DDPG）</li>
 <li></li>

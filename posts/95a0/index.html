@@ -404,7 +404,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.5k
+                    5.6k
                 </div>
                 
 
@@ -454,9 +454,19 @@ torch<span class="token punctuation">.</span>cuda<span class="token punctuation"
 <span class="token comment"># 激活 anaconda 环境</span>
  source activate
 <span class="token comment"># 退出 anaconda 环境</span>
- source deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ source deactivate
+    
+<span class="token keyword">or</span>
+<span class="token comment"># 在windows中直接使用的话，需要添加anaconda 环境变量，比如我这儿是</span>
+<span class="token comment">#C:\software\Anaconda3和C:\software\Anaconda3\Scripts 这两个放进Path中</span>
+<span class="token comment">#windows 查看环境 </span>
+conda info <span class="token operator">-</span>e
+<span class="token comment">#进入环境</span>
+activate py38torch1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/nn.html">官方文档</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://edcarp.github.io/introduction-to-conda-for-data-scientists/02-working-with-environments/index.html">详细的使用教程</a></p>
 </li>
 <li><p>切换环境</p>
 <p> 使用Anaconda切换python环境</p>
@@ -474,6 +484,12 @@ torch<span class="token punctuation">.</span>cuda<span class="token punctuation"
 <li><strong>python –version python -V</strong></li>
 </ol>
 <p><em><strong>尝试能不能想起这些代码的意思吧，可不要为python版本而烦恼啦</strong></em></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">更换清华源</a>，and excute<code>conda config --set ssl_verify False</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html">ABOUT MUJOCO</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.irftalks.tech/mdp/3jBAgbpp/">Setting Environment Variables in Conda</a></p>
 </li>
 </ul>
 <h2 id="pyTorch加载数据"><a href="#pyTorch加载数据" class="headerlink" title="pyTorch加载数据"></a>pyTorch加载数据</h2><p>Dataset类  &amp; Dataloader</p>
