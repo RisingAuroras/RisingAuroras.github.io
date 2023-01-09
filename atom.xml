@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-01-04T17:22:59.780Z</updated>
+  <updated>2023-01-09T15:46:25.924Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实用脚本</title>
+    <link href="https://risingauroras.github.io/posts/5550/"/>
+    <id>https://risingauroras.github.io/posts/5550/</id>
+    <published>2023-01-08T11:23:02.000Z</published>
+    <updated>2023-01-09T15:46:25.924Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Window批量删除文件名前缀&quot;&gt;&lt;a href=&quot;#Window批量删除文件名前缀&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Tensorflow2学习笔记</title>
+    <link href="https://risingauroras.github.io/posts/96ac/"/>
+    <id>https://risingauroras.github.io/posts/96ac/</id>
+    <published>2023-01-07T14:37:54.000Z</published>
+    <updated>2023-01-09T15:46:25.921Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;环境tensorflow2.1&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="tensorflow2" scheme="https://risingauroras.github.io/tags/tensorflow2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>动手学强化学习</title>
     <link href="https://risingauroras.github.io/posts/6040/"/>
     <id>https://risingauroras.github.io/posts/6040/</id>
     <published>2023-01-01T14:00:22.000Z</published>
-    <updated>2023-01-04T17:22:59.780Z</updated>
+    <updated>2023-01-09T13:47:36.662Z</updated>
     
     
       
@@ -434,54 +481,6 @@
     
     
     <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解</title>
-    <link href="https://risingauroras.github.io/posts/8e6/"/>
-    <id>https://risingauroras.github.io/posts/8e6/</id>
-    <published>2022-09-17T03:17:01.000Z</published>
-    <updated>2022-09-17T16:12:50.722Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;写在开头：本文转自&lt;a href=&quot;https://blog.csdn.net/u011508640&quot;&gt;nebulaf91&lt;/a&gt;，文章&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《统计学习方法》学习笔记</title>
-    <link href="https://risingauroras.github.io/posts/b54a/"/>
-    <id>https://risingauroras.github.io/posts/b54a/</id>
-    <published>2022-09-13T01:47:12.000Z</published>
-    <updated>2022-09-15T15:17:19.684Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;第二章-感知机&quot;&gt;&lt;a href=&quot;#第二章-感知机&quot; class=&quot;headerlink&quot; title=&quot;第二章 感知机&quot;&gt;&lt;/a&gt;第二章 感知机&lt;/h2&gt;&lt;h3 id=&quot;感知机学习算法&quot;&gt;&lt;a href=&quot;#感知机学习算法&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
     
   </entry>
   

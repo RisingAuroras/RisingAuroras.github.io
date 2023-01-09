@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    16 分
                 </div>
                 
 
@@ -637,8 +637,8 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
        <span class="token punctuation">[</span> <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.9975</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
        <span class="token punctuation">[</span> <span class="token number">2.</span>    <span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1316</span><span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">,</span>  <span class="token number">2.</span>    <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
+<p><code>np.mgrid[] np.ravel np.c_[]</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072329710.png" alt="image-20230107232903557"></p>
 <h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34498545/article/details/112631706">改变刻度</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
@@ -791,6 +791,56 @@ plt<span class="token punctuation">.</span>title<span class="token punctuation">
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209141401528.png" alt="image-20220914140156474"></p>
+<h2 id="tensorflow"><a href="#tensorflow" class="headerlink" title="tensorflow"></a>tensorflow</h2><h3 id="tensor创建"><a href="#tensor创建" class="headerlink" title="tensor创建"></a>tensor创建</h3><p><code>tf.zeros(维度)</code></p>
+<p>创建全为0的tensor</p>
+<p><code>tf.ones(维度)</code></p>
+<p>创建全为1的tensor</p>
+<p><code>tf.fill(维度，指定值)</code></p>
+<p>创建指定值的tensor</p>
+<p><code>tf.random.normal(维度，mean=均值，stddev=标准差)</code></p>
+<p>生成正态分布的随机数，默认均值为0，标准差为1</p>
+<p><code>tf.random.truncated_normal(维度，mean=均值，stddev=标准差)</code></p>
+<p>保证生成的随机数在$\mu$+/-$2\sigma$之内,数据更加向均值集中</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072015871.png" alt="image-20230107201508711"></p>
+<p><code>tf.random.uniform(维度，minval=最小值，maxval=最大值)</code></p>
+<p>生成均匀分布随机数[minval,maxval)</p>
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><p><code>tf.cast(张量名,dtype=数据类型)</code></p>
+<p>强制tensor转换为该数据类型</p>
+<p><code>tf.reduce_min(张量名)</code></p>
+<p>计算张量维度上元素最小值</p>
+<p><code>tf.reduce_max(张量名)</code></p>
+<p>计算张量维度上的最大值</p>
+<p><code>tf.reduce_mean(张量名,axis=)</code></p>
+<p>计算张量沿着指定维度的平均值</p>
+<p><code>tf.reduce_sum(张量名,axis=)</code></p>
+<p>计算张量沿着指定维度的和</p>
+<p><code>tf.Variable()</code></p>
+<p>将变量标记为可训练的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072126182.png" alt="image-20230107212622090"></p>
+<p>tf中常用的数学运算</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072131637.png" alt="image-20230107213130561"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072152130.png" alt="image-20230107215214038"></p>
+<p><code>tf.data.Dataset.from_tensor_slices</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072203685.png" alt="image-20230107220356609"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072204665.png" alt="image-20230107220413566"></p>
+<p><code>tf.GradientTape</code></p>
+<p>with结构中记录计算过程，gradient求出张量的梯度</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072206399.png" alt="image-20230107220637294"></p>
+<p><code>enumerate</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072207445.png" alt="image-20230107220743356"></p>
+<p><code>tf.one_hot</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072210190.png" alt="image-20230107221011113"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072211381.png" alt="image-20230107221105289"></p>
+<p><code>tf.nn.softmax</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072213870.png" alt="image-20230107221313729"></p>
+<p><code>assign_sub</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072214197.png" alt="image-20230107221452097"></p>
+<p><code>tf.argmax</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072215454.png" alt="image-20230107221553307"></p>
+<p><code>tf.where</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072323772.png" alt="image-20230107232314655"></p>
+<p><code>tf.distributions.Normal(self.mu, self.sigma)</code></p>
+<p>根据Mu和sigma求出一个正太分布，这个是随机的正态分布</p>
 
                 
             </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="动手学强化学习, 马克图布">
+    <meta name="keywords" content="Tensorflow2学习笔记, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>动手学强化学习 | 马克图布</title>
+    <title>Tensorflow2学习笔记 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/27.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">动手学强化学习</h1>
+                    <h1 class="description center-align post-title">Tensorflow2学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/tensorflow2/">
+                                <span class="chip bg-color">tensorflow2</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                强化学习
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -391,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-01
+                    2023-01-07
                 </div>
                 
 
@@ -400,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -430,132 +434,201 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="强化学习简介"><a href="#强化学习简介" class="headerlink" title="强化学习简介"></a>强化学习简介</h2><p>强化学习里面一直以来就是value based和policy based两路方法，它们各有优劣。</p>
-<p>Value based 方法强调让机器知道什么state或者state-action pair是好的，什么是坏的。例如Q-learning训练的优化目标是最小化一个TD error：</p>
-<p>这个优化目标很清晰，就是让当前Q函数估计更准。但是这个优化目标并不对应任何策略的目标。</p>
-<p>我们强化学习的总目标是给出一个policy，使之能在环境里面很好的完成序列决策任务。</p>
-<p>Policy based 方法则正好直接朝着这么目标去优化策略的参数：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301040002870.png" alt="image-20230104000205843"></p>
-<p>所以Berkeley和OpenAI的人（PPO和TRPO的作者）一般喜欢强调policy based 方法更加直接在优化最终的目标。</p>
-<p>当然，我们也要知道value based 方法其实往往更方便学习，毕竟其优化目标就是一个TD error，相比policy based方法的目标要容易优化得多。</p>
-<p>所以如果我们希望算法能尽快达到一个比较好的效果，可以直接用value based 方法。而如果有足够的时间和算力去训练，那么推荐使用 policy based 方法。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032315632.png" alt="image-20230103231516559"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032321541.png" alt="image-20230103232141470"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032325880.png" alt="image-20230103232516797"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032327286.png" alt="image-20230103232710218"></p>
-<p>随机策略输出是条件概率分布</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032336777.png" alt="image-20230103233614708"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032341993.png" alt="image-20230103234113921"></p>
-<p>环境最重要得两个部分：状态转移概率，奖励函数</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032347810.png" alt="image-20230103234716734"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032349567.png" alt="image-20230103234904499"></p>
-<p>如下行走策略$\pi$</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032349534.png" alt="image-20230103234918465"></p>
-<p>对于上面给出的$\pi$的状态价值函数如下</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032349551.png" alt="image-20230103234944473"></p>
-<p>强化学习可分为基于model-base或者model-free的强化学习</p>
-<p>model-base：知道环境信息，可以自己模拟</p>
-<p>model-free：不知道环境信息，需要大量采样</p>
-<p>Model-based RL最终效果还是会受到环境model本身精度不够的影响，导致最终效果往往不如model-free RL。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032355659.png" alt="image-20230103235510598"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032356206.png" alt="image-20230103235642128"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301032359779.png" alt="image-20230103235922705"></p>
-<h2 id="探索与利用"><a href="#探索与利用" class="headerlink" title="探索与利用"></a>探索与利用</h2><p>Epsilon greedy在RL里面是做探索的方法。其实RL领域也有不少其他的做探索的方法，只是专门在做探索，所以就不仅仅是UCB或者TS这种MAB的经典方法了。这个你搜索RL exploration methods就有不少工作。</p>
-<p>例如，在树结构博弈环境里面UCB叫UCT (Upper Confidence bounds applied to Trees)。这方面很有名。David Silver的论文还拿了ICML的10年最佳论文奖：</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041349733.jpeg" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041041946.png" alt="image-20230104104147805"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041049700.png" alt="image-20230104104933586"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041053433.png" alt="image-20230104105322310"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041056949.png" alt="image-20230104105657814"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041059742.png" alt="image-20230104105931625"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041100701.png" alt="image-20230104110053600"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041104163.png" alt="image-20230104110416048"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041112051.png" alt="image-20230104111211907"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041114673.png" alt="image-20230104111400561"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041115004.png" alt="image-20230104111543909"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041117013.png" alt="image-20230104111701915"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041118334.png" alt="image-20230104111821206"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041120836.png" alt="image-20230104112028715"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041148818.png" alt="image-20230104114815700"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041150269.png" alt="image-20230104115043142"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041154799.png" alt="image-20230104115412662"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041157600.png" alt="image-20230104115707475"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041158232.png" alt="image-20230104115803096"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041205261.png" alt="image-20230104120523146"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041208972.png" alt="image-20230104120823873"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041344120.png" alt="image-20230104134424027"></p>
-<h2 id="策略梯度（Policy-Gradient）"><a href="#策略梯度（Policy-Gradient）" class="headerlink" title="策略梯度（Policy Gradient）"></a>策略梯度（Policy Gradient）</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092113150.jpeg" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091927054.png" alt="image-20230109192733983"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091931492.png" alt="image-20230109193145420"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091937429.png" alt="image-20230109193723361"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091941347.png" alt="image-20230109194148272"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091945816.png" alt="image-20230109194537747"></p>
-<p>小trick</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091948215.png" alt="image-20230109194824127"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092006624.png" alt="image-20230109200651544"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092033470.png" alt="image-20230109203329402"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092035694.png" alt="image-20230109203519618"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092049596.png" alt="image-20230109204910523"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092051203.png" alt="image-20230109205133139"></p>
-<h2 id="Actor-Critic方法"><a href="#Actor-Critic方法" class="headerlink" title="Actor-Critic方法"></a>Actor-Critic方法</h2><p>在PG算法中，计算Q(s,a)可以用REINFORE算法，也可以用AC算法</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092147834.jpeg" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092117016.png" alt="image-20230109211732946"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092128940.png" alt="image-20230109212859824"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092133149.png" alt="image-20230109213325082"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092136848.png" alt="image-20230109213605773"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092141874.png" alt="image-20230109214119827"></p>
-<h2 id="重要性采样"><a href="#重要性采样" class="headerlink" title="重要性采样"></a>重要性采样</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031020762.jpeg" alt="img"></p>
-<p>TRPO（PPO同理）的objective给出过程中也用到了importance sampling的思想，可以参考TRPO论文。但它们的确是on-policy算法。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031035361.png" alt="image-20230103103549296"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031042929.png" alt="image-20230103104250852"></p>
-<p>无偏估计，但是方差可能会出现很大的情况</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031048067.png" alt="image-20230103104849984"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031053310.png" alt="image-20230103105350225"></p>
-<h2 id="信任区域策略优化TRPO"><a href="#信任区域策略优化TRPO" class="headerlink" title="信任区域策略优化TRPO"></a>信任区域策略优化TRPO</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012201212.jpeg" alt="img"></p>
-<p>TRPO（以及PPO）算法都是on-policy的算法。On-policy是指，采样使用的policy就是要更新的policy。在TRPO中，用来更新policy的样本都是由当前policy生成的，更新完就丢弃了，所以是on policy的。TRPO的思想是通过局部优化一个近似$\R(\pi)$的下界函数，从而保证每次策略的改进并最终得到最优策略。</p>
-<p>策略梯度算法回顾</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012202777.png" alt="image-20230101220237693"></p>
-<p>策略梯度算法的缺点</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012224178.png" alt="image-20230101222404108"></p>
-<p>TRPO</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012233141.png" alt="image-20230101223314061"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012242620.png" alt="image-20230101224221536"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012247024.png" alt="image-20230101224722953"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012300304.png" alt="image-20230101230021213"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012309931.png" alt="image-20230101230946859"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012315983.png" alt="image-20230101231516833"></p>
-<p>通过不断改进$L(\theta)-C\cdot KL$,走到其曲线最顶端$\theta’$,然后在从$\theta’$所在横轴坐标处在$J(\theta’)$上构建新的$L(\theta)$,然后不断更新。</p>
-<p>这里C是等于where后面的那个值，D_KL表示KL散度。这里相当是是给出$J(\theta’)$的下界，表示我们策略是一直在往好的地方改进的</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012320121.png" alt="image-20230101232039041"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012328232.png" alt="image-20230101232817159"></p>
-<h2 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h2><p>PPO算法按照同策略（on policy）模式更新时，每次更新参数$\theta$的目的是在旧参数$\theta_{old}$的$\epsilon$领域中找到尽可能接近最优解的参数，所以每轮更新参数$\theta$时会用同一批数据更新多次，然后赋值给$\theta_{old}$，详见PPO算法论文或本课程的代码实现。</p>
-<p>截断式优化目标意在用截断操作达到限制新旧策略的差异程度。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021044447.jpeg" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021043932.png" alt="image-20230102104350782"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021053111.png" alt="image-20230102105310029"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021055541.png" alt="image-20230102105517465"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021057047.png" alt="image-20230102105709971"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021059447.png" alt="image-20230102105912366"></p>
-<p>代码实现：</p>
-<h2 id="Offline-RL-离线强化学习"><a href="#Offline-RL-离线强化学习" class="headerlink" title="Offline RL(离线强化学习)"></a>Offline RL(离线强化学习)</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041604042.png" alt="image-20230104160406673"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041608715.png" alt="image-20230104160839619"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041612897.png" alt="image-20230104161235815"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041625962.png" alt="image-20230104162528790"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041712658.png" alt="image-20230104171225562"></p>
-<p>BCQ</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041718081.png" alt="image-20230104171818998"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041723893.png" alt="image-20230104172337711"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041726755.png" alt="image-20230104172635675"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041739631.png" alt="image-20230104173925537"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041746336.png" alt="image-20230104174639232"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041747049.png" alt="image-20230104174755920"></p>
-<p>==CQL==</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041800832.png" alt="image-20230104180059729"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041802959.png" alt="image-20230104180214860"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041802492.png" alt="image-20230104180232377"></p>
-<h2 id="知识Tips"><a href="#知识Tips" class="headerlink" title="知识Tips"></a>知识Tips</h2><ul>
-<li>深度强化学习可以分类为基于价值的方法、基于随机策略的方法和基于确定性策略的方法，其中基于确定性策略的方法包括了确定性策略梯度（DPG）和深度确定性策略梯度（DDPG）</li>
-<li></li>
+                <p>环境tensorflow2.1</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1B7411L7Qt?p=8&amp;spm_id_from=pageDriver&amp;vd_source=2ffed29a08d7c0e5407d996c2c4915a8">课程连接</a></p>
+<p>课程介绍</p>
+<blockquote>
+<p> 本视频是新冠疫情期间，为北京大学软件与微电子学院选修《软硬件协同设计方法》的33位同学推送的录播课。6小时掌握Tensorflow2搭建优化神经网络的方法，以通俗精炼的语言，授人以渔。</p>
+</blockquote>
+<p>一、搭建深度学习模型的区别</p>
+<p><strong>对于Tensorflow1.0</strong>，</p>
+<ol>
+<li>​    <strong>step 01</strong> ：准备输入数据</li>
+<li>​    <strong>step 02</strong>：定义输入PlaceHolder</li>
+<li>​    <strong>step 03</strong>：搭建模型</li>
+<li>​    <strong>step 04</strong>：定义损失函数及优化器</li>
+<li>​    <strong>step 05</strong>：初始化所有变量</li>
+<li>​    <strong>step 06</strong>：创建会话session</li>
+<li>​    <strong>step 07</strong>：传参计算session.run()</li>
+</ol>
+<p><strong>对于Tensorflow 2.0</strong>，</p>
+<ol>
+<li>​    <strong>step 01</strong> ：准备输入数据</li>
+<li>​    <del><strong>step 02</strong>：定义输入PlaceHolder</del></li>
+<li>​    <strong>step 03</strong>：搭建模型</li>
+<li>​    <strong>step 04</strong>：定义损失函数及优化器</li>
+<li>​    <del><strong>step 05</strong>：初始化所有变量</del></li>
+<li>​    <del><strong>step 06</strong>：创建会话session</del></li>
+<li>​    <strong>step 07</strong>：传参计算<strong>model()</strong></li>
+</ol>
+<p> 二、TensorFlow 2.0 相比于TensorFlow 1.0 的其他区别</p>
+<p><strong>1. TensorFlow 2.0 动态图机制默认开启，方便开发者调试。</strong></p>
+<ul>
+<li>TensorFlow 1.0 默认是静态图，需要手动开启动态图。</li>
 </ul>
+<p><strong>2. tf.keras模块上的区别</strong></p>
+<ul>
+<li>Keras是对TensorFlow的更高一层封装，简化了TensorFlow的使用。</li>
+<li>TensorFlow 2.0中搭建网络，<strong>官方推荐</strong>使用Keras提供的方法。有两种搭建风格：Keras Function API (tf1中搭建模型的风格）和 Model Subclassing API（类似于Pytorch中搭建模型的风格）</li>
+<li>TensorFlow 2.0 删除了重复、废弃的API。而在TensorFlow 1.0，同一个功能可以找到多个API实现，会给开发者造成疑惑。</li>
+</ul>
+<p><strong>3.在TensorFlow 2.0 中使用 @tf.function 装饰器，构造高效的Python代码</strong></p>
+<h2 id="tensorflow"><a href="#tensorflow" class="headerlink" title="tensorflow"></a>tensorflow</h2><h3 id="tensor创建"><a href="#tensor创建" class="headerlink" title="tensor创建"></a>tensor创建</h3><p><code>tf.zeros(维度)</code></p>
+<p>创建全为0的tensor</p>
+<p><code>tf.ones(维度)</code></p>
+<p>创建全为1的tensor</p>
+<p><code>tf.fill(维度，指定值)</code></p>
+<p>创建指定值的tensor</p>
+<p><code>tf.random.normal(维度，mean=均值，stddev=标准差)</code></p>
+<p>生成正态分布的随机数，默认均值为0，标准差为1</p>
+<p><code>tf.random.truncated_normal(维度，mean=均值，stddev=标准差)</code></p>
+<p>保证生成的随机数在$\mu$+/-$2\sigma$之内,数据更加向均值集中</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072015871.png" alt="image-20230107201508711"></p>
+<p><code>tf.random.uniform(维度，minval=最小值，maxval=最大值)</code></p>
+<p>生成均匀分布随机数[minval,maxval)</p>
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><p><code>tf.cast(张量名,dtype=数据类型)</code></p>
+<p>强制tensor转换为该数据类型</p>
+<p><code>tf.reduce_min(张量名)</code></p>
+<p>计算张量维度上元素最小值</p>
+<p><code>tf.reduce_max(张量名)</code></p>
+<p>计算张量维度上的最大值</p>
+<p><code>tf.reduce_mean(张量名,axis=)</code></p>
+<p>计算张量沿着指定维度的平均值</p>
+<p><code>tf.reduce_sum(张量名,axis=)</code></p>
+<p>计算张量沿着指定维度的和</p>
+<p><code>tf.Variable()</code></p>
+<p>将变量标记为可训练的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072126182.png" alt="image-20230107212622090"></p>
+<p>tf中常用的数学运算</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072131637.png" alt="image-20230107213130561"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072152130.png" alt="image-20230107215214038"></p>
+<p><code>tf.data.Dataset.from_tensor_slices</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072203685.png" alt="image-20230107220356609"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072204665.png" alt="image-20230107220413566"></p>
+<p><code>tf.GradientTape</code></p>
+<p>with结构中记录计算过程，gradient求出张量的梯度</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072206399.png" alt="image-20230107220637294"></p>
+<p><code>enumerate</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072207445.png" alt="image-20230107220743356"></p>
+<p><code>tf.one_hot</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072210190.png" alt="image-20230107221011113"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072211381.png" alt="image-20230107221105289"></p>
+<p><code>tf.nn.softmax</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072213870.png" alt="image-20230107221313729"></p>
+<p><code>assign_sub</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072214197.png" alt="image-20230107221452097"></p>
+<p><code>tf.argmax</code></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072215454.png" alt="image-20230107221553307"></p>
+<h2 id="神经网咯实现鸢尾花分类"><a href="#神经网咯实现鸢尾花分类" class="headerlink" title="神经网咯实现鸢尾花分类"></a>神经网咯实现鸢尾花分类</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072241072.png" alt="image-20230107224100986"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*- coding: UTF-8 -*-</span>
+<span class="token comment"># 利用鸢尾花数据集，实现前向传播、反向传播，可视化loss曲线</span>
+
+<span class="token comment"># 导入所需模块</span>
+<span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> datasets
+<span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment"># 导入数据，分别为输入特征和标签</span>
+x_data <span class="token operator">=</span> datasets<span class="token punctuation">.</span>load_iris<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data
+y_data <span class="token operator">=</span> datasets<span class="token punctuation">.</span>load_iris<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>target
+
+<span class="token comment"># 随机打乱数据（因为原始数据是顺序的，顺序不打乱会影响准确率）</span>
+<span class="token comment"># seed: 随机数种子，是一个整数，当设置之后，每次生成的随机数都一样（为方便教学，以保每位同学结果一致）</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">116</span><span class="token punctuation">)</span>  <span class="token comment"># 使用相同的seed，保证输入特征和标签一一对应</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>x_data<span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">116</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>y_data<span class="token punctuation">)</span>
+tf<span class="token punctuation">.</span>random<span class="token punctuation">.</span>set_seed<span class="token punctuation">(</span><span class="token number">116</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将打乱后的数据集分割为训练集和测试集，训练集为前120行，测试集为后30行</span>
+x_train <span class="token operator">=</span> x_data<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">]</span>
+y_train <span class="token operator">=</span> y_data<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">]</span>
+x_test <span class="token operator">=</span> x_data<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+y_test <span class="token operator">=</span> y_data<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 转换x的数据类型，否则后面矩阵相乘时会因数据类型不一致报错</span>
+x_train <span class="token operator">=</span> tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> tf<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+x_test <span class="token operator">=</span> tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> tf<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+
+<span class="token comment"># from_tensor_slices函数使输入特征和标签值一一对应。（把数据集分批次，每个批次batch组数据）</span>
+train_db <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>from_tensor_slices<span class="token punctuation">(</span><span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span>
+test_db <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>from_tensor_slices<span class="token punctuation">(</span><span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 生成神经网络的参数，4个输入特征故，输入层为4个输入节点；因为3分类，故输出层为3个神经元</span>
+<span class="token comment"># 用tf.Variable()标记参数可训练</span>
+<span class="token comment"># 使用seed使每次生成的随机数相同（方便教学，使大家结果都一致，在现实使用时不写seed）</span>
+w1 <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>random<span class="token punctuation">.</span>truncated_normal<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> stddev<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">,</span> seed<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+b1 <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>random<span class="token punctuation">.</span>truncated_normal<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> stddev<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">,</span> seed<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+lr <span class="token operator">=</span> <span class="token number">0.1</span>  <span class="token comment"># 学习率为0.1</span>
+train_loss_results <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 将每轮的loss记录在此列表中，为后续画loss曲线提供数据</span>
+test_acc <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 将每轮的acc记录在此列表中，为后续画acc曲线提供数据</span>
+epoch <span class="token operator">=</span> <span class="token number">500</span>  <span class="token comment"># 循环500轮</span>
+loss_all <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 每轮分4个step，loss_all记录四个step生成的4个loss的和</span>
+
+<span class="token comment"># 训练部分</span>
+<span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>epoch<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#数据集级别的循环，每个epoch循环一次数据集</span>
+    <span class="token keyword">for</span> step<span class="token punctuation">,</span> <span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>train_db<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#batch级别的循环 ，每个step循环一个batch</span>
+        <span class="token keyword">with</span> tf<span class="token punctuation">.</span>GradientTape<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> tape<span class="token punctuation">:</span>  <span class="token comment"># with结构记录梯度信息</span>
+            y <span class="token operator">=</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> w1<span class="token punctuation">)</span> <span class="token operator">+</span> b1  <span class="token comment"># 神经网络乘加运算</span>
+            y <span class="token operator">=</span> tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>softmax<span class="token punctuation">(</span>y<span class="token punctuation">)</span>  <span class="token comment"># 使输出y符合概率分布（此操作后与独热码同量级，可相减求loss）</span>
+            y_ <span class="token operator">=</span> tf<span class="token punctuation">.</span>one_hot<span class="token punctuation">(</span>y_train<span class="token punctuation">,</span> depth<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 将标签值转换为独热码格式，方便计算loss和accuracy</span>
+            loss <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span>y_ <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 采用均方误差损失函数mse = mean(sum(y-out)^2)</span>
+            loss_all <span class="token operator">+=</span> loss<span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 将每个step计算出的loss累加，为后续求loss平均值提供数据，这样计算的loss更准确</span>
+        <span class="token comment"># 计算loss对各个参数的梯度</span>
+        grads <span class="token operator">=</span> tape<span class="token punctuation">.</span>gradient<span class="token punctuation">(</span>loss<span class="token punctuation">,</span> <span class="token punctuation">[</span>w1<span class="token punctuation">,</span> b1<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># 实现梯度更新 w1 = w1 - lr * w1_grad    b = b - lr * b_grad</span>
+        w1<span class="token punctuation">.</span>assign_sub<span class="token punctuation">(</span>lr <span class="token operator">*</span> grads<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 参数w1自更新</span>
+        b1<span class="token punctuation">.</span>assign_sub<span class="token punctuation">(</span>lr <span class="token operator">*</span> grads<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 参数b自更新</span>
+
+    <span class="token comment"># 每个epoch，打印loss信息</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Epoch {}, loss: {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>epoch<span class="token punctuation">,</span> loss_all<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    train_loss_results<span class="token punctuation">.</span>append<span class="token punctuation">(</span>loss_all <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span>  <span class="token comment"># 将4个step的loss求平均记录在此变量中</span>
+    loss_all <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># loss_all归零，为记录下一个epoch的loss做准备</span>
+
+    <span class="token comment"># 测试部分</span>
+    <span class="token comment"># total_correct为预测对的样本个数, total_number为测试的总样本数，将这两个变量都初始化为0</span>
+    total_correct<span class="token punctuation">,</span> total_number <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> x_test<span class="token punctuation">,</span> y_test <span class="token keyword">in</span> test_db<span class="token punctuation">:</span>
+        <span class="token comment"># 使用更新后的参数进行预测</span>
+        y <span class="token operator">=</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> w1<span class="token punctuation">)</span> <span class="token operator">+</span> b1
+        y <span class="token operator">=</span> tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>softmax<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+        pred <span class="token operator">=</span> tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>y<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 返回y中最大值的索引，即预测的分类</span>
+        <span class="token comment"># 将pred转换为y_test的数据类型</span>
+        pred <span class="token operator">=</span> tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>pred<span class="token punctuation">,</span> dtype<span class="token operator">=</span>y_test<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+        <span class="token comment"># 若分类正确，则correct=1，否则为0，将bool型的结果转换为int型</span>
+        correct <span class="token operator">=</span> tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>equal<span class="token punctuation">(</span>pred<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>int32<span class="token punctuation">)</span>
+        <span class="token comment"># 将每个batch的correct数加起来</span>
+        correct <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_sum<span class="token punctuation">(</span>correct<span class="token punctuation">)</span>
+        <span class="token comment"># 将所有batch中的correct数加起来</span>
+        total_correct <span class="token operator">+=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>correct<span class="token punctuation">)</span>
+        <span class="token comment"># total_number为测试的总样本数，也就是x_test的行数，shape[0]返回变量的行数</span>
+        total_number <span class="token operator">+=</span> x_test<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment"># 总的准确率等于total_correct/total_number</span>
+    acc <span class="token operator">=</span> total_correct <span class="token operator">/</span> total_number
+    test_acc<span class="token punctuation">.</span>append<span class="token punctuation">(</span>acc<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Test_acc:"</span><span class="token punctuation">,</span> acc<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"--------------------------"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 绘制 loss 曲线</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Loss Function Curve'</span><span class="token punctuation">)</span>  <span class="token comment"># 图片标题</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Epoch'</span><span class="token punctuation">)</span>  <span class="token comment"># x轴变量名称</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Loss'</span><span class="token punctuation">)</span>  <span class="token comment"># y轴变量名称</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>train_loss_results<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"$Loss$"</span><span class="token punctuation">)</span>  <span class="token comment"># 逐点画出trian_loss_results值并连线，连线图标是Loss</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 画出曲线图标</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 画出图像</span>
+
+<span class="token comment"># 绘制 Accuracy 曲线</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Acc Curve'</span><span class="token punctuation">)</span>  <span class="token comment"># 图片标题</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Epoch'</span><span class="token punctuation">)</span>  <span class="token comment"># x轴变量名称</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Acc'</span><span class="token punctuation">)</span>  <span class="token comment"># y轴变量名称</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>test_acc<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"$Accuracy$"</span><span class="token punctuation">)</span>  <span class="token comment"># 逐点画出test_acc值并连线，连线图标是Accuracy</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -582,7 +655,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/6040/">https://risingauroras.github.io/posts/6040/</a>
+                    <a href="https://risingauroras.github.io/posts/96ac/">https://risingauroras.github.io/posts/96ac/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -619,7 +692,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/tensorflow2/">
+                                    <span class="chip bg-color">tensorflow2</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -982,13 +1059,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/96ac/">
+                <a href="/posts/5550/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="Tensorflow2学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/28.jpg" class="responsive-img" alt="实用脚本">
                         
-                        <span class="card-title">Tensorflow2学习笔记</span>
+                        <span class="card-title">实用脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -999,27 +1076,15 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马克图布
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/tensorflow2/">
-                        <span class="chip bg-color">tensorflow2</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1031,13 +1096,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/7280/">
+                <a href="/posts/6040/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="What is Mutual Information?">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/27.jpg" class="responsive-img" alt="动手学强化学习">
                         
-                        <span class="card-title">What is Mutual Information?</span>
+                        <span class="card-title">动手学强化学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1054,12 +1119,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
-                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    数学基础
+                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    强化学习
                                 </a>
                             
                             

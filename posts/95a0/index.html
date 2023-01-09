@@ -446,6 +446,8 @@ conda install pytorch torchvision torchaudio cudatoolkit<span class="token opera
 python
 <span class="token keyword">import</span> torch
 torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#输出应为True</span>
+<span class="token comment">#环境备份</span>
+conda create <span class="token operator">-</span>n pytorch_copy <span class="token operator">-</span><span class="token operator">-</span>clone pytorch
 
 
 <span class="token keyword">or</span>
@@ -462,7 +464,7 @@ torch<span class="token punctuation">.</span>cuda<span class="token punctuation"
 <span class="token comment">#windows 查看环境 </span>
 conda info <span class="token operator">-</span>e
 <span class="token comment">#进入环境</span>
-activate py38torch1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+activate py38torch1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/nn.html">官方文档</a></p>
 </li>
@@ -480,6 +482,7 @@ activate py38torch1<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <ol>
 <li><strong>conda env list conda info -e</strong></li>
 <li><strong>conda create -n name python=number</strong></li>
+<li>conda env remove -n 环境名称</li>
 <li><strong>conda activate name</strong></li>
 <li><strong>python –version python -V</strong></li>
 </ol>
