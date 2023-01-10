@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<h2 id="Window批量删除文件名前缀"><a href="#Window批量删除文件名前缀" class="headerlink" title="Window批量删除文件名前缀"></a>Window批量删除文件名前缀</h2><p>在需要删除前缀的文件的同级目录下，新建一个记事本 .txt 文件，然后将下面的代码复制到记事本里面，把“需要替换的字符串”改为你想删除的文件名前缀。然后保存为.txt文件，再把txt修改为bat批处理文件，双击运行即可。 </p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">::此批处理命令用来批量重命令文件::当无匹配的文件时会显示“找不到文件”@echo offsetlocal enabledelayedexpansion<span class="token keyword">for</span> /f <span class="token string">"delims="</span> %%i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">'dir /b *需要替换的字符串*'</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>    <span class="token builtin class-name">echo</span> %%i    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span>%%i    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token operator">!</span>var:需要替换的字符串<span class="token operator">=</span><span class="token operator">!</span>    <span class="token builtin class-name">echo</span> %%i <span class="token operator">!</span>var<span class="token operator">!</span>    ren <span class="token string">"%%i"</span> <span class="token string">"!var!"</span><span class="token punctuation">)</span>pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> <strong>示例</strong></p><p>假设tmp目录下有3个相同前缀的文件“1_1.txt”，“1_2.txt”，“1_3.txt”，需要删掉前缀“1_”。修改上面的命令并保存为bat文件，内容如下：</p><pre class="line-numbers language-none"><code class="language-none">::此批处理命令用来批量重命令文件::当无匹配的文件时会显示“找不到文件”@echo offsetlocal enabledelayedexpansionfor /f "delims=" %%i in ('dir /b *1_*') do (    echo %%i    set var=%%i    set var=!var:1_=!    echo %%i !var!    ren "%%i" "!var!")pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 实用 </category>
+          
+      </categories>
+      
       
     </entry>
     
