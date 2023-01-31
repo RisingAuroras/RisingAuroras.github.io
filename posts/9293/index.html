@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实用脚本, 马克图布">
+    <meta name="keywords" content="强化学习笔记, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实用脚本 | 马克图布</title>
+    <title>强化学习笔记 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实用脚本</h1>
+                    <h1 class="description center-align post-title">强化学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -378,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                实用
+                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                强化学习
                             </a>
                         
                     </div>
@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-08
+                    2023-01-12
                 </div>
                 
 
@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    677
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -430,37 +430,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Window批量删除文件名前缀"><a href="#Window批量删除文件名前缀" class="headerlink" title="Window批量删除文件名前缀"></a>Window批量删除文件名前缀</h2><p>在需要删除前缀的文件的同级目录下，新建一个记事本 .txt 文件，然后将下面的代码复制到记事本里面，把“需要替换的字符串”改为你想删除的文件名前缀。然后保存为.txt文件，再把txt修改为bat批处理文件，双击运行即可。 </p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">::此批处理命令用来批量重命令文件
-::当无匹配的文件时会显示“找不到文件”
-
-@echo off
-setlocal enabledelayedexpansion
-<span class="token keyword">for</span> /f <span class="token string">"delims="</span> %%i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">'dir /b *需要替换的字符串*'</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>
-    <span class="token builtin class-name">echo</span> %%i
-    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span>%%i
-    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token operator">!</span>var:需要替换的字符串<span class="token operator">=</span><span class="token operator">!</span>
-    <span class="token builtin class-name">echo</span> %%i <span class="token operator">!</span>var<span class="token operator">!</span>
-    ren <span class="token string">"%%i"</span> <span class="token string">"!var!"</span>
-<span class="token punctuation">)</span>
-pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p> <strong>示例</strong></p>
-<p>假设tmp目录下有3个相同前缀的文件“1_1.txt”，“1_2.txt”，“1_3.txt”，需要删掉前缀“1_”。修改上面的命令并保存为bat文件，内容如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">::此批处理命令用来批量重命令文件
-::当无匹配的文件时会显示“找不到文件”
-
-@echo off
-setlocal enabledelayedexpansion
-for /f "delims=" %%i in ('dir /b *1_*') do (
-    echo %%i
-    set var=%%i
-    set var=!var:1_=!
-    echo %%i !var!
-    ren "%%i" "!var!"
-)
-pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h2 id="Reward相关"><a href="#Reward相关" class="headerlink" title="Reward相关"></a>Reward相关</h2><ul>
+<li>reward设置成[-1, 1]是normalized之后的结果，一般reward的设置是根据reward function或是根据一些经验值，比如在一些经典的迷宫场景中，reward的设置一般是一步-1的reward，作用是鞭策agent加快学习过程，在一些悬崖的地方会设置很大的负reward比如-200，这是因为这些地方会直接导致游戏结束，所以reward会很大，有点类似于自动驾驶中的撞车。不过总体来说reward的设置多数是根据经验并结合reward function</li>
+<li>强化学习本身也是一个搜索和优化的过程，肯定存在一些局部最优点，agent在学习的过程中很可能会收敛到局部最优点，解决方法主要是通过exploration来扩大搜索范围，防止agent因为没有见过相关的state而收敛到现有的state，目前也有一种方法是学习anti-goal，可以<a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/9225-keeping-your-distance-solving-sparse-reward-tasks-using-self-balancing-shaped-rewards.pdf">参考</a></li>
+</ul>
+<h3 id="reward-shaping"><a href="#reward-shaping" class="headerlink" title="reward shaping"></a>reward shaping</h3><p>关于reward shaping 详细内容点这跳转：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137167522">原文</a></p>
+<p>reward shaping是强化学习中的一个具有普适性的研究方向，即有强化学习影子的地方总能够尝试用reward shaping进行改进。本文准备介绍几篇近两年的ICLR在reward shaping上进行过研究的工作，并尝试总结出这些研究的一些共通点。</p>
+<p>通常来说，reward shaping的动机主要有两点：</p>
+<p>1、为了解决long-term credit assignment问题，即智能体只能到某个游戏关卡结束以后才能获得实质性的奖励值，其他时候的奖励都是零，从而<strong>导致智能体无法认识到某个状态下采取某个动作对最后奖励的贡献程度</strong>，识别不出关键动作。</p>
+<p>2、在很多较为困难的Atari游戏场景中，往往需要智能体进行大量的exploration以后才能够收获到实质性的奖励，若在exploration中所有情况的奖励都是零，则<strong>智能体就没有进行exploration的动力</strong>，因此需要在智能体进行exploration的时候设计额外的奖励促使智能体去exploration。</p>
+<p>本文的行文顺序为：reward shaping的基础理论–&gt;reward shaping的有关论文–&gt;reward shaping的个人思考</p>
+<p><strong>一、reward shaping的基础理论</strong></p>
+<p>基于前面两个动机，可以知道reward shaping是需要对一个episode中的每一个 $(s_t,a_t)$ 都计算一个额外奖励，即除了原始奖励 $R(s_t,a_t,s’<em>t) $以外还需要计算一个 $F(s_t,a_t,s’</em>{t})$ 作为额外奖励。</p>
+<p>Andrew Y. Ng在2016年给出了这个额外奖励所需要具备的条件：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121021426.png" alt="image-20230112102111347"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121023915.png" alt="image-20230112102311872"></p>
 
                 
             </div>
@@ -487,7 +471,7 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/5550/">https://risingauroras.github.io/posts/5550/</a>
+                    <a href="https://risingauroras.github.io/posts/9293/">https://risingauroras.github.io/posts/9293/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -887,13 +871,13 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9293/">
+                <a href="/posts/5077/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="强化学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="如何做一名合格的研究生？">
                         
-                        <span class="card-title">强化学习笔记</span>
+                        <span class="card-title">如何做一名合格的研究生？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -908,12 +892,8 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    强化学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马克图布
                             
                         </span>
                     </div>
@@ -928,13 +908,13 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/96ac/">
+                <a href="/posts/5550/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="Tensorflow2学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/28.jpg" class="responsive-img" alt="实用脚本">
                         
-                        <span class="card-title">Tensorflow2学习笔记</span>
+                        <span class="card-title">实用脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -945,27 +925,19 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
+                                    实用
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/tensorflow2/">
-                        <span class="chip bg-color">tensorflow2</span>
-                    </a>
-                    
                 </div>
                 
             </div>

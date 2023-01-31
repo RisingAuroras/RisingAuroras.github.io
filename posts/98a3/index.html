@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实用脚本, 马克图布">
+    <meta name="keywords" content="动手学深度学习, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实用脚本 | 马克图布</title>
+    <title>动手学深度学习 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实用脚本</h1>
+                    <h1 class="description center-align post-title">动手学深度学习</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BB%8F%E5%85%B8/">
+                                <span class="chip bg-color">经典</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9D%8E%E6%B2%90/">
+                                <span class="chip bg-color">李沐</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,8 +386,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                实用
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
+                            </a>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                深度学习
                             </a>
                         
                     </div>
@@ -391,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-08
+                    2023-01-29
                 </div>
                 
 
@@ -400,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    36
                 </div>
                 
 
@@ -430,37 +442,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Window批量删除文件名前缀"><a href="#Window批量删除文件名前缀" class="headerlink" title="Window批量删除文件名前缀"></a>Window批量删除文件名前缀</h2><p>在需要删除前缀的文件的同级目录下，新建一个记事本 .txt 文件，然后将下面的代码复制到记事本里面，把“需要替换的字符串”改为你想删除的文件名前缀。然后保存为.txt文件，再把txt修改为bat批处理文件，双击运行即可。 </p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">::此批处理命令用来批量重命令文件
-::当无匹配的文件时会显示“找不到文件”
-
-@echo off
-setlocal enabledelayedexpansion
-<span class="token keyword">for</span> /f <span class="token string">"delims="</span> %%i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">'dir /b *需要替换的字符串*'</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>
-    <span class="token builtin class-name">echo</span> %%i
-    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span>%%i
-    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token operator">!</span>var:需要替换的字符串<span class="token operator">=</span><span class="token operator">!</span>
-    <span class="token builtin class-name">echo</span> %%i <span class="token operator">!</span>var<span class="token operator">!</span>
-    ren <span class="token string">"%%i"</span> <span class="token string">"!var!"</span>
-<span class="token punctuation">)</span>
-pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p> <strong>示例</strong></p>
-<p>假设tmp目录下有3个相同前缀的文件“1_1.txt”，“1_2.txt”，“1_3.txt”，需要删掉前缀“1_”。修改上面的命令并保存为bat文件，内容如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">::此批处理命令用来批量重命令文件
-::当无匹配的文件时会显示“找不到文件”
-
-@echo off
-setlocal enabledelayedexpansion
-for /f "delims=" %%i in ('dir /b *1_*') do (
-    echo %%i
-    set var=%%i
-    set var=!var:1_=!
-    echo %%i !var!
-    ren "%%i" "!var!"
-)
-pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h2 id="自动求导"><a href="#自动求导" class="headerlink" title="自动求导"></a>自动求导</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291657863.png" alt="image-20230129165706791"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291700571.png" alt="image-20230129170034502"></p>
+<p>计算图可以显示的去构造</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291703810.png" alt="image-20230129170304746"></p>
+<p>也可以隐式构造</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291705600.png" alt="image-20230129170505529"></p>
+<p>自动求导的两种方式：正向or反向</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291707264.png" alt="image-20230129170721187"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291709281.png" alt="image-20230129170959203"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291714175.png" alt="image-20230129171434113"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291715506.png" alt="image-20230129171544432"></p>
 
                 
             </div>
@@ -487,7 +479,7 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/5550/">https://risingauroras.github.io/posts/5550/</a>
+                    <a href="https://risingauroras.github.io/posts/98a3/">https://risingauroras.github.io/posts/98a3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -524,7 +516,15 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%BB%8F%E5%85%B8/">
+                                    <span class="chip bg-color">经典</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9D%8E%E6%B2%90/">
+                                    <span class="chip bg-color">李沐</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -883,17 +883,18 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/9293/">
+                <a href="/posts/98a3/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="强化学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="动手学深度学习">
                         
-                        <span class="card-title">强化学习笔记</span>
+                        <span class="card-title">动手学深度学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -903,20 +904,37 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    强化学习
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BB%8F%E5%85%B8/">
+                        <span class="chip bg-color">经典</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9D%8E%E6%B2%90/">
+                        <span class="chip bg-color">李沐</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -928,13 +946,13 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/96ac/">
+                <a href="/posts/c2fd/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="Tensorflow2学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="强化学习的数学原理">
                         
-                        <span class="card-title">Tensorflow2学习笔记</span>
+                        <span class="card-title">强化学习的数学原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -945,27 +963,19 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    强化学习
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/tensorflow2/">
-                        <span class="chip bg-color">tensorflow2</span>
-                    </a>
-                    
                 </div>
                 
             </div>

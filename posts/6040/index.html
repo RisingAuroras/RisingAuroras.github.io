@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -483,6 +483,24 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041205261.png" alt="image-20230104120523146"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041208972.png" alt="image-20230104120823873"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041344120.png" alt="image-20230104134424027"></p>
+<h2 id="马尔科夫决策过程"><a href="#马尔科夫决策过程" class="headerlink" title="马尔科夫决策过程"></a>马尔科夫决策过程</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102340804.png" alt="image-20230110234040676"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102341613.png" alt="image-20230110234139543"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102346219.png" alt="image-20230110234619149"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102348920.png" alt="image-20230110234829841"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102350117.png" alt="image-20230110235006050"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102352978.png" alt="image-20230110235222914"></p>
+<h2 id="基于动态规划的强化学习"><a href="#基于动态规划的强化学习" class="headerlink" title="基于动态规划的强化学习"></a>基于动态规划的强化学习</h2><p>更新价值函数很耗时，对于空间较小的MDP，策略迭代通常更快收敛；而对于空间较大的价值迭代效率更高。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121221549.jpeg" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121056397.png" alt="image-20230112105637325"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121059032.png" alt="image-20230112105905971"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121102540.png" alt="image-20230112110217474"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121130616.png" alt="image-20230112113046551"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121132358.png" alt="image-20230112113225284"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121135609.png" alt="image-20230112113529531"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121137212.png" alt="image-20230112113755143"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121139119.png" alt="image-20230112113925041"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121144690.png" alt="image-20230112114448618"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301121152307.png" alt="image-20230112115231216"></p>
 <h2 id="策略梯度（Policy-Gradient）"><a href="#策略梯度（Policy-Gradient）" class="headerlink" title="策略梯度（Policy Gradient）"></a>策略梯度（Policy Gradient）</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092113150.jpeg" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091927054.png" alt="image-20230109192733983"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301091931492.png" alt="image-20230109193145420"></p>
@@ -554,7 +572,7 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041802492.png" alt="image-20230104180232377"></p>
 <h2 id="知识Tips"><a href="#知识Tips" class="headerlink" title="知识Tips"></a>知识Tips</h2><ul>
 <li>深度强化学习可以分类为基于价值的方法、基于随机策略的方法和基于确定性策略的方法，其中基于确定性策略的方法包括了确定性策略梯度（DPG）和深度确定性策略梯度（DDPG）</li>
-<li></li>
+<li>第一，reward设置成[-1, 1]是normalized之后的结果，一般reward的设置是根据reward function或是根据一些经验值，比如在一些经典的迷宫场景中，reward的设置一般是一步-1的reward，作用是鞭策agent加快学习过程，在一些悬崖的地方会设置很大的负reward比如-200，这是因为这些地方会直接导致游戏结束，所以reward会很大，有点类似于自动驾驶中的撞车。不过总体来说reward的设置多数是根据经验并结合reward function。第二，强化学习本身也是一个搜索和优化的过程，肯定存在一些局部最优点，agent在学习的过程中很可能会收敛到局部最优点，解决方法主要是通过exploration来扩大搜索范围，防止agent因为没有见过相关的state而收敛到现有的state，目前也有一种方法是学习anti-goal，可以<a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/9225-keeping-your-distance-solving-sparse-reward-tasks-using-self-balancing-shaped-rewards.pdf">参考</a></li>
 </ul>
 
                 

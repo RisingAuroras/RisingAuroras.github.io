@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实用脚本, 马克图布">
+    <meta name="keywords" content="强化学习的数学原理, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实用脚本 | 马克图布</title>
+    <title>强化学习的数学原理 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实用脚本</h1>
+                    <h1 class="description center-align post-title">强化学习的数学原理</h1>
                 </div>
             </div>
         </div>
@@ -378,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                实用
+                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                强化学习
                             </a>
                         
                     </div>
@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-08
+                    2023-01-13
                 </div>
                 
 
@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    244
                 </div>
                 
 
@@ -430,37 +430,88 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Window批量删除文件名前缀"><a href="#Window批量删除文件名前缀" class="headerlink" title="Window批量删除文件名前缀"></a>Window批量删除文件名前缀</h2><p>在需要删除前缀的文件的同级目录下，新建一个记事本 .txt 文件，然后将下面的代码复制到记事本里面，把“需要替换的字符串”改为你想删除的文件名前缀。然后保存为.txt文件，再把txt修改为bat批处理文件，双击运行即可。 </p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">::此批处理命令用来批量重命令文件
-::当无匹配的文件时会显示“找不到文件”
-
-@echo off
-setlocal enabledelayedexpansion
-<span class="token keyword">for</span> /f <span class="token string">"delims="</span> %%i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">'dir /b *需要替换的字符串*'</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>
-    <span class="token builtin class-name">echo</span> %%i
-    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span>%%i
-    <span class="token builtin class-name">set</span> <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token operator">!</span>var:需要替换的字符串<span class="token operator">=</span><span class="token operator">!</span>
-    <span class="token builtin class-name">echo</span> %%i <span class="token operator">!</span>var<span class="token operator">!</span>
-    ren <span class="token string">"%%i"</span> <span class="token string">"!var!"</span>
-<span class="token punctuation">)</span>
-pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p> <strong>示例</strong></p>
-<p>假设tmp目录下有3个相同前缀的文件“1_1.txt”，“1_2.txt”，“1_3.txt”，需要删掉前缀“1_”。修改上面的命令并保存为bat文件，内容如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">::此批处理命令用来批量重命令文件
-::当无匹配的文件时会显示“找不到文件”
-
-@echo off
-setlocal enabledelayedexpansion
-for /f "delims=" %%i in ('dir /b *1_*') do (
-    echo %%i
-    set var=%%i
-    set var=!var:1_=!
-    echo %%i !var!
-    ren "%%i" "!var!"
-)
-pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <p>写在前面—— ——对于强化学习的建议</p>
+<ul>
+<li>不要有追求速成的想法</li>
+<li>对于自己的目标要分类合理的时间</li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>经典书籍</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301131219364.png" alt="image-20230113121914133"></p>
+<p>课程目的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301131219387.png" alt="image-20230113121941318"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301131222478.png" alt="image-20230113122213354"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301131224247.png" alt="image-20230113122440140"></p>
+<h2 id="贝尔曼公式"><a href="#贝尔曼公式" class="headerlink" title="贝尔曼公式"></a>贝尔曼公式</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282048396.png" alt="image-20230128204812340"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281655736.png" alt="image-20230128165517590"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281704644.png" alt="image-20230128170409931"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281727639.png" alt="image-20230128172712551"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281758267.png" alt="image-20230128175858154"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281802396.png" alt="image-20230128180228305"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281805334.png" alt="image-20230128180554256"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281807579.png" alt="image-20230128180738504"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281807177.png" alt="image-20230128180756111"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281815470.png" alt="image-20230128181552387"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281820457.png" alt="image-20230128182026388"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281823012.png" alt="image-20230128182318912"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281823700.png" alt="image-20230128182354645"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281824078.png" alt="image-20230128182456991"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281830314.png" alt="image-20230128183009226"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281836889.png" alt="image-20230128183604826"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281837227.png" alt="image-20230128183710147"></p>
+<p>通过计算state value来评价策略的好坏</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281841715.png" alt="image-20230128184124631"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301281841231.png" alt="image-20230128184148158"></p>
+<p>动作价值函数</p>
+<p>从下面的几个公式可以看出，state value 和action value 是可以相互推导的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282052419.png" alt="image-20230128205247340"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282056627.png" alt="image-20230128205613554"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282103098.png" alt="image-20230128210313033"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282104281.png" alt="image-20230128210403215"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282105538.png" alt="image-20230128210541462"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301282107790.png" alt="image-20230128210734706"></p>
+<h2 id="贝尔曼最优公式"><a href="#贝尔曼最优公式" class="headerlink" title="贝尔曼最优公式"></a>贝尔曼最优公式</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301037561.png" alt="image-20230130103748502"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292236535.png" alt="image-20230129223633446"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292304740.png" alt="image-20230129230417648"></p>
+<p>我们要去求解这个优化问题，得到最优的$\pi$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292306783.png" alt="image-20230129230658694"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292308358.png" alt="image-20230129230817266"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292309337.png" alt="image-20230129230936242"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292316415.png" alt="image-20230129231630304"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292319950.png" alt="image-20230129231938847"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301292323704.png" alt="image-20230129232346610"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301037857.png" alt="image-20230130103703750"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301041668.png" alt="image-20230130104100582"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301042145.png" alt="image-20230130104232048"></p>
+<p>定理求解</p>
+<p>$$x=f(x)$$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301044731.png" alt="image-20230130104410641"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301047874.png" alt="image-20230130104744794"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301048829.png" alt="image-20230130104825732"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301050825.png" alt="image-20230130105052759"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301055242.png" alt="image-20230130105556156"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301057586.png" alt="image-20230130105714515"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301058682.png" alt="image-20230130105837611"></p>
+<p>虽然下面例子中，策略已经达到最优，但是state value还没有达到最优，所以需要继续迭代</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301103120.png" alt="image-20230130110306039"></p>
+<p>迭代不能无穷的进行下去，所以需要有终止条件，常见的是$v_k-v_{k+1}&lt;\epsilon$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301106475.png" alt="image-20230130110645402"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301114852.png" alt="image-20230130111422776"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301114435.png" alt="image-20230130111447362"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301115593.png" alt="image-20230130111532505"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301135359.png" alt="image-20230130113517281"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301137287.png" alt="image-20230130113734211"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301139549.png" alt="image-20230130113912467"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301140273.png" alt="image-20230130114018189"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301141876.png" alt="image-20230130114157800"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301142411.png" alt="image-20230130114247324"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301144321.png" alt="image-20230130114456254"></p>
+<p>最优策略的不变性</p>
+<p>只考虑相对价值的大小</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301153259.png" alt="image-20230130115304172"></p>
+<p>一般为了防止绕远路，每一步会给$r=-1$，但其实，这个不止和$r$有关，和$\gamma$也有关系</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301157846.png" alt="image-20230130115738768"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301158484.png" alt="image-20230130115805408"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301158360.png" alt="image-20230130115829264"></p>
 
                 
             </div>
@@ -487,7 +538,7 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/5550/">https://risingauroras.github.io/posts/5550/</a>
+                    <a href="https://risingauroras.github.io/posts/c2fd/">https://risingauroras.github.io/posts/c2fd/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -887,13 +938,13 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9293/">
+                <a href="/posts/98a3/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="强化学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="动手学深度学习">
                         
-                        <span class="card-title">强化学习笔记</span>
+                        <span class="card-title">动手学深度学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,19 +955,35 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    强化学习
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BB%8F%E5%85%B8/">
+                        <span class="chip bg-color">经典</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9D%8E%E6%B2%90/">
+                        <span class="chip bg-color">李沐</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -928,13 +995,13 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/96ac/">
+                <a href="/posts/5077/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="Tensorflow2学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="如何做一名合格的研究生？">
                         
-                        <span class="card-title">Tensorflow2学习笔记</span>
+                        <span class="card-title">如何做一名合格的研究生？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -945,27 +1012,15 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马克图布
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/tensorflow2/">
-                        <span class="chip bg-color">tensorflow2</span>
-                    </a>
-                    
                 </div>
                 
             </div>

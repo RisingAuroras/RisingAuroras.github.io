@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-01-10T01:16:20.705Z</updated>
+  <updated>2023-01-31T02:41:24.632Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,109 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动手学深度学习</title>
+    <link href="https://risingauroras.github.io/posts/98a3/"/>
+    <id>https://risingauroras.github.io/posts/98a3/</id>
+    <published>2023-01-29T08:55:57.000Z</published>
+    <updated>2023-01-31T02:41:24.632Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;自动求导&quot;&gt;&lt;a href=&quot;#自动求导&quot; class=&quot;headerlink&quot; title=&quot;自动求导&quot;&gt;&lt;/a&gt;自动求导&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="经典" scheme="https://risingauroras.github.io/tags/%E7%BB%8F%E5%85%B8/"/>
+    
+    <category term="李沐" scheme="https://risingauroras.github.io/tags/%E6%9D%8E%E6%B2%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>强化学习的数学原理</title>
+    <link href="https://risingauroras.github.io/posts/c2fd/"/>
+    <id>https://risingauroras.github.io/posts/c2fd/</id>
+    <published>2023-01-13T03:23:47.000Z</published>
+    <updated>2023-01-30T15:25:49.927Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;写在前面—— ——对于强化学习的建议&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不要有追求速成的想法&lt;/li&gt;
+&lt;li&gt;对于自己的目标要分类合理的时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何做一名合格的研究生？</title>
+    <link href="https://risingauroras.github.io/posts/5077/"/>
+    <id>https://risingauroras.github.io/posts/5077/</id>
+    <published>2023-01-12T09:10:07.000Z</published>
+    <updated>2023-01-12T11:04:22.053Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;摘自&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>强化学习笔记</title>
+    <link href="https://risingauroras.github.io/posts/9293/"/>
+    <id>https://risingauroras.github.io/posts/9293/</id>
+    <published>2023-01-12T02:05:16.000Z</published>
+    <updated>2023-01-12T02:23:14.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Reward相关&quot;&gt;&lt;a href=&quot;#Reward相关&quot; class=&quot;headerlink&quot; title=&quot;Reward相关&quot;&gt;&lt;/a&gt;Reward相关&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;reward设置成[-1,</summary>
+        
+      
+    
+    
+    
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>实用脚本</title>
@@ -70,7 +173,7 @@
     <link href="https://risingauroras.github.io/posts/6040/"/>
     <id>https://risingauroras.github.io/posts/6040/</id>
     <published>2023-01-01T14:00:22.000Z</published>
-    <updated>2023-01-09T13:47:36.662Z</updated>
+    <updated>2023-01-12T07:49:58.205Z</updated>
     
     
       
@@ -119,15 +222,14 @@
     <link href="https://risingauroras.github.io/posts/1618/"/>
     <id>https://risingauroras.github.io/posts/1618/</id>
     <published>2023-01-01T08:12:20.000Z</published>
-    <updated>2023-01-03T13:35:12.065Z</updated>
+    <updated>2023-01-12T09:06:52.971Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/304499706&quot;&gt;本文地址&lt;/a&gt;，转载自&lt;a href=&quot;https://www.zhihu.com/people/nan-de-4-89&quot;&gt;LR-bee&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/304499706&quot;&gt;本文地址&lt;/a&gt;，转载自&lt;a</summary>
         
       
     
@@ -143,7 +245,7 @@
     <link href="https://risingauroras.github.io/posts/bf25/"/>
     <id>https://risingauroras.github.io/posts/bf25/</id>
     <published>2022-12-26T04:38:51.000Z</published>
-    <updated>2023-01-03T15:09:45.963Z</updated>
+    <updated>2023-01-10T12:42:37.184Z</updated>
     
     
       
@@ -157,6 +259,8 @@
     
     
     <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="学术" scheme="https://risingauroras.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
     <category term="论文" scheme="https://risingauroras.github.io/tags/%E8%AE%BA%E6%96%87/"/>
@@ -387,102 +491,6 @@
     
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>线性代数</title>
-    <link href="https://risingauroras.github.io/posts/6e55/"/>
-    <id>https://risingauroras.github.io/posts/6e55/</id>
-    <published>2022-09-29T05:24:43.000Z</published>
-    <updated>2022-10-29T13:05:40.640Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;正定-x2F-负定、半正定-x2F-半负定&quot;&gt;&lt;a href=&quot;#正定-x2F-负定、半正定-x2F-半负定&quot; class=&quot;headerlink&quot; title=&quot;正定/负定、半正定/半负定&quot;&gt;&lt;/a&gt;正定/负定、半正定/半负定&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>矩阵、向量的导数运算</title>
-    <link href="https://risingauroras.github.io/posts/cbab/"/>
-    <id>https://risingauroras.github.io/posts/cbab/</id>
-    <published>2022-09-28T11:14:47.000Z</published>
-    <updated>2022-10-02T03:09:20.878Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;向量对向量求导&quot;&gt;&lt;a href=&quot;#向量对向量求导&quot; class=&quot;headerlink&quot; title=&quot;向量对向量求导&quot;&gt;&lt;/a&gt;向量对向量求导&lt;/h2&gt;&lt;p&gt;本文转自&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>常见分布的数学期望以及方差公式</title>
-    <link href="https://risingauroras.github.io/posts/d498/"/>
-    <id>https://risingauroras.github.io/posts/d498/</id>
-    <published>2022-09-27T11:09:32.000Z</published>
-    <updated>2022-09-28T11:55:25.308Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;转载自&lt;a href=&quot;https://blog.csdn.net/sodacoco&quot;&gt;二喵君&lt;/a&gt;，文章&lt;a href=&quot;https://blog.csdn.net/sodacoco/article/details/89041910&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>求和求乘累加累乘符号运算法则</title>
-    <link href="https://risingauroras.github.io/posts/67ff/"/>
-    <id>https://risingauroras.github.io/posts/67ff/</id>
-    <published>2022-09-21T03:51:01.000Z</published>
-    <updated>2022-10-02T03:10:07.115Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本文转载自&lt;a href=&quot;https://www.it610.com/article/1304682095108460544.htm&quot;&gt;&lt;strong&gt;kyle1314608&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;累加符&quot;&gt;&lt;a href=&quot;#累加符&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="转载" scheme="https://risingauroras.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
     
   </entry>
   
