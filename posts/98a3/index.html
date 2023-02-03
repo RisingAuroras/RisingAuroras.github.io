@@ -412,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    36
+                    172
                 </div>
                 
 
@@ -453,6 +453,37 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291709281.png" alt="image-20230129170959203"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291714175.png" alt="image-20230129171434113"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301291715506.png" alt="image-20230129171544432"></p>
+<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p>训练数据集</p>
+<p>验证数据集</p>
+<p>测试数据集</p>
+<blockquote>
+<p>NOTE:</p>
+<p>不要把验证数据集合测试数据集弄混</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302021957036.png" alt="image-20230202195726933"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022001052.png" alt="image-20230202200152001"></p>
+<h2 id="模型的选择以及过拟合和欠拟合"><a href="#模型的选择以及过拟合和欠拟合" class="headerlink" title="模型的选择以及过拟合和欠拟合"></a>模型的选择以及过拟合和欠拟合</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022005139.png" alt="image-20230202200548074"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022011089.png" alt="image-20230202201140008"> <img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022011490.png" alt="image-20230202201120419"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022015329.png" alt="image-20230202201554242"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022017752.png" alt="image-20230202201745674"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022024356.png" alt="image-20230202202416282"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022027545.png" alt="image-20230202202726488"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022034066.png" alt="image-20230202203438984"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302022037701.png" alt="image-20230202203703633"></p>
+<h2 id="处理过拟合的方法"><a href="#处理过拟合的方法" class="headerlink" title="处理过拟合的方法"></a>处理过拟合的方法</h2><h3 id="weight-decay"><a href="#weight-decay" class="headerlink" title="weight decay"></a>weight decay</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302031953390.png" alt="image-20230203195306276"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302031957683.png" alt="image-20230203195747613"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302031959075.png" alt="image-20230203195936993"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032006834.png" alt="image-20230203200638760"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032008626.png" alt="image-20230203200837562"></p>
+<p>对$w_t$的权重衰减值往往设为1e-2/1e-3/1e-4(ps: 1-$\eta\lambda$)</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032012019.png" alt="image-20230203201226954"></p>
+<h3 id="dropout（主流）"><a href="#dropout（主流）" class="headerlink" title="dropout（主流）"></a>dropout（主流）</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032126516.png" alt="image-20230203212659444"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032130598.png" alt="image-20230203213009516"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032132709.png" alt="image-20230203213229619"></p>
+<p>只在训练过程中使用正则方法，在测试过程(推理)中是不需要正则的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032134722.png" alt="image-20230203213407665"></p>
+<p>多用在多层感知机的隐藏层上，很少用在CNN之类的模型上</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032139071.png" alt="image-20230203213934978"></p>
 
                 
             </div>

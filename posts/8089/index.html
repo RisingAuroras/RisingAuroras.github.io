@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.1k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    20 分
                 </div>
                 
 
@@ -639,7 +639,7 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
 
 <p><code>np.mgrid[] np.ravel np.c_[]</code></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072329710.png" alt="image-20230107232903557"></p>
-<h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p>小技巧：</p>
+<h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p><code>小技巧：</code></p>
 <p>Jupyter Notebook 上面用 Matplotlib 了，但是不知道大家看到画出来那一坨糊糊的东西会不会跟我一样浑身难受。实际上，只要多加一行配置，就能够让 Matplotlib 在 Jupyter Notebook 上面输出矢量图了：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
@@ -650,6 +650,69 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">'tmp.pdf'</span><span class="token punctuation">,</span> bbox_inches<span class="token operator">=</span><span class="token string">'tight'</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+
+
+<p><code>matplotlib实用函数</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">use_svg_display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token triple-quoted-string string">"""使用svg格式在Jupyter中显示绘图"""</span>
+    backend_inline<span class="token punctuation">.</span>set_matplotlib_formats<span class="token punctuation">(</span><span class="token string">'svg'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">set_figsize</span><span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token triple-quoted-string string">"""设置matplotlib的图表大小"""</span>
+    use_svg_display<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'figure.figsize'</span><span class="token punctuation">]</span> <span class="token operator">=</span> figsize
+
+<span class="token keyword">def</span> <span class="token function">set_axes</span><span class="token punctuation">(</span>axes<span class="token punctuation">,</span> xlabel<span class="token punctuation">,</span> ylabel<span class="token punctuation">,</span> xlim<span class="token punctuation">,</span> ylim<span class="token punctuation">,</span> xscale<span class="token punctuation">,</span> yscale<span class="token punctuation">,</span> legend<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""设置matplotlib的轴"""</span>
+    axes<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span>xlabel<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span>ylabel<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>set_xscale<span class="token punctuation">(</span>xscale<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>set_yscale<span class="token punctuation">(</span>yscale<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span>xlim<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span>ylim<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> legend<span class="token punctuation">:</span>
+        axes<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>legend<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">plot</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> xlabel<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> ylabel<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> legend<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> xlim<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+         ylim<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> xscale<span class="token operator">=</span><span class="token string">'linear'</span><span class="token punctuation">,</span> yscale<span class="token operator">=</span><span class="token string">'linear'</span><span class="token punctuation">,</span>
+         fmts<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">,</span> <span class="token string">'m--'</span><span class="token punctuation">,</span> <span class="token string">'g-.'</span><span class="token punctuation">,</span> <span class="token string">'r:'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axes<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""绘制数据点"""</span>
+    <span class="token keyword">if</span> legend <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        legend <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    set_figsize<span class="token punctuation">(</span>figsize<span class="token punctuation">)</span>
+    axes <span class="token operator">=</span> axes <span class="token keyword">if</span> axes <span class="token keyword">else</span> d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">has_one_axis</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token builtin">hasattr</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> <span class="token string">"ndim"</span><span class="token punctuation">)</span> <span class="token keyword">and</span> X<span class="token punctuation">.</span>ndim <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword">or</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">)</span>
+                <span class="token keyword">and</span> <span class="token keyword">not</span> <span class="token builtin">hasattr</span><span class="token punctuation">(</span>X<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"__len__"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> has_one_axis<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        X <span class="token operator">=</span> <span class="token punctuation">[</span>X<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> Y <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        X<span class="token punctuation">,</span> Y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">,</span> X
+    <span class="token keyword">elif</span> has_one_axis<span class="token punctuation">(</span>Y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Y <span class="token operator">=</span> <span class="token punctuation">[</span>Y<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>Y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        X <span class="token operator">=</span> X <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>Y<span class="token punctuation">)</span>
+    axes<span class="token punctuation">.</span>cla<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> fmt <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">,</span> fmts<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            axes<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> fmt<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            axes<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>y<span class="token punctuation">,</span> fmt<span class="token punctuation">)</span>
+    set_axes<span class="token punctuation">(</span>axes<span class="token punctuation">,</span> xlabel<span class="token punctuation">,</span> ylabel<span class="token punctuation">,</span> xlim<span class="token punctuation">,</span> ylim<span class="token punctuation">,</span> xscale<span class="token punctuation">,</span> yscale<span class="token punctuation">,</span> legend<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>使用上述函数画图</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">
+<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">3</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">4</span> <span class="token operator">*</span> x
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token punctuation">[</span>f<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">,</span> <span class="token string">'f(x)'</span><span class="token punctuation">,</span> legend<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'f(x)'</span><span class="token punctuation">,</span> <span class="token string">'Tangent line (x=1)'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301312154501.png" alt="image-20230131215451447"></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34498545/article/details/112631706">改变刻度</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
