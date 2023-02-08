@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-02-03T14:30:35.767Z</updated>
+  <updated>2023-02-08T13:15:28.421Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>菜菜的sklearn机器学习</title>
+    <link href="https://risingauroras.github.io/posts/b588/"/>
+    <id>https://risingauroras.github.io/posts/b588/</id>
+    <published>2023-02-08T05:58:15.000Z</published>
+    <updated>2023-02-08T13:15:28.421Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;sklearn中的数据预处理和特征工程&quot;&gt;&lt;a href=&quot;#sklearn中的数据预处理和特征工程&quot; class=&quot;headerlink&quot; title=&quot;sklearn中的数据预处理和特征工程&quot;&gt;&lt;/a&gt;sklearn中的数据预处理和特征工程&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="sklearn" scheme="https://risingauroras.github.io/tags/sklearn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>特征工程</title>
+    <link href="https://risingauroras.github.io/posts/4485/"/>
+    <id>https://risingauroras.github.io/posts/4485/</id>
+    <published>2023-02-07T12:19:00.000Z</published>
+    <updated>2023-02-07T15:20:39.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Instruction&quot;&gt;&lt;a href=&quot;#Instruction&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="特征工程" scheme="https://risingauroras.github.io/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>动手学深度学习</title>
     <link href="https://risingauroras.github.io/posts/98a3/"/>
     <id>https://risingauroras.github.io/posts/98a3/</id>
     <published>2023-01-29T08:55:57.000Z</published>
-    <updated>2023-02-03T14:30:35.767Z</updated>
+    <updated>2023-02-04T14:01:09.301Z</updated>
     
     
       
@@ -50,7 +100,7 @@
     <link href="https://risingauroras.github.io/posts/c2fd/"/>
     <id>https://risingauroras.github.io/posts/c2fd/</id>
     <published>2023-01-13T03:23:47.000Z</published>
-    <updated>2023-02-03T11:52:14.976Z</updated>
+    <updated>2023-02-07T09:48:41.668Z</updated>
     
     
       
@@ -443,53 +493,6 @@
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="深度学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>矩阵理论-1范数、2范数、无穷范数的通俗理解</title>
-    <link href="https://risingauroras.github.io/posts/9ac0/"/>
-    <id>https://risingauroras.github.io/posts/9ac0/</id>
-    <published>2022-10-02T02:56:19.000Z</published>
-    <updated>2022-10-02T10:48:25.519Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本文转自&lt;a href=&quot;https://www.zhihu.com/people/tiaopig&quot;&gt;调皮连续波&lt;/a&gt;，文章&lt;a href=&quot;https://zhuanlan.zhihu.com/p/111762323&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习题目</title>
-    <link href="https://risingauroras.github.io/posts/53f5/"/>
-    <id>https://risingauroras.github.io/posts/53f5/</id>
-    <published>2022-10-01T14:22:47.000Z</published>
-    <updated>2022-10-12T03:14:26.813Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;机器学习&quot;&gt;&lt;a href=&quot;#机器学习&quot; class=&quot;headerlink&quot; title=&quot;机器学习&quot;&gt;&lt;/a&gt;机器学习&lt;/h2&gt;&lt;h3 id=&quot;简单线性回归&quot;&gt;&lt;a href=&quot;#简单线性回归&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>

@@ -412,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    172
+                    287
                 </div>
                 
 
@@ -477,13 +477,36 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032008626.png" alt="image-20230203200837562"></p>
 <p>对$w_t$的权重衰减值往往设为1e-2/1e-3/1e-4(ps: 1-$\eta\lambda$)</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032012019.png" alt="image-20230203201226954"></p>
-<h3 id="dropout（主流）"><a href="#dropout（主流）" class="headerlink" title="dropout（主流）"></a>dropout（主流）</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032126516.png" alt="image-20230203212659444"></p>
+<h3 id="dropout（主流）"><a href="#dropout（主流）" class="headerlink" title="dropout（主流）"></a>dropout（主流）</h3><p>dropout用在全连接层，BN用在卷积层，两者不冲突</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032126516.png" alt="image-20230203212659444"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032130598.png" alt="image-20230203213009516"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032132709.png" alt="image-20230203213229619"></p>
 <p>只在训练过程中使用正则方法，在测试过程(推理)中是不需要正则的</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032134722.png" alt="image-20230203213407665"></p>
 <p>多用在多层感知机的隐藏层上，很少用在CNN之类的模型上</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032139071.png" alt="image-20230203213934978"></p>
+<h2 id="数值稳定性"><a href="#数值稳定性" class="headerlink" title="数值稳定性"></a>数值稳定性</h2><h3 id="梯度爆炸-amp-梯度消失"><a href="#梯度爆炸-amp-梯度消失" class="headerlink" title="梯度爆炸&amp;梯度消失"></a>梯度爆炸&amp;梯度消失</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041108287.png" alt="image-20230204110817173"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041110951.png" alt="image-20230204111004817"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041115525.png" alt="image-20230204111557460"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041116370.png" alt="image-20230204111643277"></p>
+<p>用<code>gpu</code>训练时，我们往往会采用16位浮点数，因为训练速度上16位浮点数比32位浮点数快大约两倍</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041118752.png" alt="image-20230204111810686"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041122168.png" alt="image-20230204112238101"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041131910.png" alt="image-20230204113107843"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041131995.png" alt="image-20230204113127937"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041132402.png" alt="image-20230204113230349"></p>
+<h3 id="让训练更加稳定—模型初始化和激活函数"><a href="#让训练更加稳定—模型初始化和激活函数" class="headerlink" title="让训练更加稳定—模型初始化和激活函数"></a>让训练更加稳定—模型初始化和激活函数</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041134276.png" alt="image-20230204113423212"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041140874.png" alt="image-20230204114047803"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041147957.png" alt="image-20230204114708895"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041153853.png" alt="image-20230204115357761"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041157137.png" alt="image-20230204115724051"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041200601.png" alt="image-20230204120001528"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041203914.png" alt="image-20230204120311834"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041206263.png" alt="image-20230204120657176"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041212374.png" alt="image-20230204121258315"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041218904.png" alt="image-20230204121838824"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041219124.png" alt="image-20230204121900068"></p>
+<p>也就是说用xavier初始化权重，激活函数可以选择relu,tanh或者调整后的sigmoid</p>
 
                 
             </div>
@@ -914,18 +937,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/98a3/">
+                <a href="/posts/4485/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="动手学深度学习">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="特征工程">
                         
-                        <span class="card-title">动手学深度学习</span>
+                        <span class="card-title">特征工程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -935,9 +957,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -946,24 +968,15 @@
                                     机器学习
                                 </a>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%8F%E5%85%B8/">
-                        <span class="chip bg-color">经典</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9D%8E%E6%B2%90/">
-                        <span class="chip bg-color">李沐</span>
+                    <a href="/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">特征工程</span>
                     </a>
                     
                 </div>

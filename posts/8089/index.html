@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    4.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    22 分
                 </div>
                 
 
@@ -445,6 +445,36 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
 
 <p>我们会在PyTorch中使用使用squeeze()和unsqueeze()进行降维和升维的步骤。</p>
 <p>unsqueeze()函数的功能是在tensor的某个维度上添加一个维数为1的维度，这个功能用view()函数也可以实现。这一功能尤其在神经网络输入单个样本时很有用，由于pytorch神经网络要求的输入都是mini-batch型的，维度为[batch_size, channels, w, h]，而一个样本的维度为[c, w, h]，此时用unsqueeze()增加一个维度变为[1, c, w, h]就很方便了。</p>
+<p><strong>median()</strong></p>
+<blockquote>
+<p>edian(a,<br>    <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=axis&amp;spm=1001.2101.3001.7020">axis</a>=None,<br>    out=None,<br>    overwrite_input=False,<br>    keepdims=False)</p>
+<p><strong>a：</strong>输入的数组；<br><strong>axis：</strong>计算哪个轴上的均值，比如输入是<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84&amp;spm=1001.2101.3001.7020">二维数组</a>，那么axis=0对应行，axis=1对应列；<br><strong>out：</strong>用于放置求取中位数后的数组。 它必须具有与预期输出相同的形状和缓冲区长度；<br>**overwrite_input :**一个bool型的参数，默认为Flase。如果为True那么将直接在数组内存中计算，这意味着计算之后原数组没办法保存，但是好处在于节省内存资源，Flase则相反；<br><strong>keepdims：</strong>一个bool型的参数，默认为Flase。如果为True那么求取中位数的那个轴将保留在结果中；</p>
+</blockquote>
+<p>计算沿指定轴的均值,返回数组元素的均值</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span>  <span class="token number">7</span><span class="token punctuation">,</span>  <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span> <span class="token number">3</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token number">3.5</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token number">6.5</span><span class="token punctuation">,</span>  <span class="token number">4.5</span><span class="token punctuation">,</span>  <span class="token number">2.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token number">7.</span><span class="token punctuation">,</span>  <span class="token number">2.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> m <span class="token operator">=</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> out <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> out<span class="token operator">=</span>m<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token number">6.5</span><span class="token punctuation">,</span>  <span class="token number">4.5</span><span class="token punctuation">,</span>  <span class="token number">2.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> m
+array<span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token number">6.5</span><span class="token punctuation">,</span>  <span class="token number">4.5</span><span class="token punctuation">,</span>  <span class="token number">2.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> b <span class="token operator">=</span> a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>b<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> overwrite_input<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token number">7.</span><span class="token punctuation">,</span>  <span class="token number">2.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">assert</span> <span class="token keyword">not</span> np<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span>a<span class="token operator">==</span>b<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> b <span class="token operator">=</span> a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>b<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> overwrite_input<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token number">3.5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>expand_dims()</strong></p>
 <p>这个东西的主要作用，就是增加一个维度。</p>
 <p>现在我们假设有一个数组A，数组A是一个<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%B8%A4%E8%A1%8C%E4%B8%89%E5%88%97&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:377793892%7D">两行三列</a>的矩阵。大小我们记成（2,3）。</p>
@@ -602,6 +632,20 @@ rng<span class="token punctuation">.</span>shuffle<span class="token punctuation
 <p><strong>广播（broadcasting）</strong></p>
 <p>在Numpy中，如果参与运算的两个数组或者矩阵的形状不同，则解释器将双方的各个维数右对齐，并开始从右至左依次比较对应的两个维数是否相等。如果只存在<code>“相等“</code>、<code>”不相等但有一方为1“</code>，<code>”有一方没有对应的维数</code>“这三种情况，则进行广播，否则报错。</p>
 <p>例如，一方的维数为6x3x5,另一方的维数是3x1，则进行广播，运算的结果为一个6x3x5大小的数组。再例如，一方为行向量，维数为1xm，另一方为标量b，维数为1x1，则进行广播，广播的结果是将标量b拉伸为与前一方形状相同的1xm维行向量，其中的元素都是标量b的副本，然后再进行运算。</p>
+<p><strong>np.power(x1,x2)</strong></p>
+<p>x1和x2可以是整数类型或数组或者array类型。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+result <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>x1<span class="token punctuation">,</span>x2<span class="token punctuation">)</span> <span class="token comment"># 实际就是相应位置的前者的后者次方(x1[i,j]**x2[i,j])</span>
+
+<span class="token comment">#输出</span>
+<span class="token triple-quoted-string string">'''
+[[  0   1]
+ [ 16 243]]
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p><strong>numpy.where–将条件逻辑表述为数组运算</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">result <span class="token operator">=</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>cond<span class="token punctuation">,</span> xarr<span class="token punctuation">,</span> yarr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -639,6 +683,17 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
 
 <p><code>np.mgrid[] np.ravel np.c_[]</code></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301072329710.png" alt="image-20230107232903557"></p>
+<p>数据数组去除第一行和第一列data = np.array(data[1:])[:, 1:]</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'*******************************'</span><span class="token punctuation">)</span>
+data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data1<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>结果：</p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202204081710167.png" alt="image-20220408170941407" style="zoom:50%;">
+
 <h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><p><code>小技巧：</code></p>
 <p>Jupyter Notebook 上面用 Matplotlib 了，但是不知道大家看到画出来那一坨糊糊的东西会不会跟我一样浑身难受。实际上，只要多加一行配置，就能够让 Matplotlib 在 Jupyter Notebook 上面输出矢量图了：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
@@ -705,6 +760,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
     set_axes<span class="token punctuation">(</span>axes<span class="token punctuation">,</span> xlabel<span class="token punctuation">,</span> ylabel<span class="token punctuation">,</span> xlim<span class="token punctuation">,</span> ylim<span class="token punctuation">,</span> xscale<span class="token punctuation">,</span> yscale<span class="token punctuation">,</span> legend<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><code>使用上述函数画图</code></p>
+<p>eg.1</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">
 <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token number">3</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">4</span> <span class="token operator">*</span> x
@@ -713,6 +769,12 @@ plot<span class="token punctuation">(</span>x<span class="token punctuation">,</
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301312154501.png" alt="image-20230131215451447"></p>
+<p>eg.2</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> torch<span class="token punctuation">.</span>relu<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+d2l<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> y<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">,</span> <span class="token string">'relu(x)'</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041555105.png" alt="image-20230204155537022"></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34498545/article/details/112631706">改变刻度</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt

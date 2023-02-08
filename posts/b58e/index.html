@@ -472,6 +472,8 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <h2 id="3-tanh"><a href="#3-tanh" class="headerlink" title="3. tanh"></a>3. tanh</h2><p>tanh是双曲函数中的一个，tanh()为双曲正切。在数学中，双曲正切“tanh”是由基本双曲函数双曲正弦和双曲余弦推导而来。其实$tanh(x)=2 *sigmoid(2 *x)-1$,它解决了Sigmoid函数的不以0为中心输出问题，然而，梯度消失的问题和幂运算的问题仍然存在。</p>
 <p><strong>公式：</strong></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209050943911.png" alt="image-20220905094334886"></p>
+<p>也可以写为</p>
+<p>$$\operatorname{tanh}(x) = \frac{1 - \exp(-2x)}{1 + \exp(-2x)}$$</p>
 <p><strong>特点</strong></p>
 <ul>
 <li>函数：y=tanh x；</li>
