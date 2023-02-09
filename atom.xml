@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-02-08T13:15:28.421Z</updated>
+  <updated>2023-02-09T03:06:51.574Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -21,14 +21,16 @@
     <link href="https://risingauroras.github.io/posts/b588/"/>
     <id>https://risingauroras.github.io/posts/b588/</id>
     <published>2023-02-08T05:58:15.000Z</published>
-    <updated>2023-02-08T13:15:28.421Z</updated>
+    <updated>2023-02-09T03:06:51.574Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;sklearn中的数据预处理和特征工程&quot;&gt;&lt;a href=&quot;#sklearn中的数据预处理和特征工程&quot; class=&quot;headerlink&quot; title=&quot;sklearn中的数据预处理和特征工程&quot;&gt;&lt;/a&gt;sklearn中的数据预处理和特征工程&lt;/h1&gt;&lt;h2</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;课程名称：菜菜的sklearn机器学习&lt;/p&gt;
+&lt;p&gt;课程地址：&lt;a</summary>
         
       
     
@@ -46,7 +48,7 @@
     <link href="https://risingauroras.github.io/posts/4485/"/>
     <id>https://risingauroras.github.io/posts/4485/</id>
     <published>2023-02-07T12:19:00.000Z</published>
-    <updated>2023-02-07T15:20:39.845Z</updated>
+    <updated>2023-02-08T13:16:11.594Z</updated>
     
     
       
@@ -128,7 +130,7 @@
     <link href="https://risingauroras.github.io/posts/5077/"/>
     <id>https://risingauroras.github.io/posts/5077/</id>
     <published>2023-01-12T09:10:07.000Z</published>
-    <updated>2023-01-31T02:42:02.186Z</updated>
+    <updated>2023-02-09T03:04:12.308Z</updated>
     
     
       
@@ -142,6 +144,10 @@
     
     
     
+    <category term="你说，人生你好！" scheme="https://risingauroras.github.io/categories/%E4%BD%A0%E8%AF%B4%EF%BC%8C%E4%BA%BA%E7%94%9F%E4%BD%A0%E5%A5%BD%EF%BC%81/"/>
+    
+    
+    <category term="提升" scheme="https://risingauroras.github.io/tags/%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
