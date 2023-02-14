@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    182
+                    263
                 </div>
                 
 
@@ -455,7 +455,21 @@ tasklist <span class="token operator">|</span>findstr “22752"
 <span class="token comment"># 杀掉进程</span>
 taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p>#查看gpu、显卡常⽤命令</p>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h3 id="端口-1"><a href="#端口-1" class="headerlink" title="端口"></a>端口</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">kill</span> -9 pid 终止进程
+
+
+<span class="token comment"># 查看端口使用情况，使用netstat命令。查看已经连接的服务端口（ESTABLISHED</span>
+<span class="token function">netstat</span> -a
+<span class="token comment"># 查看所有的服务端口（LISTEN，ESTABLISHED）</span>
+<span class="token function">netstat</span> -ap
+<span class="token comment"># 查看8080端口，则可以结合grep命令：</span>
+<span class="token function">netstat</span> -ap <span class="token operator">|</span> <span class="token function">grep</span> <span class="token number">8080</span>
+
+<span class="token comment">#v如查看8888端口，则在终端中输入：</span>
+<span class="token function">lsof</span> -i:8888
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>#查看gpu、显卡常⽤命令</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#1.查看显卡基本信息</span>
 lspci <span class="token operator">|</span> <span class="token function">grep</span> -i nvidia
 <span class="token comment">#2.查看显卡驱动版本</span>

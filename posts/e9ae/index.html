@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    19 分
                 </div>
                 
 
@@ -547,10 +547,29 @@
 <p>To address such a challenge, the recent works <em>(Fujimoto et al., 2019; Laroche et al., 2019; Jaques et al., 2019; Wu et al., 2019; Kumar et al., 2019, 2020; Agarwal et al., 2020b; Yu et al., 2020; Kidambi et al., 2020; Wang et al., 2020c; Siegel et al., 2020; Nair et al., 2020; Liu et al., 2020)</em> demonstrate the empirical success of various algorithms, which fall into two (possibly overlapping) categories: ==(i) regularized policy-based approaches==and ==(ii) pessimistic value-based approaches==. Specifically, (i) regularizes (or equivalently, constrains) the policy to avoid visiting the states and actions that are less covered by the dataset, while (ii) penalizes the (action- or state-) value function on such states and actions.</p>
 <p>In offline/batch reinforcement learning (RL), the predominant class of approaches with most      success have been “==support constraint==” methods, ==where trained policies are encouraged to remain    within the support of the provided offline dataset==.However, support constraints correspond to an overly <code>pessimistic assumption that actions outside the provided data may lead to worst-case outcomes.</code></p>
 <p>Offline RL的解决思路无外乎就是“悲观”二字，也就要想办法对OOD action进行低估，不要让策略走到没见到过的动作上去。为了实现这种悲观，实际的算法大体分为两种思路：一种是把OOD action的值直接拉低，代表性的方法就是CQL；另一种是让被训练的策略和采样策略不要差得太远，这类方法有AWAC，TD3+BC等。</p>
-<p>Stackelberg Game，即斯塔克伯格博弈，是一个两阶段的完全信息动态博弈，博弈的time是序贯的。主要思想是双方都是根据对方可能的策略来选择自己的策略以保证自己在对方策略下的利益最大化，从而达到纳什均衡。在该博弈模型中，先作出决策的一方被称为leader，在leader之后，剩余的players根据leader的决策进行决策，被称为followers，然后leader再根据followers的决策对自己的决策进行调整，如此往复，直到达到纳什均衡。</p>
+<p>Stackelberg Game，即斯塔克伯格博弈，是一个两阶段的完全信息动态博弈，博弈的time是序贯的。<code>主要思想是双方都是根据对方可能的策略来选择自己的策略以保证自己在对方策略下的利益最大化，从而达到纳什均衡</code>。在该博弈模型中，先作出决策的一方被称为leader，在leader之后，剩余的players根据leader的决策进行决策，被称为followers，然后leader再根据followers的决策对自己的决策进行调整，如此往复，直到达到纳什均衡。(斯塔克伯格博弈（Stackelberg game）是一种博弈理论中的概念，是一种多人博弈的形式，在这种博弈中，有一个明确的领导者（称为领导者）和若干个追随者（称为追随者）。领导者先决策，然后追随者决策。领导者考虑追随者的反应，试图通过最优决策来最大化自己的利益。追随者则根据领导者的决策来决策，试图最大化自己的利益。</p>
+<p>斯塔克伯格博弈的应用广泛，如市场竞争、广告定价、生产决策等。在实际应用中，斯塔克伯格博弈可以帮助我们了解决决策者之间的博弈关系，从而帮助决策者做出更好的决策。)</p>
+<p>零和博弈是一种博弈理论的概念，它指的是一种博弈模型，在这种模型中，双方的利益是对立的，每个人的目的是赢得比对手多的利益，换句话说，没有公共利益可以分享。因此，在零和博弈中，一个人的胜利必须是另一个人的失败。零和博弈是研究博弈策略和决策理论的重要工具，广泛应用于经济学、政治学、军事学和生物学等领域。</p>
 <p>深度离线强化学习（deep offline RL）可以通过利用深度神经网络和巨大的离线数据集，在没有任何环境交互的情况下训练强大的agent，但是训练得到的offline RL agents可能是次优的，因为offline datasets可能是次优的，另外，agent部署的环境可能与生成offline datasets的环境不同，这就需要一个在线微调（online fine-tuning）过程，agent通过在线收集更多的样本来改进。</p>
 <p>但是使用传统的off-policy RL算法微调offline RL agent比较困难，因为存在distribution shift，agent会遇见offline dataset中没有的state-action，即out-of-distribution (OOD) online samples，Q函数在这样的state-action上无法给出准确的估计，导致严重的bootstrap error，从而使策略在任意方向上更新，破坏了offline RL获得的良好初始策略</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141237228.png" alt="image-20230214123740154"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141237759.png" alt="image-20230214123753685"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141239948.png" alt="image-20230214123951879"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141421428.png" alt="image-20230214142157358"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141424525.png" alt="image-20230214142417458"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141426452.png" alt="image-20230214142656394"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141430334.png" alt="image-20230214143053270"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141431590.png" alt="image-20230214143134519"></p>
+<p>Bi-level Actor-Critic for Multi-agent Coordination<br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.03510">https://arxiv.org/abs/1909.03510</a></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141441780.png" alt="image-20230214144122705"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141444075.png" alt="image-20230214144419961"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141445122.png" alt="image-20230214144502035"></p>
 <h4 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h4><p>mark：3.2. Relative Pessimism and Robust Policy Improvement</p>
+<h2 id="Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design"><a href="#Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design" class="headerlink" title="Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design"></a>Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design</h2><p>in Full-Duplex Multi-UAV Networks<br>downlink (DL) uplink (UL)  multi-UAV networks  user equipment(UE) DL-UL decoupling(DUDe)  robust partially observable Markov decision process<br>(robust POMDP) model full-duplex (FD)<br>communication macro base station (MBS)</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131129442.png" alt="image-20230213112927370"></p>
+<p>Network Model and BSs Deployment</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131232312.png" alt="image-20230213123238260"></p>
+<p>Channel Model</p>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
 <li><p>what is Pessimistic method in RL?</p>
 <p>In reinforcement learning, the pessimistic method is an algorithm that learns the worst-case value of each state or action, rather than the expected value. This approach can be useful in situations where the consequences of making a mistake can be very severe, and it is important to be conservative in decision-making.</p>
@@ -560,7 +579,11 @@
 <li><p>what is OOD Action?</p>
 <p>Out-of-Distribution (OOD) action in reinforcement learning (RL) refers to actions that the agent may take that are not part of the training distribution of actions. These actions can occur when the agent is operating in a different environment or context than it was trained on, or when the agent is asked to perform a task that it has not seen before. OOD actions can be challenging for an RL agent to handle, as they may not be well-suited to the current task or may lead to unexpected outcomes. One way to mitigate the risk of OOD actions is to train the RL agent on a diverse set of tasks and environments, so that it has a greater range of experience to draw upon when making decisions.</p>
 </li>
-<li></li>
+<li><p>what is discounted state-action occupancy？</p>
+<p>Discounted state-action occupancy refers to a measure of the frequency with which an agent or a system visits a particular state-action pair in a Markov decision process (MDP). The discount factor, denoted by γ, determines the weight of future rewards in the total expected reward. It allows the agent to prioritize short-term rewards over long-term rewards, or vice versa, depending on the value of γ. The discounted state-action occupancy is often used in reinforcement learning, a subfield of machine learning, to evaluate the quality of an agent’s policy and to compare different policies. It can also be used in planning and control to determine the optimal policy for an MDP.</p>
+</li>
+<li><p>e</p>
+</li>
 </ol>
 
                 

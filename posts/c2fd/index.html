@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    582
+                    739
                 </div>
                 
 
@@ -493,7 +493,7 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301058682.png" alt="image-20230130105837611"></p>
 <p>虽然下面例子中，策略已经达到最优，但是state value还没有达到最优，所以需要继续迭代</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301103120.png" alt="image-20230130110306039"></p>
-<p>迭代不能无穷的进行下去，所以需要有终止条件，常见的是$v_k-v_{k+1}&lt;\epsilon$</p>
+<p>迭代不能无穷的进行下去，所以需要有终止条件，常见的是$|v_k-v_{k+1}|&lt;\epsilon$</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301106475.png" alt="image-20230130110645402"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301114852.png" alt="image-20230130111422776"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301301114435.png" alt="image-20230130111447362"></p>
@@ -707,6 +707,156 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302071642996.png" alt="image-20230207164241897"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302071731849.png" alt="image-20230207173111740"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302071733426.png" alt="image-20230207173352322"></p>
+<h2 id="值函数近似-value-function-approximation"><a href="#值函数近似-value-function-approximation" class="headerlink" title="值函数近似(value function approximation)"></a>值函数近似(value function approximation)</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111424594.png" alt="image-20230211142428438"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111428248.png" alt="image-20230211142803158"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111432665.png" alt="image-20230211143222558"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111434259.png" alt="image-20230211143404180"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111435571.png" alt="image-20230211143537470"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111436182.png" alt="image-20230211143659096"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111439453.png" alt="image-20230211143903384"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111442554.png" alt="image-20230211144242457"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111446317.png" alt="image-20230211144628223"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111448913.png" alt="image-20230211144854823"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111451336.png" alt="image-20230211145116235"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111454130.png" alt="image-20230211145420015"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111456852.png" alt="image-20230211145612752"></p>
+<p>开始的时候波动还比较大，随着访问次数的增多，曲线趋于平稳。曲线最后的星号代表着理论值，也就是说我们不通过运行很多次来找到$d_{\pi}$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111458355.png" alt="image-20230211145858263"></p>
+<p>$P_{\pi}$是状态转移矩阵，$d_{\pi}$是$P_{\pi}$特征值为1的特征向量</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111506807.png" alt="image-20230211150639712"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111516850.png" alt="image-20230211151642757"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111518577.png" alt="image-20230211151845491"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111520960.png" alt="image-20230211152014865"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111521477.png" alt="image-20230211152151375"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111531949.png" alt="image-20230211153149852"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111533326.png" alt="image-20230211153304245"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111536945.png" alt="image-20230211153613837"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111539242.png" alt="image-20230211153903147"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111539495.png" alt="image-20230211153952413"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111604299.png" alt="image-20230211160404208"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111605545.png" alt="image-20230211160539443"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111607736.png" alt="image-20230211160749640"></p>
+<p>feature vector 中变量的顺序是可以调整的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111612011.png" alt="image-20230211161211933"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111613242.png" alt="image-20230211161331149"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111619166.png" alt="image-20230211161911077"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111619609.png" alt="image-20230211161947512"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111627215.png" alt="image-20230211162701113"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111627580.png" alt="image-20230211162755506"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111629323.png" alt="image-20230211162942240"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111632701.png" alt="image-20230211163216602"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111639687.png" alt="image-20230211163934609"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111647148.png" alt="image-20230211164720056"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111648308.png" alt="image-20230211164813223"></p>
+<p>相比之前的Sarsa，这里value update 是更新的parameter $w$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111650810.png" alt="image-20230211165020705"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111651614.png" alt="image-20230211165157524"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111652960.png" alt="image-20230211165206872"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111655099.png" alt="image-20230211165531000"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111658526.png" alt="image-20230211165839428"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111700321.png" alt="image-20230211170043228"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111704070.png" alt="image-20230211170433978"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111705805.png" alt="image-20230211170536711"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111710784.png" alt="image-20230211171045701"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111714934.png" alt="image-20230211171429856"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111715854.png" alt="image-20230211171531772"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111721724.png" alt="image-20230211172109613"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111807572.png" alt="image-20230211180747405"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111808791.png" alt="image-20230211180832698"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111809538.png" alt="image-20230211180931444"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111817507.png" alt="image-20230211181711407"></p>
+<p>与原论文中的有些出入，原论文中用了更多的技巧，效果也更好些</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111928190.png" alt="image-20230211192810072"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111928317.png" alt="image-20230211192838251"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111931147.png" alt="image-20230211193116064"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111934431.png" alt="image-20230211193431340"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302111936428.png" alt="image-20230211193634339"></p>
+<h2 id="策略梯度方法"><a href="#策略梯度方法" class="headerlink" title="策略梯度方法"></a>策略梯度方法</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121459684.png" alt="image-20230212145911032"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121459758.png" alt="image-20230212145917670"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121502120.png" alt="image-20230212150200013"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121503008.png" alt="image-20230212150302905"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121504432.png" alt="image-20230212150456339"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121506329.png" alt="image-20230212150657242"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121507292.png" alt="image-20230212150740196"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121508826.png" alt="image-20230212150813737"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121513447.png" alt="image-20230212151325343"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121516788.png" alt="image-20230212151622690"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121516275.png" alt="image-20230212151647192"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121520209.png" alt="image-20230212152001092"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121521475.png" alt="image-20230212152135372"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121524319.png" alt="image-20230212152441221"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121524386.png" alt="image-20230212152456295"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121526818.png" alt="image-20230212152615727"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121527153.png" alt="image-20230212152713066"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121528020.png" alt="image-20230212152852927"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121531215.png" alt="image-20230212153140140"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121535125.png" alt="image-20230212153534039"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121537416.png" alt="image-20230212153708316"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121539568.png" alt="image-20230212153942480"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121555546.png" alt="image-20230212155544454"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121556428.png" alt="image-20230212155649348"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121557661.png" alt="image-20230212155739575"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121559316.png" alt="image-20230212155955234"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121601014.png" alt="image-20230212160119928"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121602652.png" alt="image-20230212160238576"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121605633.png" alt="image-20230212160517526"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121606928.png" alt="image-20230212160616825"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121607223.png" alt="image-20230212160714132"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121616273.png" alt="image-20230212161634186"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121617194.png" alt="image-20230212161714104"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121617215.png" alt="image-20230212161730133"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121619832.png" alt="image-20230212161910747"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121620895.png" alt="image-20230212162040803"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121626417.png" alt="image-20230212162619328"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121628880.png" alt="image-20230212162803778"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121632324.png" alt="image-20230212163201225"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121633003.png" alt="image-20230212163339897"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121633848.png" alt="image-20230212163351746"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302121643200.png" alt="image-20230212164311111"></p>
+<h2 id="Actor-Critic方法"><a href="#Actor-Critic方法" class="headerlink" title="Actor-Critic方法"></a>Actor-Critic方法</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132027017.png" alt="image-20230213202744852"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132032216.png" alt="image-20230213203233118"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132049928.png" alt="image-20230213204941825"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132054574.png" alt="image-20230213205406480"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132058530.png" alt="image-20230213205839432"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132106530.png" alt="image-20230213210651419"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132109663.png" alt="image-20230213210926589"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132110570.png" alt="image-20230213211049483"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132125462.png" alt="image-20230213212533373"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132129413.png" alt="image-20230213212921312"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132131858.png" alt="image-20230213213117778"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132132279.png" alt="image-20230213213224197"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132135219.png" alt="image-20230213213520128"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132149330.png" alt="image-20230213214905245"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132152428.png" alt="image-20230213215220340"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302132153366.png" alt="image-20230213215333269"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302140957309.png" alt="image-20230214095731174"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302140958978.png" alt="image-20230214095809899"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141001270.png" alt="image-20230214100109188"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141003193.png" alt="image-20230214100301077"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141005228.png" alt="image-20230214100504145"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141005575.png" alt="image-20230214100523502"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141007825.png" alt="image-20230214100723742"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141009217.png" alt="image-20230214100927134"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141010818.png" alt="image-20230214101023733"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141016571.png" alt="image-20230214101611484"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141018628.png" alt="image-20230214101811540"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141022418.png" alt="image-20230214102210305"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141031592.png" alt="image-20230214103120508"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141032866.png" alt="image-20230214103229775"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141033305.png" alt="image-20230214103353216"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141035068.png" alt="image-20230214103526978"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141038867.png" alt="image-20230214103822767"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141040202.png" alt="image-20230214104040101"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141138681.png" alt="image-20230214113829558"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141134373.png" alt="image-20230214113429288"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141138621.png" alt="image-20230214113811515"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141140484.png" alt="image-20230214114049380"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141145118.png" alt="image-20230214114504990"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141146712.png" alt="image-20230214114605551"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141148916.png" alt="image-20230214114851783"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141150261.png" alt="image-20230214115051173"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141151293.png" alt="image-20230214115151180"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141156673.png" alt="image-20230214115620567"></p>
 
                 
             </div>
