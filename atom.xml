@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-02-09T03:06:51.574Z</updated>
+  <updated>2023-02-26T15:48:23.896Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,104 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ChatGPT——助我学习系列</title>
+    <link href="https://risingauroras.github.io/posts/2040/"/>
+    <id>https://risingauroras.github.io/posts/2040/</id>
+    <published>2023-02-26T07:34:17.000Z</published>
+    <updated>2023-02-26T15:48:23.896Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数理统计篇&quot;&gt;&lt;a href=&quot;#数理统计篇&quot; class=&quot;headerlink&quot; title=&quot;数理统计篇&quot;&gt;&lt;/a&gt;数理统计篇&lt;/h2&gt;&lt;h3 id=&quot;贝叶斯理论——Q-amp-A&quot;&gt;&lt;a href=&quot;#贝叶斯理论——Q-amp-A&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="ChatGPT" scheme="https://risingauroras.github.io/tags/ChatGPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>马克图布的碎碎念</title>
+    <link href="https://risingauroras.github.io/posts/d89f/"/>
+    <id>https://risingauroras.github.io/posts/d89f/</id>
+    <published>2023-02-20T13:08:05.000Z</published>
+    <updated>2023-02-20T13:09:32.400Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我喜欢太阳，却总在&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="你说，人生你好！" scheme="https://risingauroras.github.io/categories/%E4%BD%A0%E8%AF%B4%EF%BC%8C%E4%BA%BA%E7%94%9F%E4%BD%A0%E5%A5%BD%EF%BC%81/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://risingauroras.github.io/posts/0/"/>
+    <id>https://risingauroras.github.io/posts/0/</id>
+    <published>2023-02-17T05:21:25.636Z</published>
+    <updated>2023-02-17T07:40:16.957Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;git常用操作&quot;&gt;&lt;a href=&quot;#git常用操作&quot; class=&quot;headerlink&quot; title=&quot;git常用操作&quot;&gt;&lt;/a&gt;git常用操作&lt;/h2&gt;&lt;h3 id=&quot;配置Git&quot;&gt;&lt;a href=&quot;#配置Git&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从零实现RL</title>
+    <link href="https://risingauroras.github.io/posts/d804/"/>
+    <id>https://risingauroras.github.io/posts/d804/</id>
+    <published>2023-02-15T12:00:39.000Z</published>
+    <updated>2023-02-15T12:07:21.639Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;DQN&quot;&gt;&lt;a href=&quot;#DQN&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>菜菜的sklearn机器学习</title>
     <link href="https://risingauroras.github.io/posts/b588/"/>
     <id>https://risingauroras.github.io/posts/b588/</id>
     <published>2023-02-08T05:58:15.000Z</published>
-    <updated>2023-02-09T03:06:51.574Z</updated>
+    <updated>2023-02-25T01:30:01.446Z</updated>
     
     
       
@@ -229,7 +322,7 @@
     <link href="https://risingauroras.github.io/posts/6040/"/>
     <id>https://risingauroras.github.io/posts/6040/</id>
     <published>2023-01-01T14:00:22.000Z</published>
-    <updated>2023-01-12T07:49:58.205Z</updated>
+    <updated>2023-02-15T15:10:29.604Z</updated>
     
     
       
@@ -266,9 +359,9 @@
     
     
     
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
@@ -404,101 +497,6 @@
     
     
     <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>概率论与数理统计</title>
-    <link href="https://risingauroras.github.io/posts/1a70/"/>
-    <id>https://risingauroras.github.io/posts/1a70/</id>
-    <published>2022-10-10T07:27:22.000Z</published>
-    <updated>2022-12-02T12:57:23.046Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;数字特征&quot;&gt;&lt;a href=&quot;#数字特征&quot; class=&quot;headerlink&quot; title=&quot;数字特征&quot;&gt;&lt;/a&gt;数字特征&lt;/h2&gt;&lt;h3 id=&quot;数学期望&quot;&gt;&lt;a href=&quot;#数学期望&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>TED原声跟读笔记</title>
-    <link href="https://risingauroras.github.io/posts/b7ac/"/>
-    <id>https://risingauroras.github.io/posts/b7ac/</id>
-    <published>2022-10-09T09:03:25.000Z</published>
-    <updated>2022-10-10T16:30:57.074Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;来自B站&lt;a href=&quot;https://space.bilibili.com/1705931273&quot;&gt;TED阅读笔记&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第103集-层次高的人，都懂得延迟满足&quot;&gt;&lt;a href=&quot;#第103集-层次高的人，都懂得延迟满足&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="英语" scheme="https://risingauroras.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>分类问题可以使用MSE作为损失函数吗</title>
-    <link href="https://risingauroras.github.io/posts/5e96/"/>
-    <id>https://risingauroras.github.io/posts/5e96/</id>
-    <published>2022-10-07T16:09:48.000Z</published>
-    <updated>2022-10-07T16:22:40.280Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本文&lt;a href=&quot;https://blog.csdn.net/u013385018?type=blog&quot;&gt;转自&lt;/a&gt;，文章&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习笔记</title>
-    <link href="https://risingauroras.github.io/posts/bd81/"/>
-    <id>https://risingauroras.github.io/posts/bd81/</id>
-    <published>2022-10-05T13:18:03.000Z</published>
-    <updated>2023-01-03T15:09:54.637Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;卷积&quot;&gt;&lt;a href=&quot;#卷积&quot; class=&quot;headerlink&quot; title=&quot;卷积&quot;&gt;&lt;/a&gt;卷积&lt;/h2&gt;&lt;h3 id=&quot;1x1卷积核的作用&quot;&gt;&lt;a href=&quot;#1x1卷积核的作用&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="深度学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>

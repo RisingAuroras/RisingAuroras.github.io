@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -514,6 +514,35 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092035694.png" alt="image-20230109203519618"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092049596.png" alt="image-20230109204910523"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092051203.png" alt="image-20230109205133139"></p>
+<h2 id="深度Q网络"><a href="#深度Q网络" class="headerlink" title="深度Q网络"></a>深度Q网络</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152226096.jpeg" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152008607.png" alt="image-20230215200815467"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152008030.png" alt="image-20230215200850937"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152015096.png" alt="image-20230215201552016"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152018215.png" alt="image-20230215201842132"></p>
+<p>原本的DQN中是根据均匀分布采样数据，而优先经验回放机制根据p_t的大小来采样，就会带来data bias的问题；于是引入重要性采样就是先以每个样本p_t的大小确定选择样本的概率，再在更新Q的学习率上把采样到这个样本的概率除回去，这样就能把采样到数据的分布修改为原来的均匀分布。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152023373.png" alt="image-20230215202330291"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152027605.png" alt="image-20230215202738507"></p>
+<p>双网络结构指的是使用评估网络和目标网络，其目的是缓解拟合的Q函数的频繁更新。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152029315.png" alt="image-20230215202921234"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152035149.png" alt="image-20230215203515034"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152035571.png" alt="image-20230215203544502"></p>
+<p>过估计问题是由Target值计算中的max⁡max操作导致的。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152038945.png" alt="image-20230215203840859"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152208384.png" alt="image-20230215220815293"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152210888.png" alt="image-20230215221052784"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152227781.png" alt="image-20230215222745688"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152213768.png" alt="image-20230215221351663">、<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152228526.png" alt="image-20230215222806426"></p>
+<p>dueling dqn能够通过advantage函数把方向感建模出来，这句话我不是非常理解。在我看来，单纯的Q(s,a)也是能够建模出方向感的，因为不同action对应的q函数的差值和advantage函数的差值应该是一样的？</p>
+<p>首先，当reward都是正数的时候，Q(s,a)也肯定只会是正数，也就是都是正向的。</p>
+<p>Advantage函数重点在建模 Q(s,a) 相对于 V(s) （或者其他baseline function）的residual，它的学习目标就是那个residual。当residual比较小而V Q值比较大的时候，直接学Q(s,a)就不容易捕捉到这些微小的residual信号从而使得Q网络估计不精确。而Q(s,a) = V(s) + A(s,a)，所以argmax_a Q(s,a) 其实就是 argmax_a A(s,a)，所以对residual的学习至关重要。</p>
+<p>对Q的建模不如A有方向感，这其实更加体现在policy gradient（actor critic）上面。在上述reward总是正数的情况下，Q(s,a)都是正数，所以policy gradient时，每个action其实都是加分的，最后被softmax给normalize一下。这时就好比action们在赛跑，谁跑的更快，谁接下来的pi(a|s)概率就越大。而对A(s,a)建模，即使在上述reward总是正数的情况下，也各有正负，这时A(s,a)为负数的就对应着pi(a|s)的概率下降，为正数的对应着概率上升，就很合理，对学习算法很友好。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152215112.png" alt="image-20230215221505035"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152217594.png" alt="image-20230215221709513"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152218464.png" alt="image-20230215221819381"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152228902.png" alt="image-20230215222827736"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152223660.png" alt="image-20230215222309556"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152224699.png" alt="image-20230215222415598"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302152225686.png" alt="image-20230215222501585"></p>
 <h2 id="Actor-Critic方法"><a href="#Actor-Critic方法" class="headerlink" title="Actor-Critic方法"></a>Actor-Critic方法</h2><p>在PG算法中，计算Q(s,a)可以用REINFORE算法，也可以用AC算法</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092147834.jpeg" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092117016.png" alt="image-20230109211732946"></p>
@@ -1072,12 +1101,12 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
                             <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
                                     数学基础
+                                </a>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             

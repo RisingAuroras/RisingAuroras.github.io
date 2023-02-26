@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    27 分
                 </div>
                 
 
@@ -512,6 +512,29 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
 <p>axis为1,2都同理。</p>
 <p>可能说的有点啰嗦了。</p>
 <p>如果是三维矩阵变成四维矩阵，那就不好直接想象样子了。但是道理是一样的。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">122</span><span class="token punctuation">,</span><span class="token number">34</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>expand_dims<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+[[122  34  45]]
+'''</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>expand_dims<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+[[122]
+ [ 34]
+ [ 45]]
+'''</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>expand_dims<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+[[122]
+ [ 34]
+ [ 45]
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p><strong>random</strong></p>
 <p><code>seed()</code></p>
 <p>可以通过输入int或arrat_like来使得随机的结果固定;使实验可重复，对于同一个seed，生成的随机数相同</p>
@@ -979,7 +1002,84 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <p>根据Mu和sigma求出一个正太分布，这个是随机的正态分布</p>
 <p><code> tf.clip_by_value</code></p>
 <p>tf.clip_by_value(A, min, max)：输入一个张量A，把A中的每一个元素的值都压缩在min和max之间。小于min的让它等于min，大于max的元素的值等于max。</p>
-<h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p><code>numel</code></p>
+<h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><p><strong>sklearn流水线（Pipeline）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/536194668">参考</a></p>
+<p>在机器学习或数据科学的实践中，经常需要对原始数据进行一系列的变换，或依次使用若干算法，从而构成一个算法链（algorithm chains）。比如，先对原始数据进行标准化（standardization）的预处理，然后再估计支持向量机的模型。为此，Sci-Kit Learn模块提供了方便的流水线类（Pipeline class），使得创建“算法链”的过程更简单。而且，Pipeline类可与GridSearchCV类相结合，针对整个算法进行超参数的网格搜索。</p>
+<p>流水线流程</p>
+<p>简易流水线流程</p>
+<p>Pipeline()的参数为一个有“步骤”（steps）组称的列表。每个步骤（step）则为一个元组，包括该步骤的名称（可自行命名），比如“’scaler’”或“’svm’”，以及此步骤所有估计量的实例（an instance of an estimator），比如“StandardScaler()”或“SVC()”。此命令生成Pipeline类的一个实例pipe。使用type()函数查看此对象类型。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 创建一个流水线实例，暂时不进行交叉验证</span>
+pipe <span class="token operator">=</span> Pipeline<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'scaler'</span><span class="token punctuation">,</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'svm'</span><span class="token punctuation">,</span> SVC<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 查看类型</span>
+<span class="token builtin">type</span><span class="token punctuation">(</span>pipe<span class="token punctuation">)</span>
+
+<span class="token comment"># 使用实例pipe的fit()方法进行估计</span>
+pipe<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
+
+<span class="token comment"># 预测测试集</span>
+pipe<span class="token punctuation">.</span>score<span class="token punctuation">(</span>X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>常规的流水线流程</p>
+<p>使用交叉验证法进行参数网格搜索。由于这些超参数可能出现于管线的不同步骤，故须以“双下划线”的格式指定超参数所在的步骤</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">param_grid <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'svm__C'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   <span class="token comment"># "svm_C"表示步骤"svm"的参数"C",中间以双下划线连接</span>
+             <span class="token string">'svm__gamma'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+
+model <span class="token operator">=</span> GridSearchCV<span class="token punctuation">(</span>pipe<span class="token punctuation">,</span> param_grid<span class="token operator">=</span>param_grid<span class="token punctuation">,</span> cv<span class="token operator">=</span>kfold<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"流水线预测准确度："</span><span class="token punctuation">,</span> model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>X_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"流水线最佳参数："</span><span class="token punctuation">,</span> model<span class="token punctuation">.</span>best_params_<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对于管线中的每个步骤，均可使用named_steps()方法，考察其相应的属性。比如考察“svm”步骤共有多少个支持向量，可使用SVC类的n_surpport_属性</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 查看支持向量的个数</span>
+pipe<span class="token punctuation">.</span>named_steps<span class="token punctuation">[</span><span class="token string">'svm'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>n_support_
+<span class="token comment"># 展示支持向量的观测值的索引</span>
+pipe<span class="token punctuation">.</span>named_steps<span class="token punctuation">[</span><span class="token string">'svm'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>support_
+<span class="token comment"># 展示支持向量</span>
+pipe<span class="token punctuation">.</span>named_steps<span class="token punctuation">[</span><span class="token string">'svm'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>support_vectors_<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用Pipeline()建立Pipeline类的一个实例，需指定每个步骤的名称。若不想指定管线中的每个步骤的名称，也可使用更为简便的make_pipeline()函数</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pipe_long <span class="token operator">=</span> Pipeline<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'scaler'</span><span class="token punctuation">,</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'svm'</span><span class="token punctuation">,</span> SVC<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 等价于</span>
+pipe_short <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> SVC<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 使用管线的steps属性，考察管线pipelong的步骤细节</span>
+pipe_long<span class="token punctuation">.</span>steps
+pipe_short<span class="token punctuation">.</span>steps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>sklearn中RBFSampler的用法</strong></p>
+<p><code>RBFSampler</code> 是 <code>sklearn</code> 中的一个随机特征映射器，可以将原始特征空间映射到高维空间中。其主要用途是通过随机投影将非线性分类问题转换为线性分类问题，从而提高模型的效率和精度。</p>
+<p><code>RBFSampler</code> 的主要参数如下：</p>
+<ul>
+<li><code>gamma</code>：RBF核的带宽参数。默认为 1.0。</li>
+<li><code>n_components</code>：随机映射后的特征空间的维度。默认为 100。</li>
+<li><code>random_state</code>：随机数种子。默认为 None。</li>
+</ul>
+<p>下面是一个简单的示例，展示如何使用 <code>RBFSampler</code> 进行特征映射：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> make_classification
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> SGDClassifier
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>pipeline <span class="token keyword">import</span> make_pipeline
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>kernel_approximation <span class="token keyword">import</span> RBFSampler
+
+<span class="token comment"># 生成一个二分类问题的样本数据</span>
+X<span class="token punctuation">,</span> y <span class="token operator">=</span> make_classification<span class="token punctuation">(</span>n_features<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> n_samples<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">,</span> n_informative<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> n_redundant<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 定义随机特征映射器，将原始特征空间映射到高维空间中</span>
+rbf_feature <span class="token operator">=</span> RBFSampler<span class="token punctuation">(</span>gamma<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 定义分类器，并将特征映射器和标准化器组成流水线</span>
+clf <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rbf_feature<span class="token punctuation">,</span> SGDClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 训练分类器</span>
+clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上述示例中，我们首先生成了一个二分类问题的样本数据。然后，我们定义了一个 <code>RBFSampler</code> 对象，将原始特征空间映射到高维空间中。接着，我们将 <code>RBFSampler</code> 对象、标准化器和线性分类器组成了一个流水线，并使用训练数据对其进行训练。</p>
+<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p><code>numel</code></p>
 <p>numel就是”number of elements”的简写。numel()可以直接返回int类型的元素个数</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch 
 a <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
@@ -1000,6 +1100,38 @@ b <span class="token operator">=</span> a<span class="token punctuation">.</span
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">torch<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>mean<span class="token operator">=</span>torch<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">4.</span><span class="token punctuation">)</span><span class="token punctuation">,</span>std<span class="token operator">=</span>torch<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1.</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302142133772.png" alt="image-20230214213300709"></p>
+<p><code>max</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pred <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.7</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.4</span><span class="token punctuation">,</span><span class="token number">0.3</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> pred<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> keepdim<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+torch.return_types.max(
+values=tensor([[0.7000],
+        [0.4000]]),
+indices=tensor([[0],
+        [2]]))
+
+tensor([[0],
+        [2]])
+        
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>sum</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pred <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.7</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>									 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.4</span><span class="token punctuation">,</span><span class="token number">0.3</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> pred<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment"># tensor([1., 1.]),自动降维</span>
+a <span class="token operator">=</span> pred<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>keepdim<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+tensor([[1.],
+        [1.]])
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>detach()</code></p>
+<p>detach() &amp; data()</p>
+<p>detach()返回一个新的tensor，是从当前计算图中分离下来的，但是仍指向原变量的存放位置，其grad_fn=None且requires_grad=False，得到的这个tensor永远不需要计算其梯度，不具有梯度grad，即使之后重新将它的requires_grad置为true,它也不会具有梯度grad。</p>
 <h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>创建一个人工数据集，并存储在CSV（逗号分隔值）文件</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 

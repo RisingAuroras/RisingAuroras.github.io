@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    4.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    17 分
                 </div>
                 
 
@@ -436,6 +436,23 @@
 <h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102000652.png" alt="image-20221010200011572"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102001267.png" alt="image-20221010200120214"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210102002452.png" alt="image-20221010200208397"></p>
+<p><strong>协方差的分配律</strong></p>
+<p>假设 $X$ 是一个 $n\times m$ 的矩阵，$Y$ 是一个 $m\times p$ 的矩阵，$A$ 是一个 $n\times n$ 的矩阵，$B$ 是一个 $p\times p$ 的矩阵，则有：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302231703288.png" alt="image-20230223170316201"></p>
+<p>其中，$\operatorname{Cov}(X,Y)$ 表示 $X$ 和 $Y$ 的协方差矩阵，其定义为：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302231703219.png" alt="image-20230223170333185"></p>
+<p>其中，$\operatorname{E}[\cdot]$ 表示期望，$^\top$ 表示矩阵的转置。</p>
+<p>这个公式可以通过以下推导得到：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302231703498.png" alt="image-20230223170357462"></p>
+<p>因此，当协方差矩阵中的随机变量系数为矩阵时，可以通过左右分配原则将矩阵系数分别乘到协方差矩阵的左右两侧。</p>
+<p><strong>样本的修正方差</strong></p>
+<p>在统计学中，样本的修正方差是一个用来衡量样本数据的离散程度的统计量。它是在计算样本方差时对无偏性进行修正的结果。</p>
+<p>样本方差是用来衡量样本数据的分散程度的统计量，它是每个观察值与样本均值之差的平方的平均值。样本方差通常用于估计总体方差。然而，由于样本方差是基于样本均值估计的，因此它通常会低估总体方差。为了解决这个问题，可以使用样本的修正方差，它是样本方差乘以修正系数（通常为 $n/(n-1)$）得到的结果。这个修正系数的作用是将样本方差的无偏性进行修正，使得它更接近于总体方差的真实值。</p>
+<p>因此，样本的修正方差可以更准确地估计总体方差，并且更适用于小样本的情况。</p>
+<p>比如对矩估计进行修正：</p>
+<p>对于矩估计值进行方差修正的常见方法是使用样本矩的无偏估计来代替真实的总体矩。例如，使用样本均值代替总体均值和使用样本方差代替总体方差。这样做是为了减少由于矩估计带来的偏差，并且可以更准确地估计参数的标准误差。</p>
+<p>对于样本均值进行方差修正的方法是使用样本的 修正方差，如前面的回答所述。对于样本方差进行方差修正的方法是使用渐进无偏估计的方差修正系数，也称为Bessel修正，其公式为 $n/(n-1)$。</p>
+<p>需要注意的是，对于其他类型的矩估计，可能需要不同的方差修正方法。但是，通常情况下，使用无偏估计来代替总体参数可以降低估计误差并提高估计的精度。</p>
 <h2 id="特征函数"><a href="#特征函数" class="headerlink" title="特征函数"></a>特征函数</h2><p>（1）用来证明分布的可加性</p>
 <p>（2）特征函数用来求k阶矩</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210101637324.png" alt="image-20221010163725268"></p>
@@ -501,6 +518,36 @@
 <h2 id="似然函数"><a href="#似然函数" class="headerlink" title="似然函数"></a>似然函数</h2><p>两个定义可以对比来看</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211041140881.png" alt="image-20221104113954768"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211041140712.png" alt="image-20221104114011657"></p>
+<p><strong>似然估计的不变性</strong>是指，当我们进行似然函数的最大化时，我们可以对参数进行任何等价变换，而不会影响最终的估计结果。换句话说，如果我们对参数进行一个变换，使得似然函数在新的参数下具有相同的形式，那么我们可以使用相同的最大化方法得到相同的估计值。</p>
+<p>例如，假设我们有一个二项分布的似然函数：</p>
+<p>$$L(p|n,k) = {n \choose k}p^k(1-p)^{n-k}$$</p>
+<p>其中 $p$ 是未知的概率参数，$n$ 是试验的次数，$k$ 是成功的次数。我们可以通过求解似然函数的导数来找到最大似然估计（MLE）：</p>
+<p>$$\frac{\partial}{\partial p} L(p|n,k) = \frac{k}{p} - \frac{n-k}{1-p}$$</p>
+<p>令其等于0，得到：</p>
+<p>$$\hat{p}_{MLE} = \frac{k}{n}$$</p>
+<p>这是二项分布中 $p$ 的最大似然估计。现在，假设我们对 $p$ 进行一个变换，定义 $q = 1-p$，那么似然函数变为：</p>
+<p>$$L(q|n,k) = {n \choose k}(1-q)^kp^{n-k}$$</p>
+<p>现在我们要找到 $q$ 的最大似然估计，我们可以使用相同的方法：</p>
+<p>$$\frac{\partial}{\partial q} L(q|n,k) = -\frac{k}{1-q} + \frac{n-k}{q}$$</p>
+<p>令其等于0，得到：</p>
+<p>$$\hat{q}_{MLE} = 1 - \frac{k}{n} = \frac{n-k}{n}$$</p>
+<p>我们可以看到，这个结果与 $p$ 的最大似然估计是等价的，即：</p>
+<p>$$\hat{p}<em>{MLE} = \frac{k}{n} = 1 - \frac{n-k}{n} = \hat{q}</em>{MLE}$$</p>
+<p>这就是似然估计的不变性：对参数的等价变换不会影响估计结果。在实际应用中，这个性质可以使我们更加灵活地选择参数，以便于最大化似然函数并获得更好的估计结果。2</p>
+<p>当我们用最大似然估计去拟合一组数据时，有时我们可以对参数进行等价变换，来简化问题或者获得更好的结果。</p>
+<p>举个例子，假设我们有一组数据 $(x_1, x_2, …, x_n)$，这些数据服从指数分布，其概率密度函数为：</p>
+<p>$$f(x|\lambda) = \lambda e^{-\lambda x}, x \ge 0$$</p>
+<p>其中 $\lambda$ 是未知参数。我们希望通过这些数据来估计参数 $\lambda$。使用最大似然估计，我们可以计算似然函数：</p>
+<p>$$L(\lambda|x_1,x_2,…,x_n) = \prod_{i=1}^n \lambda e^{-\lambda x_i} = \lambda^n e^{-\lambda\sum_{i=1}^n x_i}$$</p>
+<p>对 $\lambda$ 求导并令其等于0，我们可以得到 $\lambda$ 的最大似然估计为：</p>
+<p>$$\hat{\lambda}<em>{MLE} = \frac{n}{\sum</em>{i=1}^n x_i}$$</p>
+<p>但是，有时我们可能更希望估计指数分布的另一个参数，即其均值 $\mu$。注意到指数分布的均值 $\mu$ 和参数 $\lambda$ 之间存在等价变换关系，即：</p>
+<p>$$\mu = \frac{1}{\lambda}$$</p>
+<p>这意味着，我们可以通过估计均值 $\mu$，然后对其取倒数来得到 $\lambda$ 的估计。为了进行均值的估计，我们可以直接计算数据的算术平均数：</p>
+<p>$$\hat{\mu} = \frac{1}{n}\sum_{i=1}^n x_i$$</p>
+<p>然后，我们可以使用等价变换 $\lambda = 1/\mu$ 得到：</p>
+<p>$$\hat{\lambda} = \frac{1}{\hat{\mu}} = \frac{n}{\sum_{i=1}^n x_i}$$</p>
+<p>可以看到，这个估计结果和直接对 $\lambda$ 求解的最大似然估计式是一样的。这是因为两种估计方法之间存在着等价变换的关系。通过这种等价变换，我们可以更加灵活地选择估计参数，从而得到更好的结果。</p>
 <h2 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h2><p>定义与性质</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211042340659.png" alt="image-20221104234034583"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211042340776.png" alt="image-20221104234048711"></p>
@@ -524,7 +571,41 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211062024575.png" alt="image-20221106202428512"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211062025305.png" alt="image-20221106202545248"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202211062025878.png" alt="image-20221106202558803"></p>
-<h2 id="load"><a href="#load" class="headerlink" title="load"></a>load</h2><hr>
+<h2 id="零碎知识的补充"><a href="#零碎知识的补充" class="headerlink" title="零碎知识的补充"></a>零碎知识的补充</h2><h3 id="离散总体的联合分布律怎么求"><a href="#离散总体的联合分布律怎么求" class="headerlink" title="离散总体的联合分布律怎么求"></a>离散总体的联合分布律怎么求</h3><p>离散总体的联合分布律指的是给定多个离散随机变量的取值，它们同时出现的概率分布。</p>
+<p>设 $X_1, X_2, \ldots, X_n$ 为 $n$ 个离散随机变量，它们的取值分别为 $x_1, x_2, \ldots, x_n$，它们的联合分布律为 $P(X_1=x_1, X_2=x_2, \ldots, X_n=x_n)$。如果这些随机变量是独立的，则可以使用它们各自的分布律来求联合分布律，即：</p>
+<p>$$P(X_1=x_1, X_2=x_2, \ldots, X_n=x_n) = \prod_{i=1}^{n} P(X_i=x_i)$$</p>
+<p>如果这些随机变量不是独立的，则需要根据它们之间的关系来求联合分布律，具体的方法需要根据具体情况而定。</p>
+<p>需要注意的是，如果 $n$ 很大，直接列出联合分布律可能会非常繁琐，此时可以考虑使用概率生成函数或特征函数等工具来求解。</p>
+<h3 id="为什么似然函数对于离散总体来说是样本联合分布律，而对于连续总体确实样本的联合密度函数"><a href="#为什么似然函数对于离散总体来说是样本联合分布律，而对于连续总体确实样本的联合密度函数" class="headerlink" title="为什么似然函数对于离散总体来说是样本联合分布律，而对于连续总体确实样本的联合密度函数"></a>为什么似然函数对于离散总体来说是样本联合分布律，而对于连续总体确实样本的联合密度函数</h3><p>似然函数是用来衡量模型参数在给定观测数据下的可能性，因此其具体形式取决于所考虑的总体类型。</p>
+<p>对于离散总体，样本空间为有限或可数无限个元素的集合，每个元素对应一个可能的观测值。此时，样本的联合分布律指的是在给定总体分布的情况下，多个观测值同时出现的概率，因此样本联合分布律可以写成概率质量函数的形式。似然函数则是将概率质量函数看作关于模型参数的函数，并将样本观测值代入其中，得到一个只与模型参数有关的函数。</p>
+<p>对于连续总体，样本空间是实数轴上的一个区间，每个可能的观测值都是一个实数。此时，样本的联合密度函数指的是在给定总体分布的情况下，多个观测值同时出现的概率密度，因此样本联合密度函数可以写成概率密度函数的形式。似然函数则是将概率密度函数看作关于模型参数的函数，并将样本观测值代入其中，得到一个只与模型参数有关的函数。</p>
+<p>因此，似然函数的形式取决于所考虑的总体类型，对于离散总体来说是样本联合分布律，对于连续总体来说是样本的联合密度函数。</p>
+<h3 id="为什么似然函数对于连续总体是样本的联合密度函数"><a href="#为什么似然函数对于连续总体是样本的联合密度函数" class="headerlink" title="为什么似然函数对于连续总体是样本的联合密度函数"></a>为什么似然函数对于连续总体是样本的联合密度函数</h3><p>似然函数是用来衡量模型参数在给定观测数据下的可能性，具体形式与所考虑的总体类型有关。</p>
+<p>对于连续总体，样本空间是实数轴上的一个区间，每个可能的观测值都是一个实数。此时，样本的联合密度函数指的是在给定总体分布的情况下，多个观测值同时出现的概率密度，因此样本联合密度函数可以写成概率密度函数的形式。似然函数则是将概率密度函数看作关于模型参数的函数，并将样本观测值代入其中，得到一个只与模型参数有关的函数。</p>
+<p>具体来说，假设总体分布的概率密度函数为 $f(x;\theta)$，其中 $\theta$ 是模型参数。设样本 $X_1,X_2,\ldots,X_n$ 是从总体中独立取出的 $n$ 个观测值，其联合密度函数为</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302232217708.png" alt="image-20230223221709669"></p>
+<p>其中 $f(x_i;\theta)$ 是总体在参数 $\theta$ 下观测值为 $x_i$ 的概率密度。注意这里假设每个观测值都是独立同分布的，因此样本联合密度函数可以写成各个观测值的概率密度的乘积形式。</p>
+<p>然后我们将样本观测值代入联合密度函数中，得到似然函数：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302232217347.png" alt="image-20230223221735315"></p>
+<p>这个函数只与模型参数 $\theta$ 有关，而与样本观测值 $x_1,x_2,\ldots,x_n$ 无关。因此，对于连续总体来说，似然函数是样本的联合密度函数。</p>
+<h3 id="连续总体的概率密度有什么含义吗，只是用来计算概率的吗？"><a href="#连续总体的概率密度有什么含义吗，只是用来计算概率的吗？" class="headerlink" title="连续总体的概率密度有什么含义吗，只是用来计算概率的吗？"></a>连续总体的概率密度有什么含义吗，只是用来计算概率的吗？</h3><p>连续总体的概率密度函数描述了总体在不同取值点上的密度分布情况，具有以下含义：</p>
+<ol>
+<li>在某个取值点 $x$ 处，概率密度函数 $f(x)$ 表示该点处单位取值范围内的“概率密度”，即总体在这个点上取值的“相对可能性”。注意，这里“概率密度”不等于概率，因为连续总体在单个点处的概率为零。</li>
+<li>在某个区间 $[a,b]$ 上，概率密度函数 $f(x)$ 的积分 $\int_{a}^{b}f(x)dx$ 表示该区间内总体取值的“相对可能性”，即该区间内出现的概率。</li>
+</ol>
+<p>因此，概率密度函数描述了总体在各个取值点或区间上的相对可能性，而不是直接描述概率。但是，我们可以使用概率密度函数来计算某个区间内出现的概率，即对其进行积分。</p>
+<p>需要注意的是，概率密度函数在计算概率时需要使用积分，而不是简单地将密度函数在某个点上的值当作概率。另外，在使用概率密度函数进行概率计算时，需要保证积分区间是合法的，并且使用正确的积分方法。</p>
+<h3 id="用概率密度表示在某个点上的取值的相对可能性有什么意义吗，可以用来做什么"><a href="#用概率密度表示在某个点上的取值的相对可能性有什么意义吗，可以用来做什么" class="headerlink" title="用概率密度表示在某个点上的取值的相对可能性有什么意义吗，可以用来做什么"></a>用概率密度表示在某个点上的取值的相对可能性有什么意义吗，可以用来做什么</h3><p>在连续总体中，单个点的概率密度并不代表该点上的概率，因为一个具体的取值点的概率在数学上为零。但是，概率密度函数仍然有其重要的应用和意义：</p>
+<ol>
+<li>概率密度函数可以用来描述总体的分布情况，即在整个样本空间上各个取值的相对可能性分布。通过对概率密度函数的观察，我们可以获得对总体的分布特征的认识，例如总体的中心位置、分布形状、分布范围等。</li>
+<li>概率密度函数可以用来计算某个区间内出现的概率，即将概率密度函数在该区间上的积分作为该区间内总体出现的相对可能性。这在实际应用中非常有用，例如我们可以使用概率密度函数计算某个测量值落在某个区间内的概率，进而评估该测量值的置信度。</li>
+<li>概率密度函数还可以用来进行假设检验和模型比较，例如通过比较两个概率密度函数的差异来评估两个总体的差异，或者通过对拟合概率密度函数的参数进行检验来评估某个总体分布的合理性。</li>
+</ol>
+<p>总之，概率密度函数是描述总体分布情况的重要工具，可以用来获得对总体的认识、计算概率、进行假设检验和模型比较等。</p>
+<h3 id="我还是不理解”用概率密度表示在某个点上的取值的相对可能性”这一句话"><a href="#我还是不理解”用概率密度表示在某个点上的取值的相对可能性”这一句话" class="headerlink" title="我还是不理解”用概率密度表示在某个点上的取值的相对可能性”这一句话"></a>我还是不理解”用概率密度表示在某个点上的取值的相对可能性”这一句话</h3><p>很抱歉，我的回答可能存在误解。在连续总体中，由于每个具体的取值点的概率为零，概率密度函数不能用来直接计算在某个点上的取值的概率。因此，用概率密度函数表示在某个点上的取值的相对可能性是不准确的表述。</p>
+<p>更准确地说，概率密度函数在某个点附近的取值较高，可以表示该点附近的取值相对于整个取值空间来说更可能出现。这是由于概率密度函数的值表示了取值的相对可能性分布，可以用来描述不同取值出现的相对概率大小。因此，如果在概率密度函数上的某个点附近的取值出现的概率相对较高，我们可以认为在该点附近取值的可能性相对较大。但需要注意的是，这并不能精确地计算某个具体取值的概率，而只能表示某个取值相对于其他取值的可能性大小。</p>
+<p>举个例子，假设我们有一个连续总体的概率密度函数为 $f(x)$。如果我们想知道在某个点 $x_0$ 处取值的概率，我们需要计算 $x_0$ 在一个非常小的区间内出现的概率，即 $\int_{x_0-\epsilon}^{x_0+\epsilon}f(x)dx$，其中 $\epsilon$ 是一个非常小的正数。因为该区间非常小，因此该概率也非常小，通常可以认为是零。因此，我们不能用概率密度函数来计算在某个具体点上取值的概率，只能用来表示不同取值出现的相对可能性大小。</p>
+<hr>
 <p>参考：</p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/liu-li-94-49">学弱猹</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/JudgementH">Judgement</a>—<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/371834109">简单理解Beta函数</a></p>

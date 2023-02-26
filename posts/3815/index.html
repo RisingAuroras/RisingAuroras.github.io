@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
 </head>
 
 
@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    10 分
                 </div>
                 
 
@@ -623,10 +623,73 @@ kevin: 1 windows (created Sun Sep 30 10:17:00 2018) [136x29] (attached)<span ari
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">g <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">1</span>
 g<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token comment">#10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<p> 封装日志类</p>
+<p>以下是一个比较复杂的 Python 封装日志类的示例代码，其中包含了很多不同的功能和选项：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> sys
 
+<span class="token keyword">class</span> <span class="token class-name">CustomLogger</span><span class="token punctuation">:</span>
 
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> logger_name<span class="token punctuation">,</span> log_level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">,</span> log_dir<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> log_filename<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> console_log<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> file_log<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
 
+        <span class="token comment"># create logger</span>
+        self<span class="token punctuation">.</span>logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span>logger_name<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>log_level<span class="token punctuation">)</span>
 
+        <span class="token comment"># set log format</span>
+        formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># add console handler</span>
+        <span class="token keyword">if</span> console_log<span class="token punctuation">:</span>
+            ch <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>stdout<span class="token punctuation">)</span>
+            ch<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
+
+        <span class="token comment"># add file handler</span>
+        <span class="token keyword">if</span> file_log<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token keyword">not</span> log_dir<span class="token punctuation">:</span>
+                log_dir <span class="token operator">=</span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token keyword">not</span> log_filename<span class="token punctuation">:</span>
+                log_filename <span class="token operator">=</span> logger_name <span class="token operator">+</span> <span class="token string">'.log'</span>
+            log_file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>log_dir<span class="token punctuation">,</span> log_filename<span class="token punctuation">)</span>
+            fh <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>log_file_path<span class="token punctuation">)</span>
+            fh<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fh<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">debug</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">info</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">warning</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">error</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">critical</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>critical<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上面的代码中，<code>CustomLogger</code> 类接受以下参数：</p>
+<ul>
+<li><code>logger_name</code>：指定 logger 的名称。</li>
+<li><code>log_level</code>：指定 logger 的日志级别，默认为 <code>logging.DEBUG</code>。</li>
+<li><code>log_dir</code>：指定日志文件存储的目录，默认为当前工作目录。</li>
+<li><code>log_filename</code>：指定日志文件的文件名，默认为 logger 的名称加上 <code>.log</code> 后缀。</li>
+<li><code>console_log</code>：如果为 True，将会向控制台输出日志。</li>
+<li><code>file_log</code>：如果为 True，将会将日志写入文件。</li>
+</ul>
+<p><code>CustomLogger</code> 类在初始化时会创建 logger 对象，并设置日志级别。然后，它会根据给定的参数决定是否添加控制台处理器和文件处理器。控制台处理器将日志输出到标准输出流，文件处理器将日志写入指定的文件。如果没有指定日志文件的存储目录和文件名，则会使用当前工作目录和 logger 名称加上 <code>.log</code> 后缀。</p>
+<p><code>CustomLogger</code> 类还定义了一些方法，包括 <code>debug()</code>、<code>info()</code>、<code>warning()</code>、<code>error()</code> 和 <code>critical()</code>，这些方法分别对应不同的日志级别，并将日志消息传递给 logger 对象进行处理。</p>
+<p>使用该类时，您可以像下面这样实例化：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> CustomLogger<span class="token punctuation">(</span>logger_name<span class="token operator">=</span><span class="token string">'my_logger'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">,</span> log_dir<span class="token operator">=</span><span class="token string">'/path/to/logs'</span><span class="token punctuation">,</span> log_filename<span class="token operator">=</span><span class="token string">'my_app.log'</span><span class="token punctuation">,</span> console_log<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> file_log<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'Hello, world!'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这将创建一个名为 <code>my_logger</code> 的 logger 对象，日志级别为 <code>logging.INFO</code>，日志文件存储在 <code>/path/to/logs/my_app.log</code>，同时向控制台输出日志。然后，它将记录一条日志消息：“Hello, world</p>
 <h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol>
 <li><p>网络输出离散动作概率的时候，一般加一层<code>softmax</code>层，保证输出的离散动作概率和为1；输出连续动作概率的时候，一般加一层<code>tanh</code>层，因为<code>tanh</code>范围是[-1,1]，我们可以根据实际需要，将输出进行缩放。</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209110920372.png" alt="image-20220911092035223"></p>
