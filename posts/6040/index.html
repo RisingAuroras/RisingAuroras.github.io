@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -550,6 +550,7 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092133149.png" alt="image-20230109213325082"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092136848.png" alt="image-20230109213605773"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301092141874.png" alt="image-20230109214119827"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271236431.png" alt="image-20230227123629349"></p>
 <h2 id="重要性采样"><a href="#重要性采样" class="headerlink" title="重要性采样"></a>重要性采样</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031020762.jpeg" alt="img"></p>
 <p>TRPO（PPO同理）的objective给出过程中也用到了importance sampling的思想，可以参考TRPO论文。但它们的确是on-policy算法。</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031035361.png" alt="image-20230103103549296"></p>
@@ -557,6 +558,13 @@
 <p>无偏估计，但是方差可能会出现很大的情况</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031048067.png" alt="image-20230103104849984"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301031053310.png" alt="image-20230103105350225"></p>
+<h2 id="A3C"><a href="#A3C" class="headerlink" title="A3C"></a>A3C</h2><p>A3C的创新和厉害之处在于：A3C算法为了提升训练速度采用异步训练的思想，利用多个线程。每个线程相当于一个智能体在随机探索，多个智能体共同探索，并行计算策略梯度，对参数进行更新。或者说同时启动多个训练环境，同时进行采样，并直接使用采集的样本进行训练，这里的异步得到数据，相比DQN算法，A3C算法不需要使用经验池来存储历史样本并随机抽取训练来打乱数据相关性，节约了存储空间，并且采用异步训练，大大加倍了数据的采样速度，也因此提升了训练速度。与此同时，采用多个不同训练环境采集样本，样本的分布更加均匀，更有利于神经网络的训练。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271249000.jpeg" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271222633.png" alt="image-20230227122204454"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271226677.png" alt="image-20230227122620599"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271231394.png" alt="image-20230227123127314"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271235650.png" alt="image-20230227123556564"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302271245372.png" alt="image-20230227124513286"></p>
 <h2 id="信任区域策略优化TRPO"><a href="#信任区域策略优化TRPO" class="headerlink" title="信任区域策略优化TRPO"></a>信任区域策略优化TRPO</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301012201212.jpeg" alt="img"></p>
 <p>TRPO（以及PPO）算法都是on-policy的算法。On-policy是指，采样使用的policy就是要更新的policy。在TRPO中，用来更新policy的样本都是由当前policy生成的，更新完就丢弃了，所以是on policy的。TRPO的思想是通过局部优化一个近似$\R(\pi)$的下界函数，从而保证每次策略的改进并最终得到最优策略。</p>
 <p>策略梯度算法回顾</p>

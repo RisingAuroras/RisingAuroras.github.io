@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    6.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    27 分
+                    29 分
                 </div>
                 
 
@@ -1079,7 +1079,8 @@ clf<span class="token punctuation">.</span>fit<span class="token punctuation">(<
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在上述示例中，我们首先生成了一个二分类问题的样本数据。然后，我们定义了一个 <code>RBFSampler</code> 对象，将原始特征空间映射到高维空间中。接着，我们将 <code>RBFSampler</code> 对象、标准化器和线性分类器组成了一个流水线，并使用训练数据对其进行训练。</p>
-<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p><code>numel</code></p>
+<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p>   pytorch中，一般来说如果对tensor的一个函数后加上了下划线，则表明这是一个in-place类型。in-place类型是指，当在一个tensor上操作了之后，是直接修改了这个tensor，而不是返回一个新的tensor并不修改旧的tensor。</p>
+<p><code>numel</code></p>
 <p>numel就是”number of elements”的简写。numel()可以直接返回int类型的元素个数</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch 
 a <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
@@ -1132,6 +1133,55 @@ tensor([[1.],
 <p><code>detach()</code></p>
 <p>detach() &amp; data()</p>
 <p>detach()返回一个新的tensor，是从当前计算图中分离下来的，但是仍指向原变量的存放位置，其grad_fn=None且requires_grad=False，得到的这个tensor永远不需要计算其梯度，不具有梯度grad，即使之后重新将它的requires_grad置为true,它也不会具有梯度grad。</p>
+<p><code>clamp()</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">torch<span class="token punctuation">.</span>clamp<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> <span class="token builtin">min</span><span class="token punctuation">,</span> <span class="token builtin">max</span><span class="token punctuation">,</span> out<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span> → Tensor<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>将输入<code>input</code>张量每个元素的夹紧到区间 [min ,max]，，并返回结果到一个新张量。</p>
+<p>操作定义如下</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">      | min, if x_i &lt; min
+y_i = | x_i, if min &lt;= x_i &lt;= max
+      | max, if x_i &gt; max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>如果输入是FloatTensor or DoubleTensor类型，则参数<code>min</code> <code>max</code> 必须为实数，否则须为整数。【译注：似乎并非如此，无关输入类型，<code>min</code>， <code>max</code>取整数、实数皆可。】</p>
+<p>参数：</p>
+<ul>
+<li>input (Tensor) – 输入张量</li>
+<li>min (Number) – 限制范围下限</li>
+<li>max (Number) – 限制范围上限</li>
+<li>out (Tensor, optional) – 输出张量</li>
+</ul>
+<p>代码示例如下:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span>torch<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>high<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+a<span class="token operator">=</span>torch<span class="token punctuation">.</span>clamp<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+
+tensor([[9.],
+        [3.],
+        [0.],
+        [4.],
+        [4.],
+        [2.],
+        [4.],
+        [1.],
+        [2.],
+        [9.]])
+tensor([[9.],
+        [3.],
+        [3.],
+        [4.],
+        [4.],
+        [3.],
+        [4.],
+        [3.],
+        [3.],
+        [9.]])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>创建一个人工数据集，并存储在CSV（逗号分隔值）文件</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 

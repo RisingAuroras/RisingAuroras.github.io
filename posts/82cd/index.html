@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="马克图布的碎碎念, 马克图布">
+    <meta name="keywords" content="git常用操作, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>马克图布的碎碎念 | 马克图布</title>
+    <title>git常用操作 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/25.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">马克图布的碎碎念</h1>
+                    <h1 class="description center-align post-title">git常用操作</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%BD%A0%E8%AF%B4%EF%BC%8C%E4%BA%BA%E7%94%9F%E4%BD%A0%E5%A5%BD%EF%BC%81/" class="post-category">
-                                你说，人生你好！
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
+                                实用
                             </a>
                         
                     </div>
@@ -391,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-20
+                    2023-02-17
                 </div>
                 
 
@@ -400,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    704
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -430,7 +434,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>我喜欢太阳，却总在</p>
+                <h2 id="git常用操作"><a href="#git常用操作" class="headerlink" title="git常用操作"></a>git常用操作</h2><h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><p>首先在本地创建<code>ssh key；</code></p>
+<pre class="line-numbers language-none"><code class="language-none">$ ssh-keygen -t rsa -C "your_email@youremail.com"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
+<p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202207221004711.png" alt="image-20220722100424616"></p>
+<p>为了验证是否成功，在git bash下输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
+<p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ git config --global user.name "your name"
+$ git config --global user.email "your_email@youremail.com"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>进入要上传的仓库，右键git bash，添加远程地址：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ git remote add origin git@github.com:yourName/yourRepo.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。</p>
+<p>创建新文件夹，打开，然后执行<code> git init</code> 以创建新的 git 仓库。</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-install-setup.html">git教程</a></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202207162109888.jpeg" alt="img"></p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul>
+<li>解除ssl验证</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">git config --global http.sslVerify false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><p>初始化仓库</p>
+<pre class="line-numbers language-none"><code class="language-none">git init
+git add README.md
+git commit -m "this is my first commit"
+git branch -M main
+git remote add origin https://github.com/RisingAuroras/re0.git
+git push -u origin main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>添加文件</p>
+<pre class="line-numbers language-none"><code class="language-none">git add .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>提交</p>
+<pre class="line-numbers language-none"><code class="language-none">git commit -m "this is my first commit"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>查询提交日志</p>
+<pre class="line-numbers language-none"><code class="language-none">git log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>克隆仓库</p>
+<p>找到一个文件夹</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https://github.com/RisingAuroras/re01.git <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>显示所有远程仓库</p>
+<pre class="line-numbers language-none"><code class="language-none">git remote -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>添加上游代码库链接</p>
+<pre class="line-numbers language-none"><code class="language-none">git remote add upstream https://github.com/midorg-com/re01.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>创建并切换分支<code>kbb</code>，并提交</p>
+<pre class="line-numbers language-none"><code class="language-none">git  checkout -b kbb 
+git push -u origin kbb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="Git-工作流程"><a href="#Git-工作流程" class="headerlink" title="Git 工作流程"></a>Git 工作流程</h3><p>本章节我们将为大家介绍 Git 的工作流程。</p>
+<p>一般工作流程如下：</p>
+<ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202207051702529.png" alt="image-20220705170215395"></p>
+<h2 id="git常见错误"><a href="#git常见错误" class="headerlink" title="git常见错误"></a>git常见错误</h2><h3 id="Git出现-rejected-master-＞-master-fetch-first-error-failed-to-push-some-refs-to解决方法"><a href="#Git出现-rejected-master-＞-master-fetch-first-error-failed-to-push-some-refs-to解决方法" class="headerlink" title="Git出现 [rejected] master -＞ master (fetch first) error: failed to push some refs to解决方法"></a>Git出现 [rejected] master -＞ master (fetch first) error: failed to push some refs to解决方法</h3><p>要的原因是push上去的时候，仓库内容和本地内容已经不一样了</p>
+<p>所以直接拉取最新的下来更改替换即可<br>通过这条命令：<code>git pull --rebase origin main</code><br>然后再<code>git push origin master</code></p>
 
                 
             </div>
@@ -457,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/d89f/">https://risingauroras.github.io/posts/d89f/</a>
+                    <a href="https://risingauroras.github.io/posts/82cd/">https://risingauroras.github.io/posts/82cd/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -494,7 +568,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -857,13 +935,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2040/">
+                <a href="/posts/d89f/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="ChatGPT——助我学习系列">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="马克图布的碎碎念">
                         
-                        <span class="card-title">ChatGPT——助我学习系列</span>
+                        <span class="card-title">马克图布的碎碎念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -874,27 +952,19 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    数学基础
+                            <a href="/categories/%E4%BD%A0%E8%AF%B4%EF%BC%8C%E4%BA%BA%E7%94%9F%E4%BD%A0%E5%A5%BD%EF%BC%81/" class="post-category">
+                                    你说，人生你好！
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ChatGPT/">
-                        <span class="chip bg-color">ChatGPT</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -906,44 +976,36 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/82cd/">
+                <a href="/posts/d804/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/25.jpg" class="responsive-img" alt="git常用操作">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="从零实现RL">
                         
-                        <span class="card-title">git常用操作</span>
+                        <span class="card-title">从零实现RL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            git常用操作
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                    实用
+                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    强化学习
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
                 </div>
                 
             </div>
