@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    12 分
                 </div>
                 
 
@@ -502,6 +502,25 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302261615669.png" alt="image-20230226161539626"></p>
 <p>其中 $\Gamma(\cdot)$ 表示伽马函数。因此，我们可以写出 $Y$ 的分布符号为 $Y \sim \operatorname{InvGamma}(\alpha, \beta)$，其中 $\operatorname{InvGamma}$ 表示反演伽马分布。反演伽马分布的期望为：<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302261616857.png" alt="image-20230226161605829"></p>
 <p>反演伽马分布在很多贝叶斯统计推断中都有广泛应用，比如共轭先验等。</p>
+</li>
+</ol>
+<h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><ol>
+<li><p>n个两个分布的和相加可以近似于二项分布吗?</p>
+<p>如果 $X_1, X_2, \ldots, X_n$ 是 $n$ 个独立同分布的随机变量，且每个随机变量只能取 $0$ 或 $1$ 两个值，即 $X_i$ 只能取 $0$ 或 $1$，且其期望和方差分别为 $E(X_i) = p$ 和 $\text{Var}(X_i) = p(1-p)$，其中 $0&lt;p&lt;1$，那么将这 $n$ 个随机变量相加的和 $S_n = \sum_{i=1}^{n}X_i$ 近似服从二项分布 $\text{Bin}(n, p)$。</p>
+<p>这是由于根据中心极限定理，当 $n$ 足够大时，$S_n$ 的分布会趋近于正态分布。具体来说，当 $n$ 足够大时，有：</p>
+<p>$$S_n \approx N(np, np(1-p))$$</p>
+<p>这意味着可以用正态分布来近似描述 $S_n$ 的分布。而二项分布 $\text{Bin}(n, p)$ 也可以近似用正态分布来描述，即：</p>
+<p>$$\text{Bin}(n, p) \approx N(np, np(1-p))$$</p>
+<p>因此，将 $n$ 个独立同分布的随机变量相加的和近似为二项分布 $\text{Bin}(n, p)$ 是合理的。</p>
+</li>
+<li></li>
+</ol>
+<h2 id="机器学习篇"><a href="#机器学习篇" class="headerlink" title="机器学习篇"></a>机器学习篇</h2><h3 id="损失"><a href="#损失" class="headerlink" title="损失"></a>损失</h3><ol>
+<li><p>为什么要计算log 概率密度函数？</p>
+<p>在机器学习和统计建模中，通常需要计算概率密度函数或概率质量函数。概率密度函数或概率质量函数的值描述了观测到某个事件或数据点的概率。</p>
+<p>然而，在实际应用中，概率值通常非常小，可能会导致数值下溢或浮点数舍入误差。为了解决这个问题，我们可以使用对数变换来计算概率密度函数或概率质量函数的对数值，这个对数值通常被称为对数概率密度函数或对数概率质量函数。对数值的计算可以避免数值下溢和浮点数舍入误差，并提高计算的稳定性和精度。</p>
+<p>在 PyTorch 中，<code>torch.distributions</code> 模块中的分布类通常提供两个方法来计算概率密度函数或概率质量函数的值：<code>log_prob()</code> 和 <code>prob()</code>。<code>log_prob()</code> 方法计算对数概率密度函数或对数概率质量函数的值，而 <code>prob()</code> 方法计算概率密度函数或概率质量函数的值。由于 <code>log_prob()</code> 方法计算的是对数值，它通常比 <code>prob()</code> 方法更稳定和精确。</p>
+<p>因此，在 PyTorch 中，计算对数概率密度函数或对数概率质量函数的值通常更常见。当然，在一些特定情况下，比如需要计算分布的熵（entropy）时，我们可能会使用 <code>prob()</code> 方法。</p>
 </li>
 <li></li>
 </ol>

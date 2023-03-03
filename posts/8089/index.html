@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.4k
+                    8.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    29 分
+                    40 分
                 </div>
                 
 
@@ -434,7 +434,122 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p><strong>axis</strong></p>
+                <h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p><code>python中的*与**用法详解</code></p>
+<p>python中<code>*</code>与 <code>**</code>的作用一共有四个，分别是数值计算、序列解包、函数声明的时候作为函数形参、函数调用的时候作为函数实参</p>
+<p>序列(列表、元组)解包</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">list</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+a<span class="token punctuation">,</span>b<span class="token punctuation">,</span><span class="token operator">*</span>c <span class="token operator">=</span><span class="token builtin">list</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a='</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'b='</span><span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'c='</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+a= 1
+b= 2
+c= [3, 4, 5]
+
+'''</span>
+<span class="token builtin">list</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+a<span class="token punctuation">,</span>b<span class="token punctuation">,</span><span class="token operator">*</span>c <span class="token operator">=</span><span class="token builtin">list</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a='</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'b='</span><span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'c='</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+a= 1
+b= 2
+c= []
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>函数声明的时候作为函数形参</p>
+<p>大家应该会经常看到类似这样的函数：def function( <code>*</code> arg,<code>** </code>kwargs): ，这里的<code>*</code> arg与<code>**</code>kwarg都是为了接受不定长参数的。其中<code>*</code>arg是位置参数，用于接受不定长的无名参数，本质是一个元组，<code>**</code>kwargs是关键字参数，本质是一个字典。还有一点arg,kwargs就是一个变量名，换成 <code>*</code>a,<code>**</code>b效果是一样的。接下来看代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>kwargs<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>kwargs<span class="token punctuation">[</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+my_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span>
+my_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+function<span class="token punctuation">(</span><span class="token operator">*</span>my_list<span class="token punctuation">,</span><span class="token operator">**</span>my_dict<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><code>- *args 返回的是一个tuple元组</code><br><code>- **kwargs返回的是一个dict字典</code><br><code>- **kwargs传参只能是A=“B”形式</code><br><code>- *args必须要在kwargs前面</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'args=</span><span class="token interpolation"><span class="token punctuation">{</span>args<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'kwargs=</span><span class="token interpolation"><span class="token punctuation">{</span>kwargs<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+test<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span>food<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span>sex<span class="token operator">=</span><span class="token string">"F"</span><span class="token punctuation">)</span>
+dic <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'lisa'</span><span class="token punctuation">,</span><span class="token string">'job'</span><span class="token punctuation">:</span><span class="token string">'nurse'</span><span class="token punctuation">}</span>
+
+结果：
+args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+kwargs<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'food'</span><span class="token punctuation">:</span> <span class="token string">'orange'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">:</span> <span class="token string">'F'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>实参分解</strong><br><code>即将参数拆分成单独的个体</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+data1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token string">'python'</span><span class="token punctuation">,</span><span class="token string">'java'</span><span class="token punctuation">)</span>
+test<span class="token punctuation">(</span><span class="token operator">*</span>data1<span class="token punctuation">)</span>   <span class="token comment"># 相当于分别传入了3个参数</span>
+结果：
+a<span class="token operator">=</span> hello
+b<span class="token operator">=</span> python
+c<span class="token operator">=</span> java
+
+<span class="token comment"># 此时字典data2的key值必须和形参名称相等，顺序可以不一样</span>
+data2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'b'</span><span class="token punctuation">:</span><span class="token string">'lisa'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">:</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token string">'F'</span><span class="token punctuation">}</span>
+test<span class="token punctuation">(</span><span class="token operator">**</span>data2<span class="token punctuation">)</span>
+结果：
+a<span class="token operator">=</span> F
+b<span class="token operator">=</span> lisa
+c<span class="token operator">=</span> <span class="token number">12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>IPython</strong></p>
+<p><code>from IPython import display</code></p>
+<p>The <code>IPython.display</code> module provides a set of functions that can be used to display various types of output in Jupyter notebooks, including images, audio, video, HTML, Markdown, and more.</p>
+<p>The <code>display</code> function from the <code>IPython.display</code> module is a particularly useful function, as it allows you to display arbitrary Python expressions in the notebook, and it automatically chooses the appropriate display mechanism based on the type of the expression. For example, you can use <code>display</code> to display the value of a variable, the output of a function call, or even a plot generated by a visualization library.</p>
+<p>Here’s an example of how you can use <code>display</code> to show an image in a Jupyter notebook:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> IPython<span class="token punctuation">.</span>display <span class="token keyword">import</span> display<span class="token punctuation">,</span> Image
+
+<span class="token comment"># Load the image from a file</span>
+image <span class="token operator">=</span> Image<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'my_image.png'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Display the image in the notebook</span>
+display<span class="token punctuation">(</span>image<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>In this example, we first import both the <code>display</code> and <code>Image</code> functions from the <code>IPython.display</code> module. We then load an image from a file using the <code>Image</code> function, and finally we use the <code>display</code> function to show the image in the notebook.</p>
+<p>Overall, the <code>IPython.display</code> module and the <code>display</code> function are essential tools for working with Jupyter notebooks, as they make it easy to display a wide variety of output formats directly in the notebook.</p>
+<p><strong>pylab</strong></p>
+<p><code>pylab</code> and <code>IPython</code> are two different things in the Python ecosystem.</p>
+<p><code>pylab</code> is a module in the matplotlib library that provides a convenient interface for creating plots and charts in Python. It is essentially a convenience module that provides a simple way to access all of the functionality of <code>matplotlib</code> and <code>numpy</code> in a single namespace. By importing <code>pylab</code>, you get access to a wide range of functionality for creating plots and visualizations, including line plots, scatter plots, histograms, and more.</p>
+<p>Here’s an example of how you can use <code>pylab</code> to create a simple line plot:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pylab
+
+<span class="token comment"># Create some data</span>
+x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Create a line plot</span>
+pylab<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+
+<span class="token comment"># Show the plot</span>
+pylab<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>IPython</strong></p>
+<p>On the other hand, <code>IPython</code> is a powerful interactive shell for Python that provides a rich set of tools and features for working with code in an interactive and exploratory way. It is particularly well-suited for working with Jupyter notebooks, which allow you to mix code, text, and visualizations in a single document.</p>
+<p><code>IPython</code> provides a range of useful features for working with Python code interactively, including tab completion, object introspection, and interactive debugging. It also provides a range of useful tools for working with Jupyter notebooks, including support for displaying rich media content (such as images, audio, and video), integrating with third-party libraries, and sharing notebooks with others.</p>
+<p>Overall, both <code>pylab</code> and <code>IPython</code> are useful tools for working with Python code, but they serve different purposes. <code>pylab</code> is primarily focused on creating visualizations, while <code>IPython</code> is focused on providing an interactive environment for working with Python code.</p>
+<h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p><strong>axis</strong></p>
 <p>“axis=0表示跨行，axis=1表示跨列，作为方法动作的副词”</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209061015661.png" alt="image-20220906101507580"></p>
 <p><strong>squeeze()函数</strong></p>
@@ -950,6 +1065,9 @@ plt<span class="token punctuation">.</span>title<span class="token punctuation">
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209141401528.png" alt="image-20220914140156474"></p>
+<p><code>%matplotlib inline</code>是IPython的魔法命令之一，用于在IPython notebook或Jupyter notebook中显示图形输出。具体而言，它会将matplotlib生成的图形嵌入到notebook中，并且不需要在单独的窗口中打开它们。</p>
+<p>当在notebook中执行matplotlib绘图代码时，如果没有使用<code>%matplotlib inline</code>命令，则matplotlib默认情况下会创建一个新的窗口来显示图形。而使用<code>%matplotlib inline</code>命令后，所有的图形输出将直接显示在notebook中，便于查看和分析。</p>
+<p>需要注意的是，<code>%matplotlib inline</code>命令必须在导入matplotlib库之前执行，才能确保所有的图形都能被正确地显示在notebook中。</p>
 <h2 id="tensorflow"><a href="#tensorflow" class="headerlink" title="tensorflow"></a>tensorflow</h2><h3 id="tensor创建"><a href="#tensor创建" class="headerlink" title="tensor创建"></a>tensor创建</h3><p><code>tf.zeros(维度)</code></p>
 <p>创建全为0的tensor</p>
 <p><code>tf.ones(维度)</code></p>
@@ -1180,8 +1298,29 @@ tensor([[9.],
         [9.]])
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><strong>torch.distributions.Categorical</strong></p>
+<p><code>torch.distributions.Categorical</code> 是 PyTorch 中的一个分布类，它表示具有固定类别概率的离散分布。使用 <code>Categorical</code> 类，您可以创建一个离散分布对象，其中每个类别的概率由输入的概率张量确定。</p>
+<p>以下是一个使用 <code>Categorical</code> 类的示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>distributions <span class="token keyword">import</span> Categorical
 
+<span class="token comment"># 定义一个概率张量，表示三个类别的概率分别为 0.3、0.5 和 0.2</span>
+probs <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
+<span class="token comment"># 创建一个 Categorical 分布对象</span>
+dist <span class="token operator">=</span> Categorical<span class="token punctuation">(</span>probs<span class="token punctuation">)</span>
+
+<span class="token comment"># 从分布中抽样</span>
+sample <span class="token operator">=</span> dist<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sample<span class="token punctuation">)</span>  <span class="token comment"># 输出抽样结果，可能为 0、1 或 2</span>
+
+<span class="token comment"># 计算 log 概率密度函数</span>
+log_prob <span class="token operator">=</span> dist<span class="token punctuation">.</span>log_prob<span class="token punctuation">(</span>sample<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>log_prob<span class="token punctuation">)</span>  <span class="token comment"># 输出 log 概率密度函数的值</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在这里，我们首先定义了一个概率张量，其中三个类别的概率分别为 0.3、0.5 和 0.2。然后，我们使用 <code>Categorical</code> 类创建了一个分布对象 <code>dist</code>，其中每个类别的概率由概率张量 <code>probs</code> 确定。接着，我们使用 <code>sample()</code> 方法从分布中抽样，返回一个表示抽样结果的张量。最后，我们使用 <code>log_prob()</code> 方法计算抽样结果的对数概率密度函数的值。</p>
+<p>需要注意的是，<code>Categorical</code> 类的概率张量必须是非负的，并且总和必须为 1。如果概率张量不满足这些条件，<code>Categorical</code> 类将引发异常。如果您的概率张量不满足这些条件，您可以使用 <code>torch.softmax()</code> 函数将其转换为满足条件的概率张量。</p>
 <h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>创建一个人工数据集，并存储在CSV（逗号分隔值）文件</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 
@@ -1241,6 +1380,115 @@ X<span class="token punctuation">,</span> y<span aria-hidden="true" class="line-
          [4., 0., 1.],
          [3., 0., 1.]], dtype=torch.float64),
  tensor([127500, 106000, 178100, 140000]))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>get_dummies</code></p>
+<p>pandas的get_dummies函数可以将分类数据转换为二进制哑变量（dummy variable）表示形式，方便机器学习和数据分析的处理。下面是get_dummies函数的用法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pandas<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> prefix_sep<span class="token operator">=</span><span class="token string">'_'</span><span class="token punctuation">,</span> dummy_na<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> drop_first<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中，参数说明如下：</p>
+<ul>
+<li><code>data</code>：要进行处理的DataFrame或Series对象。</li>
+<li><code>prefix</code>：哑变量的列名前缀，用于与原始列进行区分。默认值为None，表示使用原始列名作为前缀。</li>
+<li><code>prefix_sep</code>：前缀与列名的分隔符，默认值为下划线。</li>
+<li><code>dummy_na</code>：是否为缺失值创建一列哑变量，如果为True，则将缺失值所在行的哑变量值设为1。默认值为False。</li>
+<li><code>columns</code>：指定要进行哑变量转换的列，如果不指定，则默认对所有的分类数据进行处理。</li>
+<li><code>sparse</code>：是否返回稀疏矩阵（SparseDataFrame），默认为False，表示返回密集矩阵（DataFrame）。</li>
+<li><code>drop_first</code>：是否删除第一个哑变量列，默认为False，表示保留第一个哑变量列。</li>
+<li><code>dtype</code>：指定输出矩阵的数据类型，默认为np.uint8。</li>
+</ul>
+<p>下面是一个示例代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+dummies <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token string">'color'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">,</span> dummies<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果如下:</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">   color  color_blue  color_green  color_red
+0    red           0            0          1
+1  green           0            1          0
+2   blue           1            0          0
+3    red           0            0          1
+4   blue           1            0          0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该示例代码将一列分类数据“color”转换为了三列哑变量数据，并将它们与原始数据进行合并。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token comment"># data = pd.concat([data, dummies], axis=1)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">   age  color_blue  color_green  color_red
+0   12           0            0          1
+1    3           0            1          0
+2    4           1            0          0
+3    5           0            0          1
+4    6           1            0          0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>to_numeric</strong></p>
+<p><code>pandas.to_numeric()</code>是一个用于将Pandas对象（Series或DataFrame）中的数据转换为数值类型的函数。这个函数的语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pandas<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>arg<span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'raise'</span><span class="token punctuation">,</span> downcast<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>其中，<code>arg</code>表示需要转换的Pandas对象，可以是一个Series或DataFrame，或是一个由Series或DataFrame构成的列表或字典；<code>errors</code>表示非数值数据的处理方式，它有以下几个选项：</p>
+<ul>
+<li><code>'raise'</code>（默认值）：如果有非数值数据，就抛出异常；</li>
+<li><code>'coerce'</code>：如果有非数值数据，就将它们转换为NaN；</li>
+<li><code>'ignore'</code>：忽略非数值数据，不进行转换；</li>
+</ul>
+<p><code>downcast</code>表示转换后的数据类型，它可以是以下几个选项：</p>
+<ul>
+<li><code>'integer'</code>：将数值类型转换为整型；</li>
+<li><code>'signed'</code>：将数值类型转换为带符号的整型；</li>
+<li><code>'unsigned'</code>：将数值类型转换为无符号的整型；</li>
+<li><code>'float'</code>：将数值类型转换为浮点型；</li>
+</ul>
+<p>如果不指定<code>downcast</code>，则会根据转换后的数值类型自动选择合适的数据类型。</p>
+<p>下面是一个示例代码，演示如何使用<code>pandas.to_numeric()</code>将Pandas对象中的数据转换为数值类型：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 创建一个包含非数值数据的Series</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3a'</span><span class="token punctuation">,</span> <span class="token string">'4b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将Series中的数据转换为数值类型</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>s<span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'coerce'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 输出结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+0    1.0
+1    2.0
+2    3.0
+3    4.0
+dtype: float64
+'''</span>
+<span class="token comment"># 创建一个包含非数字元素的DataFrame</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'fdfd'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将列B中的非数字元素替换为NaN</span>
+df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'coerce'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 输出结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+   A    B
+0  1  4.0
+1  2  5.0
+2  3  NaN
+
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上面的示例中，我们使用<code>pd.to_numeric()</code>方法将Series中的数据转换为数值类型。由于Series中包含非数值数据，我们将<code>errors</code>参数设置为<code>'coerce'</code>，将非数值数据转换为NaN。最后，我们输出了处理后的Series。</p>
+<p>需要注意的是，<code>pandas.to_numeric()</code>方法不能处理多个特征的情况，如果要处理多个特征，需要对每个特征进行单独的转换。另外，如果要将某一列中的非数字元素替换为指定的值，可以使用<code>replace()</code>方法。</p>
 
                 
             </div>

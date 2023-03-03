@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    44
+                    667
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -443,6 +443,47 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302072042400.png" alt="image-20230207204230956"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302072048997.png" alt="image-20230207204829612"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302072052195.png" alt="image-20230207205220809"></p>
+<p>pandas怎么处理特征中异常值</p>
+<p>在处理异常值时，我们需要先了解数据的分布情况，以及异常值的产生原因，然后根据具体情况采取相应的处理方法。下面介绍一些常用的异常值处理方法：</p>
+<ol>
+<li>剔除异常值：如果异常值是由于数据采集或处理错误引起的，可以考虑直接剔除异常值。例如，可以删除特别大或特别小的数据点，或者删除超出3个标准差的数据点。需要注意的是，剔除异常值可能会导致数据样本减少，从而影响建模结果。</li>
+<li>修正异常值：如果异常值是由于数据采集或处理错误引起的，但是不能直接剔除，可以考虑对异常值进行修正。例如，可以将特别大或特别小的数据点修正为平均值或中位数，或者使用插值法进行修正。</li>
+<li>分箱处理：如果异常值是由于数据分布不均匀引起的，可以将特征进行分箱处理。例如，可以将数值型特征按照分位数进行分箱，或者将分类特征进行合并。</li>
+<li>离群值处理：如果异常值是由于样本本身的特殊性引起的，可以考虑将异常值作为一个新的特征进行处理。例如，可以将特别大或特别小的数据点作为一个新的二元特征，并将其设置为1或0。</li>
+</ol>
+<p>在Pandas中，可以使用<code>describe()</code>方法查看特征的基本统计信息，例如均值、标准差、最大值、最小值、中位数等。另外，可以使用<code>boxplot()</code>方法绘制特征的箱线图，以帮助识别异常值。</p>
+<p>下面是一个示例代码，演示如何使用Pandas处理特征中的异常值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment"># 创建一个包含异常值的DataFrame</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 查看DataFrame的基本统计信息</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 绘制DataFrame的箱线图</span>
+df<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将超出3个标准差的数据点替换为NaN</span>
+df<span class="token punctuation">[</span>np<span class="token punctuation">.</span><span class="token builtin">abs</span><span class="token punctuation">(</span>df <span class="token operator">-</span> df<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">3</span> <span class="token operator">*</span> df<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>nan
+
+<span class="token comment"># 输出处理后的DataFrame</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果如下：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">                 A            B
+count     6.000000     6.000000
+mean    168.333333  -150.500000
+std     417.179679   642.418291
+min       1.000000 -1000.000000
+25%       2.250000    4.250000
+50%       3.500000    6.500000
+75%       4.750000    7.750000
+max    1000.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
