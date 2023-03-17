@@ -1,0 +1,1882 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="启发式算法, 马克图布">
+    <meta name="description" content="记录我的遗忘">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>启发式算法 | 马克图布</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/jquery/jquery.min.js"></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="马克图布" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/log3.jfif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">马克图布</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/log3.jfif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">马克图布</div>
+        <div class="logo-desc">
+            
+            记录我的遗忘
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">启发式算法</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">启发式算法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-03-09
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    39 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:9">范叶亮</a></p>
+</blockquote>
+<h2 id="启发式算法-Heuristic-Algorithms"><a href="#启发式算法-Heuristic-Algorithms" class="headerlink" title="启发式算法 (Heuristic Algorithms)"></a>启发式算法 (Heuristic Algorithms)</h2><p><strong>启发式算法 (Heuristic Algorithms)</strong> 是相对于最优算法提出的。一个问题的最优算法是指求得该问题每个实例的最优解. 启发式算法可以这样定义 1：一个基于直观或经验构造的算法，在可接受的花费 (指计算时间、占用空间等) 下给出待解决组合优化问题每一个实例的一个可行解，该可行解与最优解的偏离程度不一定事先可以预计。</p>
+<p>在某些情况下，特别是实际问题中，最优算法的计算时间使人无法忍受或因问题的难度使其计算时间随问题规模的增加以指数速度增加，此时只能通过启发式算法求得问题的一个可行解。</p>
+<p>利用启发式算法进行目标优化的一些优缺点如下：</p>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 算法简单直观，易于修改 2. 算法能够在可接受的时间内给出一个较优解</td>
+<td>1. 不能保证为全局最优解 2. 算法不稳定，性能取决于具体问题和设计者经验</td>
+</tr>
+</tbody></table>
+<p>启发式算法简单的划分为如下三类：<strong>简单启发式算法 (Simple Heuristic Algorithms)<strong>，</strong>元启发式算法 (Meta-Heuristic Algorithms)</strong> 和 **超启发式算法 (Hyper-Heuristic Algorithms)**。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303151930313.png" alt="Heuristic-Algorithms"></p>
+<h2 id="简单启发式算法-Simple-Heuristic-Algorithms"><a href="#简单启发式算法-Simple-Heuristic-Algorithms" class="headerlink" title="简单启发式算法 (Simple Heuristic Algorithms)"></a>简单启发式算法 (Simple Heuristic Algorithms)</h2><h3 id="贪心算法-Greedy-Algorithm"><a href="#贪心算法-Greedy-Algorithm" class="headerlink" title="贪心算法 (Greedy Algorithm)"></a>贪心算法 (Greedy Algorithm)</h3><p>贪心算法是指一种在求解问题时总是采取当前状态下最优的选择从而得到最优解的算法。贪心算法的基本步骤定义如下：</p>
+<ol>
+<li>确定问题的最优子结构。</li>
+<li>设计递归解，并保证在任一阶段，最优选择之一总是贪心选择。</li>
+<li>实现基于贪心策略的递归算法，并转换成迭代算法。</li>
+</ol>
+<p>对于利用贪心算法求解的问题需要包含如下两个重要的性质：</p>
+<ol>
+<li>最优子结构性质。当一个问题具有最优子结构性质时，可用 动态规划 法求解，但有时用贪心算法求解会更加的简单有效。同时并非所有具有最优子结构性质的问题都可以利用贪心算法求解。</li>
+<li>贪心选择性质。所求问题的整体最优解可以通过一系列局部最优的选择 (即贪心选择) 来达到。这是贪心算法可行的基本要素，也是贪心算法与动态规划算法的主要区别。</li>
+</ol>
+<p>贪心算法和动态规划算法之间的差异如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>贪心算法</th>
+<th>动态规划</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>每个阶段可以根据选择当前状态最优解快速的做出决策</td>
+<td>每个阶段的选择建立在子问题的解之上</td>
+</tr>
+<tr>
+<td>可以在子问题求解之前贪婪的做出选择</td>
+<td>子问题需先进行求解</td>
+</tr>
+<tr>
+<td>自顶向下的求解</td>
+<td>自底向上的求解 (也可采用带备忘录的自顶向下方法)</td>
+</tr>
+<tr>
+<td>通常情况下简单高效</td>
+<td>效率可能比较低</td>
+</tr>
+</tbody></table>
+<h3 id="局部搜索-Local-Search-和爬山算法-Hill-Climbing"><a href="#局部搜索-Local-Search-和爬山算法-Hill-Climbing" class="headerlink" title="局部搜索 (Local Search) 和爬山算法 (Hill Climbing)"></a>局部搜索 (Local Search) 和爬山算法 (Hill Climbing)</h3><p>局部搜索算法基于贪婪思想，从一个候选解开始，持续地在其<strong>邻域</strong>中搜索，直至邻域中没有更好的解。对于一个优化问题：</p>
+<p>$$\min f(x),x\in\mathbb{R}^n\quad$$</p>
+<p>其中，$f(x)$ 为目标函数。搜索可以理解为从一个解移动到另一个解的过程，令 $s(x)$表示通过移动得到的一个解，$S(x)$ 为从当前解出发所有可能的解的集合 (邻域)，则局部搜索算法的步骤描述如下：</p>
+<ol>
+<li>初始化一个可行解 $x$。</li>
+<li>在当前解的邻域内选择一个移动后的解$s(x)$，使得 $f(s(x))&lt;f(x),s(x)\in S(x)$，如果不存在这样的解，则 $x$为最优解，算法停止。</li>
+<li>令 $x=s(x)$，重复步骤 2。</li>
+</ol>
+<p>当我们的优化目标为最大化目标函数 $f(x)$时，这种局部搜索算法称之为爬山算法。</p>
+<h2 id="元启发式算法-Meta-Heuristic-Algorithms"><a href="#元启发式算法-Meta-Heuristic-Algorithms" class="headerlink" title="元启发式算法 (Meta-Heuristic Algorithms)"></a>元启发式算法 (Meta-Heuristic Algorithms)</h2><p>元启发式算法 (Meta-Heuristic Algorithms) 是启发式算法的改进，通常使用随机搜索技巧，可以应用在非常广泛的问题上，但不能保证效率。本节部分内容参考了《智能优化方法》 和《现代优化计算方法》。</p>
+<h3 id="禁忌搜索-Tabu-Search"><a href="#禁忌搜索-Tabu-Search" class="headerlink" title="禁忌搜索 (Tabu Search)"></a>禁忌搜索 (Tabu Search)</h3><p>禁忌搜索 (Tabu Search) 是由 Glover 提出的一种优化方法。禁忌搜索通过在解邻域内搜索更优的解的方式寻找目标的最优解，在搜索的过程中将搜索历史放入禁忌表 (Tabu List) 中从而避免重复搜索。禁忌表通过模仿人类的记忆功能，禁忌搜索因此得名。</p>
+<p>在禁忌搜索算法中，禁忌表用于防止搜索过程出现循环，避免陷入局部最优。对于一个给定长度的禁忌表，随着新的禁忌对象的不断进入，旧的禁忌对象会逐步退出，从而可以重新被访问。禁忌表是禁忌搜索算法的核心，其功能同人类的短时记忆功能相似，因此又称之为“短期表”。</p>
+<p>在某些特定的条件下，无论某个选择是否包含在禁忌表中，我们都接受这个选择并更新当前解和历史最优解，这个选择所满足的特定条件称之为渴望水平。</p>
+<p>一个基本的禁忌搜索算法的步骤描述如下：</p>
+<ol>
+<li>给定一个初始可行解，将禁忌表设置为空。</li>
+<li>选择候选集中的最优解，若其满足渴望水平，则更新渴望水平和当前解；否则选择未被禁忌的最优解。</li>
+<li>更新禁忌表。</li>
+<li>判断是否满足停止条件，如果满足，则停止算法；否则转至步骤 2。</li>
+</ol>
+<h3 id="模拟退火-Simulated-Annealing"><a href="#模拟退火-Simulated-Annealing" class="headerlink" title="模拟退火 (Simulated Annealing)"></a>模拟退火 (Simulated Annealing)</h3><p>模拟退火 (Simulated Annealing) 是一种通过在邻域中寻找目标值相对小的状态从而求解全局最优的算法，现代的模拟退火是由 Kirkpatrick 等人于 1983 年提出 4。模拟退火算法源自于对热力学中退火过程的模拟，在给定一个初始温度下，通过不断降低温度，使得算法能够在多项式时间内得到一个近似最优解。</p>
+<p>对于一个优化问题 $\min\ f(x)$，模拟退火算法的步骤描述如下：</p>
+<ol>
+<li>给定一个初始可行解 $x_0$，初始温度$T_0$和终止温度 $T_t$，令迭代计数为 $k$。</li>
+<li>随机选取一个邻域解 $x_k$，计算目标函数增量 $\Delta f=f\left(x_k\right)-f\left(x\right)$。若 $\Delta f&lt;0$，则令 $x=x_k$；否则生成随机数 $\xi =U(0,1)$，若随机数小于转移概率 $P(\Delta f,T)$，则令 $x=x_k$。</li>
+<li>降低温度 $T$。</li>
+<li>若达到最大迭代次数 $k_{max}$ 或最低温度 $T_f$，则停止算法；否则转至步骤 2。</li>
+</ol>
+<p>整个算法的伪代码如下：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303152059548.png" alt="image-20230315205902499"></p>
+<img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303152219709.jpeg" alt="img" style="zoom: 67%;">
+
+<p>在进行邻域搜索的过程中，当温度较高时，搜索的空间较大，反之搜索的空间较小。类似的，当 $\Delta f&gt;0$ 时，转移概率的设置也同当前温度的大小成正比。常用的降温函数有两种：</p>
+<ol>
+<li>$T_{k+1}=T_k*r$,其中$r\in (0.95,0.99)$，$r$的设置越大，温度下降的越快</li>
+<li>$T_{k+1}=T_k-\Delta T$，其中$\Delta T$为每一步温度的减少量</li>
+</ol>
+<p>初始温度和终止温度对算法的影响较大，相关参数设置的细节请参见参考文献。</p>
+<p>模拟退火算法是对局部搜索和爬山算法的改进，我们通过如下示例对比两者之间的差异。假设目标函数如下：</p>
+<p>$$f\left(x,y\right)=e^{-\left(x^{2}+y^{2}\right)}+2e^{-\left(\left(x-1.7\right)^{2}+\left(y-1.7\right)^2\right)}$$</p>
+<p>优化问题定义为：</p>
+<p>$$\max f(x,y),x\in[-2,4],y\in[-2,4]$$</p>
+<p>我们分别令初始解为 $(1.5,−1.5)$ 和 $(3.5,0.5)$，下图 (上) 为爬山算法的结果，下图 (下) 为模拟退火算法的结果。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303152104173.png" alt="Hill Climbing"></p>
+<p>其中，<strong>白色</strong> 的大点为初始解位置，<strong>粉色</strong> 的大点为求解的最优解位置，颜色从白到粉描述了迭代次数。从图中不难看出，由于局部最大值的存在，从不同的初始解出发，爬山算法容易陷入局部最大值，而模拟退火算法则相对稳定。</p>
+<p>再看下面这个图：</p>
+<p><img src="https://oi-wiki.org/misc/images/simulated-annealing.gif" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> random
+
+
+<span class="token keyword">class</span> <span class="token class-name">SA</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> interval<span class="token punctuation">,</span> tab<span class="token operator">=</span><span class="token string">'min'</span><span class="token punctuation">,</span> T_max<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">,</span> T_min<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> iterMax<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> rate<span class="token operator">=</span><span class="token number">0.95</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>interval <span class="token operator">=</span> interval  <span class="token comment"># 给定状态空间 - 即待求解空间</span>
+        self<span class="token punctuation">.</span>T_max <span class="token operator">=</span> T_max  <span class="token comment"># 初始退火温度 - 温度上限</span>
+        self<span class="token punctuation">.</span>T_min <span class="token operator">=</span> T_min  <span class="token comment"># 截止退火温度 - 温度下限</span>
+        self<span class="token punctuation">.</span>iterMax <span class="token operator">=</span> iterMax  <span class="token comment"># 定温内部迭代次数</span>
+        self<span class="token punctuation">.</span>rate <span class="token operator">=</span> rate  <span class="token comment"># 退火降温速度</span>
+        <span class="token comment">#############################################################</span>
+        self<span class="token punctuation">.</span>x_seed <span class="token operator">=</span> random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span>interval<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> interval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 解空间内的种子</span>
+        self<span class="token punctuation">.</span>tab <span class="token operator">=</span> tab<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 求解最大值还是最小值的标签: 'min' - 最小值；'max' - 最大值</span>
+        <span class="token comment">#############################################################</span>
+        self<span class="token punctuation">.</span>solve<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 完成主体的求解过程</span>
+        self<span class="token punctuation">.</span>display<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 数据可视化展示</span>
+
+    <span class="token keyword">def</span> <span class="token function">solve</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        temp <span class="token operator">=</span> <span class="token string">'deal_'</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>tab  <span class="token comment"># 采用反射方法提取对应的函数</span>
+
+        <span class="token keyword">if</span> <span class="token builtin">hasattr</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> temp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            deal <span class="token operator">=</span> <span class="token builtin">getattr</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> temp<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            exit<span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;tab标签传参有误："min"|"max"&lt;&lt;&lt;'</span><span class="token punctuation">)</span>
+        x1 <span class="token operator">=</span> self<span class="token punctuation">.</span>x_seed
+        T <span class="token operator">=</span> self<span class="token punctuation">.</span>T_max
+        <span class="token keyword">while</span> T <span class="token operator">&gt;=</span> self<span class="token punctuation">.</span>T_min<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>iterMax<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                f1 <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span>x1<span class="token punctuation">)</span>
+                delta_x <span class="token operator">=</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span>
+                <span class="token keyword">if</span> x1 <span class="token operator">+</span> delta_x <span class="token operator">&gt;=</span> self<span class="token punctuation">.</span>interval<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">and</span> x1 <span class="token operator">+</span> delta_x <span class="token operator">&lt;=</span> self<span class="token punctuation">.</span>interval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment"># 将随机解束缚在给定状态空间内</span>
+                    x2 <span class="token operator">=</span> x1 <span class="token operator">+</span> delta_x
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    x2 <span class="token operator">=</span> x1 <span class="token operator">-</span> delta_x
+                f2 <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span>x2<span class="token punctuation">)</span>
+                delta_f <span class="token operator">=</span> f2 <span class="token operator">-</span> f1
+                x1 <span class="token operator">=</span> deal<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> delta_f<span class="token punctuation">,</span> T<span class="token punctuation">)</span>
+            T <span class="token operator">*=</span> self<span class="token punctuation">.</span>rate
+        self<span class="token punctuation">.</span>x_solu <span class="token operator">=</span> x1  <span class="token comment"># 提取最终退火解</span>
+
+
+    <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 状态产生函数 - 即待求解函数</span>
+        value <span class="token operator">=</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>x <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>x <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">5</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> value
+
+
+    <span class="token keyword">def</span> <span class="token function">p_min</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> delta<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 计算最小值时，容忍解的状态迁移概率</span>
+        probability <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>delta <span class="token operator">/</span> T<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> probability
+
+
+    <span class="token keyword">def</span> <span class="token function">p_max</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> delta<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        probability <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>delta <span class="token operator">/</span> T<span class="token punctuation">)</span>  <span class="token comment"># 计算最大值时，容忍解的状态迁移概率</span>
+        <span class="token keyword">return</span> probability
+
+
+    <span class="token keyword">def</span> <span class="token function">deal_min</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> delta<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> delta <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>  <span class="token comment"># 更优解</span>
+            <span class="token keyword">return</span> x2
+        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment"># 容忍解</span>
+            P <span class="token operator">=</span> self<span class="token punctuation">.</span>p_min<span class="token punctuation">(</span>delta<span class="token punctuation">,</span> T<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> P <span class="token operator">&gt;</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> x2
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> x1
+
+
+    <span class="token keyword">def</span> <span class="token function">deal_max</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> delta<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> delta <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>  <span class="token comment"># 更优解</span>
+            <span class="token keyword">return</span> x2
+        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment"># 容忍解</span>
+            P <span class="token operator">=</span> self<span class="token punctuation">.</span>p_max<span class="token punctuation">(</span>delta<span class="token punctuation">,</span> T<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> P <span class="token operator">&gt;</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> x2
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> x1
+
+
+    <span class="token keyword">def</span> <span class="token function">display</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'seed: {}\nsolution: {}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>x_seed<span class="token punctuation">,</span> self<span class="token punctuation">.</span>x_solu<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>self<span class="token punctuation">.</span>interval<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>interval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span>
+        y <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'g-'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'function'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>self<span class="token punctuation">.</span>x_seed<span class="token punctuation">,</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span>self<span class="token punctuation">.</span>x_seed<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'bo'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'seed'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>self<span class="token punctuation">.</span>x_solu<span class="token punctuation">,</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span>self<span class="token punctuation">.</span>x_solu<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'r*'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'solution'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'solution = {}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>x_solu<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">'SA.png'</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    SA<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'max'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="遗传算法-Genetic-Algorithm"><a href="#遗传算法-Genetic-Algorithm" class="headerlink" title="遗传算法 (Genetic Algorithm)"></a>遗传算法 (Genetic Algorithm)</h3><p>遗传算法 (Genetic Algorithm, GA) 是由 John Holland 提出，其学生 Goldberg 对整个算法进行了进一步完善 <a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:5">5</a>。算法的整个思想来源于达尔文的进化论，其基本思想是根据问题的目标函数构造一个适应度函数 (Fitness Function)，对于种群中的每个个体 (即问题的一个解) 进行评估 (计算适应度)，选择，交叉和变异，通过多轮的繁殖选择适应度最好的个体作为问题的最优解。算法的整个流程如下所示：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160736276.png" alt="GA-Process"></p>
+<h4 id="初始化种群"><a href="#初始化种群" class="headerlink" title="初始化种群"></a>初始化种群</h4><p>在初始化种群时，我们首先需要对每一个个体进行编码，常用的编码方式有二进制编码，实值编码 <a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:6">6</a>，矩阵编码 <a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:7">7</a>，树形编码等。以二进制为例 (如下不做特殊说明时均以二进制编码为例)，对于 $p∈{0,1,…,100} $中 $p_i=50$ 可以表示为：<br>$$x_i=50_{10}=0110010_2$$</p>
+<p>对于一个具体的问题，我们需要选择合适的编码方式对问题的解进行编码，编码后的个体可以称之为一个染色体。则一个染色体可以表示为：</p>
+<p>$$x={p_1,p_2,…,p_m}$$</p>
+<p>其中，$m$为染色体的长度或编码的位数。初始化种群个体共 $n$个，对于任意一个个体染色体的任意一位 $i$，随机生成一个随机数 $rand\in (0,1)$，若 $rand&gt;0.5$，则 $p_i=1$，否则$p_i=0$。</p>
+<h4 id="计算适应度"><a href="#计算适应度" class="headerlink" title="计算适应度"></a>计算适应度</h4><p>适应度为评价个体优劣程度的函数 $f(x)$，通常为问题的目标函数，对最小化优化问题$f\left(x\right)=-\min\sum\mathcal{L}\left(\hat{y},y\right)$,中 $\mathcal{L}$为损失函数。</p>
+<h4 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h4><p>对于种群中的每个个体，计算其适应度，记第 $i$个个体的适应度为 $F_i=f(x_i)$。则个体在一次选择中被选中的概率为：</p>
+<p>$$P_i=\dfrac{F_i}{\sum_{i=1}^n F_i}$$</p>
+<p>为了保证种群的数量不变，我们需要重复 $n$次选择过程，单次选择采用轮盘赌的方法。利用计算得到的被选中的概率计算每个个体的累积概率：</p>
+<p>$$CP_0=0\ CP_i=\sum_{j=1}^i P_i$$</p>
+<p>对于如下一个示例：</p>
+<p>对于如下一个示例：</p>
+<table>
+<thead>
+<tr>
+<th>指标 \ 个体</th>
+<th>$x_1$</th>
+<th>$x_2$</th>
+<th>$x_3$</th>
+<th>$x_4$</th>
+<th>$x_5$</th>
+<th>$x_6$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>适应度 (F)</td>
+<td>100</td>
+<td>60</td>
+<td>60</td>
+<td>40</td>
+<td>30</td>
+<td>20</td>
+</tr>
+<tr>
+<td>概率 (P)</td>
+<td>0.322</td>
+<td>0.194</td>
+<td>0.194</td>
+<td>0.129</td>
+<td>0.097</td>
+<td>0.064</td>
+</tr>
+<tr>
+<td>累积概率 (CP)</td>
+<td>0.322</td>
+<td>0.516</td>
+<td>0.71</td>
+<td>0.839</td>
+<td>0.936</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>每次选择时，随机生成 $rand\in U(0,1)$，当 $CP_{i-1}≤rand≤CP_i $时，选择个体 $x_i$。选择的过程如同在下图的轮盘上安装一个指针并随机旋转，每次指针停止的位置的即为选择的个体。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160806493.png" alt="GA-Roulette-Wheel"></p>
+<h4 id="交叉"><a href="#交叉" class="headerlink" title="交叉"></a>交叉</h4><p>交叉运算类似于染色体之间的交叉，常用的方法有单点交叉，多点交叉和均匀交叉等。</p>
+<ul>
+<li>单点交叉：在染色体中选择一个切点，然后将其中一部分同另一个染色体的对应部分进行交换得到两个新的个体。交叉过程如下图所示：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160807105.png" alt="GA-Crossover-One-Point"></p>
+<ul>
+<li>多点交叉：在染色体中选择多个切点，对其任意两个切点之间部分以概率 $P_c$ 进行交换，其中$P_c$为一个较大的值，例如 $P_m=0.9$。两点交叉过程如下图所示：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160809613.png" alt="GA-Crossover-Two-Points"></p>
+<ul>
+<li>均匀交叉：染色体任意对应的位置以一定的概率进行交换得到新的个体。交叉过程如下图所示：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160809159.png" alt="GA-Crossover-Uniform"></p>
+<h4 id="变异"><a href="#变异" class="headerlink" title="变异"></a>变异</h4><p>变异即对于一个染色体的任意位置的值以一定的概率 $P_m$ 发生变化，对于二进制编码来说即反转该位置的值。其中 $P_m$为一个较小的值，例如 $P_m=0.05$。</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>在整个遗传运算的过程中，不同的操作发挥着不同的作用：</p>
+<ol>
+<li>选择：优胜劣汰，适者生存。</li>
+<li>交叉：丰富种群，持续优化。</li>
+<li>变异：随机扰动，避免局部最优。</li>
+</ol>
+<p>除此之外，对于基本的遗传算法还有多种优化方法，例如：精英主义，即将每一代中的最优解原封不动的复制到下一代中，这保证了最优解可以存活到整个算法结束。</p>
+<h4 id="示例-商旅问题"><a href="#示例-商旅问题" class="headerlink" title="示例 - 商旅问题"></a>示例 - 商旅问题</h4><p>以 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh/%E6%97%85%E8%A1%8C%E6%8E%A8%E9%94%80%E5%91%98%E9%97%AE%E9%A2%98">商旅问题</a> 为例，利用 GA 算法求解中国 34 个省会城市的商旅问题。求解代码利用了 <a target="_blank" rel="noopener" href="https://deap.readthedocs.io/en/master/">Deap</a> 库，结果可视化如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160811841.gif" alt="GA-TSP"></p>
+<p>一个更有趣的例子是利用 GA 算法，使用不同颜色和透明度的多边形的叠加表示一张图片，在线体验详见 <a target="_blank" rel="noopener" href="http://alteredqualia.com/visualization/evolve/">这里</a>，下图为不同参数下的蒙娜丽莎图片的表示情况：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160816090.png" alt="GA-Mona-Lisa"></p>
+<h4 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ha_ha_ha233/article/details/91364937">原文地址</a></p>
+<p>上面提到遗传算法是用来解决最优化问题的，下面我将以求二元函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">F</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> <span class="token number">3</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">*</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">(</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span> <span class="token number">10</span><span class="token operator">*</span><span class="token punctuation">(</span>x<span class="token operator">/</span><span class="token number">5</span> <span class="token operator">-</span> x<span class="token operator">**</span><span class="token number">3</span> <span class="token operator">-</span> y<span class="token operator">**</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span>y<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span><span class="token operator">**</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> y<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在 $x\in[-3, 3], y\in[-3, 3]$范围里的最大值为例子来详细讲解遗传算法的每一步。该函数的图像如下图：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160917816.png"></p>
+<p>通过旋转视角可以发现，函数在这个局部的最大值大概在当 $x \approx 0,y\approx1.5$时，函数值取得最大值，这里的$x,y$的取值就是我们最后要得到的结果。</p>
+<p>先直观看一下算法过程：</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160918299.gif" alt="在这里插入图片描述"></p>
+<p>首先我们生成了200个随机的（x,y）对，将(x, y)坐标对带入要求解的函数F(x,y)中，根据适者生存，我们定义使得函数值F(x,y)越大的(x,y)对越适合环境，从而这些适应环境的(x,y)对更有可能被保留下来，而那些不适应该环境的(x,y)则有很大几率被淘汰，保留下来的点经过繁殖产生新的点，如此进化下去最后留下的大部分点都是试应环境的点，即在最高点附近。下图为算法执行结果，和上面的分析$x \approx 0,y\approx1.5$相近。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303160920455.png" alt="在这里插入图片描述"></p>
+<p><strong>种群和个体的概念</strong></p>
+<p>遗传算法启发自进化理论，而我们知道进化是由<strong>种群为单位的</strong>，种群是什么呢？维基百科上解释为：在生物学上，是在一定空间范围内同时生活着的同种生物的全部<strong>个体</strong>。显然要想理解种群的概念，又先得理解个体的概念，在遗传算法里，<strong>个体通常为某个问题的一个解，并且该解在计算机中被编码为一个向量表示！</strong> 我们的例子中要求最大值，所以该问题的解为一组可能的( x , y ) 的取值。比如( x = 2.1 , y = 0.8 ) , ( x = − 1.5 , y = 2.3 )…就是求最大值问题的一个可能解，也就是遗传算法里的个体，把这样的一组一组的<strong>可能解的集合就叫做种群</strong> ，比如在这个问题中设置100个这样的x , y 的可能的取值对，这100个个体就构成了种群。	</p>
+<p><strong>编码、解码与染色体的概念</strong></p>
+<p>在上面个体概念里提到个体（也就是一组可能解）在计算机程序中被<strong>编码</strong>为一个向量表示，而在我们这个问题中，个体是x , y的取值，是两个实数，所以问题就可以转化为<strong>如何将实数编码为一个向量表示</strong>，可能有些朋友有疑惑，实数在计算机里不是可以直接存储吗，为什么需要编码呢？这里编码是为了后续操作（交叉和变异）的方便。实数如何编码为向量这个问题找了很多博客，写的都是很不清楚，看了莫烦python的教学代码，终于明白了一种实数编码、解码的方式。</p>
+<p>生物的DNA有四种碱基对，分别是ACGT，<strong>DNA的编码可以看作是DNA上碱基对的不同排列</strong>，不同的排列使得基因的表现出来的性状也不同（如单眼皮双眼皮）。在计算机中，我们可以模仿这种编码，但是碱基对的种类只有两种，分别是0，1。只要我们能够<strong>将不同的实数表示成不同的0，1二进制串表示就完成了编码</strong>，也就是说其实我们并不需要去了解一个实数对应的二进制具体是多少，我们只需要保证<strong>有一个映射</strong></p>
+<p>$$y=f(x),x<del>is decimal system,y</del>is binary~system$$</p>
+<p><strong>能够将十进制的数编码为二进制即可</strong>，至于这个映射是什么，其实可以不必关心。将个体（可能解）编码后的二进制串叫做<strong>染色体</strong>，<strong>染色体（或者有人叫DNA）就是个体（可能解）的二进制编码表示</strong>。为什么可以不必关心映射$f ( x ) $呢？因为其实我们在程序中操纵的都是二进制串，而二进制串生成时可以随机生成，如：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#pop表示种群矩阵，一行表示一个二进制编码表示的DNA，矩阵的行数为种群数目,DNA_SIZE为编码长度，不理解乘2的看后文</span>
+pop <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">,</span> DNA_SIZE<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#matrix (POP_SIZE, DNA_SIZE*2)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>实际上是没有需求需要将一个十进制数转化为一个二进制数，而在最后我们肯定要将编码后的二进制串转换为我们理解的十进制串，所以我们需要的是$y = f ( x )$的<strong>逆映射</strong>，也就是将二进制转化为十进制，这个过程叫做<strong>解码（很重要，感觉初学者不容易理解）</strong>，理解了解码编码还难吗?先看具体的解码过程如下。</p>
+<p>首先我们限制二进制串的长度为10（长度自己指定即可，越长精度越高），例如我们有一个二进制串（在程序中用数组存储即可）</p>
+<p>$$[0,1,0,1,1,1,0,1,0,1]$$，这个二进制串如何转化为实数呢？不要忘记我们的$ x,y\in[-3,3]$这个限制，我们<strong>目标是求一个逆映射将这个二进制串映射到 $x,y\in[-3,3]$即可</strong>，为了更一般化我们将$x , y$的取值范围用一个变量表示，在程序中可以用python语言写到：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">X_BOUND <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token comment">#x取值范围</span>
+Y_BOUND <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token comment">#y取值范围</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>为将二进制串映射到指定范围，<strong>首先先将二进制串按权展开，将二进制数转化为十进制数</strong>，我们有$0<em>2^9+1</em>2^8+0<em>2^7+…+0</em>2^0+1*2^0=373$，然后<strong>将转换后的实数压缩到$[0,1]$之间的一个小数</strong>， $373 / （2^{10}-1） \approx 0.36461388074$，通过以上这些步骤所有二进制串表示都可以转换为$[ 0 , 1 ] $之间的小数现在<strong>只需要将$[0,1] $ 区间内的数映射到我们要的区间即可</strong>。假设区间$[ 0 , 1 ]$内的数称为num，转换在python语言中可以写成：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#X_BOUND,Y_BOUND是x，y的取值范围 X_BOUND = [-3, 3], Y_BOUND = [-3, 3],</span>
+x_ <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token punctuation">(</span>X_BOUND<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> X_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> X_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment">#映射为x范围内的数</span>
+y_ <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token punctuation">(</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> Y_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> Y_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment">#映射为y范围内的数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>通过以上这些标记为蓝色的步骤我们完成了将一个二进制串映射到指定范围内的任务（解码）。</p>
+<p>现在再来看看编码过程。不难看出上面我们的DNA（二进制串）长为10，10位二进制可以表示$2^{10}$种不同的状态，可以看成是<strong>将最后要转化为的十进制区间$x,y\in[-3,3]$（下面讨论都时转化到这个区间）切分成$ 2^{10}$份</strong>，显而易见，如果我们增加二进制串的长度，那么我们对区间的切分可以更加精细，转化后的十进制解也更加精确。例如，十位二进制全1按权展开为1023，最后映射到[-3, 3]区间时为3，而1111111110（前面9个1）按权展开为1022，$1022/(2^{10}-1) \approx 0.999022$，$ 0.999022*(3 - (-3)) + (-3)\approx2.994134$；如果我们将实数编码为12位二进制，111111111111（12个1）最后转化为3，而111111111110（前面11个1）按权展开为4094， $4094/(2^{12}-1=4095)\approx0.9997564094/(212−1=4095)≈0.999756$，$ 0.999755*(3-(-3))+(-3)\approx2.9985340.999755∗(3−(−3))+(−3)≈2.998534$;而 $3-2.994134=0.0058663−2.994134=0.005866$；$ 3-2.998534=0.0014663−2.998534=0.001466$，可以看出用10位二进制编码划分区间后，每个二进制状态改变对应的实数大约改变0.005866，而用12位二进制编码这个数字下降到0.001466，所以DNA长度越长，解码为10进制的实数越精确。</p>
+<p>以下为<strong>解码过程</strong>的python代码：</p>
+<p>这里我设置DNA_SIZE=24（一个实数DNA长度），两个实数$x , y$ 一共用48位二进制编码，我同时<strong>将x和y编码到同一个48位的二进制串里</strong>，每一个变量用24位表示，奇数24列为x的编码表示，偶数24列为y的编码表示。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">translateDNA</span><span class="token punctuation">(</span>pop<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#pop表示种群矩阵，一行表示一个二进制编码表示的DNA，矩阵的行数为种群数目</span>
+	x_pop <span class="token operator">=</span> pop<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token comment">#奇数列表示X</span>
+	y_pop <span class="token operator">=</span> pop<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment">#偶数列表示y</span>
+    <span class="token comment">#pop:(POP_SIZE,DNA_SIZE)*(DNA_SIZE,1) --&gt; (POP_SIZE,1)完成解码</span>
+    x <span class="token operator">=</span> x_pop<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>DNA_SIZE<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>DNA_SIZE<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>X_BOUND<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>X_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>X_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>	
+    y <span class="token operator">=</span> y_pop<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>DNA_SIZE<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>DNA_SIZE<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">,</span>y
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>适应度和选择</strong></p>
+<p>我们已经得到了一个种群，现在要根据适者生存规则把优秀的个体保存下来，同时淘汰掉那些不适应环境的个体。现在摆在我们面前的问题是<strong>如何评价一个个体对环境的适应度？在我们的求最大值的问题中可以直接用可能解（个体）对应的函数的函数值的大小来评估</strong>，这样可能解对应的函数值越大越有可能被保留下来，以求解上面定义的函数F的最大值为例，python代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_fitness</span><span class="token punctuation">(</span>pop<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    x<span class="token punctuation">,</span>y <span class="token operator">=</span> translateDNA<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+	pred <span class="token operator">=</span> F<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>pred <span class="token operator">-</span> np<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e-3</span> <span class="token comment">#减去最小的适应度是为了防止适应度出现负数，通过这一步fitness的范围为[0, np.max(pred)-np.min(pred)],最后在加上一个很小的数防止出现为0的适应度</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>pred是将可能解带入函数F中得到的预测值，因为后面的选择过程需要<strong>根据个体适应度确定每个个体被保留下来的概率，而概率不能是负值</strong>，所以<strong>减去预测中的最小值</strong>把适应度值的最小区间提升到从0开始，但是如果适应度为0，其对应的概率也为0，表示该个体不可能在选择中保留下来，这不符合算法思想，遗传算法不绝对否定谁也不绝对肯定谁，所以最后加上了一个很小的正数。</p>
+<p>有了求最大值的适应度函数求<strong>最小值适应度函数</strong>也就容易了，python代码如下:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_fitness</span><span class="token punctuation">(</span>pop<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+	x<span class="token punctuation">,</span>y <span class="token operator">=</span> translateDNA<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+	pred <span class="token operator">=</span> F<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token operator">-</span><span class="token punctuation">(</span>pred <span class="token operator">-</span> np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e-3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>因为根据适者生存规则在求最小值问题上，函数值越小的可能解对应的适应度应该越大，同时适应度也不能为负值，先将适应度减去最大预测值，将适应度可能取值区间压缩为$[ n p . m i n ( p r e d ) − n p . m a x ( p r e d ) , 0 ]$，然后添加个负号将适应度变为正数，同理为了不出现0，最后在加上一个很小的正数。</p>
+<p>有了评估的适应度函数，下面可以根据适者生存法则将优秀者保留下来了。选择则是根据新个体的适应度进行，但同时不意味着<em>完全以适应度高低为导向</em>（选择top k个适应度最高的个体，容易陷入局部最优解），因为单纯选择适应度高的个体将可能导致算法快速收敛到局部最优解而非全局最优解，我们称之为早熟。作为折中，遗传算法依据原则：<strong>适应度越高，被选择的机会越高，而适应度低的，被选择的机会就低。</strong> 在python中可以写做：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">select</span><span class="token punctuation">(</span>pop<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment"># nature selection wrt pop's fitness</span>
+    idx <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">)</span><span class="token punctuation">,</span> size<span class="token operator">=</span>POP_SIZE<span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+                           p<span class="token operator">=</span><span class="token punctuation">(</span>fitness<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>fitness<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> pop<span class="token punctuation">[</span>idx<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不熟悉numpy的朋友可以查阅一下这个函数，主要是使用了choice里的最后一个参数p，参数p描述了从np.arange(POP_SIZE)里选择每一个元素的概率，概率越高约有可能被选中，最后返回被选中的个体即可。</p>
+<p> <strong>交叉、变异</strong></p>
+<p>通过选择我们得到了当前看来“还不错的基因”，但是这并不是最好的基因，我们需要通过繁殖后代（包含有交叉+变异过程）来产生比当前更好的基因，但是繁殖后代并不能保证每个后代个体的基因都比上一代优秀，这时需要继续通过选择过程来让试应环境的个体保留下来，从而完成进化，不断迭代上面这个过程种群中的个体就会一步一步地进化。</p>
+<p>具体地繁殖后代过程包括交叉和变异两步。交叉是指每一个个体是由父亲和母亲两个个体繁殖产生，<strong>子代个体的DNA（二进制串）获得了一半父亲的DNA，一半母亲的DNA</strong>，但是这里的一半并不是真正的一半，这个位置叫做<strong>交配点</strong>，是<strong>随机产生</strong>的，可以是染色体的任意位置。通过交叉子代获得了一半来自父亲一半来自母亲的DNA，但是子代自身可能发生<strong>变异，使得其DNA即不来自父亲，也不来自母亲，在某个位置上发生随机改变</strong>，通常就是改变DNA的一个二进制位（0变到1，或者1变到0）。</p>
+<p>需要说明的是<strong>交叉和变异不是必然发生，而是有一定概率发生</strong>。先考虑交叉，最坏情况，交叉产生的子代的DNA都比父代要差（这样算法有可能朝着优化的反方向进行，不收敛），如果交叉是有一定概率不发生，那么就能保证子代有一部分基因和当前这一代基因水平一样；而变异本质上是让算法跳出局部最优解，如果变异时常发生，或发生概率太大，那么算法到了最优解时还会不稳定。交叉概率，范围一般是0.6~1，突变常数（又称为变异概率），通常是0.1或者更小。</p>
+<p>python实现如下</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">crossover_and_mutation</span><span class="token punctuation">(</span>pop<span class="token punctuation">,</span> CROSSOVER_RATE <span class="token operator">=</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	new_pop <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+	<span class="token keyword">for</span> father <span class="token keyword">in</span> pop<span class="token punctuation">:</span>		<span class="token comment">#遍历种群中的每一个个体，将该个体作为父亲</span>
+		child <span class="token operator">=</span> father		<span class="token comment">#孩子先得到父亲的全部基因（这里我把一串二进制串的那些0，1称为基因）</span>
+		<span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> CROSSOVER_RATE<span class="token punctuation">:</span>			<span class="token comment">#产生子代时不是必然发生交叉，而是以一定的概率发生交叉</span>
+			mother <span class="token operator">=</span> pop<span class="token punctuation">[</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">)</span><span class="token punctuation">]</span>	<span class="token comment">#再种群中选择另一个个体，并将该个体作为母亲</span>
+			cross_points <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> high<span class="token operator">=</span>DNA_SIZE<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>	<span class="token comment">#随机产生交叉的点</span>
+			child<span class="token punctuation">[</span>cross_points<span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> mother<span class="token punctuation">[</span>cross_points<span class="token punctuation">:</span><span class="token punctuation">]</span>		<span class="token comment">#孩子得到位于交叉点后的母亲的基因</span>
+		mutation<span class="token punctuation">(</span>child<span class="token punctuation">)</span>	<span class="token comment">#每个后代有一定的机率发生变异</span>
+		new_pop<span class="token punctuation">.</span>append<span class="token punctuation">(</span>child<span class="token punctuation">)</span>
+
+	<span class="token keyword">return</span> new_pop
+
+<span class="token keyword">def</span> <span class="token function">mutation</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> MUTATION_RATE<span class="token operator">=</span><span class="token number">0.003</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> MUTATION_RATE<span class="token punctuation">:</span> 				<span class="token comment">#以MUTATION_RATE的概率进行变异</span>
+		mutate_point <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> DNA_SIZE<span class="token punctuation">)</span>	<span class="token comment">#随机产生一个实数，代表要变异基因的位置</span>
+		child<span class="token punctuation">[</span>mutate_point<span class="token punctuation">]</span> <span class="token operator">=</span> child<span class="token punctuation">[</span>mutate_point<span class="token punctuation">]</span><span class="token operator">^</span><span class="token number">1</span> 	<span class="token comment">#将变异点的二进制为反转</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面这些步骤即为遗传算法的核心模块，将这些模块在主函数中迭代起来，让种群去进化</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pop <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">,</span> DNA_SIZE<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#生成种群 matrix (POP_SIZE, DNA_SIZE)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>N_GENERATIONS<span class="token punctuation">)</span><span class="token punctuation">:</span>	<span class="token comment">#种群迭代进化N_GENERATIONS代</span>
+	crossover_and_mutation<span class="token punctuation">(</span>pop<span class="token punctuation">,</span> CROSSOVER_RATE<span class="token punctuation">)</span>	<span class="token comment">#种群通过交叉变异产生后代</span>
+	fitness <span class="token operator">=</span> get_fitness<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>	<span class="token comment">#对种群中的每个个体进行评估</span>
+	pop <span class="token operator">=</span> select<span class="token punctuation">(</span>pop<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span> 	<span class="token comment">#选择生成新的种群</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>完整代码</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> cm
+<span class="token keyword">from</span> mpl_toolkits<span class="token punctuation">.</span>mplot3d <span class="token keyword">import</span> Axes3D
+
+DNA_SIZE <span class="token operator">=</span> <span class="token number">24</span>
+POP_SIZE <span class="token operator">=</span> <span class="token number">200</span>
+CROSSOVER_RATE <span class="token operator">=</span> <span class="token number">0.8</span>
+MUTATION_RATE <span class="token operator">=</span> <span class="token number">0.005</span>
+N_GENERATIONS <span class="token operator">=</span> <span class="token number">50</span>
+X_BOUND <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+Y_BOUND <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+
+<span class="token keyword">def</span> <span class="token function">F</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> <span class="token number">3</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">*</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">(</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span> <span class="token number">10</span><span class="token operator">*</span><span class="token punctuation">(</span>x<span class="token operator">/</span><span class="token number">5</span> <span class="token operator">-</span> x<span class="token operator">**</span><span class="token number">3</span> <span class="token operator">-</span> y<span class="token operator">**</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span>y<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span><span class="token operator">**</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> y<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">plot_3d</span><span class="token punctuation">(</span>ax<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+	X <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">*</span>X_BOUND<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+	Y <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">*</span>Y_BOUND<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+	X<span class="token punctuation">,</span>Y <span class="token operator">=</span> np<span class="token punctuation">.</span>meshgrid<span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">)</span>
+	Z <span class="token operator">=</span> F<span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">)</span>
+	ax<span class="token punctuation">.</span>plot_surface<span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>Z<span class="token punctuation">,</span>rstride<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>cstride<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>cmap<span class="token operator">=</span>cm<span class="token punctuation">.</span>coolwarm<span class="token punctuation">)</span>
+	ax<span class="token punctuation">.</span>set_zlim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+	ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
+	ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span>
+	ax<span class="token punctuation">.</span>set_zlabel<span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span>
+	plt<span class="token punctuation">.</span>pause<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+	plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">get_fitness</span><span class="token punctuation">(</span>pop<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    x<span class="token punctuation">,</span>y <span class="token operator">=</span> translateDNA<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+	pred <span class="token operator">=</span> F<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>pred <span class="token operator">-</span> np<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e-3</span> <span class="token comment">#减去最小的适应度是为了防止适应度出现负数，通过这一步fitness的范围为[0, np.max(pred)-np.min(pred)],最后在加上一个很小的数防止出现为0的适应度</span>
+
+
+<span class="token keyword">def</span> <span class="token function">translateDNA</span><span class="token punctuation">(</span>pop<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#pop表示种群矩阵，一行表示一个二进制编码表示的DNA，矩阵的行数为种群数目</span>
+	x_pop <span class="token operator">=</span> pop<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token comment">#奇数列表示X</span>
+	y_pop <span class="token operator">=</span> pop<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment">#偶数列表示y</span>
+	
+	<span class="token comment">#pop:(POP_SIZE,DNA_SIZE)*(DNA_SIZE,1) --&gt; (POP_SIZE,1)</span>
+	x <span class="token operator">=</span> x_pop<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>DNA_SIZE<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>DNA_SIZE<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>X_BOUND<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>X_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>X_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+	y <span class="token operator">=</span> y_pop<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>DNA_SIZE<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span>DNA_SIZE<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>Y_BOUND<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+	<span class="token keyword">return</span> x<span class="token punctuation">,</span>y
+
+<span class="token keyword">def</span> <span class="token function">crossover_and_mutation</span><span class="token punctuation">(</span>pop<span class="token punctuation">,</span> CROSSOVER_RATE <span class="token operator">=</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	new_pop <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+	<span class="token keyword">for</span> father <span class="token keyword">in</span> pop<span class="token punctuation">:</span>		<span class="token comment">#遍历种群中的每一个个体，将该个体作为父亲</span>
+		child <span class="token operator">=</span> father		<span class="token comment">#孩子先得到父亲的全部基因（这里我把一串二进制串的那些0，1称为基因）</span>
+		<span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> CROSSOVER_RATE<span class="token punctuation">:</span>			<span class="token comment">#产生子代时不是必然发生交叉，而是以一定的概率发生交叉</span>
+			mother <span class="token operator">=</span> pop<span class="token punctuation">[</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">)</span><span class="token punctuation">]</span>	<span class="token comment">#再种群中选择另一个个体，并将该个体作为母亲</span>
+			cross_points <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> high<span class="token operator">=</span>DNA_SIZE<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>	<span class="token comment">#随机产生交叉的点</span>
+			child<span class="token punctuation">[</span>cross_points<span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> mother<span class="token punctuation">[</span>cross_points<span class="token punctuation">:</span><span class="token punctuation">]</span>		<span class="token comment">#孩子得到位于交叉点后的母亲的基因</span>
+		mutation<span class="token punctuation">(</span>child<span class="token punctuation">)</span>	<span class="token comment">#每个后代有一定的机率发生变异</span>
+		new_pop<span class="token punctuation">.</span>append<span class="token punctuation">(</span>child<span class="token punctuation">)</span>
+
+	<span class="token keyword">return</span> new_pop
+
+<span class="token keyword">def</span> <span class="token function">mutation</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> MUTATION_RATE<span class="token operator">=</span><span class="token number">0.003</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> MUTATION_RATE<span class="token punctuation">:</span> 				<span class="token comment">#以MUTATION_RATE的概率进行变异</span>
+		mutate_point <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> DNA_SIZE<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>	<span class="token comment">#随机产生一个实数，代表要变异基因的位置</span>
+		child<span class="token punctuation">[</span>mutate_point<span class="token punctuation">]</span> <span class="token operator">=</span> child<span class="token punctuation">[</span>mutate_point<span class="token punctuation">]</span><span class="token operator">^</span><span class="token number">1</span> 	<span class="token comment">#将变异点的二进制为反转</span>
+
+<span class="token keyword">def</span> <span class="token function">select</span><span class="token punctuation">(</span>pop<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment"># nature selection wrt pop's fitness</span>
+    idx <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">)</span><span class="token punctuation">,</span> size<span class="token operator">=</span>POP_SIZE<span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+                           p<span class="token operator">=</span><span class="token punctuation">(</span>fitness<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>fitness<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> pop<span class="token punctuation">[</span>idx<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">print_info</span><span class="token punctuation">(</span>pop<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	fitness <span class="token operator">=</span> get_fitness<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+	max_fitness_index <span class="token operator">=</span> np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>fitness<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"max_fitness:"</span><span class="token punctuation">,</span> fitness<span class="token punctuation">[</span>max_fitness_index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	x<span class="token punctuation">,</span>y <span class="token operator">=</span> translateDNA<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"最优的基因型："</span><span class="token punctuation">,</span> pop<span class="token punctuation">[</span>max_fitness_index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"(x, y):"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">[</span>max_fitness_index<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">[</span>max_fitness_index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+	fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	ax <span class="token operator">=</span> Axes3D<span class="token punctuation">(</span>fig<span class="token punctuation">)</span>	
+	plt<span class="token punctuation">.</span>ion<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#将画图模式改为交互模式，程序遇到plt.show不会暂停，而是继续执行</span>
+	plot_3d<span class="token punctuation">(</span>ax<span class="token punctuation">)</span>
+
+	pop <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span>POP_SIZE<span class="token punctuation">,</span> DNA_SIZE<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#matrix (POP_SIZE, DNA_SIZE)</span>
+	<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>N_GENERATIONS<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#迭代N代</span>
+		x<span class="token punctuation">,</span>y <span class="token operator">=</span> translateDNA<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> <span class="token string">'sca'</span> <span class="token keyword">in</span> <span class="token builtin">locals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+			sca<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		sca <span class="token operator">=</span> ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> F<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>plt<span class="token punctuation">.</span>pause<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+		pop <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>crossover_and_mutation<span class="token punctuation">(</span>pop<span class="token punctuation">,</span> CROSSOVER_RATE<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token comment">#F_values = F(translateDNA(pop)[0], translateDNA(pop)[1])#x, y --&gt; Z matrix</span>
+		fitness <span class="token operator">=</span> get_fitness<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+		pop <span class="token operator">=</span> select<span class="token punctuation">(</span>pop<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span> <span class="token comment">#选择生成新的种群</span>
+	
+	print_info<span class="token punctuation">(</span>pop<span class="token punctuation">)</span>
+	plt<span class="token punctuation">.</span>ioff<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	plot_3d<span class="token punctuation">(</span>ax<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>后记：很多人评论最后最大适应度很小是不是没收敛，我说一下我的理解，请注意最大适应度和F(x,y)不等价，最大适应度小不能说明没有拟合，认真观察适应度咋算的，是F(x,y) - min(F(x,y))，这个值小，F(x,y)的最大值和最小值很接近，方差很小，反而可能是表明收敛了</strong></p>
+<h4 id="Microbial-Genetic-Algorithm"><a href="#Microbial-Genetic-Algorithm" class="headerlink" title="Microbial Genetic Algorithm"></a>Microbial Genetic Algorithm</h4><p>原文章：<a target="_blank" rel="noopener" href="https://mofanpy.com/tutorials/machine-learning/evolutionary-algorithm/microbial-genetic-algorithm">莫烦Python</a></p>
+<p>说到遗传算法 (GA), 有一点不得不提的是如何有效保留好的父母 (Elitism), 让好的父母不会消失掉. 这也是永远都给自己留条后路的意思. Microbial GA (后面统称 MGA) 就是一个很好的保留 Elitism 的算法. <strong>一句话来概括: 在袋子里抽两个球, 对比两个球, 把球大的放回袋子里, 把球小的变一下再放回袋子里</strong>, 这样在这次选着中, 大球不会被改变任何东西, 就被放回了袋子, 当作下一代的一部分.</p>
+<p>算法</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303172259500.png" alt="image-20230317225905410"></p>
+<p>像最开始说的那样, 我们有一些 <code>population</code>, 每次在进化的时候, 我们会从这个 <code>pop</code> 中随机抽 2 个 DNA 出来, 然后对比一下他们的 <code>fitness</code>, 我们将 <code>fitness</code> 高的定义成 <code>winner</code>, 反之是 <code>loser</code>. 我们不会去动任何 <code>winner</code> 的 DNA, 要动手脚的只有这个 <code>loser</code>, 比如对 <code>loser</code> 进行 <code>crossover</code> 和 <code>mutate</code>. 动完手脚后将 <code>winner</code> 和 <code>loser</code> 一同放回 <code>pop</code> 中.</p>
+<p>通过这样的流程, 我们就不用担心有时候变异着变异着, 那些原本好的 pop 流失掉了, 有了这个 MGA 算法, <code>winner</code> 总是会被保留下来的. GA 中的 Elitism 问题通过这种方法巧妙解决了.</p>
+<h3 id="蚁群算法-Ant-Colony-Optimization-ACO"><a href="#蚁群算法-Ant-Colony-Optimization-ACO" class="headerlink" title="蚁群算法 (Ant Colony Optimization, ACO)"></a>蚁群算法 (Ant Colony Optimization, ACO)</h3><p>1991 年，意大利学者 Dorigo M. 等人在第一届欧洲人工生命会议 (ECAL) 上首次提出了蚁群算法。1996 年 Dorigo M. 等人发表的文章 “Ant system: optimization by a colony of cooperating agents”为蚁群算法奠定了基础。在自然界中，蚂蚁会分泌一种叫做信息素的化学物质，蚂蚁的许多行为受信息素的调控。蚂蚁在运动过程中能够感知其经过的路径上信息素的浓度，蚂蚁倾向朝着信息素浓度高的方向移动。以下图为例：</p>
+<p><img src="https://leovan.me/images/cn/2019-04-05-heuristic-algorithms/aco-shortest-path.png" alt="ACO Shortest Path"></p>
+<p>蚂蚁从蚁巢 (N) 出发到达食物源所在地 (F)，取得食物后再折返回蚁巢。整个过程中蚂蚁有多种路径可以选择，单位时间内路径上通过蚂蚁的数量越多，则该路径上留下的信息素浓度越高。因此，最短路径上走过的蚂蚁数量越多，则后来的蚂蚁选择该路径的机率就越大，从而蚂蚁通过信息的交流实现了寻找食物和蚁巢之间最短路的目的。</p>
+<h3 id="粒子群算法-Particle-Swarm-Optimization-PSO"><a href="#粒子群算法-Particle-Swarm-Optimization-PSO" class="headerlink" title="粒子群算法 (Particle Swarm Optimization, PSO)"></a>粒子群算法 (Particle Swarm Optimization, PSO)</h3><p>Eberhart, R. 和 Kennedy, J. 于 1995 年提出了粒子群优化算法。粒子群算法模仿的是自然界中鸟群和鱼群等群体的行为，其基本原理描述如下：</p>
+<p>一个由 $m$个粒子 (Particle) 组成的群体 (Swarm) 在 $D$维空间中飞行，每个粒子在搜索时，考虑自己历史搜索到的最优解和群体内 (或邻域内) 其他粒子历史搜索到的最优解，在此基础上进行位置 (状态，也就是解) 的变化。令第 $i$个粒子的位置为 $x_i$，速度为 $v_i$，历史搜索的最优解对应的点为 $p_i$，群体内 (或邻域内) 所有粒子历史搜索到的最优解对应的点为 $p_g$，则粒子的位置和速度依据如下公式进行变化：<br>$$<br>\begin{array}{ll}&amp;v_{i}^{k+1}=\omega v_{i}^{k}+c_{1}\xi\left(p_{i}^{k}-x_{i}^{k}\right)+c_{2}\eta\left(p_{g}^k-x_{i}^k\right)\ &amp;x_{i}^{k+2}=x_{i}^{k}+v^{k+1}<em>{i}\ \end{array}<br>$$<br>其中，$\omega$为惯性参数；$c_1$ 和 $c_2$ 为学习因子，其一般为正数，通常情况下等于 2；$\xi$,$\eta$∈$U[0,1]$。学习因子使得粒子具有自我总结和向群体中优秀个体学习的能力，从而向自己的历史最优点以及群体内或邻域内的最优点靠近。同时，粒子的速度被限制在一个最大速度 $V</em>{max}$范围内。</p>
+<p>对于 $Rosenbrock $函数<br>$$<br>f \left(x, y\right) = \left(1 - x\right)^2 + 100 \left(y - x^2\right)^2<br>$$<br>当$x \in \left[-2, 2\right], y \in \left[-1, 3\right]$，定义优化问题为最小化目标函数，最优解为 (0,0)。利用 <a target="_blank" rel="noopener" href="https://github.com/ljvmiranda921/pyswarms">PySwarms</a> 扩展包的优化过程可视化如下</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303172308122.gif" alt="Rosenbrock PSO"></p>
+<p>其中，$m = 50, \omega = 0.8, c_1 = 0.5, c_2 = 0.3$，迭代次数为 $200$</p>
+<p>本节相关示例代码详见 <a target="_blank" rel="noopener" href="https://github.com/leovan/leovan.me/tree/master/scripts/cn/2019-04-05-heuristic-algorithms/">这里</a>。</p>
+<h2 id="超启发式算法-Hyper-Heuristic-Algorithms"><a href="#超启发式算法-Hyper-Heuristic-Algorithms" class="headerlink" title="超启发式算法 (Hyper-Heuristic Algorithms)"></a>超启发式算法 (Hyper-Heuristic Algorithms)</h2><p>超启发式算法 (Hyper-Heuristic Algorithms) 提供了一种高层次启发式方法，通过管理或操纵一系列低层次启发式算法 (Low-Level Heuristics，LLH)，以产生新的启发式算法。这些新启发式算法被用于求解各类组合优化问题 <a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:12">12</a>。</p>
+<p>下图给出了超启发式算法的概念模型。该模型分为两个层面：在问题域层面上，应用领域专家根据自己的背景知识，在智能计算专家协助下，提供一系列 LLH 和问题的定义、评估函数等信息；在高层次启发式方法层面上，智能计算专家设计高效的管理操纵机制，运用问题域所提供的 LLH 算法库和问题特征信息，构造出新的启发式算法。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303172309938.png" alt="Hyper-Heuristic-Algorithms"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">马克图布</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://risingauroras.github.io/posts/4764/">https://risingauroras.github.io/posts/4764/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">马克图布</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">启发式算法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.iohttps://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'rq8NIIMaU9s4hlhozChVSkCo-9Nh9j0Va',
+        appKey: 'J9SyUPeeBACIilhmoO49Jt20',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+        enableQQ: true,
+        emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+        // 表情title和图片映射
+        emojiMaps: {
+        "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+        "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+        "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+        "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+            // ... 更多表情
+        },
+        requiredFields: ['nick','mail'], //设置必填项
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/99b6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="关于图论中诸多图的概念以及解法">
+                        
+                        <span class="card-title">关于图论中诸多图的概念以及解法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/" class="post-category">
+                                    图论
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/2040/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="ChatGPT——助我学习系列">
+                        
+                        <span class="card-title">ChatGPT——助我学习系列</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    数学基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ChatGPT/">
+                        <span class="chip bg-color">ChatGPT</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">马克图布</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/RisingAuroras" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:auroras.k6@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/js/matery.js"></script>
+	<script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    12 分
                 </div>
                 
 
@@ -510,6 +510,39 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303012057947.png" alt="image-20230301205707869"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303012059328.png" alt="image-20230301205943246"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303012102508.png" alt="image-20230301210234424"></p>
+<h2 id="规划与学习"><a href="#规划与学习" class="headerlink" title="规划与学习"></a>规划与学习</h2><h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>Dyna-Q中规划会受到模型偏差的影响，经验需求量比较小，规划可以使得策略能够收敛的更快, Dyna-Q+可以在环境改变时能够快速反应得到更好的策略</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041105835.png" alt="image-20230304110550708"></p>
+<p>环境本身去建模，称为环境模型。</p>
+<p>分布模型可以看做白盒，样本模型可以视作为黑盒</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041108284.png" alt="image-20230304110818215"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041110474.png" alt="image-20230304111058402"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041116930.png" alt="image-20230304111646848"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041119648.png" alt="image-20230304111936568"></p>
+<p>只有$S,A$是真实的，$R,S’$是模型给出的，被称为模拟经验。然后进行Q-planning更新$Q(S,A)$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041120537.png" alt="image-20230304112006456"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041126053.png" alt="image-20230304112618984"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041126612.png" alt="image-20230304112628543"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041130961.png" alt="image-20230304113035871"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041135556.png" alt="image-20230304113518460"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041138702.png" alt="image-20230304113825621"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303041139561.png" alt="image-20230304113945484"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303052313121.png" alt="image-20230305231258009"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303052324969.png" alt="image-20230305232419885"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303052326868.png" alt="image-20230305232643794"><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303052327937.png" alt="image-20230305232707876"></p>
+<h3 id="采样方法"><a href="#采样方法" class="headerlink" title="采样方法"></a>采样方法</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081747318.jpeg" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081716623.png" alt="image-20230308171629511"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081719339.png" alt="image-20230308171940261"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081729824.png" alt="image-20230308172909721"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081730371.png" alt="image-20230308173016281"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081739448.png" alt="image-20230308173939343"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081742411.png" alt="image-20230308174227334"></p>
+<p>此处策略变为随机</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081747753.png" alt="image-20230308174727646"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081750721.png" alt="image-20230308175018618"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081751212.png" alt="image-20230308175107127"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081752943.png" alt="image-20230308175231867"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081753617.png" alt="image-20230308175338531"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081757362.png" alt="image-20230308175707276"></p>
 <h2 id="模型无关控制方法"><a href="#模型无关控制方法" class="headerlink" title="模型无关控制方法"></a>模型无关控制方法</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303012211824.jpeg" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303012135403.png" alt="image-20230301213537315"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303012136419.png" alt="image-20230301213616350"></p>
@@ -626,6 +659,71 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021057047.png" alt="image-20230102105709971"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301021059447.png" alt="image-20230102105912366"></p>
 <p>代码实现：</p>
+<h2 id="模仿学习"><a href="#模仿学习" class="headerlink" title="模仿学习"></a>模仿学习</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081906491.png" alt="image-20230308190631407"></p>
+<p>强化学习中的模仿学习和机器学习中的监督学习有什么相同与区别：</p>
+<p>强化学习中的模仿学习（Imitation Learning）和机器学习中的监督学习（Supervised Learning）有一些相同点和区别。</p>
+<p>相同点：</p>
+<ol>
+<li>数据驱动：它们都是基于数据的学习方法，需要使用大量的数据样本进行训练。</li>
+<li>目标导向：它们都有一个明确的目标，即通过学习从输入到输出的映射来实现某种预期的目标。</li>
+</ol>
+<p>区别：</p>
+<ol>
+<li>数据来源不同：监督学习的数据来自于已有的标注数据集，而模仿学习的数据则来自于专家演示的行为轨迹。</li>
+<li>预测结果不同：监督学习是从输入到输出的映射，即输入数据与输出结果之间的对应关系。而模仿学习是从状态到动作的映射，即给定一个状态，预测出在这个状态下应该采取的动作。</li>
+<li>应用场景不同：监督学习主要应用于分类和回归等问题，而模仿学习主要应用于控制问题，如机器人控制、自动驾驶等。</li>
+<li>误差来源不同：监督学习的误差来自于标签与预测值之间的差异，而模仿学习的误差来自于专家演示的行为与模型生成的行为之间的差异。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081913255.png" alt="image-20230308191337145"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081925448.png" alt="image-20230308192549357"></p>
+<h3 id="行为克隆"><a href="#行为克隆" class="headerlink" title="行为克隆"></a>行为克隆</h3><p>行为克隆可以理解为以状态-动作对为特征值，以下一个状态值为标签的监督学习过程</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081939409.png" alt="image-20230308193945311"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081957241.png" alt="image-20230308195704137"></p>
+<p>强化学习中多模态的行为指的是什么？</p>
+<p>在强化学习中，多模态的行为是指智能体在学习和执行任务时，能够利用多种不同类型的输入信号，从而实现更加丰富和复杂的行为。</p>
+<p>在传统的强化学习中，智能体通常只能通过单一的输入信号（例如状态向量）来感知环境，并通过一个单一的输出信号（例如动作向量）来执行动作。但在现实世界中，智能体通常需要同时感知多种不同类型的信息，例如图像、声音、文本等。这些不同类型的信息可以提供不同的视角和丰富的信息，帮助智能体更好地理解环境和任务，并做出更加准确和高效的决策。</p>
+<p>因此，利用多模态的行为可以提高智能体的学习能力和任务执行能力。例如，在视觉任务中，智能体可以同时感知图像和语音信号，从而更好地理解环境和执行任务；在语音交互任务中，智能体可以同时感知语音和文本信号，从而更好地理解用户的意图和需求。同时，多模态的行为也带来了更多的挑战和复杂性，例如如何有效地融合不同类型的输入信号和如何处理不同类型的输出信号等。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303081959331.png" alt="image-20230308195921217"></p>
+<h3 id="逆强化学习"><a href="#逆强化学习" class="headerlink" title="逆强化学习"></a>逆强化学习</h3><p>逆强化学习找到一个代价函数使得专家策略产生较低的代价，而其他策略产生较高的代价，然后通过使用该代价函数进行正向强化学习，尝试恢复专家策略</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303082015869.png" alt="image-20230308201530748"></p>
+<p>奖励函数的相反数可以看做代价函数</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303082021827.png" alt="image-20230308202128744"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303082036705.png" alt="image-20230308203613599"></p>
+<h2 id="多智能体强化学习"><a href="#多智能体强化学习" class="headerlink" title="多智能体强化学习"></a>多智能体强化学习</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031024768.png" alt="image-20230303102431618"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031025452.png" alt="image-20230303102540354"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031028941.png" alt="image-20230303102817840"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031028584.png" alt="image-20230303102826502"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031028982.png" alt="image-20230303102839788"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031030288.png" alt="image-20230303103036203"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031031194.png" alt="image-20230303103103984"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031031408.png" alt="image-20230303103149326"></p>
+<p>多智能体的环境是非稳态的，智能体不仅和环境交互，智能体之间还要交互，假如把其他智能体当成环境的一部分从而使用单智能体的学习算法，结果不可行，原因是该方法环境不是稳态的，任何一个智能体策略的改变会影响其它智能体的策略，学习不收敛</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031038560.png" alt="image-20230303103853467"></p>
+<h3 id="入门-1"><a href="#入门-1" class="headerlink" title="入门"></a>入门</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031041775.png" alt="image-20230303104109698"></p>
+<p>多智能体环境是非稳态的[稳态的意思是说条件概率分布是不能改变的]</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031043204.png" alt="image-20230303104336095"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031048575.png" alt="image-20230303104853485"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031100334.png" alt="image-20230303110023247"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031105881.png" alt="image-20230303110503803"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031106531.png" alt="image-20230303110653452"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031111360.png" alt="image-20230303111145257"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031114244.png" alt="image-20230303111444172"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031115570.png" alt="image-20230303111500485"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031736832.png" alt="image-20230303173606728"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031744560.png" alt="image-20230303174442467"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031911579.png" alt="image-20230303191154495"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031913977.png" alt="image-20230303191345884"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031920151.png" alt="image-20230303192014078"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031920941.png" alt="image-20230303192034842"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031924089.png" alt="image-20230303192419991"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031930222.png" alt="image-20230303193032127"></p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031932036.png" alt="image-20230303193257923"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031935733.png" alt="image-20230303193520635"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031938882.png" alt="image-20230303193844766"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031944040.png" alt="image-20230303194427944"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031948006.png" alt="image-20230303194834911"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031951799.png" alt="image-20230303195149697"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303031958413.png" alt="image-20230303195840324"></p>
 <h2 id="Offline-RL-离线强化学习"><a href="#Offline-RL-离线强化学习" class="headerlink" title="Offline RL(离线强化学习)"></a>Offline RL(离线强化学习)</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041604042.png" alt="image-20230104160406673"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041608715.png" alt="image-20230104160839619"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301041612897.png" alt="image-20230104161235815"></p>

@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.6k
+                    11k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    38 分
+                    43 分
                 </div>
                 
 
@@ -569,7 +569,7 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141444075.png" alt="image-20230214144419961"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141445122.png" alt="image-20230214144502035"></p>
 <h4 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h4><p>mark：3.2. Relative Pessimism and Robust Policy Improvement</p>
-<h2 id="Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design"><a href="#Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design" class="headerlink" title="Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design"></a>Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design</h2><p>in Full-Duplex Multi-UAV Networks<br>downlink (DL) uplink (UL)  multi-UAV networks  user equipment(UE) DL-UL decoupling(DUDe)  robust partially observable Markov decision process<br>(robust POMDP) model full-duplex (FD)<br>communication macro base station (MBS)</p>
+<h3 id="Constrained-Variational-Policy-Optimization-for-Safe-Reinforcement-Learning"><a href="#Constrained-Variational-Policy-Optimization-for-Safe-Reinforcement-Learning" class="headerlink" title="Constrained Variational Policy Optimization for Safe Reinforcement Learning"></a>Constrained Variational Policy Optimization for Safe Reinforcement Learning</h3><h2 id="Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design"><a href="#Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design" class="headerlink" title="Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design"></a>Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design</h2><p>in Full-Duplex Multi-UAV Networks<br>downlink (DL) uplink (UL)  multi-UAV networks  user equipment(UE) DL-UL decoupling(DUDe)  robust partially observable Markov decision process<br>(robust POMDP) model full-duplex (FD)<br>communication macro base station (MBS)</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131129442.png" alt="image-20230213112927370"></p>
 <p>Network Model and BSs Deployment</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131232312.png" alt="image-20230213123238260"></p>
@@ -688,6 +688,30 @@
 <li>鲁棒POMDP是POMDP的一个扩展，它可以处理更广泛的不确定性情况。POMDP只能处理部分可观测性问题，而鲁棒POMDP可以处理不确定性模型和参数不确定性问题。</li>
 </ol>
 <p>总的来说，鲁棒POMDP是POMDP的一个更广泛的形式，用于处理更复杂的不确定性情况。</p>
+</li>
+<li><p>扩散模型和GAN可以应用在什么地方，这两个有什么区别呢？</p>
+<p>扩散模型和GAN（生成对抗网络）都是机器学习中常用的模型，但应用场景和工作原理有所不同。</p>
+<p>扩散模型（Diffusion Models）是一种用于生成样本的概率模型，它的基本思想是对一个样本进行多次采样，每次采样时将当前样本的信息扩散到相邻的样本中。通过多次采样和扩散，扩散模型可以生成高质量的样本，比如图像、语音、文本等。扩散模型在计算机视觉、自然语言处理等领域中得到了广泛应用。</p>
+<p>GAN（Generative Adversarial Networks）是一种用于生成样本的神经网络模型，它由两个神经网络组成：生成器（Generator）和判别器（Discriminator）。生成器的作用是生成样本，判别器的作用是判断生成器生成的样本是否真实。通过不断的迭代训练，生成器会逐渐学习到生成真实的样本，判别器也会逐渐学习到判别真实和虚假的样本。GAN 在图像生成、语音合成等领域中得到了广泛应用。</p>
+<p>两者的主要区别在于工作原理和应用场景。扩散模型是一种基于概率的模型，它的基本思想是对样本进行多次采样和扩散，生成高质量的样本。GAN 则是一种基于神经网络的模型，它通过生成器和判别器相互博弈的方式来生成高质量的样本。因此，扩散模型适用于需要生成大量高质量样本的场景，而 GAN 更适用于需要生成具有多样性的样本的场景。</p>
+</li>
+<li><p>马尔科夫博弈</p>
+<p>马尔科夫博弈（Markov game）是一种多人博弈模型，它结合了马尔科夫过程和博弈论。在马尔科夫博弈中，多个参与者以随机的方式采取决策，这些决策的结果不仅取决于当前的状态，还取决于上一个状态和之前采取的行动。马尔科夫博弈是一种比博弈论更为复杂的博弈模型，它可以用于模拟一些现实世界中的问题，例如机器人控制、多智能体系统的协调等。</p>
+<p>马尔科夫博弈具有以下特点：</p>
+<ol>
+<li>参与者采取行动的结果取决于当前的状态和上一个状态以及之前的行动；</li>
+<li>参与者的行动具有随机性，即它们可以采取不同的行动，并且每个行动有一定的概率实现；</li>
+<li>参与者的目标是最大化自己的收益或者最小化自己的成本。</li>
+</ol>
+<p>在马尔科夫博弈中，通常采用强化学习算法来学习参与者的最佳策略。强化学习算法利用当前的状态和行动信息来更新策略，使得参与者能够逐渐学习到最优的行动策略。</p>
+</li>
+<li><p>强化学习中的Credit Assignment是什么？请问Credit Assignment解决了什么呢？为什么被提出</p>
+<p>强化学习中的Credit Assignment（信用分配）是指在一个智能体完成一个任务时，对于获得的奖励（reward）或惩罚（penalty）的分配方式。在强化学习中，一个智能体与环境进行交互，并根据环境的反馈（奖励或惩罚）来更新其策略以优化其行为。然而，这些奖励或惩罚通常是在时间序列中被分配的，这使得决定每个行动对应的奖励或惩罚变得复杂。</p>
+<p>因此，Credit Assignment可以看作是一个问题：如何将智能体的行为与获得的奖励或惩罚联系起来。这个问题的解决方式有很多，包括基于价值函数的Credit Assignment、基于Temporal-Difference（TD）方法的Credit Assignment以及基于Actor-Critic框架的Credit Assignment等。这些方法可以帮助智能体更好地理解哪些行动是对任务有帮助的，并对其进行加强或弱化，从而改进其策略。</p>
+<p>Credit Assignment解决了强化学习中的一些重要问题。</p>
+<p>首先，强化学习的目标是通过最大化期望累积回报来寻找最优策略。然而，这个过程是一个序列决策问题，即当前的决策会影响未来的奖励，而未来的奖励又反过来影响当前的决策。这个问题被称为Credit Assignment问题，因为它需要将奖励或惩罚与先前的行为联系起来，以决定哪些行为应该受到奖励或惩罚。</p>
+<p>其次，Credit Assignment问题也是因为强化学习通常涉及到长时间的延迟奖励。即智能体的某个行为可能会导致在未来的某个时间点获得奖励，而这个时间点可能会很长。这就使得Credit Assignment变得非常困难，因为要确定哪些行为导致了未来的奖励或惩罚需要考虑许多因素，如环境的变化、智能体的行为选择等。</p>
+<p>因此，Credit Assignment的提出旨在解决强化学习中的信用分配问题，从而提高智能体的决策质量和性能。Credit Assignment可以帮助智能体更好地理解哪些行为是有用的，哪些行为是无用的，并针对性地对行为进行加强或弱化，从而提高其策略的质量和效果。</p>
 </li>
 <li></li>
 </ol>
