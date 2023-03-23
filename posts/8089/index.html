@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.5k
+                    11.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    43 分
+                    50 分
                 </div>
                 
 
@@ -1178,6 +1178,61 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <p>根据Mu和sigma求出一个正太分布，这个是随机的正态分布</p>
 <p><code> tf.clip_by_value</code></p>
 <p>tf.clip_by_value(A, min, max)：输入一个张量A，把A中的每一个元素的值都压缩在min和max之间。小于min的让它等于min，大于max的元素的值等于max。</p>
+<h3 id="tensorflow-probability"><a href="#tensorflow-probability" class="headerlink" title="tensorflow_probability"></a>tensorflow_probability</h3><p><code>tensorflow_probability</code> 是基于 TensorFlow 的一个概率编程库，它提供了许多用于概率建模和推断的工具和算法，可以用于深度学习、统计学习、贝叶斯推断、概率编程等领域。它是 TensorFlow 生态系统中的一个子项目，由 TensorFlow 官方支持和维护。</p>
+<p><code>tensorflow_probability</code> 包含了很多常用的概率分布类，例如正态分布、多项式分布、贝塔分布等，还包括许多概率模型，例如高斯混合模型、马尔可夫链蒙特卡罗（MCMC）模型等。此外，它还提供了许多常用的推断算法，例如变分推断、哈密顿蒙特卡罗（HMC）算法等，可以用于学习和推断概率模型。</p>
+<p><code>tensorflow_probability</code> 的设计理念是利用 TensorFlow 的计算图和自动微分机制，为概率编程提供高效、可扩展和易用的工具。因此，它与 TensorFlow 紧密集成，可以直接利用 TensorFlow 的张量操作和优化器等功能，实现高效的概率编程。</p>
+<p><strong>tfp.distributions.MultivariateNormalFullCovariance</strong></p>
+<p><code>MultivariateNormalFullCovariance</code> 是 TensorFlow 中的一个概率分布类，表示一个具有多元正态分布的随机变量。它接受两个参数：均值向量和协方差矩阵，可以使用它来构建一个多元正态分布的概率模型。</p>
+<p>下面是一个示例代码，展示了如何使用 <code>MultivariateNormalFullCovariance</code> 类：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tensorflow_probability <span class="token keyword">as</span> tfp
+<span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+
+<span class="token comment"># 定义均值向量和协方差矩阵</span>
+mu <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">]</span>
+cov <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">2.</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 创建一个多元正态分布模型</span>
+mvn <span class="token operator">=</span> tfp<span class="token punctuation">.</span>distributions<span class="token punctuation">.</span>MultivariateNormalFullCovariance<span class="token punctuation">(</span>loc<span class="token operator">=</span>mu<span class="token punctuation">,</span> covariance_matrix<span class="token operator">=</span>cov<span class="token punctuation">)</span>
+
+<span class="token comment"># 生成一些样本</span>
+samples <span class="token operator">=</span> mvn<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 计算概率密度函数</span>
+pdf <span class="token operator">=</span> mvn<span class="token punctuation">.</span>prob<span class="token punctuation">(</span>samples<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"samples: \n"</span><span class="token punctuation">,</span> samples<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"pdf: \n"</span><span class="token punctuation">,</span> pdf<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+samples: 
+ tf.Tensor(
+[[-0.76739496  2.204533  ]
+ [-0.5291017  -1.2480607 ]
+ [ 0.2066121  -0.3552009 ]
+ [-0.3798596   2.0005732 ]
+ [-0.3424486   1.2140272 ]
+ [-0.9631925   1.9374372 ]
+ [-0.343555    1.0946357 ]
+ [ 0.83072865 -0.9090407 ]
+ [ 0.22511458 -0.35162723]
+ [-1.363401    1.9629669 ]], shape=(10, 2), dtype=float32)
+pdf: 
+ tf.Tensor(
+[0.04359382 0.03398798 0.06413195 0.07466278 0.1087476  0.04255811
+ 0.11113843 0.01819854 0.06357419 0.02192882], shape=(10,), dtype=float32)
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上面的代码中，我们首先定义了均值向量 <code>mu</code> 和协方差矩阵 <code>cov</code>。然后，我们使用这些参数创建了一个 <code>MultivariateNormalFullCovariance</code> 对象 <code>mvn</code>，它表示一个多元正态分布。接着，我们使用 <code>mvn.sample(10)</code> 生成了 10 个样本，并计算了这些样本的概率密度函数。</p>
+<p>你可以根据自己的需求来修改均值向量和协方差矩阵，从而创建不同的多元正态分布模型。另外，<code>MultivariateNormalFullCovariance</code> 类还提供了其他一些方法，例如 <code>log_prob()</code>、<code>entropy()</code> 等，可以用于计算概率密度函数的对数、熵等。</p>
+<p>在上面的例子中，<code>prob</code> 函数是 <code>tensorflow_probability</code> 中 <code>MultivariateNormalFullCovariance</code> 类的一个方法，它的作用是计算给定样本的概率密度函数值。</p>
+<p>具体来说，<code>prob</code> 方法接受一个张量作为输入，这个张量的每一行代表一个样本，每一列代表一个特征。它返回一个形状与输入张量相同的张量，每个元素代表相应样本的概率密度函数值。</p>
+<p>在本例中，我们首先通过 <code>mvn.sample(10)</code> 生成了 10 个样本，然后通过 <code>mvn.prob(samples)</code> 计算了这些样本的概率密度函数值。这个结果告诉我们这些样本在多元正态分布模型下的概率密度大小，可以用于评估样本的合理性、寻找异常值等任务。</p>
+<p>需要注意的是，<code>prob</code> 方法仅适用于概率密度函数已知的分布，对于一些无法计算概率密度函数的分布，例如混合分布，需要使用其他方法来评估样本的合理性，例如计算似然函数、负对数似然函数等。</p>
+<p>需要注意的是，<code>prob</code> 方法返回的值并不是概率，而是概率密度函数的值。</p>
+<p>在概率论中，概率密度函数（Probability Density Function，简称 PDF）是指某个随机变量落在某个区间内的概率在该区间长度趋于零时的极限，即密度函数在该点处的函数值。因此，概率密度函数的值并不代表概率，而是代表了某个区间内的概率密度大小。</p>
+<p>对于连续型随机变量，我们无法像离散型随机变量那样直接计算概率，而是需要通过概率密度函数进行计算。具体来说，某个区间内的概率可以通过该区间内概率密度函数的积分来计算。</p>
+<p>在本例中，<code>mvn.prob(samples)</code> 返回的是样本在多元正态分布模型下的概率密度函数值，它的大小反映了该样本在该分布下的密度大小，而不是该样本出现的概率。因此，在实际使用中需要注意区分概率和概率密度函数的概念。</p>
 <h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><p><strong>sklearn流水线（Pipeline）</strong></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/536194668">参考</a></p>
 <p>在机器学习或数据科学的实践中，经常需要对原始数据进行一系列的变换，或依次使用若干算法，从而构成一个算法链（algorithm chains）。比如，先对原始数据进行标准化（standardization）的预处理，然后再估计支持向量机的模型。为此，Sci-Kit Learn模块提供了方便的流水线类（Pipeline class），使得创建“算法链”的过程更简单。而且，Pipeline类可与GridSearchCV类相结合，针对整个算法进行超参数的网格搜索。</p>
@@ -1379,7 +1434,215 @@ log_prob <span class="token operator">=</span> dist<span class="token punctuatio
 
 <p>在这里，我们首先定义了一个概率张量，其中三个类别的概率分别为 0.3、0.5 和 0.2。然后，我们使用 <code>Categorical</code> 类创建了一个分布对象 <code>dist</code>，其中每个类别的概率由概率张量 <code>probs</code> 确定。接着，我们使用 <code>sample()</code> 方法从分布中抽样，返回一个表示抽样结果的张量。最后，我们使用 <code>log_prob()</code> 方法计算抽样结果的对数概率密度函数的值。</p>
 <p>需要注意的是，<code>Categorical</code> 类的概率张量必须是非负的，并且总和必须为 1。如果概率张量不满足这些条件，<code>Categorical</code> 类将引发异常。如果您的概率张量不满足这些条件，您可以使用 <code>torch.softmax()</code> 函数将其转换为满足条件的概率张量。</p>
-<h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>创建一个人工数据集，并存储在CSV（逗号分隔值）文件</p>
+<h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><h4 id="drop"><a href="#drop" class="headerlink" title="drop"></a><strong><code>drop</code></strong></h4><p>功能：删除数据集中多余的数据</p>
+<p><code>DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')</code></p>
+<p>常用参数详解：</p>
+<p>labels:待删除的行名or列名；<br>axis:删除时所参考的轴，0为行，1为列；<br>index:待删除的行名<br>columns:待删除的列名<br>level:多级列表时使用，暂时不作说明<br>inplace:布尔值，默认为False,这是返回的是一个copy;若为True,返回的是删除相应数据后的版本<br>errors一般用不到，这里不作解释</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#构件一个数据集</span>
+df1<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span>columns<span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'ABCDEF'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303210939049.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'1.删除行数据'</span>
+<span class="token comment">#下面两种删除方式是等价的，传入labels和axis 与只传入一个index 作用相同</span>
+df2<span class="token operator">=</span>df1<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>labels<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+df22<span class="token operator">=</span>df1<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303210950198.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#删除多行数据</span>
+df3<span class="token operator">=</span>df1<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>labels<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+df33<span class="token operator">=</span>df1<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211002108.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'2.删除列数据'</span>
+df4<span class="token operator">=</span>df1<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>labels<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+df44<span class="token operator">=</span>df1<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211002744.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'3.inplace参数的使用'</span>
+dfs<span class="token operator">=</span>df1
+<span class="token comment">#inplace=None时返回删除前的数据</span>
+dfs<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>labels<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211003664.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#inplace=True时返回删除后的数据</span>
+dfs<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>labels<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211003446.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">'<span class="token number">4</span><span class="token punctuation">.</span>drop函数在多级列表中的应用（实例copy自pandas官方帮助文档）‘
+<span class="token comment">#构建多级索引</span>
+midx <span class="token operator">=</span> pd<span class="token punctuation">.</span>MultiIndex<span class="token punctuation">(</span>levels<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'lama'</span><span class="token punctuation">,</span> <span class="token string">'cow'</span><span class="token punctuation">,</span> <span class="token string">'falcon'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                             <span class="token punctuation">[</span><span class="token string">'speed'</span><span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">,</span> <span class="token string">'length'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                     codes<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">#构造数据集</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>index<span class="token operator">=</span>midx<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'big'</span><span class="token punctuation">,</span> <span class="token string">'small'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">[</span><span class="token number">250</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">250</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211003624.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#同时删除行数据和列数据</span>
+df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token string">'cow'</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token string">'small'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211004316.png" alt="img"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#删除某级index的对应行</span>
+df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token string">'length'</span><span class="token punctuation">,</span>level<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303211004793.png" alt="img"></p>
+<h4 id="fillna"><a href="#fillna" class="headerlink" title="fillna"></a><code>fillna</code></h4><p><code>fillna(value=None, method=None, axis=None, inplace=False,limit=None, downcast=None, **kwargs)</code></p>
+<ul>
+<li><code>value</code>：用于填充的<code>数值</code>。</li>
+<li><code>method</code>：表示<code>填充方式</code>，默认值为None。</li>
+<li><code>limit</code>： 可以连续填充的<code>最大数量</code>，默认None。</li>
+</ul>
+<blockquote>
+<p><code>method</code>参数不能与<code>value</code>参数同时使用。</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                   <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                   <span class="token punctuation">[</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                   <span class="token punctuation">[</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  columns<span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">"ABCD"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+df
+
+<span class="token triple-quoted-string string">'''
+	A	B	C	D
+0	NaN	2.0	NaN	0
+1	3.0	4.0	NaN	1
+2	NaN	NaN	NaN	5
+3	NaN	3.0	NaN	4
+'''</span>
+a_mean <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b_mean <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c_mean <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span>a_mean<span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">:</span>b_mean<span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">:</span>c_mean<span class="token punctuation">}</span><span class="token punctuation">,</span>inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+df
+<span class="token triple-quoted-string string">'''
+	A	B	C	D
+0	3.0	2.0	NaN	0
+1	3.0	4.0	NaN	1
+2	3.0	3.0	NaN	5
+3	3.0	3.0	NaN	4
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="get-dummies"><a href="#get-dummies" class="headerlink" title="get_dummies"></a><code>get_dummies</code></h4><p>pd.get_dummies() 是 Pandas 的一个函数，它在一行代码中执行伪编码。数据科学家大多将其用于特征编码，但不建议将其用于生产或 Kaggle 竞赛。</p>
+<p>==测试数据可能具有也可能不具有所有特征值，这可能会在建模时导致数据不匹配问题。==</p>
+<p>pandas的get_dummies函数可以将分类数据转换为二进制哑变量（dummy variable）表示形式，方便机器学习和数据分析的处理。下面是get_dummies函数的用法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pandas<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> prefix_sep<span class="token operator">=</span><span class="token string">'_'</span><span class="token punctuation">,</span> dummy_na<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> drop_first<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中，参数说明如下：</p>
+<ul>
+<li><code>data</code>：要进行处理的DataFrame或Series对象。</li>
+<li><code>prefix</code>：哑变量的列名前缀，用于与原始列进行区分。默认值为None，表示使用原始列名作为前缀。</li>
+<li><code>prefix_sep</code>：前缀与列名的分隔符，默认值为下划线。</li>
+<li><code>dummy_na</code>：是否为缺失值创建一列哑变量，如果为True，则将缺失值所在行的哑变量值设为1。默认值为False。</li>
+<li><code>columns</code>：指定要进行哑变量转换的列，如果不指定，则默认对所有的分类数据进行处理。</li>
+<li><code>sparse</code>：是否返回稀疏矩阵（SparseDataFrame），默认为False，表示返回密集矩阵（DataFrame）。</li>
+<li><code>drop_first</code>：是否删除第一个哑变量列，默认为False，表示保留第一个哑变量列。</li>
+<li><code>dtype</code>：指定输出矩阵的数据类型，默认为np.uint8。</li>
+</ul>
+<p>下面是一个示例代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+dummies <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token string">'color'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">,</span> dummies<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果如下:</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">   color  color_blue  color_green  color_red
+0    red           0            0          1
+1  green           0            1          0
+2   blue           1            0          0
+3    red           0            0          1
+4   blue           1            0          0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该示例代码将一列分类数据“color”转换为了三列哑变量数据，并将它们与原始数据进行合并。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token comment"># data = pd.concat([data, dummies], axis=1)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">   age  color_blue  color_green  color_red
+0   12           0            0          1
+1    3           0            1          0
+2    4           1            0          0
+3    5           0            0          1
+4    6           1            0          0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="to-numeric"><a href="#to-numeric" class="headerlink" title="to_numeric"></a><strong>to_numeric</strong></h4><p><code>pandas.to_numeric()</code>是一个用于将Pandas对象（Series或DataFrame）中的数据转换为数值类型的函数。这个函数的语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pandas<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>arg<span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'raise'</span><span class="token punctuation">,</span> downcast<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>其中，<code>arg</code>表示需要转换的Pandas对象，可以是一个Series或DataFrame，或是一个由Series或DataFrame构成的列表或字典；<code>errors</code>表示非数值数据的处理方式，它有以下几个选项：</p>
+<ul>
+<li><code>'raise'</code>（默认值）：如果有非数值数据，就抛出异常；</li>
+<li><code>'coerce'</code>：如果有非数值数据，就将它们转换为NaN；</li>
+<li><code>'ignore'</code>：忽略非数值数据，不进行转换；</li>
+</ul>
+<p><code>downcast</code>表示转换后的数据类型，它可以是以下几个选项：</p>
+<ul>
+<li><code>'integer'</code>：将数值类型转换为整型；</li>
+<li><code>'signed'</code>：将数值类型转换为带符号的整型；</li>
+<li><code>'unsigned'</code>：将数值类型转换为无符号的整型；</li>
+<li><code>'float'</code>：将数值类型转换为浮点型；</li>
+</ul>
+<p>如果不指定<code>downcast</code>，则会根据转换后的数值类型自动选择合适的数据类型。</p>
+<p>下面是一个示例代码，演示如何使用<code>pandas.to_numeric()</code>将Pandas对象中的数据转换为数值类型：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 创建一个包含非数值数据的Series</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3a'</span><span class="token punctuation">,</span> <span class="token string">'4b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将Series中的数据转换为数值类型</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>s<span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'coerce'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 输出结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+0    1.0
+1    2.0
+2    3.0
+3    4.0
+dtype: float64
+'''</span>
+<span class="token comment"># 创建一个包含非数字元素的DataFrame</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'fdfd'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将列B中的非数字元素替换为NaN</span>
+df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'coerce'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 输出结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+   A    B
+0  1  4.0
+1  2  5.0
+2  3  NaN
+
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上面的示例中，我们使用<code>pd.to_numeric()</code>方法将Series中的数据转换为数值类型。由于Series中包含非数值数据，我们将<code>errors</code>参数设置为<code>'coerce'</code>，将非数值数据转换为NaN。最后，我们输出了处理后的Series。</p>
+<p>需要注意的是，<code>pandas.to_numeric()</code>方法不能处理多个特征的情况，如果要处理多个特征，需要对每个特征进行单独的转换。另外，如果要将某一列中的非数字元素替换为指定的值，可以使用<code>replace()</code>方法。</p>
+<h4 id="select-dtypes"><a href="#select-dtypes" class="headerlink" title="select_dtypes"></a><code>select_dtypes</code></h4><p>找到特定类型的列，返回一个索引</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">train_data<span class="token punctuation">.</span>select_dtypes<span class="token punctuation">(</span><span class="token string">'object'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>columns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>创建一个人工数据集，并存储在CSV（逗号分隔值）文件</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 
 os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'..'</span><span class="token punctuation">,</span> <span class="token string">'data'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> exist_ok<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
@@ -1439,114 +1702,10 @@ X<span class="token punctuation">,</span> y<span aria-hidden="true" class="line-
          [3., 0., 1.]], dtype=torch.float64),
  tensor([127500, 106000, 178100, 140000]))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><code>get_dummies</code></p>
-<p>pandas的get_dummies函数可以将分类数据转换为二进制哑变量（dummy variable）表示形式，方便机器学习和数据分析的处理。下面是get_dummies函数的用法：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">pandas<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> prefix_sep<span class="token operator">=</span><span class="token string">'_'</span><span class="token punctuation">,</span> dummy_na<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> drop_first<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>其中，参数说明如下：</p>
-<ul>
-<li><code>data</code>：要进行处理的DataFrame或Series对象。</li>
-<li><code>prefix</code>：哑变量的列名前缀，用于与原始列进行区分。默认值为None，表示使用原始列名作为前缀。</li>
-<li><code>prefix_sep</code>：前缀与列名的分隔符，默认值为下划线。</li>
-<li><code>dummy_na</code>：是否为缺失值创建一列哑变量，如果为True，则将缺失值所在行的哑变量值设为1。默认值为False。</li>
-<li><code>columns</code>：指定要进行哑变量转换的列，如果不指定，则默认对所有的分类数据进行处理。</li>
-<li><code>sparse</code>：是否返回稀疏矩阵（SparseDataFrame），默认为False，表示返回密集矩阵（DataFrame）。</li>
-<li><code>drop_first</code>：是否删除第一个哑变量列，默认为False，表示保留第一个哑变量列。</li>
-<li><code>dtype</code>：指定输出矩阵的数据类型，默认为np.uint8。</li>
-</ul>
-<p>下面是一个示例代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-
-data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-dummies <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token string">'color'</span><span class="token punctuation">)</span>
-data <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">,</span> dummies<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果如下:</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">   color  color_blue  color_green  color_red
-0    red           0            0          1
-1  green           0            1          0
-2   blue           1            0          0
-3    red           0            0          1
-4   blue           1            0          0
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>该示例代码将一列分类数据“color”转换为了三列哑变量数据，并将它们与原始数据进行合并。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-
-data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-data <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span class="token comment"># data = pd.concat([data, dummies], axis=1)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">   age  color_blue  color_green  color_red
-0   12           0            0          1
-1    3           0            1          0
-2    4           1            0          0
-3    5           0            0          1
-4    6           1            0          0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>to_numeric</strong></p>
-<p><code>pandas.to_numeric()</code>是一个用于将Pandas对象（Series或DataFrame）中的数据转换为数值类型的函数。这个函数的语法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">pandas<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>arg<span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'raise'</span><span class="token punctuation">,</span> downcast<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<p>其中，<code>arg</code>表示需要转换的Pandas对象，可以是一个Series或DataFrame，或是一个由Series或DataFrame构成的列表或字典；<code>errors</code>表示非数值数据的处理方式，它有以下几个选项：</p>
-<ul>
-<li><code>'raise'</code>（默认值）：如果有非数值数据，就抛出异常；</li>
-<li><code>'coerce'</code>：如果有非数值数据，就将它们转换为NaN；</li>
-<li><code>'ignore'</code>：忽略非数值数据，不进行转换；</li>
-</ul>
-<p><code>downcast</code>表示转换后的数据类型，它可以是以下几个选项：</p>
-<ul>
-<li><code>'integer'</code>：将数值类型转换为整型；</li>
-<li><code>'signed'</code>：将数值类型转换为带符号的整型；</li>
-<li><code>'unsigned'</code>：将数值类型转换为无符号的整型；</li>
-<li><code>'float'</code>：将数值类型转换为浮点型；</li>
-</ul>
-<p>如果不指定<code>downcast</code>，则会根据转换后的数值类型自动选择合适的数据类型。</p>
-<p>下面是一个示例代码，演示如何使用<code>pandas.to_numeric()</code>将Pandas对象中的数据转换为数值类型：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 
-<span class="token comment"># 创建一个包含非数值数据的Series</span>
-s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3a'</span><span class="token punctuation">,</span> <span class="token string">'4b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 将Series中的数据转换为数值类型</span>
-s <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>s<span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'coerce'</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 输出结果</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">'''
-0    1.0
-1    2.0
-2    3.0
-3    4.0
-dtype: float64
-'''</span>
-<span class="token comment"># 创建一个包含非数字元素的DataFrame</span>
-df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'fdfd'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 将列B中的非数字元素替换为NaN</span>
-df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_numeric<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> errors<span class="token operator">=</span><span class="token string">'coerce'</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 输出结果</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">'''
-   A    B
-0  1  4.0
-1  2  5.0
-2  3  NaN
-
-'''</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在上面的示例中，我们使用<code>pd.to_numeric()</code>方法将Series中的数据转换为数值类型。由于Series中包含非数值数据，我们将<code>errors</code>参数设置为<code>'coerce'</code>，将非数值数据转换为NaN。最后，我们输出了处理后的Series。</p>
-<p>需要注意的是，<code>pandas.to_numeric()</code>方法不能处理多个特征的情况，如果要处理多个特征，需要对每个特征进行单独的转换。另外，如果要将某一列中的非数字元素替换为指定的值，可以使用<code>replace()</code>方法。</p>
 
                 
             </div>

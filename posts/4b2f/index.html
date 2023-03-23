@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于图论中诸多图的概念以及解法, 马克图布">
+    <meta name="keywords" content="网络流, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于图论中诸多图的概念以及解法 | 马克图布</title>
+    <title>网络流 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于图论中诸多图的概念以及解法</h1>
+                    <h1 class="description center-align post-title">网络流</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/">
+                                <span class="chip bg-color">网络流</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -395,7 +399,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-16
+                    2023-03-19
                 </div>
                 
 
@@ -404,14 +408,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    288
+                    800
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -434,12 +438,117 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="仙人掌图"><a href="#仙人掌图" class="headerlink" title="仙人掌图"></a><strong>仙人掌图</strong></h2><p>如果某个无向连通图的任意一条边至多只出现在一条简单回路（simple cycle）里，我们就称这张图为仙人图（cactus）。所谓简单回路就是指在图上不重复经过任何一个顶点的回路。</p>
-<p><strong>性质定理</strong></p>
-<p>要将仙人掌变成树（或者森林），只需要保证对于仙人掌中的每个环，至少有一条边被删去即可。设图中环的大小分别为$c1 、c2、…………ck$，不属于任意一个环的边数为b   ，则答案为<img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">$2^{b}\prod_{i = 1}^{k}(2^{ci} - 1)$ ，时间复杂度$O( n + m)$。</p>
-<h2 id="点双连通图"><a href="#点双连通图" class="headerlink" title="点双连通图"></a><strong>点双连通图</strong></h2><p>若一张无向连通图不存在割点，则称为“点双连通图”。</p>
-<h2 id="边双连通图"><a href="#边双连通图" class="headerlink" title="边双连通图"></a><strong>边双连通图</strong></h2><p>若一张无向连通图不存在桥，则称它为“边双连通图”。</p>
-<h2 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a><strong>强连通图</strong></h2><p>给定一张有向图，若对于图中任意两个节点x,y，既存在从x到y的路径，也存在从y到x的路径，则称该有向图是“强连通图”。有向图的极大强连通子图被称为“强连通分量：简记SCC。</p>
+                <blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://oi-wiki.org/graph/flow/max-flow/">OI Wiki</a>|王树深</p>
+</blockquote>
+<p>名词：最大流，阻塞流</p>
+<p>最大流一定是阻塞流，但是阻塞流不一定是最大流</p>
+<p>m是边，n是节点，f为最大流的大小</p>
+<p>Ford-Fulkerson Algorithm（算法复杂度$O(f\cdot m)$，依赖于最大流的大小）</p>
+<p>key concept:residual graph</p>
+<ol>
+<li>构造residual graph</li>
+<li>寻找简单路径</li>
+<li>取路径上residual最小的管道流量$p$作为路径上能通过的最大的流量，然后路径上每个管道都减去这个$p$</li>
+<li>算法依次进行，直到找不到从$s$到$t$的简单路径</li>
+</ol>
+<p>Edmonds-karp Algorithm（算法复杂度$O(m^2\cdot n)$，不依赖于最大流的大小）</p>
+<p>key concept:residual graph</p>
+<ol>
+<li>构造residual graph</li>
+<li>寻找简单路径</li>
+<li>取路径上residual最小的管道流量$p$作为路径上能通过的最大的流量，然后路径上每个管道都减去这个$p$</li>
+<li>然后按照给这个路径上的管道都建一条反向的边，其流量为$p$</li>
+<li>算法依次进行，直到找不到从$s$到$t$的简单路径</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303201700439.png" alt="image-20230320165957317"></p>
+<p>EK代码：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">maxn</span> <span class="token expression"><span class="token number">250</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">0x3f3f3f3f</span></span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">Edge</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> from<span class="token punctuation">,</span> to<span class="token punctuation">,</span> cap<span class="token punctuation">,</span> flow<span class="token punctuation">;</span>
+
+  <span class="token function">Edge</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">,</span> <span class="token keyword">int</span> v<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">,</span> <span class="token keyword">int</span> f<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">from</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">to</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">flow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">EK</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">;</span>             <span class="token comment">// n：点数，m：边数</span>
+  vector<span class="token operator">&lt;</span>Edge<span class="token operator">&gt;</span> edges<span class="token punctuation">;</span>   <span class="token comment">// edges：所有边的集合</span>
+  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> G<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// G：点 x -&gt; x 的所有边在 edges 中的下标</span>
+  <span class="token keyword">int</span> a<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// a：点 x -&gt; BFS 过程中最近接近点 x 的边给它的最大流</span>
+                         <span class="token comment">// p：点 x -&gt; BFS 过程中最近接近点 x 的边</span>
+
+  <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> G<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    edges<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">void</span> <span class="token function">AddEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> from<span class="token punctuation">,</span> <span class="token keyword">int</span> to<span class="token punctuation">,</span> <span class="token keyword">int</span> cap<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">Edge</span><span class="token punctuation">(</span>from<span class="token punctuation">,</span> to<span class="token punctuation">,</span> cap<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">Edge</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    m <span class="token operator">=</span> edges<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    G<span class="token punctuation">[</span>from<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>m <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    G<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">int</span> <span class="token function">Maxflow</span><span class="token punctuation">(</span><span class="token keyword">int</span> s<span class="token punctuation">,</span> <span class="token keyword">int</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> flow <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">memset</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> Q<span class="token punctuation">;</span>
+      Q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      a<span class="token punctuation">[</span>s<span class="token punctuation">]</span> <span class="token operator">=</span> INF<span class="token punctuation">;</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>Q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> Q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 遍历以 x 作为起点的边</span>
+          Edge<span class="token operator">&amp;</span> e <span class="token operator">=</span> edges<span class="token punctuation">[</span>G<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>a<span class="token punctuation">[</span>e<span class="token punctuation">.</span>to<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>cap <span class="token operator">&gt;</span> e<span class="token punctuation">.</span>flow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            p<span class="token punctuation">[</span>e<span class="token punctuation">.</span>to<span class="token punctuation">]</span> <span class="token operator">=</span> G<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// G[x][i] 是最近接近点 e.to 的边</span>
+            a<span class="token punctuation">[</span>e<span class="token punctuation">.</span>to<span class="token punctuation">]</span> <span class="token operator">=</span>
+                <span class="token function">min</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>cap <span class="token operator">-</span> e<span class="token punctuation">.</span>flow<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 最近接近点 e.to 的边赋给它的流</span>
+            Q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>  <span class="token comment">// 如果汇点接受到了流，就退出 BFS</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>a<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>  <span class="token comment">// 如果汇点没有接受到流，说明源点和汇点不在同一个连通分量上</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> u <span class="token operator">=</span> t<span class="token punctuation">;</span> u <span class="token operator">!=</span> s<span class="token punctuation">;</span>
+           u <span class="token operator">=</span> edges<span class="token punctuation">[</span>p<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>from<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 通过 u 追寻 BFS 过程中 s -&gt; t 的路径</span>
+        edges<span class="token punctuation">[</span>p<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>flow <span class="token operator">+=</span> a<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span>      <span class="token comment">// 增加路径上边的 flow 值</span>
+        edges<span class="token punctuation">[</span>p<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">^</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>flow <span class="token operator">-=</span> a<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 减小反向路径的 flow 值</span>
+      <span class="token punctuation">}</span>
+      flow <span class="token operator">+=</span> a<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> flow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  cout <span class="token operator">&lt;&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Dinic‘s Algorithm（算法复杂度为$O(m\cdot n^2)$）</p>
+<p>key concept:block flow、level graph</p>
+<ol>
+<li>构造residual graph</li>
+<li>iteration<ol>
+<li>根据residual graph 构造level graph</li>
+<li>在level graph上找阻塞流</li>
+<li>用找到的阻塞流来更新residual graph，并在residual graph中建立反向边，其流量大小与阻塞流大小相同</li>
+</ol>
+</li>
+</ol>
+<p>最小割</p>
+<p>求最小割问题就是求最大流问题，两者是等价的</p>
+<p>Max-Flow Min-Cut Theorem</p>
 
                 
             </div>
@@ -466,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/99b6/">https://risingauroras.github.io/posts/99b6/</a>
+                    <a href="https://risingauroras.github.io/posts/4b2f/">https://risingauroras.github.io/posts/4b2f/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -503,7 +612,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/">
+                                    <span class="chip bg-color">网络流</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -866,13 +979,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/4b2f/">
+                <a href="/posts/1218/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="网络流">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="二分图">
                         
-                        <span class="card-title">网络流</span>
+                        <span class="card-title">二分图</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -883,7 +996,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-20
                         </span>
                         <span class="publish-author">
                             
@@ -902,14 +1015,6 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/">
-                        <span class="chip bg-color">网络流</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -919,24 +1024,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4764/">
+                <a href="/posts/99b6/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="启发式算法">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="关于图论中诸多图的概念以及解法">
                         
-                        <span class="card-title">启发式算法</span>
+                        <span class="card-title">关于图论中诸多图的概念以及解法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个问题的最优算法是指求得该问题每个实例的最优解. 启发式算法可以这样定义 1：一个基于直观或经验构造的算法，在可接受的花费 (指计算时间、占用空间等) 下给出待解决组合优化问题每一个实例的一个可行解，该可行解与最优解的偏离程度不一定事先可以预计。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
                             </span>
                         <span class="publish-author">
                             
@@ -946,17 +1051,13 @@
                                     算法
                                 </a>
                             
+                            <a href="/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/" class="post-category">
+                                    图论
+                                </a>
+                            
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">启发式算法</span>
-                    </a>
-                    
                 </div>
                 
             </div>

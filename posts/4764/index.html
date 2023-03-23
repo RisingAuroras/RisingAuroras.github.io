@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10k
+                    11.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    39 分
+                    44 分
                 </div>
                 
 
@@ -435,8 +435,18 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>原文地址：<a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:9">范叶亮</a></p>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:9">范叶亮</a>|<a target="_blank" rel="noopener" href="https://mofanpy.com/tutorials/machine-learning/evolutionary-algorithm/evolution-strategy-1plus1-ES">莫烦</a>|<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/385424796">黄少兵</a></p>
 </blockquote>
+<p><strong>1</strong> <strong>启发式算法</strong></p>
+<p>启发式算法（Heuristic Algorithm）是解优化问题的一种算法。它是借助于对问题的具体分析或计算经验等方面的启示，能够较快地给出问题满意解的算法。这里说的满意解，一般不是问题的最优解，而是较好的可行解。</p>
+<p>数学辞海.第二卷[M].南京:东南大学出版社.2002.129-129</p>
+<p><strong>2</strong> <strong>启发式算法分类</strong></p>
+<p>启发式算法可以分为传统启发式算法[1]、元启发式算法（Meta-heuristic algorithm）[1]、超启发式算法（Hyper-heuristic algorithm）[2]。</p>
+<p>传统启发式算法包括构造型方法、局部搜索算法、松弛方法、解空间缩减算法等[1]。</p>
+<p>元启发式算法包括禁忌搜索算法、模拟退火算法、遗传算法、蚁群优化算法、人工神经网络算法等[1]。</p>
+<p>超启发式算法定义[2]：</p>
+<p>超启发式算法提供了某种高层策略（high-level strategy, HLS），通过操纵或管理一组底层启发式算子（low-level heuristics, LLH），以获得新启发式算法。</p>
+<p>现有超启发式算法可以大致分为4类：基于随机选择（random selection）、基于贪心（greedy）策略、基于元启发式算法和基于学习的超启发式算法。</p>
 <h2 id="启发式算法-Heuristic-Algorithms"><a href="#启发式算法-Heuristic-Algorithms" class="headerlink" title="启发式算法 (Heuristic Algorithms)"></a>启发式算法 (Heuristic Algorithms)</h2><p><strong>启发式算法 (Heuristic Algorithms)</strong> 是相对于最优算法提出的。一个问题的最优算法是指求得该问题每个实例的最优解. 启发式算法可以这样定义 1：一个基于直观或经验构造的算法，在可接受的花费 (指计算时间、占用空间等) 下给出待解决组合优化问题每一个实例的一个可行解，该可行解与最优解的偏离程度不一定事先可以预计。</p>
 <p>在某些情况下，特别是实际问题中，最优算法的计算时间使人无法忍受或因问题的难度使其计算时间随问题规模的增加以指数速度增加，此时只能通过启发式算法求得问题的一个可行解。</p>
 <p>利用启发式算法进行目标优化的一些优缺点如下：</p>
@@ -930,6 +940,20 @@ Y_BOUND <span class="token operator">=</span> <span class="token punctuation">[<
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303172259500.png" alt="image-20230317225905410"></p>
 <p>像最开始说的那样, 我们有一些 <code>population</code>, 每次在进化的时候, 我们会从这个 <code>pop</code> 中随机抽 2 个 DNA 出来, 然后对比一下他们的 <code>fitness</code>, 我们将 <code>fitness</code> 高的定义成 <code>winner</code>, 反之是 <code>loser</code>. 我们不会去动任何 <code>winner</code> 的 DNA, 要动手脚的只有这个 <code>loser</code>, 比如对 <code>loser</code> 进行 <code>crossover</code> 和 <code>mutate</code>. 动完手脚后将 <code>winner</code> 和 <code>loser</code> 一同放回 <code>pop</code> 中.</p>
 <p>通过这样的流程, 我们就不用担心有时候变异着变异着, 那些原本好的 pop 流失掉了, 有了这个 MGA 算法, <code>winner</code> 总是会被保留下来的. GA 中的 Elitism 问题通过这种方法巧妙解决了.</p>
+<h4 id="什么是进化策略-Evolution-Strategy"><a href="#什么是进化策略-Evolution-Strategy" class="headerlink" title="什么是进化策略 (Evolution Strategy)"></a><strong>什么是进化策略 (Evolution Strategy)</strong></h4><p><a target="_blank" rel="noopener" href="https://mofanpy.com/tutorials/machine-learning/evolutionary-algorithm/intro-genetic-algorithm">遗传算法</a>和进化策略共享着一些东西. 他们都用遗传信息, 比如 DNA 染色体, 一代代传承, 变异. 来获取上一代没有的东西.然后通过适者生存, 不适者淘汰的这一套理论不断进化着. 我们的祖先, 通过不断变异, 生存淘汰, 从猴子变成人也就是这么回事.既然进化策略或遗传算法都用到了进化的原则, 他们到底有哪些不同呢? 他们各自又适用于哪些问题呢?</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303181434072.png" alt="image-20230318143438847"></p>
+<p>爸妈的 DNA 不用再是 01 的这种形式, 我们可以用实数来代替, 咋一看, 觉得牛逼了起来, 因为我们抛开了二进制的转换问题, 从而能解决实际生活中的很多由实数组成的真实问题. 比如我有一个关于 x 的公式, 而这个公式中其他参数, 我都能用 DNA 中的实数代替, 然后进化我的 DNA, 也就是优化这个公式啦. 这样用起来, 的确比遗传算法方便. 同样, 在制造宝宝的时候, 我们也能用到交叉配对, 一部分来自爸爸, 一部分来自妈妈. 可是我们应该如何变异呢? 遗传算法中简单的翻牌做法貌似在这里行不通. 不过进化策略中的另外一个因素起了决定性的作用. 这就是变异强度. 简单来说, 我们将爸妈遗传下来的值看做是正态分布的平均值, 再在这个平均值上附加一个标准差, 我们就能用正态分布产生一个相近的数了. 比如在这个8.8位置上的变异强度为1, 我们就按照1的标准差和8.8的均值产生一个离8.8的比较近的数, 比如8.7. 然后对宝宝每一位上的值进行同样的操作. 就能产生稍微不同的宝宝 DNA 啦. 所以, 变异强度也可以被当成一组遗传信息从爸妈的 DNA 里遗传下来. 甚至遗传给宝宝的变异强度基因也能变异. 进化策略的玩法也能多种多样.</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303181435031.png" alt="image-20230318143514895"></p>
+<p>我们总结一下, 在进化策略中, 可以有两种遗传性系被继承给后代, 一种是记录所有位置的均值, 一种是记录这个均值的变异强度, 有了这套体系, 我们就能更加轻松自在的在实数区间上进行变异了. 这种思路甚至还能被用在神经网络的参数优化上, 因为这些参数本来就是一些实数. 在之后的视频中我们会继续提到当今比较流行的将人工神经网络结合上遗传算法或者进化策略的方法.</p>
+<h5 id="（1-1）ES"><a href="#（1-1）ES" class="headerlink" title="（1+1）ES"></a>（1+1）ES</h5><p>像上面看到的, 统一来说都是 (μ/ρ +, λ)-ES, (1+1)-ES 只是一种特殊形式. 这里的 μ 是 population 的数量, ρ 是从 population 中选取的个数, 用来生成宝宝的. λ 是生成的宝宝数, 如果采用的是 + 形式的, 就是使用将 ρ + λ 混合起来进行适者生存, 如果是 , 形式, 那么就是只使用 λ 进行适者生存.</p>
+<p>形式多种多样有些头疼. 不过在这一节中, 我们考虑的只是一个爸爸, 生成一个宝宝, 然后在爸爸和宝宝中进行适者生存的游戏, 选择爸爸和宝宝中比较好的那个当做下一代的爸爸. (1+1)-ES 总结如下:</p>
+<ul>
+<li>有一个爸爸;</li>
+<li>根据爸爸变异出一个宝宝;</li>
+<li>在爸爸和宝宝中选好的那个变成下一代爸爸.</li>
+</ul>
+<h5 id="Natural-Evolution-Strategy"><a href="#Natural-Evolution-Strategy" class="headerlink" title="Natural Evolution Strategy"></a><strong>Natural Evolution Strategy</strong></h5><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303182132317.png" alt="image-20230318213250247"></p>
+<p>NES 的方法其实和强化学习中 <a target="_blank" rel="noopener" href="https://mofanpy.com/tutorials/machine-learning/reinforcement-learning/policy-gradient-softmax1">Policy Gradient</a> 的方法非常接近. 简单来概括一下它们的不同: 在行为的策略上, PG 是扰动 Action, 不同的 action 带来不同的 reward, 通过 reward 大小对应上 action 来计算 gradient, 再反向传递 gradient. 但是 ES 是扰动 神经网络中的 Parameters, 不同的 parameters 带来不同的 reward, 通过 reward 大小对应上 parameters 来按比例更新原始的 parameters.</p>
 <h3 id="蚁群算法-Ant-Colony-Optimization-ACO"><a href="#蚁群算法-Ant-Colony-Optimization-ACO" class="headerlink" title="蚁群算法 (Ant Colony Optimization, ACO)"></a>蚁群算法 (Ant Colony Optimization, ACO)</h3><p>1991 年，意大利学者 Dorigo M. 等人在第一届欧洲人工生命会议 (ECAL) 上首次提出了蚁群算法。1996 年 Dorigo M. 等人发表的文章 “Ant system: optimization by a colony of cooperating agents”为蚁群算法奠定了基础。在自然界中，蚂蚁会分泌一种叫做信息素的化学物质，蚂蚁的许多行为受信息素的调控。蚂蚁在运动过程中能够感知其经过的路径上信息素的浓度，蚂蚁倾向朝着信息素浓度高的方向移动。以下图为例：</p>
 <p><img src="https://leovan.me/images/cn/2019-04-05-heuristic-algorithms/aco-shortest-path.png" alt="ACO Shortest Path"></p>
 <p>蚂蚁从蚁巢 (N) 出发到达食物源所在地 (F)，取得食物后再折返回蚁巢。整个过程中蚂蚁有多种路径可以选择，单位时间内路径上通过蚂蚁的数量越多，则该路径上留下的信息素浓度越高。因此，最短路径上走过的蚂蚁数量越多，则后来的蚂蚁选择该路径的机率就越大，从而蚂蚁通过信息的交流实现了寻找食物和蚁巢之间最短路的目的。</p>

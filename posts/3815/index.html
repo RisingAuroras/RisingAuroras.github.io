@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -690,6 +690,41 @@ logger<span class="token punctuation">.</span>info<span class="token punctuation
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>这将创建一个名为 <code>my_logger</code> 的 logger 对象，日志级别为 <code>logging.INFO</code>，日志文件存储在 <code>/path/to/logs/my_app.log</code>，同时向控制台输出日志。然后，它将记录一条日志消息：“Hello, world</p>
+<h3 id="jupyter"><a href="#jupyter" class="headerlink" title="jupyter"></a>jupyter</h3><p>如何在jupyter中可视化训练效果？</p>
+<p>某些情况不方便弹窗把 env 界面实时渲染出来，所以我们通过下面两种方法环境的可视化，从而看到智能体的交互情况。</p>
+<p>方法一：直接在jupyter中渲染</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gym
+<span class="token keyword">from</span> IPython <span class="token keyword">import</span> display
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token operator">%</span>matplotlib inline
+
+<span class="token comment"># Set up fake display; otherwise rendering will fail</span>
+<span class="token keyword">import</span> os
+os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"Xvfb :1 -screen 0 1024x768x24 &amp;"</span><span class="token punctuation">)</span>
+os<span class="token punctuation">.</span>environ<span class="token punctuation">[</span><span class="token string">'DISPLAY'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">':1'</span>
+
+env <span class="token operator">=</span> gym<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'CartPole-v1'</span><span class="token punctuation">)</span>
+env<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span>
+env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+img <span class="token operator">=</span> plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>env<span class="token punctuation">.</span>render<span class="token punctuation">(</span>mode<span class="token operator">=</span><span class="token string">'rgb_array'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># only call this once</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    img<span class="token punctuation">.</span>set_data<span class="token punctuation">(</span>env<span class="token punctuation">.</span>render<span class="token punctuation">(</span>mode<span class="token operator">=</span><span class="token string">'rgb_array'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># just update the data</span>
+    display<span class="token punctuation">.</span>display<span class="token punctuation">(</span>plt<span class="token punctuation">.</span>gcf<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    display<span class="token punctuation">.</span>clear_output<span class="token punctuation">(</span>wait<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    action <span class="token operator">=</span> env<span class="token punctuation">.</span>action_space<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>方法二：对环境进行录制，再播放视频</p>
+<p>由于工具函数太长了，具体见github中的代码</p>
+<p>下面录制视频和播放视频：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 录制视频</span>
+record_video<span class="token punctuation">(</span><span class="token string">'CartPole-v1'</span><span class="token punctuation">,</span> model<span class="token punctuation">,</span> video_length<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token string">'ppo2-cartpole'</span><span class="token punctuation">)</span>
+<span class="token comment"># 展示视频</span>
+show_videos<span class="token punctuation">(</span><span class="token string">'videos'</span><span class="token punctuation">,</span> prefix<span class="token operator">=</span><span class="token string">'ppo2'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ol>
 <li><p>网络输出离散动作概率的时候，一般加一层<code>softmax</code>层，保证输出的离散动作概率和为1；输出连续动作概率的时候，一般加一层<code>tanh</code>层，因为<code>tanh</code>范围是[-1,1]，我们可以根据实际需要，将输出进行缩放。</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209110920372.png" alt="image-20220911092035223"></p>

@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-03-17T15:20:21.767Z</updated>
+  <updated>2023-03-22T12:26:31.921Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Stable-Baselines3</title>
+    <link href="https://risingauroras.github.io/posts/cced/"/>
+    <id>https://risingauroras.github.io/posts/cced/</id>
+    <published>2023-03-22T09:34:20.000Z</published>
+    <updated>2023-03-22T12:26:31.921Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Stable-Baselines3-Docs-可靠的强化学习实现&quot;&gt;&lt;a href=&quot;#Stable-Baselines3-Docs-可靠的强化学习实现&quot; class=&quot;headerlink&quot; title=&quot;Stable-Baselines3 Docs -</summary>
+        
+      
+    
+    
+    
+    <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="SB3" scheme="https://risingauroras.github.io/tags/SB3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二分图</title>
+    <link href="https://risingauroras.github.io/posts/1218/"/>
+    <id>https://risingauroras.github.io/posts/1218/</id>
+    <published>2023-03-20T03:04:24.000Z</published>
+    <updated>2023-03-20T03:04:41.934Z</updated>
+    
+    
+    
+    
+    <category term="算法" scheme="https://risingauroras.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="图论" scheme="https://risingauroras.github.io/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网络流</title>
+    <link href="https://risingauroras.github.io/posts/4b2f/"/>
+    <id>https://risingauroras.github.io/posts/4b2f/</id>
+    <published>2023-03-19T15:12:07.000Z</published>
+    <updated>2023-03-21T01:50:58.847Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;参考：&lt;a href=&quot;https://oi-wiki.org/graph/flow/max-flow/&quot;&gt;OI</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://risingauroras.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="图论" scheme="https://risingauroras.github.io/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/"/>
+    
+    
+    <category term="网络流" scheme="https://risingauroras.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+    
+  </entry>
   
   <entry>
     <title>关于图论中诸多图的概念以及解法</title>
@@ -46,7 +116,7 @@
     <link href="https://risingauroras.github.io/posts/4764/"/>
     <id>https://risingauroras.github.io/posts/4764/</id>
     <published>2023-03-09T10:45:08.000Z</published>
-    <updated>2023-03-17T15:22:58.935Z</updated>
+    <updated>2023-03-19T02:29:33.966Z</updated>
     
     
       
@@ -54,9 +124,7 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;原文地址：&lt;a href=&quot;https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:9&quot;&gt;范叶亮&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2</summary>
+&lt;p&gt;原文地址：&lt;a href=&quot;https://leovan.me/cn/2019/04/heuristic-algorithms/#fn:9&quot;&gt;范叶亮&lt;/a&gt;|&lt;a</summary>
         
       
     
@@ -378,7 +446,7 @@
     <link href="https://risingauroras.github.io/posts/6040/"/>
     <id>https://risingauroras.github.io/posts/6040/</id>
     <published>2023-01-01T14:00:22.000Z</published>
-    <updated>2023-03-08T14:27:34.417Z</updated>
+    <updated>2023-03-20T06:28:46.044Z</updated>
     
     
       
@@ -441,71 +509,6 @@
     
     
     <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>论文储备知识</title>
-    <link href="https://risingauroras.github.io/posts/bf25/"/>
-    <id>https://risingauroras.github.io/posts/bf25/</id>
-    <published>2022-12-26T04:38:51.000Z</published>
-    <updated>2023-03-08T13:20:12.633Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;实验&quot;&gt;&lt;a href=&quot;#实验&quot; class=&quot;headerlink&quot; title=&quot;实验&quot;&gt;&lt;/a&gt;实验&lt;/h2&gt;&lt;h3 id=&quot;消融实验&quot;&gt;&lt;a href=&quot;#消融实验&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="学术" scheme="https://risingauroras.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-    <category term="论文" scheme="https://risingauroras.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多分类：从逻辑回归到Softmax回归</title>
-    <link href="https://risingauroras.github.io/posts/c0a8/"/>
-    <id>https://risingauroras.github.io/posts/c0a8/</id>
-    <published>2022-11-02T02:55:39.000Z</published>
-    <updated>2022-11-02T05:23:17.845Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>解决由于VM引起的网络延迟问题</title>
-    <link href="https://risingauroras.github.io/posts/2e89/"/>
-    <id>https://risingauroras.github.io/posts/2e89/</id>
-    <published>2022-11-02T02:37:12.000Z</published>
-    <updated>2022-11-02T05:23:17.847Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前提：&lt;/p&gt;
-&lt;p&gt;之前也用过VM，第一次遇见这个问题。&lt;/p&gt;
-&lt;p&gt;因为分布式作业需要，开始捣鼓多个虚拟机构建hadoop集群，然后自从修改VM网络适配器之后就发现网络有三到五秒的延迟，然后我以为是电脑DNS的问题，就用阿里云的DNS试了试，发现了问题所在，我的ip字</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="https://risingauroras.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
   </entry>
