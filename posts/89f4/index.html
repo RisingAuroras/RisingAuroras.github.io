@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="《统计学习方法》学习笔记, 马克图布">
+    <meta name="keywords" content="选择算法, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>《统计学习方法》学习笔记 | 马克图布</title>
+    <title>选择算法 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">《统计学习方法》学习笔记</h1>
+                    <h1 class="description center-align post-title">选择算法</h1>
                 </div>
             </div>
         </div>
@@ -368,9 +368,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">选择算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -391,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-13
+                    2023-03-23
                 </div>
                 
 
@@ -400,7 +404,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    485
+                    4
                 </div>
                 
 
@@ -430,52 +434,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章-统计学习方法概论"><a href="#第一章-统计学习方法概论" class="headerlink" title="第一章 统计学习方法概论"></a>第一章 统计学习方法概论</h2><ul>
-<li>赫尔伯特-西蒙对学习的定义：如果一个系统能够通过执行某个进程改进它的性能，这就是学习。按照这一观点，统计学习就是计算机系统通过运用数据及统计方法提高系统性能的机器学习。</li>
-</ul>
-<ul>
-<li><p>统计学习的对象 </p>
-<p>data ：计算机及互联网上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
-<p>数据的基本假设是同类数据具有一定的统计规律性。</p>
-</li>
-</ul>
-<ul>
-<li><p>统计学习的目的</p>
-<p>用于对数据（特别是未知数据）进行预测和分析。</p>
-</li>
-<li><p>统计学习的方法</p>
-<p>分类：<br>Supervised learning<br>Unsupervised learning<br>Semi-supervised learning<br>Reinforcement learning<br>监督学习：<br>训练数据 training data<br>模型 model   ——-  假设空间 hypothesis<br>评价准则 evaluation  criterion ——– 策略 strategy<br>算法 algorithm</p>
-</li>
-<li><p>概率图模型</p>
-</li>
-<li><p>统计学习方法三要素：模型、策略、算法</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303170840757.png" alt="image-20230317084025678"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303170841377.png" alt="image-20230317084112326"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303170841961.png" alt="image-20230317084154903"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303170842515.png" alt="image-20230317084226462"></p>
-</li>
-<li><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303170922453.png" alt="image-20230317092244418"></p>
-</li>
-</ul>
-<h2 id="第二章-感知机"><a href="#第二章-感知机" class="headerlink" title="第二章 感知机"></a>第二章 感知机</h2><h3 id="感知机学习算法"><a href="#感知机学习算法" class="headerlink" title="感知机学习算法"></a>感知机学习算法</h3><p>感知机模型</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209131011647.png" alt="image-20220913101146480"></p>
-<p>算法2.1（感知机学习算法的原始形式）</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209131012212.png" alt="image-20220913101224113"></p>
-<p>算法2.2（感知机学习算法的对偶形式）</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209151602685.png" alt="image-20220915160217602"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202209151602701.png" alt="image-20220915160252635"></p>
-<h2 id="第四章-朴素贝叶斯"><a href="#第四章-朴素贝叶斯" class="headerlink" title="第四章 朴素贝叶斯"></a>第四章 朴素贝叶斯</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271423430.png" alt="image-20230327142342341"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271424666.png" alt="image-20230327142427619"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271424570.png" alt="image-20230327142452498"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271425710.png" alt="image-20230327142510633"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271425355.png" alt="image-20230327142518269"></p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271425001.png" alt="image-20230327142539930"></p>
-<p>后验概率最大化的含义：朴素贝叶斯法将实例分到后验概率最大的类中，等价于期望风险最小化</p>
-<p>朴素贝叶斯法的参数估计：应用极大似然估计法估计相应的概率</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271429272.png" alt="image-20230327142948190"></p>
-<p>用极大似然估计可能会出现所要估计的概率值为0的情况，这时会影响到后 验概率的计算结果，使分类产生偏差.解决这一问题的方法是采用贝叶斯估计。</p>
-<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271430502.png" alt="image-20230327143043420"></p>
-<p>式中$\lambda&gt;=0$，等价于在随机变量各个取值的频数上赋予一个正数$\lambda&gt;0$，$\lambda=0$时就是极大似然估计。通常取$\lambda=1$，这时称为拉普拉斯平滑。</p>
+                <h2 id="轮盘赌法"><a href="#轮盘赌法" class="headerlink" title="轮盘赌法"></a>轮盘赌法</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231118372.png" alt="image-20230323111846255"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231118030.png" alt="image-20230323111853957"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231119035.png" alt="image-20230323111918939"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231119984.png" alt="image-20230323111924900"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231119629.png" alt="image-20230323111930552"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231119778.png" alt="image-20230323111936677"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303231119034.png" alt="image-20230323111941967"></p>
 
                 
             </div>
@@ -502,7 +467,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/b54a/">https://risingauroras.github.io/posts/b54a/</a>
+                    <a href="https://risingauroras.github.io/posts/89f4/">https://risingauroras.github.io/posts/89f4/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,7 +504,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">选择算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -902,31 +871,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/8e6/">
+                <a href="/posts/798c/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="Google开源项目风格指南">
                         
-                        <span class="card-title">详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解</span>
+                        <span class="card-title">Google开源项目风格指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最大似然估计（Maximum likelihood estimation, 简称MLE）和最大后验概率估计（Maximum a posteriori estimation, 简称MAP）是很常用的两种参数估计方法，如果不理解这两种方法的思路，很容易弄混它们。下文将详细说明MLE和MAP的思路与区别。
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    数学基础
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
+                                    实用
                                 </a>
                             
                             
@@ -936,8 +905,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                        <span class="chip bg-color">代码规范</span>
                     </a>
                     
                 </div>
@@ -951,12 +920,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/e9ae/">
+                <a href="/posts/cced/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="精读论文系列">
                         
-                        <span class="card-title">精读论文系列</span>
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="Stable-Baselines3">
+                        
+                        <span class="card-title">Stable-Baselines3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -967,14 +937,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E6%9C%AF/" class="post-category">
-                                    学术
+                            <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    强化学习
                                 </a>
                             
                             
@@ -984,8 +954,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">论文</span>
+                    <a href="/tags/SB3/">
+                        <span class="chip bg-color">SB3</span>
                     </a>
                     
                 </div>

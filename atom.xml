@@ -6,7 +6,7 @@
   <link href="https://risingauroras.github.io/atom.xml" rel="self"/>
   
   <link href="https://risingauroras.github.io/"/>
-  <updated>2023-03-22T12:26:31.921Z</updated>
+  <updated>2023-03-28T13:59:56.497Z</updated>
   <id>https://risingauroras.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Google开源项目风格指南</title>
+    <link href="https://risingauroras.github.io/posts/798c/"/>
+    <id>https://risingauroras.github.io/posts/798c/</id>
+    <published>2023-03-28T11:15:33.000Z</published>
+    <updated>2023-03-28T13:59:56.497Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;python-风格指南&quot;&gt;&lt;a href=&quot;#python-风格指南&quot; class=&quot;headerlink&quot; title=&quot;python 风格指南&quot;&gt;&lt;/a&gt;python 风格指南&lt;/h2&gt;&lt;h3 id=&quot;导入&quot;&gt;&lt;a href=&quot;#导入&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="实用" scheme="https://risingauroras.github.io/categories/%E5%AE%9E%E7%94%A8/"/>
+    
+    
+    <category term="代码规范" scheme="https://risingauroras.github.io/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>选择算法</title>
+    <link href="https://risingauroras.github.io/posts/89f4/"/>
+    <id>https://risingauroras.github.io/posts/89f4/</id>
+    <published>2023-03-23T03:18:06.000Z</published>
+    <updated>2023-03-23T03:20:34.450Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;轮盘赌法&quot;&gt;&lt;a href=&quot;#轮盘赌法&quot; class=&quot;headerlink&quot; title=&quot;轮盘赌法&quot;&gt;&lt;/a&gt;轮盘赌法&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://risingauroras.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="选择算法" scheme="https://risingauroras.github.io/tags/%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Stable-Baselines3</title>
     <link href="https://risingauroras.github.io/posts/cced/"/>
     <id>https://risingauroras.github.io/posts/cced/</id>
     <published>2023-03-22T09:34:20.000Z</published>
-    <updated>2023-03-22T12:26:31.921Z</updated>
+    <updated>2023-03-23T01:14:37.481Z</updated>
     
     
       
@@ -46,7 +96,7 @@
     <link href="https://risingauroras.github.io/posts/1218/"/>
     <id>https://risingauroras.github.io/posts/1218/</id>
     <published>2023-03-20T03:04:24.000Z</published>
-    <updated>2023-03-20T03:04:41.934Z</updated>
+    <updated>2023-03-23T01:14:37.485Z</updated>
     
     
     
@@ -63,7 +113,7 @@
     <link href="https://risingauroras.github.io/posts/4b2f/"/>
     <id>https://risingauroras.github.io/posts/4b2f/</id>
     <published>2023-03-19T15:12:07.000Z</published>
-    <updated>2023-03-21T01:50:58.847Z</updated>
+    <updated>2023-03-23T01:14:37.487Z</updated>
     
     
       
@@ -290,7 +340,7 @@
     <link href="https://risingauroras.github.io/posts/98a3/"/>
     <id>https://risingauroras.github.io/posts/98a3/</id>
     <published>2023-01-29T08:55:57.000Z</published>
-    <updated>2023-03-03T15:23:52.772Z</updated>
+    <updated>2023-03-30T02:15:07.712Z</updated>
     
     
       
@@ -460,55 +510,6 @@
     
     
     <category term="强化学习" scheme="https://risingauroras.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>What is Mutual Information?</title>
-    <link href="https://risingauroras.github.io/posts/7280/"/>
-    <id>https://risingauroras.github.io/posts/7280/</id>
-    <published>2023-01-01T08:28:59.000Z</published>
-    <updated>2023-01-03T13:44:56.658Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;In the field of machine learning, when it comes to extracting &lt;strong&gt;relationships&lt;/strong&gt; between</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="机器学习" scheme="https://risingauroras.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>信息熵</title>
-    <link href="https://risingauroras.github.io/posts/1618/"/>
-    <id>https://risingauroras.github.io/posts/1618/</id>
-    <published>2023-01-01T08:12:20.000Z</published>
-    <updated>2023-01-12T09:06:52.971Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/304499706&quot;&gt;本文地址&lt;/a&gt;，转载自&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="数学基础" scheme="https://risingauroras.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>

@@ -412,14 +412,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    303
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    9 分
                 </div>
                 
 
@@ -478,6 +478,7 @@
 <p>对$w_t$的权重衰减值往往设为1e-2/1e-3/1e-4(ps: 1-$\eta\lambda$)</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032012019.png" alt="image-20230203201226954"></p>
 <h3 id="dropout（主流）"><a href="#dropout（主流）" class="headerlink" title="dropout（主流）"></a>dropout（主流）</h3><p>dropout用在全连接层，BN用在卷积层，两者不冲突</p>
+<p>Dropout是一种常见的正则化方法，用来减少模型的复杂度</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032126516.png" alt="image-20230203212659444"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032130598.png" alt="image-20230203213009516"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302032132709.png" alt="image-20230203213229619"></p>
@@ -508,6 +509,250 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041218904.png" alt="image-20230204121838824"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302041219124.png" alt="image-20230204121900068"></p>
 <p>也就是说用xavier初始化权重，激活函数可以选择relu,tanh或者调整后的sigmoid</p>
+<h2 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h2><h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271037248.png" alt="image-20230327103653119"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271037137.png" alt="image-20230327103735060"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271037712.png" alt="image-20230327103751626"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271037708.png" alt="image-20230327103759646"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271038698.png" alt="image-20230327103810583"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271038848.png" alt="image-20230327103825765"></p>
+<p>一般$p_h=k_h-1,p_w =k_w-1$</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271038640.png" alt="image-20230327103834567"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271039644.png" alt="image-20230327103950571"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271040618.png" alt="image-20230327104018564"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271040427.png" alt="image-20230327104032359"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271041995.png" alt="image-20230327104039015"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271041749.png" alt="image-20230327104130676"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303250927730.png" alt="image-20230325092716665"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271111776.png" alt="image-20230327111143703"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303250935150.png" alt="image-20230325093546087"></p>
+<h3 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271044909.png" alt="image-20230327104405839"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251550315.png" alt="image-20230325155036195"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251553648.png" alt="image-20230325155315574"></p>
+<p>池化输出的shape公式和卷积的类似</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251554968.png" alt="image-20230325155424908"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251556624.png" alt="image-20230325155632562"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251557200.png" alt="image-20230325155752151"></p>
+<p>最大池化和平均 池化都是常用的操作</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251558043.png" alt="image-20230325155826996"></p>
+<h2 id="经典卷积神经网络-LeNet"><a href="#经典卷积神经网络-LeNet" class="headerlink" title="经典卷积神经网络 LeNet"></a>经典卷积神经网络 LeNet</h2><p>虽然现在看来有一些东西已经过时了，但是它的出现证实了卷积神经网络在图片处理中确实大有益处，且启发了后来了AlexNet</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271120195.png" alt="image-20230327112043139"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271122389.png" alt="image-20230327112201293"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271122420.png" alt="image-20230327112222332"></p>
+<p>网络架构</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+<span class="token keyword">from</span> d2l <span class="token keyword">import</span> torch <span class="token keyword">as</span> d2l
+
+net <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+    nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>AvgPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>AvgPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">16</span> <span class="token operator">*</span> <span class="token number">5</span> <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">84</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>检查模型</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">X <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+<span class="token keyword">for</span> layer <span class="token keyword">in</span> net<span class="token punctuation">:</span>
+    X <span class="token operator">=</span> layer<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>layer<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">'output shape: \t'</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Conv2d output shape: 	 torch.Size([1, 6, 28, 28])
+Sigmoid output shape: 	 torch.Size([1, 6, 28, 28])
+AvgPool2d output shape: 	 torch.Size([1, 6, 14, 14])
+Conv2d output shape: 	 torch.Size([1, 16, 10, 10])
+Sigmoid output shape: 	 torch.Size([1, 16, 10, 10])
+AvgPool2d output shape: 	 torch.Size([1, 16, 5, 5])
+Flatten output shape: 	 torch.Size([1, 400])
+Linear output shape: 	 torch.Size([1, 120])
+Sigmoid output shape: 	 torch.Size([1, 120])
+Linear output shape: 	 torch.Size([1, 84])
+Sigmoid output shape: 	 torch.Size([1, 84])
+Linear output shape: 	 torch.Size([1, 10])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>调参经验：</p>
+<p>LeNet 调参记录</p>
+<p>epochs : 100	 batch_size : 256  	激活函数 : Sigmoid  	  lr : 0.9</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303280914067.png"></p>
+<p>epochs : 100	 batch_size : 32  	激活函数 : Sigmoid  	  lr : 0.9</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303280936719.png" alt="image-20230328093654668"></p>
+<p>epochs : 100	 batch_size : 256  	激活函数 : ReLU  	  lr : 0.1</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303280945319.png" alt="image-20230328094548268"></p>
+<p>epochs : 100	 batch_size : 32 	激活函数 : ReLU  	  lr : 0.1</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281005499.png" alt="image-20230328100501449"></p>
+<p>epochs : 100	 batch_size : 32 	激活函数 : ReLU  	  lr : 0.1    改变通道：如下</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281156717.png" alt="image-20230328115615648"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281155032.png" alt="image-20230328115534900"></p>
+<h2 id="深度卷积神经网络-AlexNet"><a href="#深度卷积神经网络-AlexNet" class="headerlink" title="深度卷积神经网络 AlexNet"></a>深度卷积神经网络 AlexNet</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281718792.png" alt="image-20230328171857703"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281719658.png" alt="image-20230328171909537"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281719143.png" alt="image-20230328171921004"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281719098.png" alt="image-20230328171942981"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281720307.png" alt="image-20230328172006027"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281720411.png" alt="image-20230328172046323"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281720846.png" alt="image-20230328172055626"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281721672.png" alt="image-20230328172115570"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281715753.png" alt="image-20230328171521619"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281733079.png" alt="image-20230328173300993"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281733999.png" alt="image-20230328173338914"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''
+根据AlexNet论文: https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf ，实现如下：
+'''</span>
+net <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+      nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">96</span><span class="token punctuation">,</span>kernel_size<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span>stride<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span>padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># </span>
+      nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">96</span><span class="token punctuation">,</span><span class="token number">128</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span>kernel_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">128</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">192</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">192</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">192</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">192</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">128</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># 6*6*256</span>
+      nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">6</span><span class="token operator">*</span><span class="token number">6</span><span class="token operator">*</span><span class="token number">256</span><span class="token punctuation">,</span><span class="token number">2048</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">2048</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2048</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">2048</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+
+
+X <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> layer <span class="token keyword">in</span> net<span class="token punctuation">:</span>
+    X<span class="token operator">=</span>layer<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>layer<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">'output shape:\t'</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+    
+<span class="token triple-quoted-string string">'''
+Conv2d output shape:	 torch.Size([1, 96, 55, 55])
+ReLU output shape:	 torch.Size([1, 96, 55, 55])
+MaxPool2d output shape:	 torch.Size([1, 96, 27, 27])
+Conv2d output shape:	 torch.Size([1, 256, 27, 27])
+ReLU output shape:	 torch.Size([1, 256, 27, 27])
+MaxPool2d output shape:	 torch.Size([1, 256, 13, 13])
+Conv2d output shape:	 torch.Size([1, 384, 13, 13])
+ReLU output shape:	 torch.Size([1, 384, 13, 13])
+Conv2d output shape:	 torch.Size([1, 384, 13, 13])
+ReLU output shape:	 torch.Size([1, 384, 13, 13])
+Conv2d output shape:	 torch.Size([1, 256, 13, 13])
+ReLU output shape:	 torch.Size([1, 256, 13, 13])
+MaxPool2d output shape:	 torch.Size([1, 256, 6, 6])
+Flatten output shape:	 torch.Size([1, 9216])
+Linear output shape:	 torch.Size([1, 4096])
+ReLU output shape:	 torch.Size([1, 4096])
+Dropout output shape:	 torch.Size([1, 4096])
+Linear output shape:	 torch.Size([1, 4096])
+ReLU output shape:	 torch.Size([1, 4096])
+Dropout output shape:	 torch.Size([1, 4096])
+Linear output shape:	 torch.Size([1, 1000])
+ReLU output shape:	 torch.Size([1, 1000])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303281744222.png" alt="image-20230328174406291"></p>
+<h2 id="使用块的网络-VGG"><a href="#使用块的网络-VGG" class="headerlink" title="使用块的网络 VGG"></a>使用块的网络 VGG</h2><p>VGGNet 使用VGG块，采用3x3的卷积，堆的更深</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291538465.png" alt="image-20230329153837376"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291539345.png" alt="image-20230329153906663"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291540829.png" alt="image-20230329154015692"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291541279.png" alt="image-20230329154128141"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291542093.png" alt="image-20230329154143562"></p>
+<p>网址：<a target="_blank" rel="noopener" href="https://cv.gluon.ai/model_zoo/classification.html">https://cv.gluon.ai/model_zoo/classification.html</a></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291543100.png" alt="image-20230329154326000"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291538424.png" alt="image-20230329153819273"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291551165.png" alt="image-20230329155132081"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">vgg_block</span><span class="token punctuation">(</span>num_convs<span class="token punctuation">,</span> in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    layers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_convs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span>
+                                kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        in_channels <span class="token operator">=</span> out_channels
+    layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>layers<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">vgg_net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>cfg<span class="token punctuation">:</span><span class="token builtin">tuple</span><span class="token punctuation">,</span>in_channels<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token builtin">super</span><span class="token punctuation">(</span>vgg_net<span class="token punctuation">,</span>self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    layers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> num_conv<span class="token punctuation">,</span>out_channels <span class="token keyword">in</span> cfg<span class="token punctuation">:</span>
+      layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>vgg_block<span class="token punctuation">(</span>num_conv<span class="token punctuation">,</span>in_channels<span class="token punctuation">,</span>out_channels<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      in_channels <span class="token operator">=</span> out_channels
+    self<span class="token punctuation">.</span>model <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>layers<span class="token punctuation">,</span>
+                  nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span>in_channels <span class="token operator">*</span> <span class="token number">7</span> <span class="token operator">*</span> <span class="token number">7</span><span class="token punctuation">,</span><span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span><span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span>
+  <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>X<span class="token punctuation">:</span>torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> layer <span class="token keyword">in</span> self<span class="token punctuation">.</span>model<span class="token punctuation">:</span>
+      X<span class="token operator">=</span>layer<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span>layer<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">"output shape：\t"</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> nn<span class="token punctuation">.</span>Softmax<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="网络中的网络-NiN"><a href="#网络中的网络-NiN" class="headerlink" title="网络中的网络 NiN"></a>网络中的网络 NiN</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291728276.png" alt="image-20230329172840171"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291728161.png" alt="image-20230329172856076"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291729135.png" alt="image-20230329172913037"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291730751.png" alt="image-20230329173003645"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291830440.png" alt="image-20230329183033295"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291830800.png" alt="image-20230329183050720"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291831798.png" alt="image-20230329183144698"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291834092.png" alt="image-20230329183426994"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291834524.png" alt="image-20230329183446428"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291835738.png" alt="image-20230329183523649"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291837900.png" alt="image-20230329183701828"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">nin_block</span><span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token punctuation">,</span> strides<span class="token punctuation">,</span> padding<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+        nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token punctuation">,</span> strides<span class="token punctuation">,</span> padding<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>out_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>out_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        
+net <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+    nin_block<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">96</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nin_block<span class="token punctuation">(</span><span class="token number">96</span><span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nin_block<span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> <span class="token number">384</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nin_block<span class="token punctuation">(</span><span class="token number">384</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>AdaptiveAvgPool2d<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+X <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> layer <span class="token keyword">in</span> net<span class="token punctuation">:</span>
+    X <span class="token operator">=</span> layer<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>layer<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">'output shape:\t'</span><span class="token punctuation">,</span> X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+    
+    
+<span class="token triple-quoted-string string">'''
+Sequential output shape:	 torch.Size([1, 96, 54, 54])
+MaxPool2d output shape:	 torch.Size([1, 96, 26, 26])
+Sequential output shape:	 torch.Size([1, 256, 26, 26])
+MaxPool2d output shape:	 torch.Size([1, 256, 12, 12])
+Sequential output shape:	 torch.Size([1, 384, 12, 12])
+MaxPool2d output shape:	 torch.Size([1, 384, 5, 5])
+Dropout output shape:	 torch.Size([1, 384, 5, 5])
+Sequential output shape:	 torch.Size([1, 10, 5, 5])
+AdaptiveAvgPool2d output shape:	 torch.Size([1, 10, 1, 1])
+Flatten output shape:	 torch.Size([1, 10])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="含并行连结的网络-GoogLeNet-x2F-Inception-V3"><a href="#含并行连结的网络-GoogLeNet-x2F-Inception-V3" class="headerlink" title="含并行连结的网络 GoogLeNet / Inception V3"></a>含并行连结的网络 GoogLeNet / Inception V3</h2><h2 id="沐言沐语"><a href="#沐言沐语" class="headerlink" title="沐言沐语"></a>沐言沐语</h2><ol>
+<li>二维卷积指的输入的图片只考虑高和宽，不考虑channel。如果是深度图，就是额外多一个深度，可以用3D卷积</li>
+<li>卷积操作，对于位置是非常敏感的，用池化操作消除这种影响</li>
+<li>池化层一般放在卷积层后（消除卷积对于位置的敏感性），池化层目前用的越来越少了。池化可以1 消除卷积对于位置的敏感性 2 减少计算量 ， 对于2 我们可以把stride放入卷积层中来减少计算量，对于1 我们现在常常做数据增强，来淡化卷积对于位置的敏感性</li>
+<li>通过LeNet可以看出，卷积把高和宽不断减小，但是我们在这个过程中，让通道数不断增多，每一个通道可以看做空间的一个pattern(模式)，然后通过MLP训练得到输出。（通常来说，高宽减半的时候，通道数会变为原来的两倍，但是也不能把输出通道调的太大，不然容易overfitting）</li>
+<li>图片作为网络的输出时，图片的大小可能是随机的，不一定是输入要求的大小，一般不会直接resize，而是保持高宽比，从里面抠出一个方的，可以多抠几次，一般效果不会差很多。</li>
+<li>尽量用简单的模型，不要过度设计</li>
+<li>就是pytorch训练好后，模型怎么进行部署应用，c++的话可以试试libtorch(边缘计算的话推荐TensorRT)</li>
+<li>在实际深度学习中，尽量不要微调经典网络中的结构，但是可以改变一下通道数，或者输入输出的大小</li>
+<li></li>
+</ol>
 
                 
             </div>

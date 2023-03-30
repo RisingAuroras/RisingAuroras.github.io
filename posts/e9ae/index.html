@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11k
+                    14.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    43 分
+                    56 分
                 </div>
                 
 
@@ -569,12 +569,12 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141444075.png" alt="image-20230214144419961"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302141445122.png" alt="image-20230214144502035"></p>
 <h4 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h4><p>mark：3.2. Relative Pessimism and Robust Policy Improvement</p>
-<h3 id="Constrained-Variational-Policy-Optimization-for-Safe-Reinforcement-Learning"><a href="#Constrained-Variational-Policy-Optimization-for-Safe-Reinforcement-Learning" class="headerlink" title="Constrained Variational Policy Optimization for Safe Reinforcement Learning"></a>Constrained Variational Policy Optimization for Safe Reinforcement Learning</h3><h2 id="Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design"><a href="#Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design" class="headerlink" title="Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design"></a>Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design</h2><p>in Full-Duplex Multi-UAV Networks<br>downlink (DL) uplink (UL)  multi-UAV networks  user equipment(UE) DL-UL decoupling(DUDe)  robust partially observable Markov decision process<br>(robust POMDP) model full-duplex (FD)<br>communication macro base station (MBS)</p>
+<h3 id="Constrained-Variational-Policy-Optimization-for-Safe-Reinforcement-Learning"><a href="#Constrained-Variational-Policy-Optimization-for-Safe-Reinforcement-Learning" class="headerlink" title="Constrained Variational Policy Optimization for Safe Reinforcement Learning"></a>Constrained Variational Policy Optimization for Safe Reinforcement Learning</h3><h3 id="Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design"><a href="#Multi-Agent-Deep-Reinforcement-Learning-for-Joint-Decoupled-User-Association-and-Trajectory-Design" class="headerlink" title="Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design"></a>Multi-Agent Deep Reinforcement Learning for Joint Decoupled User Association and Trajectory Design</h3><p>in Full-Duplex Multi-UAV Networks<br>downlink (DL) uplink (UL)  multi-UAV networks  user equipment(UE) DL-UL decoupling(DUDe)  robust partially observable Markov decision process<br>(robust POMDP) model full-duplex (FD)<br>communication macro base station (MBS)</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131129442.png" alt="image-20230213112927370"></p>
 <p>Network Model and BSs Deployment</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131232312.png" alt="image-20230213123238260"></p>
 <p>Channel Model</p>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
+<h3 id="Reinforcement-Learning-Fast-and-Slow-Review"><a href="#Reinforcement-Learning-Fast-and-Slow-Review" class="headerlink" title="Reinforcement Learning, Fast and Slow[Review ]"></a>Reinforcement Learning, Fast and Slow[Review ]</h3><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
 <li><p>what is Pessimistic method in RL?</p>
 <p>In reinforcement learning, the pessimistic method is an algorithm that learns the worst-case value of each state or action, rather than the expected value. This approach can be useful in situations where the consequences of making a mistake can be very severe, and it is important to be conservative in decision-making.</p>
 <p>One way to implement the pessimistic method is to use a modified version of the Bellman equation, which is used to compute the value of each state or action in a Markov decision process. In the pessimistic version of the equation, the minimum value of the next state or action is used, rather than the expected value. This leads the algorithm to prefer actions that minimize the worst-case outcome, rather than actions that maximize the expected reward.</p>
@@ -712,6 +712,86 @@
 <p>首先，强化学习的目标是通过最大化期望累积回报来寻找最优策略。然而，这个过程是一个序列决策问题，即当前的决策会影响未来的奖励，而未来的奖励又反过来影响当前的决策。这个问题被称为Credit Assignment问题，因为它需要将奖励或惩罚与先前的行为联系起来，以决定哪些行为应该受到奖励或惩罚。</p>
 <p>其次，Credit Assignment问题也是因为强化学习通常涉及到长时间的延迟奖励。即智能体的某个行为可能会导致在未来的某个时间点获得奖励，而这个时间点可能会很长。这就使得Credit Assignment变得非常困难，因为要确定哪些行为导致了未来的奖励或惩罚需要考虑许多因素，如环境的变化、智能体的行为选择等。</p>
 <p>因此，Credit Assignment的提出旨在解决强化学习中的信用分配问题，从而提高智能体的决策质量和性能。Credit Assignment可以帮助智能体更好地理解哪些行为是有用的，哪些行为是无用的，并针对性地对行为进行加强或弱化，从而提高其策略的质量和效果。</p>
+</li>
+<li><p><strong>bias-variance tradeoff</strong></p>
+<p><strong>Bias</strong>：模型预测值跟训练集的真实值之间的差异。一般可以理解为在训练集上的表现，表现很好，那就是bias很小，表现很差，那就是bias很大。</p>
+<p><strong>Variance</strong>：模型预测值跟总体之间的差异，一般可以理解为训练集和验证集模型评价指标的差异，比如在训练集上模型表现很好，但是在验证集上表现很差，说明样本发生比较小的变化，预测值会发生比较大的变化，也就是方差比较大。</p>
+<blockquote>
+<p>帮助记忆的小tip：小的方差&amp;大的误差 —&gt; 欠拟合，大的方差&amp;小的误差 —&gt; 过拟合</p>
+</blockquote>
+<p>Bias-variance trade-off：</p>
+<p>理想的情况下，我们想要我们的模型低bias和低的variance，然而，实际工作中，这个是非常难的，所以trade-off可以帮助我们选择合适的模型。</p>
+<p>简单的模型像线性回归和逻辑回归，通常具有较高的bias和较低的variance，复杂的模型，比如随机森林，会有低的bias和高的variance。</p>
+</li>
+<li><p>how can we understand “A learning procedure with weak inductive bias will be able to master a wider range of patterns (greater variance), but will in general be less sample-efficient”</p>
+<p>In machine learning, the inductive bias of a learning procedure refers to the assumptions or prior knowledge that the algorithm uses to make predictions based on the data it is given. A strong inductive bias means that the algorithm has a lot of prior assumptions about the types of patterns that are likely to be present in the data, whereas a weak inductive bias means that the algorithm has fewer prior assumptions.</p>
+<p>When a learning procedure has a weak inductive bias, it is more flexible in the types of patterns it can recognize in the data. This means that it is able to master a wider range of patterns, which gives it greater variance in the types of tasks it can perform. However, because the algorithm has fewer prior assumptions, it may require more data to learn from in order to accurately recognize the patterns in the data. This makes it less sample-efficient, meaning that it needs more training examples to achieve the same level of accuracy as an algorithm with a stronger inductive bias.</p>
+<p>On the other hand, a learning procedure with a strong inductive bias will be more specialized in the types of patterns it can recognize, which can make it more sample-efficient. However, it may not be as effective at recognizing patterns outside of its prior assumptions, which limits its ability to generalize to new and unseen data.</p>
+<p>In summary, a learning procedure with a weak inductive bias has greater variance and can recognize a wider range of patterns, but may require more training examples to achieve the same level of accuracy as an algorithm with a stronger inductive bias.</p>
+</li>
+<li><p>怎样理解  weak inductive bias</p>
+<p>在机器学习中，归纳偏差（inductive bias）是指算法对数据的先验假设或先验知识，这些先验假设可以影响算法对数据的解释和预测。假设归纳偏差越强，算法就越倾向于使用更特定的假设和更少的参数来解释和预测数据。相反，如果归纳偏差较弱，算法就会更倾向于使用更通用的假设和更多的参数，以尝试解释和预测更广泛的数据。</p>
+<p>因此，弱归纳偏差的算法通常更加灵活，能够更好地适应不同类型的数据，但在学习新的数据时可能需要更多的训练示例。这是因为算法没有太多的先验知识可以利用，需要通过大量的训练示例来适应新的数据。相反，强归纳偏差的算法通常更加专业化，只适用于特定类型的数据，但可能会更加高效，因为它们可以从较少的训练示例中学习并达到较高的准确度。</p>
+<p>因此，“weak inductive bias”可以理解为算法在学习数据时使用的先验假设比较少，对不同类型的数据具有更强的适应性和灵活性，但可能需要更多的训练数据来学习。</p>
+<blockquote>
+<p><strong>wiki：</strong></p>
+<p><strong>归纳偏置</strong>（英语：Inductive bias），指的是学习<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%BC%94%E7%AE%97%E6%B3%95">算法</a>中，当学习器去预测其未遇到过的输入结果时，所做的一些假设的集合（Mitchell, 1980）。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a>试图去建造一个可以学习的算法，用来预测某个目标的结果。要达到此目的，要给于学习算法一些训练样本，样本说明输入与输出之间的预期关系。然后假设学习器在预测中逼近正确的结果，其中包括在训练中未出现的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%B7%E6%9C%AC">样本</a>。既然未知状况可以是任意的结果，若没有其它额外的假设，这任务就无法解决。这种关于目标函数的必要假设就称为<em>归纳偏置</em>（Mitchell, 1980; desJardins and Gordon, 1995）。</p>
+<p>一个典型的归纳偏置例子是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A7%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80">奥卡姆剃刀</a>，它假设最简单而又一致的假设是最佳的。这里的一致是指学习器的假设会对所有样本产生正确的结果。</p>
+<p>归纳偏置比较正式的定义是基于数学上的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF">逻辑</a>。这里，归纳偏置是一个与训练样本一起的逻辑式子，其逻辑上会蕴涵学习器所产生的假设。然而在实际应用中，这种严谨形式常常无法适用。在有些情况下，学习器的归纳偏置可能只是一个很粗糙的描述（如在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">人工神经网络</a>中），甚至更加简单。</p>
+<p>之所以对这个概念难以理解, 是因为这个名词太没有烟火气, 其实他就是说的是<strong>模型的指导规则</strong>, 可以同时应用于训练和预测的时候的东西, 是一种超参数(因为是模型的一部分).上面举的例子是线性回归, 还有一种是决策树, 决策树的假设就是,</p>
+<ul>
+<li><ul>
+<li>优先选择较短的树而不是较长的。</li>
+<li>选择那些信息增益高的属性里根节点较近的树。这里利用了两个假设. 相比之下, 神经网络的假设是相当弱的, 举个例子:分类神经网络模型 : 将输入通过非线性函数进行映射的结果,正确的类别具有较高的softmax值.</li>
+</ul>
+</li>
+<li><p>归纳偏置的种类</p>
+</li>
+</ul>
+<p>以下是机器学习中常见的归纳偏置列表：</p>
+<ul>
+<li>**最大<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E7%8B%AC%E7%AB%8B">条件独立性</a>**（conditional independence）：如果假说能转成<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%A6%82%E7%8E%87">贝叶斯模型</a>架构，则试着使用最大化条件独立性。这是用于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8">朴素贝叶斯分类器</a>（Naive Bayes classifier）的偏置。</li>
+<li><strong>最小<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%A4%E5%8F%89%E9%A9%97%E8%AD%89">交叉验证</a>误差</strong>：当试图在假说中做选择时，挑选那个具有最低交叉验证误差的假说，虽然交叉验证看起来可能无关偏置，但<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%A4%A9%E4%B8%8B%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E7%9A%84%E5%8D%88%E9%A4%90&amp;action=edit&amp;redlink=1">天下没有免费的午餐</a>理论显示交叉验证已是偏置的。</li>
+<li><strong>最大边界</strong>：当要在两个类别间画一道分界线时，试图去最大化边界的宽度。这是用于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA">支持向量机</a>的偏置。这个假设是不同的类别是由宽界线来区分。</li>
+<li>**<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E6%8F%8F%E8%BF%B0%E9%95%B7%E5%BA%A6">最小描述长度</a>**（Minimum description length）：当构成一个假设时，试图去最小化其假设的描述长度。假设越简单，越可能为真的。见<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A7%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80">奥卡姆剃刀</a>。</li>
+<li><strong>最少特征数</strong>（Minimum features）：除非有充分的证据显示一个特征是有效用的，否则它应当被删除。这是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9">特征选择</a>（feature selection）算法背后所使用的假设。</li>
+<li><strong>最近邻居</strong>：假设在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%89%B9%E5%BE%81%E7%A9%BA%E9%97%B4">特征空间</a>（feature space）中一小区域内大部分的样本是同属一类。给一个未知类别的样本，猜测它与它最紧接的大部分邻居是同属一类。这是用于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%80%E8%BF%91%E9%84%B0%E5%B1%85%E6%B3%95">最近邻居法</a>的偏置。这个假设是相近的样本应倾向同属于一类别。</li>
+</ul>
+</blockquote>
+</li>
+<li><p><strong>奥卡姆剃刀</strong>（英语：Ockham’s Razor、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8B%89%E4%B8%81%E8%AA%9E">拉丁语</a>：Lex Parsimoniae，意为“简约法则”）是由14世纪<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%B9%E6%B5%8E%E4%BC%9A">方济会</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BF%AE%E5%A3%AB">修士</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E7%9A%84%E5%A8%81%E5%BB%89">奥卡姆的威廉</a>（William of Occam，约1287年至1347年，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%8B%B1%E6%A0%BC%E5%85%B0">英格兰</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%90%A8%E9%87%8C%E9%83%A1">萨里郡</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A7%E5%9D%8E_(%E8%96%A9%E9%87%8C%E9%83%A1)">奥卡姆</a> (Ockham)人氏）提出的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%AD%B8">逻辑学</a>法则。如果关于同一个问题有许多种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%90%86%E8%AE%BA">理论</a>，每一种都能作出同样准确的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%A2%84%E8%A8%80">预言</a>，那么应该挑选其中使用假定最少的。尽管越复杂的方法通常能做出越好的预言，但是在不考虑预言能力（即结果大致相同）的情况下，假设越少越好。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%89%80%E7%BD%97%E9%97%A8%E8%AF%BA%E5%A4%AB%E7%9A%84%E5%BD%92%E7%BA%B3%E6%8E%A8%E7%90%86%E7%90%86%E8%AE%BA">所罗门诺夫的归纳推理理论</a>是奥卡姆剃刀的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a>化：[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80#cite_note-ReferenceA-1">1]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80#cite_note-Foundationsof-2">2]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80#cite_note-ReferenceB-3">3]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80#cite_note-dsi.uclm.es-4">4]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80#cite_note-5">5]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80#cite_note-6">6]</a>在所有能够完美描述已有观测的可<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA">计算理论</a>中，较短的可计算理论在估计下一次观测结果的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A6%82%E7%8E%87">概率</a>时具有较大<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9D%83%E9%87%8D">权重</a>。</p>
+</li>
+<li><p>假设空间</p>
+<p>假设空间（Hypothesis space）是指学习算法可以选择的所有假设的集合。假设空间可以是任何形式的，它取决于算法和问题的性质。通常情况下，假设空间包括一个或多个参数，并且每个假设对应于一组参数的值。</p>
+<p>假设空间可以是可行解的集合，但这并不一定是必须的。例如，在一些问题中，假设空间是所有可能的决策树，而决策树并不一定是可行解的集合。另一个例子是神经网络，它的假设空间通常是由许多层次和节点组成的复杂函数空间，其中每个假设都对应于网络中的一组参数。</p>
+<p>因此，假设空间并不一定是可行解的集合，它可以是任何形式的，只要它包含算法可以选择的所有假设即可。</p>
+<p>假设的意思：</p>
+<p>在我的回答中，我解释了假设空间是指学习算法可以选择的所有假设的集合，它可以是任何形式的，取决于算法和问题的性质。我还提到了一些例子来说明假设空间的不同形式。</p>
+<p>我的回答中提到的”假设”指的是在学习算法中，模型对输入数据的输出的预测，也就是假设或者猜测的结果。在机器学习中，我们使用许多不同的模型或算法来拟合训练数据，这些模型或算法可以生成许多不同的假设，从而形成假设空间。</p>
+<p>因此，我的回答中的“假设”指的是学习算法中的假设或预测结果，而不是指某个具体的问题或数据集中的假设或解。</p>
+<p>可以理解为模型输出的解：</p>
+<p>的，你理解得很对。在机器学习中，假设通常是指模型对输入数据的输出的预测或猜测，也可以称之为模型的预测或输出。在训练过程中，学习算法将许多假设或模型应用于训练数据，并尝试找到最适合数据的模型或假设。在测试或使用模型进行预测时，模型将使用其假设或模型输出对输入数据进行预测或解释。因此，假设可以被视为模型输出的解释或解。</p>
+</li>
+<li><p>什么是表征？什么是内部表征？</p>
+<p>在计算机科学中，表征（Representation）指的是一种将信息映射到某种形式的方式，以便于计算机程序进行处理和分析。在人工智能和机器学习中，表征通常用于描述数据的特征，以便于进行分类、聚类、预测等任务。</p>
+<p>内部表征（Internal Representation）是指在计算机或人工智能系统中，数据被转换成为某种内部表示形式，以便于程序进行处理和分析。这种转换通常发生在输入数据被送入到神经网络等机器学习模型中时。内部表征可以是数字、向量或矩阵等形式，通常被认为是一种高度优化的、计算机友好的形式，以便于进行各种算法和运算。内部表征的选择对机器学习的性能和效率都具有重要的影响。</p>
+</li>
+<li><p>Episodic Deep RL目前还流行吗</p>
+<p>Episodic Deep RL（Episodic Deep Reinforcement Learning）是一种深度强化学习算法，旨在解决连续任务的学习问题。它在过去几年中一直是深度强化学习领域的研究热点之一。但是，目前是否仍然流行取决于不同的应用场景和问题。</p>
+<p>在某些特定的连续控制任务中，Episodic Deep RL仍然是一个有效的解决方案，因为它能够学习从过去的经验中汲取有用的信息，并利用这些信息优化策略。此外，一些最新的研究表明，在某些复杂的任务中，Episodic Deep RL仍然是一个有前途的方向，有望解决现有深度强化学习算法存在的一些问题，比如学习效率和泛化性能等。</p>
+<p>总之，Episodic Deep RL目前仍然是深度强化学习领域的研究热点之一，但其是否适用于特定的应用场景和问题需要具体分析。</p>
+</li>
+<li><p>Episodic Deep RL在哪些算法中有应用？</p>
+<p>Episodic Deep RL已经在许多深度强化学习算法中得到了应用，包括：</p>
+<ol>
+<li>Hindsight Experience Replay (HER)：HER是一种通过将当前状态重置为目标状态并使用当前策略从新状态开始进行训练的技术，以解决稀疏奖励问题。Episodic Deep RL被用于HER算法的设计中，使其能够更好地处理这种类型的问题。</li>
+<li>Soft Actor-Critic (SAC)：SAC是一种用于连续动作控制的深度强化学习算法。Episodic Deep RL被用于SAC算法的设计中，使其能够从过去的经验中汲取有用的信息，并利用这些信息优化策略。</li>
+<li>Trust Region Policy Optimization (TRPO)：TRPO是一种基于策略梯度的深度强化学习算法，它使用了一个局部的目标优化器来改进策略的学习。Episodic Deep RL被用于TRPO算法的设计中，以解决连续任务的学习问题。</li>
+<li>Deep Deterministic Policy Gradient (DDPG)：DDPG是一种用于连续动作控制的深度强化学习算法。Episodic Deep RL被用于DDPG算法的设计中，以帮助解决这种类型的问题。</li>
+</ol>
+<p>总之，Episodic Deep RL已经在许多深度强化学习算法中得到了广泛的应用，并在解决连续任务学习问题方面取得了一定的进展。</p>
 </li>
 <li></li>
 </ol>
