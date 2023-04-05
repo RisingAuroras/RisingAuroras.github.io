@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    263
+                    444
                 </div>
                 
 
@@ -469,13 +469,25 @@ taskkill /f /t /im “进程id或者进程名称”<span aria-hidden="true" clas
 <span class="token function">lsof</span> -i:8888
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>#查看gpu、显卡常⽤命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#1.查看显卡基本信息</span>
+<h3 id="查看gpu、显卡常⽤命令"><a href="#查看gpu、显卡常⽤命令" class="headerlink" title="查看gpu、显卡常⽤命令"></a>查看gpu、显卡常⽤命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#1.查看显卡基本信息</span>
 lspci <span class="token operator">|</span> <span class="token function">grep</span> -i nvidia
 <span class="token comment">#2.查看显卡驱动版本</span>
 nvidia-smi -a
 <span class="token comment">#3.查看gpu使⽤情况</span>
 nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="压缩-x2F-解压缩"><a href="#压缩-x2F-解压缩" class="headerlink" title="压缩/解压缩"></a>压缩/解压缩</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#1. 把文件解压到当前目录下编</span>
+<span class="token function">unzip</span> xxxxx.zip
+<span class="token comment">#2. 若是要把文件解压到指定的目录下，须要用到-d参数(-d指定目标路径,file.zip是须要解压的，destination_folder是指定的目录下)。</span>
+<span class="token function">unzip</span> classify-leaves.zip -d  ./classify-leaves
+<span class="token comment">#3. 只看一下zip压缩包中包含哪些文件，不进行解压缩</span>
+<span class="token function">unzip</span> -l test.zip
+<span class="token comment">#4.查看显示的文件列表还包含压缩比率</span>
+<span class="token function">unzip</span> -v test.zip
+<span class="token comment">#5.检查zip文件是否损坏</span>
+<span class="token function">unzip</span> -t test.zip
+<span class="token comment">#6.将压缩文件test.zip在指定目录tmp下解压缩，若是已有相同的文件存在，要求unzip命令覆盖原先的文件</span>
+<span class="token function">unzip</span> -o test.zip -d /tmp/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

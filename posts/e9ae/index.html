@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14.7k
+                    14.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    56 分
+                    57 分
                 </div>
                 
 
@@ -574,7 +574,25 @@
 <p>Network Model and BSs Deployment</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202302131232312.png" alt="image-20230213123238260"></p>
 <p>Channel Model</p>
-<h3 id="Reinforcement-Learning-Fast-and-Slow-Review"><a href="#Reinforcement-Learning-Fast-and-Slow-Review" class="headerlink" title="Reinforcement Learning, Fast and Slow[Review ]"></a>Reinforcement Learning, Fast and Slow[Review ]</h3><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
+<h3 id="Reinforcement-Learning-Fast-and-Slow-Review"><a href="#Reinforcement-Learning-Fast-and-Slow-Review" class="headerlink" title="Reinforcement Learning, Fast and Slow[Review ]"></a>Reinforcement Learning, Fast and Slow[Review ]</h3><p>分析了RL采样效率低的两个原因：</p>
+<ul>
+<li><p>incremental parameter adjustment </p>
+<p>一般学习率低下，是采样效率低的第一个原因，如果单存的增大梯度很容易造成对学习策略的过程造成灾难性的干扰</p>
+</li>
+<li><p>weak inductive biasexplain</p>
+<p>神经网络具有弱归纳偏置，导致假设空间很大，这是RL采样效率低下的另一个原因。</p>
+</li>
+</ul>
+<p>对应上述问题，本文给出两个解决方案</p>
+<ul>
+<li>Episodic Deep RL: Fast Learning through Episodic Memory</li>
+<li>Meta-RL: Speeding up Deep RL by Learning to Learn</li>
+</ul>
+<p>最后</p>
+<p>这两个方法的结合——Episodic Meta-RL。</p>
+<p>总结：</p>
+<p>学习一开始的冷启动总是很慢的，两个方案相同点都是利用过去经验，然后由慢而快，也就是说快速学习需要建立在缓慢学习的基础上。</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
 <li><p>what is Pessimistic method in RL?</p>
 <p>In reinforcement learning, the pessimistic method is an algorithm that learns the worst-case value of each state or action, rather than the expected value. This approach can be useful in situations where the consequences of making a mistake can be very severe, and it is important to be conservative in decision-making.</p>
 <p>One way to implement the pessimistic method is to use a modified version of the Bellman equation, which is used to compute the value of each state or action in a Markov decision process. In the pessimistic version of the equation, the minimum value of the next state or action is used, rather than the expected value. This leads the algorithm to prefer actions that minimize the worst-case outcome, rather than actions that maximize the expected reward.</p>

@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    18.9k
+                    19.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    80 分
+                    81 分
                 </div>
                 
 
@@ -621,8 +621,24 @@ filtered_names <span class="token operator">=</span> <span class="token builtin"
 <span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token builtin">max</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token comment"># 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="staticmethod"><a href="#staticmethod" class="headerlink" title="@staticmethod"></a>@staticmethod</h3><p>@staticmethod是一个Python中的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%A3%85%E9%A5%B0%E5%99%A8&amp;spm=1001.2101.3001.7020">装饰器</a>（decorator），用于标记一个静态方法。</p>
+<p>静态方法是一种在类中定义的方法，它与实例无关，因此可以在不创建类实例的情况下调用。与普通方法不同，静态方法没有self参数，因此它不能访问实例属性和方法。</p>
+<p>在Python中，使用@staticmethod装饰器可以将一个方法转换为静态方法，即使该方法定义在类中。使用静态方法的主要优点是可以在不创建类实例的情况下调用该方法，从而提高代码的灵活性和可重用性。</p>
+<p>下面是一个使用@staticmethod装饰器定义静态方法的示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">my_static_method</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> x <span class="token operator">+</span> y
 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>在上述示例中，my_static_method方法被@staticmethod装饰器标记为静态方法。因此，可以通过以下方式直接调用该方法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">result <span class="token operator">=</span> MyClass<span class="token punctuation">.</span>my_static_method<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token number">12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>在调用静态方法时，不需要创建类实例，直接使用类名即可。静态方法可以通过类或类实例来调用，但不可以通过实例访问静态方法。</p>
+<p>staticmethod相当于定义了一个局部域函数为该类专门服务</p>
 <h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><p>简单用法——隐式函数：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">var <span class="token operator">=</span> <span class="token keyword">lambda</span> a<span class="token punctuation">,</span>b <span class="token punctuation">:</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">*</span> b
 var<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>

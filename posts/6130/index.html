@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Google开源项目风格指南, 马克图布">
+    <meta name="keywords" content="机器学习白板推导系列, 马克图布">
     <meta name="description" content="记录我的遗忘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Google开源项目风格指南 | 马克图布</title>
+    <title>机器学习白板推导系列 | 马克图布</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/favicon.jfif">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/25.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Google开源项目风格指南</h1>
+                    <h1 class="description center-align post-title">机器学习白板推导系列</h1>
                 </div>
             </div>
         </div>
@@ -368,13 +368,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                <span class="chip bg-color">代码规范</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -382,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
-                                实用
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -395,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-28
+                    2023-04-04
                 </div>
                 
 
@@ -404,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7
+                    563
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -434,7 +430,62 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="python-风格指南"><a href="#python-风格指南" class="headerlink" title="python 风格指南"></a>python 风格指南</h2><h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3>
+                <blockquote>
+<p>课程地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aE411o7qd?p=60&amp;vd_source=2ffed29a08d7c0e5407d996c2c4915a8">跳转</a></p>
+</blockquote>
+<h2 id="系列十——EM算法"><a href="#系列十——EM算法" class="headerlink" title="系列十——EM算法"></a>系列十——EM算法</h2><p>给出EM公式，解释E步，M步以及收敛性证明</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304041722480.png" alt="image-20230404172216272"></p>
+<p>EM算法的推导（公式是怎么来的）</p>
+<p>ELBO + KL divergence(kL &gt;= 0)</p>
+<p>先固定$\theta$，然后求期望（E），再滑动$\theta$ 使得期望值最大（M）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304041921324.png" alt="image-20230404192109101"></p>
+<p>ELBO + Jensen’s  Inequality</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304041958651.png" alt="image-20230404195833452"></p>
+<p>以上两种证明方法得出的结果一样。</p>
+<p>EM是一种算法</p>
+<p>从狭义EM到广义EM</p>
+<p>概率生成模型</p>
+<p>EM算法用于解决具有隐变量的混合模型的极大似然估计问题</p>
+<p>不知道P(x)的分布，无法直接求解，所以我们引入归纳偏置，即假定服从某个参数模型</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042018072.png" alt="image-20230404201852919"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042022334.png" alt="image-20230404202256182"></p>
+<p>$\log(x|\theta)=ELBO+KL(q||p)$</p>
+<ol>
+<li>固定$\theta$，$x$为观测值，即$log(x|\theta)$固定，这时，$q$越接近与$p$，那么$ELBO$越大，即$\hat{q}=argmin(KL(q||p))=argmax(ELBO)$ 【E-step】</li>
+<li>固定$\hat{q}, \ \ \ \theta=argmax_{\theta}ELPO$【M-step】</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042121098.png" alt="image-20230404212116929"></p>
+<p>以上过程称为广义EM，E步和M步交替进行。即</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042126348.png" alt="image-20230404212610146"></p>
+<p>引出广义EM，原始的EM公式是广义EM的一种特殊情况</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042139237.png" alt="image-20230404213946970"></p>
+<p>EM算法给出一个求解的框架，理想状况下，后验可以一步到位求出，实际中可能会有问题。这时我们可以用变分推断或者蒙特卡洛采样的方法。这就产生了两个变种</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042150458.png" alt="image-20230404215036272"></p>
+<p>VI （variational inference）= VB（variational bayes）</p>
+<p>VBEM（VEM）——EM变种</p>
+<p>MCEM——EM变种</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304042159741.png" alt="image-20230404215932550"></p>
+<h2 id="系列十一——高斯混合模型"><a href="#系列十一——高斯混合模型" class="headerlink" title="系列十一——高斯混合模型"></a>系列十一——高斯混合模型</h2><p>混合模型一般都是生成模型</p>
+<p>GMM的两种视角</p>
+<p>从几何角度来说，就是高斯分布的加权平均，从生成模型角度来说，引入隐变量$z$来表示所属于哪个高斯分布。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051015783.png" alt="image-20230405101456579"></p>
+<p>硬分类和软分类</p>
+<p>在分类中，为数据分配为唯一的类别，这样称之为硬分类（Crisp Classification）（像是0,1分类）；而对应的称之为软分类（Soft Classification），每个数据都可能被分配多个可能的类别（依据概率值）。</p>
+<p>用MLE无法求的解析解，log里面是连加，无法分离，对于高维变量，求偏导令其为0无法求得。可以用数值迭代的方法</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051052319.png" alt="image-20230405105210115"></p>
+<p>E-step</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051151416.png" alt="image-20230405115106206"></p>
+<p>M-step</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051352745.png" alt="image-20230405135218531"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051417592.png" alt="image-20230405141737373"></p>
+<h2 id="系列十二——变分推断"><a href="#系列十二——变分推断" class="headerlink" title="系列十二——变分推断"></a>系列十二——变分推断</h2><p>背景目的</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051445710.png" alt="image-20230405144553523"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051448310.png" alt="image-20230405144819922"></p>
+<p>公式推导</p>
+<p>基于平均场理论</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051524270.png" alt="image-20230405152432106"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051542195.png" alt="image-20230405154221016"></p>
+
                 
             </div>
             <hr/>
@@ -460,7 +511,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://risingauroras.github.io/posts/798c/">https://risingauroras.github.io/posts/798c/</a>
+                    <a href="https://risingauroras.github.io/posts/6130/">https://risingauroras.github.io/posts/6130/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -497,11 +548,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                    <span class="chip bg-color">代码规范</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -860,9 +907,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/6130/">
                     <div class="card-image">
@@ -880,9 +928,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -895,6 +943,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -905,13 +954,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/89f4/">
+                <a href="/posts/798c/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="选择算法">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="Google开源项目风格指南">
                         
-                        <span class="card-title">选择算法</span>
+                        <span class="card-title">Google开源项目风格指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -922,14 +971,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
+                                    实用
                                 </a>
                             
                             
@@ -939,8 +988,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">选择算法</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                        <span class="chip bg-color">代码规范</span>
                     </a>
                     
                 </div>

@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -434,7 +434,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数理统计篇"><a href="#数理统计篇" class="headerlink" title="数理统计篇"></a>数理统计篇</h2><h3 id="贝叶斯理论——Q-amp-A"><a href="#贝叶斯理论——Q-amp-A" class="headerlink" title="贝叶斯理论——Q&amp;A"></a>贝叶斯理论——Q&amp;A</h3><ol>
+                <h2 id="数理统计篇"><a href="#数理统计篇" class="headerlink" title="数理统计篇"></a>数理统计篇</h2><h3 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h3><h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><ul>
+<li><p>$x|\theta$ 和 $x,y|\theta$有什么关系</p>
+<p>$x|\theta $表示在给定参数 $\theta$ 的情况下，随机变量 x 的概率分布。这意味着 x 的取值取决于参数 $\theta$。</p>
+<p>$x,y|\theta$ 表示在给定参数 $\theta$ 的情况下，随机变量 x 和 y 的联合概率分布。这意味着 x 和 y 的取值都取决于参数 $\theta$。</p>
+<p>因此，$x,y|\theta$ 中的信息比 $x|\theta$ 中的信息更丰富，因为前者提供了 x 和 y 的联合概率分布，而后者只提供了 x 的概率分布。</p>
+<p>可以使用条件概率公式将 $x,y|\theta$ 转换为$ x|\theta $或者将$ x|\theta$ 转换为 $x,y|\theta$。</p>
+<p>具体而言，根据条件概率公式，有：</p>
+<p>$x,y|\theta = p(x,y|\theta) = p(x|\theta) * p(y|x,\theta)$</p>
+<p>将上式中的 $p(y|x,\theta)$ 称为给定 x 和 $\theta$ 的条件下 y 的概率分布，它表示在已知 x 和 $\theta$ 的情况下，y 的可能取值的概率分布。如果已知这个条件下 y 的概率分布，就可以通过将它乘以$ x|\theta $来计算$ x,y|\theta$。</p>
+<p>具体而言，有：</p>
+<p>$p(x,y|\theta) = p(x|\theta) * p(y|x,\theta)$</p>
+<p>$p(x|\theta) = p(x,y|\theta) / p(y|x,\theta)$</p>
+<p>同样地，如果已知 $x,y|\theta$，可以通过条件概率公式将其转换为$ x|\theta$。具体而言，有：</p>
+<p>$x|\theta = p(x|\theta) = ∫ p(x,y|\theta) dy$</p>
+<p>其中，积分是在所有可能的 y 的取值上进行的，以保证 x 的概率分布的总和为1。</p>
+</li>
+<li></li>
+</ul>
+<h3 id="贝叶斯理论——Q-amp-A"><a href="#贝叶斯理论——Q-amp-A" class="headerlink" title="贝叶斯理论——Q&amp;A"></a>贝叶斯理论——Q&amp;A</h3><ol>
 <li><p>贝叶斯理论也是统计决策的思想吗</p>
 <p>是的，贝叶斯理论是统计决策的一种思想。它是一种用于概率推断和统计推断的方法，可以通过先验概率和观察数据来推断出后验概率，从而帮助我们做出更好的决策。</p>
 <p>在贝叶斯理论中，我们首先提出一个先验概率，这是我们对某个事件发生的预估概率，然后根据新的数据来更新这个概率，得到一个更准确的后验概率。在这个过程中，我们使用贝叶斯公式来计算后验概率。贝叶斯公式将先验概率和新的数据结合起来，计算出新的后验概率。</p>
