@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14.9k
+                    16k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    57 分
+                    63 分
                 </div>
                 
 
@@ -810,6 +810,50 @@
 <li>Deep Deterministic Policy Gradient (DDPG)：DDPG是一种用于连续动作控制的深度强化学习算法。Episodic Deep RL被用于DDPG算法的设计中，以帮助解决这种类型的问题。</li>
 </ol>
 <p>总之，Episodic Deep RL已经在许多深度强化学习算法中得到了广泛的应用，并在解决连续任务学习问题方面取得了一定的进展。</p>
+</li>
+<li><p>什么是TV-divergence?和KL divergence的区别和联系?</p>
+<p>TV（Total Variation）散度是一个用于衡量两个概率分布之间差异的度量，常用于图像处理、计算机视觉、机器学习等领域。</p>
+<p>给定两个概率密度函数P和Q，TV散度定义为它们在每个点上差的绝对值的积分的总和。数学上，TV散度可以表示为：</p>
+<p>$TV(P,Q) = 1/2 * ∫|P(x) - Q(x)| dx$</p>
+<p>其中，$|P(x) - Q(x)|$表示在点x处P和Q之间的差异，积分是对所有可能的点x求和。TV散度衡量的是概率分布P和Q之间的距离，它的值越大，表示它们之间的差异越大，反之则表示它们越相似。</p>
+<p>KL（Kullback-Leibler）散度和TV（Total Variation）散度都是用于衡量两个概率分布之间的差异的度量，但它们有不同的性质和用途。</p>
+<p>KL散度也被称为相对熵，它是用于衡量两个概率分布之间的差异的一种度量方式。KL散度的值越小，表示两个概率分布越相似，越大则表示它们之间的差异越大。KL散度的数学表达式如下：</p>
+<p>$KL(P||Q) = ∫P(x)log(P(x)/Q(x))dx$</p>
+<p>其中，P和Q分别是两个概率分布，log是自然对数。KL散度的值可以是无限大，且不对称，即$KL(P||Q) ≠ KL(Q||P)$。KL散度通常用于衡量模型预测结果和真实结果之间的差异，以及在信息检索、分类、聚类等领域中的应用。</p>
+<p>相比之下，TV散度是一种更直观的距离度量，它的值永远不会是无限大，且是对称的。在图像处理、计算机视觉等领域中，TV散度通常用于图像去噪、图像分割等问题中。</p>
+<p>虽然KL散度和TV散度是两种不同的度量方式，但它们之间有一定的联系。事实上，当两个概率分布的TV散度很小时，它们之间的KL散度也会比较小，但反过来并不成立。因此，在某些应用中，可以同时使用KL散度和TV散度来综合考虑两个概率分布之间的差异。</p>
+</li>
+<li><p>what is dual gradient descent in safey reinforcement learning？</p>
+<p>Dual gradient descent is a technique used in safe reinforcement learning to optimize a policy while ensuring that certain safety constraints are satisfied.</p>
+<p>In traditional reinforcement learning, the goal is to maximize a reward function by updating the policy parameters in the direction of the gradient of the expected reward. However, in safe reinforcement learning, there may be constraints that need to be satisfied in addition to maximizing the reward.</p>
+<p>The dual gradient descent algorithm works by simultaneously optimizing the policy parameters and a set of Lagrange multipliers associated with the safety constraints. The Lagrange multipliers are used to enforce the constraints and are updated in the direction of the gradient of a cost function that penalizes violations of the constraints.</p>
+<p>The policy parameters are updated in the direction of the gradient of the expected reward, but with an additional term that is proportional to the Lagrange multipliers and the gradient of the constraint functions. This term ensures that the policy parameters are updated in a way that satisfies the constraints.</p>
+<p>By using dual gradient descent, the policy can be optimized to maximize the reward while satisfying the safety constraints, which is important in applications where safety is a critical concern.</p>
+<p>Here is the formulation of the dual gradient descent algorithm in safe reinforcement learning:</p>
+<p>Suppose we have a policy parameterized by $\theta$, and we want to maximize the expected reward $J(\theta)$ subject to some safety constraints $g_i(\theta) \leq 0$ for $i=1,\ldots,m$. We introduce Lagrange multipliers $\lambda_i \geq 0$ for each constraint and define the Lagrangian:</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112301285.png" alt="image-20230411230118243"></p>
+<p>The dual gradient descent algorithm updates the policy parameters and Lagrange multipliers iteratively as follows:</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112301795.png" alt="image-20230411230141761"></p>
+<p>where $\alpha_\theta$ and $\alpha_\lambda$ are step sizes. The update for $\theta$ is the standard policy gradient update, but with an additional term that takes into account the Lagrange multipliers and the gradients of the constraint functions. The update for $\lambda$ is a projection update that ensures that the Lagrange multipliers remain non-negative.</p>
+<p>By updating both the policy parameters and the Lagrange multipliers simultaneously, dual gradient descent can find a policy that maximizes the expected reward while satisfying the safety constraints.</p>
+<p>let me provide some more details about each step of the dual gradient descent algorithm:</p>
+<ol>
+<li><p>Initialize policy parameters and Lagrange multipliers: We start by initializing the policy parameters $\theta$ and Lagrange multipliers $\lambda$ to some initial values.</p>
+</li>
+<li><p>Evaluate policy: We use the current policy to interact with the environment and collect a set of trajectories. From these trajectories, we compute the expected reward $J(\theta)$ and the constraint violations $g_i(\theta)$.</p>
+</li>
+<li><p>Update Lagrange multipliers: We update the Lagrange multipliers using a projection update:</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112303717.png" alt="image-20230411230356679"></p>
+<p>This update ensures that the Lagrange multipliers remain non-negative.</p>
+</li>
+<li><p>Update policy parameters: We update the policy parameters using the policy gradient method, but with an additional term that takes into account the Lagrange multipliers and the gradients of the constraint functions:</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112304161.png" alt="image-20230411230451123"></p>
+<p>This update ensures that the policy parameters are updated in a way that satisfies the safety constraints.</p>
+</li>
+<li><p>Repeat: We repeat steps 2-4 until some stopping criterion is met, such as a maximum number of iterations or convergence of the policy.</p>
+</li>
+</ol>
+<p>By using dual gradient descent, we can optimize the policy to maximize the expected reward while satisfying the safety constraints, which is important in applications where safety is a critical concern.</p>
 </li>
 <li></li>
 </ol>

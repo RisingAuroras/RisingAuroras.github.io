@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    563
+                    748
                 </div>
                 
 
@@ -485,6 +485,17 @@
 <p>基于平均场理论</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051524270.png" alt="image-20230405152432106"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304051542195.png" alt="image-20230405154221016"></p>
+<p>统一符号规范，平均场理论的强假设存在很大的问题（不能保证划分的z之间相互独立），不适合于大部分模型（比如说神经网络此方法就失效了）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304062138242.png" alt="image-20230406213807936"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304062143067.png" alt="image-20230406214333932"></p>
+<p>SGVI</p>
+<p>写出梯度，并把它等价的变换成期望的形式,这样就可以通过蒙特卡洛采样的方法估计出梯度，然后进行梯度上升。</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304062215529.png" alt="image-20230406221545237"></p>
+<p>因为log函数的特殊性（接近0时趋于无穷），会造成蒙特卡洛采样采样的数据方差非常大,因此需要非常多的样本才行（实际中可能不可行）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304070906401.png" alt="image-20230407090642158"></p>
+<p>为了解决high variance的问题，引入重参数化技巧（没看懂。。o(╥﹏╥)o）</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304070934946.png" alt="image-20230407093424693"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304070935131.png" alt="image-20230407093538893"></p>
 
                 
             </div>
@@ -907,18 +918,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/6130/">
+                <a href="/posts/1452/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/25.jpg" class="responsive-img" alt="机器学习白板推导系列">
+                        <img src="https://cdn.jsdelivr.net/gh/RisingAuroras/RisingAuroras.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="linux服务器开启可视化————vcXsrv+xfce4">
                         
-                        <span class="card-title">机器学习白板推导系列</span>
+                        <span class="card-title">linux服务器开启可视化————vcXsrv+xfce4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -928,22 +938,21 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/" class="post-category">
+                                    实用
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    19.2k
+                    20.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    81 分
+                    88 分
                 </div>
                 
 
@@ -1778,8 +1778,7 @@ pdf:
 <p>在概率论中，概率密度函数（Probability Density Function，简称 PDF）是指某个随机变量落在某个区间内的概率在该区间长度趋于零时的极限，即密度函数在该点处的函数值。因此，概率密度函数的值并不代表概率，而是代表了某个区间内的概率密度大小。</p>
 <p>对于连续型随机变量，我们无法像离散型随机变量那样直接计算概率，而是需要通过概率密度函数进行计算。具体来说，某个区间内的概率可以通过该区间内概率密度函数的积分来计算。</p>
 <p>在本例中，<code>mvn.prob(samples)</code> 返回的是样本在多元正态分布模型下的概率密度函数值，它的大小反映了该样本在该分布下的密度大小，而不是该样本出现的概率。因此，在实际使用中需要注意区分概率和概率密度函数的概念。</p>
-<h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><p><strong>sklearn流水线（Pipeline）</strong></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/536194668">参考</a></p>
+<h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><h3 id="sklearn流水线（Pipeline）"><a href="#sklearn流水线（Pipeline）" class="headerlink" title="sklearn流水线（Pipeline）"></a><strong>sklearn流水线（Pipeline）</strong></h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/536194668">参考</a></p>
 <p>在机器学习或数据科学的实践中，经常需要对原始数据进行一系列的变换，或依次使用若干算法，从而构成一个算法链（algorithm chains）。比如，先对原始数据进行标准化（standardization）的预处理，然后再估计支持向量机的模型。为此，Sci-Kit Learn模块提供了方便的流水线类（Pipeline class），使得创建“算法链”的过程更简单。而且，Pipeline类可与GridSearchCV类相结合，针对整个算法进行超参数的网格搜索。</p>
 <p>流水线流程</p>
 <p>简易流水线流程</p>
@@ -1826,8 +1825,7 @@ pipe_short<span class="token punctuation">.</span>steps<span aria-hidden="true" 
 
 
 
-<p><strong>sklearn中RBFSampler的用法</strong></p>
-<p><code>RBFSampler</code> 是 <code>sklearn</code> 中的一个随机特征映射器，可以将原始特征空间映射到高维空间中。其主要用途是通过随机投影将非线性分类问题转换为线性分类问题，从而提高模型的效率和精度。</p>
+<h3 id="sklearn中RBFSampler的用法"><a href="#sklearn中RBFSampler的用法" class="headerlink" title="sklearn中RBFSampler的用法"></a><strong>sklearn中RBFSampler的用法</strong></h3><p><code>RBFSampler</code> 是 <code>sklearn</code> 中的一个随机特征映射器，可以将原始特征空间映射到高维空间中。其主要用途是通过随机投影将非线性分类问题转换为线性分类问题，从而提高模型的效率和精度。</p>
 <p><code>RBFSampler</code> 的主要参数如下：</p>
 <ul>
 <li><code>gamma</code>：RBF核的带宽参数。默认为 1.0。</li>
@@ -1855,6 +1853,55 @@ clf<span class="token punctuation">.</span>fit<span class="token punctuation">(<
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在上述示例中，我们首先生成了一个二分类问题的样本数据。然后，我们定义了一个 <code>RBFSampler</code> 对象，将原始特征空间映射到高维空间中。接着，我们将 <code>RBFSampler</code> 对象、标准化器和线性分类器组成了一个流水线，并使用训练数据对其进行训练。</p>
+<h3 id="model-selection"><a href="#model-selection" class="headerlink" title="model_selection"></a>model_selection</h3><p>在 sklearn 中，<code>model_selection</code> 模块包含了一些用于模型选择和性能评估的工具。其中包括以下功能：</p>
+<ul>
+<li><code>train_test_split</code>：将数据集划分为训练集和测试集；</li>
+<li><code>KFold</code>：K 折交叉验证；</li>
+<li><code>GridSearchCV</code>：基于网格搜索的参数调优方法；</li>
+<li><code>RandomizedSearchCV</code>：基于随机搜索的参数调优方法；</li>
+<li><code>cross_val_score</code>：基于交叉验证的模型评估方法。</li>
+</ul>
+<p>下面简要介绍一下这些功能：</p>
+<ul>
+<li><code>train_test_split</code>：将数据集划分为训练集和测试集，用于模型训练和性能评估；</li>
+<li><code>KFold</code>：K 折交叉验证，将数据集划分为 K 份，每次使用其中一份作为验证集，剩下的 K-1 份作为训练集，重复 K 次，最终将每次的评估结果进行平均；</li>
+<li><code>GridSearchCV</code>：基于网格搜索的参数调优方法，可以指定需要调优的参数以及其可能的取值范围，使用交叉验证来评估模型的性能，并选择最佳参数组合；</li>
+<li><code>RandomizedSearchCV</code>：基于随机搜索的参数调优方法，与 <code>GridSearchCV</code> 相似，但不需要指定所有可能的参数组合，而是随机从可能的取值范围中抽样，来寻找最佳参数组合；</li>
+<li><code>cross_val_score</code>：基于交叉验证的模型评估方法，使用交叉验证来评估模型的性能，可以计算模型的平均精度、准确率、召回率等指标。</li>
+</ul>
+<p>这些功能提供了一些便利的工具，可以帮助你更好地选择和评估机器学习模型。在使用这些功能时，你需要了解它们的参数和使用方法。建议参考官方文档和相关的教程学习更多细节。</p>
+<h4 id="train-test-split"><a href="#train-test-split" class="headerlink" title="train_test_split"></a><code>train_test_split</code></h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+<span class="token comment"># 创建一个 DataFrame</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+<span class="token comment"># 将 DataFrame 随机分成训练集和测试集</span>
+train_df<span class="token punctuation">,</span> test_df <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>df<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 打印训练集和测试集</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_df<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_df<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+  A   B   C
+0  1   6  11
+1  2   7  12
+2  3   8  13
+3  4   9  14
+4  5  10  15
+
+   A  B   C
+0  1  6  11
+3  4  9  14
+   A   B   C
+1  2   7  12
+4  5  10  15
+2  3   8  13
+"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p>   pytorch中，一般来说如果对tensor的一个函数后加上了下划线，则表明这是一个in-place类型。in-place类型是指，当在一个tensor上操作了之后，是直接修改了这个tensor，而不是返回一个新的tensor并不修改旧的tensor。</p>
 <p><code>numel</code></p>
 <p>numel就是”number of elements”的简写。numel()可以直接返回int类型的元素个数</p>
@@ -2072,6 +2119,115 @@ IndexError<span class="token punctuation">:</span> Dimension out of <span class=
 <p> PyTorch中惰性模块初始化</p>
 <p>LazyLinear</p>
 <p>LazyConv2d</p>
+<h3 id="torchvision-models"><a href="#torchvision-models" class="headerlink" title="torchvision models"></a>torchvision models</h3><p><code>torchvision</code> is a package in the PyTorch ecosystem that provides various tools and utilities for working with computer vision tasks. One of the key features of <code>torchvision</code> is its pre-trained models, which are neural networks trained on large datasets such as ImageNet.</p>
+<p>Here are some of the pre-trained models available in <code>torchvision</code>:</p>
+<ol>
+<li>AlexNet: a deep convolutional neural network (CNN) introduced in 2012, which was one of the first models to achieve high accuracy on the ImageNet dataset.</li>
+<li>VGG: a series of CNNs with varying depths, developed by the Visual Geometry Group at the University of Oxford.</li>
+<li>ResNet: a family of CNNs introduced in 2015 that includes skip connections, allowing the model to learn residual functions.</li>
+<li>Inception: a family of CNNs that use a combination of different convolutional filters at different scales.</li>
+<li>DenseNet: a CNN architecture that connects each layer to every other layer in a feed-forward fashion.</li>
+<li>MobileNet: a lightweight CNN designed for mobile and embedded applications.</li>
+<li>EfficientNet: a family of CNNs that use a compound scaling method to improve both accuracy and efficiency.</li>
+</ol>
+<p>These models are often used as a starting point for transfer learning, where a pre-trained model is fine-tuned on a new dataset for a specific task. This can greatly reduce the amount of training data and time needed to achieve high performance on a new task.</p>
+<p>torchvision models 中关于resnet34的具体使用方法</p>
+<p><code>resnet34</code>是<code>torchvision</code>中的一个预训练模型，是ResNet系列中的一个相对较小的模型。以下是使用<code>resnet34</code>进行预测的一个简单示例：</p>
+<ol>
+<li><p>导入所需的库和模块。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torchvision<span class="token punctuation">.</span>transforms <span class="token keyword">as</span> transforms
+<span class="token keyword">import</span> torchvision<span class="token punctuation">.</span>models <span class="token keyword">as</span> models
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>初始化预训练模型。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">model <span class="token operator">=</span> models<span class="token punctuation">.</span>resnet34<span class="token punctuation">(</span>pretrained<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>加载并预处理要进行预测的图像。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">img_path <span class="token operator">=</span> <span class="token string">'path/to/image.jpg'</span>
+
+<span class="token comment"># 定义图像转换</span>
+transform <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    transforms<span class="token punctuation">.</span>Resize<span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 调整图像大小为256x256</span>
+    transforms<span class="token punctuation">.</span>CenterCrop<span class="token punctuation">(</span><span class="token number">224</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 中心裁剪为224x224</span>
+    transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 将图像转换为张量</span>
+    transforms<span class="token punctuation">.</span>Normalize<span class="token punctuation">(</span>
+        mean<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.485</span><span class="token punctuation">,</span> <span class="token number">0.456</span><span class="token punctuation">,</span> <span class="token number">0.406</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment"># ImageNet数据集的均值</span>
+        std<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.229</span><span class="token punctuation">,</span> <span class="token number">0.224</span><span class="token punctuation">,</span> <span class="token number">0.225</span><span class="token punctuation">]</span>  <span class="token comment"># ImageNet数据集的标准差</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 加载图像并进行转换</span>
+img <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>img_path<span class="token punctuation">)</span>
+img_tensor <span class="token operator">=</span> transform<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>将输入数据传入模型进行推断。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 将输入数据添加一个批次的维度</span>
+img_tensor <span class="token operator">=</span> img_tensor<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将模型设置为评估模式</span>
+model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 通过模型进行推断</span>
+output <span class="token operator">=</span> model<span class="token punctuation">(</span>img_tensor<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在这个例子中，<code>img_path</code>表示要进行预测的图像路径，<code>transform</code>表示对图像进行的预处理操作，例如调整大小、裁剪、归一化等。在传递给模型之前，需要将图像转换为张量并添加一个批次的维度。在推断之前，需要将模型设置为评估模式。推断之后，<code>output</code>表示模型的输出，是一个形状为<code>[1, 1000]</code>的张量，其中1000表示模型预测的类别数。可以使用<code>torch.argmax(output)</code>来获取预测结果的类别索引。</p>
+</li>
+</ol>
+<p><code>torchvision</code>中的<code>resnet34</code>模型使用的默认输入通道为3（RGB彩色图像），输出通道为1000（对应ImageNet数据集中的1000个类别）。如果需要自己定义输入通道和输出通道，可以通过修改模型的构造函数实现。以下是一个简单的示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+<span class="token keyword">import</span> torchvision<span class="token punctuation">.</span>models <span class="token keyword">as</span> models
+
+<span class="token keyword">class</span> <span class="token class-name">ResNet34</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num_classes<span class="token punctuation">,</span> input_channels<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>ResNet34<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>num_classes <span class="token operator">=</span> num_classes
+        self<span class="token punctuation">.</span>input_channels <span class="token operator">=</span> input_channels
+        
+        <span class="token comment"># 加载预训练模型</span>
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> models<span class="token punctuation">.</span>resnet34<span class="token punctuation">(</span>pretrained<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+        
+        <span class="token comment"># 替换第一层卷积层</span>
+        self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>conv1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>
+            input_channels<span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+        
+        <span class="token comment"># 替换最后一层全连接层</span>
+        self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>fc <span class="token operator">=</span> nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span> num_classes<span class="token punctuation">)</span>
+        
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> x
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上面的示例中，我们首先定义了一个新的<code>ResNet34</code>类，它继承自<code>nn.Module</code>。在构造函数中，我们使用<code>super()</code>函数调用父类的构造函数，同时定义了<code>num_classes</code>和<code>input_channels</code>两个参数。在构造函数中，我们首先加载了<code>resnet34</code>预训练模型，然后替换了其第一层卷积层和最后一层全连接层，以适应自定义的输入通道和输出通道。</p>
+<p>具体地，我们通过<code>self.model.conv1</code>来替换模型的第一层卷积层，这里我们使用了<code>nn.Conv2d</code>来定义新的卷积层，将其输入通道数设为<code>input_channels</code>，输出通道数设为64。类似地，我们通过<code>self.model.fc</code>来替换模型的最后一层全连接层，将其输入通道数设为512（<code>resnet34</code>模型的最后一层卷积层的输出通道数），输出通道数设为<code>num_classes</code>。</p>
+<p>最后，我们在<code>forward()</code>函数中调用<code>self.model()</code>来实现前向传播。可以使用该自定义模型来训练自己的数据集，如：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">model <span class="token operator">=</span> ResNet34<span class="token punctuation">(</span>num_classes<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> input_channels<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># 假设输入通道为灰度图像</span>
+
+<span class="token comment"># 在训练之前对模型进行设备设置</span>
+device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">"cuda:0"</span> <span class="token keyword">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">"cpu"</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+
+<span class="token comment"># 定义损失函数和优化器</span>
+criterion <span class="token operator">=</span> nn<span class="token punctuation">.</span>CrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+optimizer <span class="token operator">=</span> torch<span class="token punctuation">.</span>optim<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.001</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 训练模型</span>
+<span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> <span class="token punctuation">(</span>images<span class="token punctuation">,</span> labels<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>train_loader<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        images <span class="token operator">=</span> images<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+        labels <span class="token operator">=</span> labels<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+        
+        optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        outputs <span class="token operator">=</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><h4 id="drop"><a href="#drop" class="headerlink" title="drop"></a><strong><code>drop</code></strong></h4><p>功能：删除数据集中多余的数据</p>
 <p><code>DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')</code></p>
 <p>常用参数详解：</p>

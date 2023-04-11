@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    55
+                    471
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -439,6 +439,85 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303250922803.png" alt="image-20230325092221763"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303250924395.png" alt="image-20230325092404361"></p>
 <h3 id="一次卷积后特征图大小"><a href="#一次卷积后特征图大小" class="headerlink" title="一次卷积后特征图大小"></a>一次卷积后特征图大小</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202210052118758.png" alt="image-20221005211847652"></p>
+<h2 id="early-stopping"><a href="#early-stopping" class="headerlink" title="early stopping"></a>early stopping</h2><p>在 PyTorch 中，实现 early stopping 可以使用 Callbacks 来实现。Callbacks 是一种 PyTorch 的机制，它可以在模型训练过程中插入一些自定义的代码块。</p>
+<p>下面是一个示例代码，用于实现 early stopping 功能：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> torch
+
+<span class="token comment"># 定义 EarlyStopping Callback</span>
+<span class="token keyword">class</span> <span class="token class-name">EarlyStopping</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> patience<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> delta<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>patience <span class="token operator">=</span> patience
+        self<span class="token punctuation">.</span>delta <span class="token operator">=</span> delta
+        self<span class="token punctuation">.</span>best_score <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>counter <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>early_stop <span class="token operator">=</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> val_loss<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        score <span class="token operator">=</span> <span class="token operator">-</span>val_loss
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>best_score <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>best_score <span class="token operator">=</span> score
+        <span class="token keyword">elif</span> score <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>best_score <span class="token operator">+</span> self<span class="token punctuation">.</span>delta<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>counter <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>counter <span class="token operator">&gt;=</span> self<span class="token punctuation">.</span>patience<span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>early_stop <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>best_score <span class="token operator">=</span> score
+            self<span class="token punctuation">.</span>counter <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token comment"># 构建模型</span>
+model <span class="token operator">=</span> torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+    torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Softmax<span class="token punctuation">(</span>dim<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 定义损失函数和优化器</span>
+criterion <span class="token operator">=</span> torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>CrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+optimizer <span class="token operator">=</span> torch<span class="token punctuation">.</span>optim<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 定义 EarlyStopping 实例</span>
+early_stopping <span class="token operator">=</span> EarlyStopping<span class="token punctuation">(</span>patience<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 训练模型</span>
+<span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> data<span class="token punctuation">,</span> target <span class="token keyword">in</span> train_loader<span class="token punctuation">:</span>
+        <span class="token comment"># 将数据加载到 GPU 上</span>
+        data<span class="token punctuation">,</span> target <span class="token operator">=</span> data<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> target<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># 前向传播、反向传播和优化</span>
+        output <span class="token operator">=</span> model<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        loss <span class="token operator">=</span> criterion<span class="token punctuation">(</span>output<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+        loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 验证模型</span>
+    model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        val_loss <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> data<span class="token punctuation">,</span> target <span class="token keyword">in</span> val_loader<span class="token punctuation">:</span>
+            <span class="token comment"># 将数据加载到 GPU 上</span>
+            data<span class="token punctuation">,</span> target <span class="token operator">=</span> data<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> target<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+            <span class="token comment"># 前向传播和计算验证集上的损失</span>
+            output <span class="token operator">=</span> model<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+            val_loss <span class="token operator">+=</span> criterion<span class="token punctuation">(</span>output<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        val_loss <span class="token operator">/=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>val_loader<span class="token punctuation">)</span>
+
+        <span class="token comment"># 判断是否需要提前结束训练</span>
+        early_stopping<span class="token punctuation">(</span>val_loss<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> early_stopping<span class="token punctuation">.</span>early_stop<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Early stopping"</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+
+    <span class="token comment"># 打印当前训练的 epoch 和验证集上的损失</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Epoch [{}/{}], Validation loss: {:.4f}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>epoch<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> num_epochs<span class="token punctuation">,</span> val_loss<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在训练过程中，每个 epoch 结束后都会计算一次验证集上的损失，并调用 EarlyStopping 实例的 <strong>call</strong>() 方法判断是否需要提前结束训练。如果 EarlyStopping 实例的 early_stop 属性被设置为 True，就会退出训练循环。</p>
 
                 
             </div>

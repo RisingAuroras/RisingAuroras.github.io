@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    4.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 
@@ -554,6 +554,27 @@
 <p>然而，在实际应用中，概率值通常非常小，可能会导致数值下溢或浮点数舍入误差。为了解决这个问题，我们可以使用对数变换来计算概率密度函数或概率质量函数的对数值，这个对数值通常被称为对数概率密度函数或对数概率质量函数。对数值的计算可以避免数值下溢和浮点数舍入误差，并提高计算的稳定性和精度。</p>
 <p>在 PyTorch 中，<code>torch.distributions</code> 模块中的分布类通常提供两个方法来计算概率密度函数或概率质量函数的值：<code>log_prob()</code> 和 <code>prob()</code>。<code>log_prob()</code> 方法计算对数概率密度函数或对数概率质量函数的值，而 <code>prob()</code> 方法计算概率密度函数或概率质量函数的值。由于 <code>log_prob()</code> 方法计算的是对数值，它通常比 <code>prob()</code> 方法更稳定和精确。</p>
 <p>因此，在 PyTorch 中，计算对数概率密度函数或对数概率质量函数的值通常更常见。当然，在一些特定情况下，比如需要计算分布的熵（entropy）时，我们可能会使用 <code>prob()</code> 方法。</p>
+</li>
+<li></li>
+</ol>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ol>
+<li><p>SPSA (Simultaneous Perturbation Stochastic Approximation)和RM (Robbins Monro)区别和联系</p>
+<p>SPSA (Simultaneous Perturbation Stochastic Approximation) 和 RM (Robbins Monro) 都是随机优化算法，用于寻找非线性、非光滑函数的全局最优解。它们之间的区别和联系如下：</p>
+<p>区别：</p>
+<ol>
+<li>SPSA 是一种随机梯度下降算法，而 RM 是一种随机逼近算法；</li>
+<li>SPSA 使用随机扰动来估计梯度，而 RM 使用随机样本来估计梯度；</li>
+<li>SPSA 适用于高维优化问题，而 RM 适用于低维优化问题；</li>
+<li>SPSA 不需要对目标函数进行任何假设，而 RM 假设目标函数是凸函数；</li>
+<li>SPSA 可以使用一阶梯度信息，而 RM 可以使用一阶或二阶梯度信息。</li>
+</ol>
+<p>联系：</p>
+<ol>
+<li>两种算法都是全局优化算法，可以在非线性、非凸函数的搜索空间中寻找全局最优解；</li>
+<li>都使用随机性来跳出局部最优解，以避免陷入局部最优解；</li>
+<li>都需要调整算法的参数，以达到最优效果。</li>
+</ol>
+<p>总之，SPSA 和 RM 是两种不同的优化算法，它们的主要区别在于梯度估计的方法和算法的适用范围。</p>
 </li>
 <li></li>
 </ol>

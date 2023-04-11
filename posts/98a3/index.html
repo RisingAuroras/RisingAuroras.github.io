@@ -412,14 +412,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    24 分
                 </div>
                 
 
@@ -535,7 +535,22 @@
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251557200.png" alt="image-20230325155752151"></p>
 <p>最大池化和平均 池化都是常用的操作</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303251558043.png" alt="image-20230325155826996"></p>
-<h2 id="卷积神经网络模型"><a href="#卷积神经网络模型" class="headerlink" title="卷积神经网络模型"></a>卷积神经网络模型</h2><h3 id="经典卷积神经网络-LeNet"><a href="#经典卷积神经网络-LeNet" class="headerlink" title="经典卷积神经网络 LeNet"></a>经典卷积神经网络 LeNet</h3><p>虽然现在看来有一些东西已经过时了，但是它的出现证实了卷积神经网络在图片处理中确实大有益处，且启发了后来了AlexNet</p>
+<h2 id="卷积神经网络模型"><a href="#卷积神经网络模型" class="headerlink" title="卷积神经网络模型"></a>卷积神经网络模型</h2><p>pytorch 中很多都已经集成了</p>
+<blockquote>
+<p><code>torchvision</code> is a package in the PyTorch ecosystem that provides various tools and utilities for working with computer vision tasks. One of the key features of <code>torchvision</code> is its pre-trained models, which are neural networks trained on large datasets such as ImageNet.</p>
+<p>Here are some of the pre-trained models available in <code>torchvision</code>:</p>
+<ol>
+<li>AlexNet: a deep convolutional neural network (CNN) introduced in 2012, which was one of the first models to achieve high accuracy on the ImageNet dataset.</li>
+<li>VGG: a series of CNNs with varying depths, developed by the Visual Geometry Group at the University of Oxford.</li>
+<li>ResNet: a family of CNNs introduced in 2015 that includes skip connections, allowing the model to learn residual functions.</li>
+<li>Inception: a family of CNNs that use a combination of different convolutional filters at different scales.</li>
+<li>DenseNet: a CNN architecture that connects each layer to every other layer in a feed-forward fashion.</li>
+<li>MobileNet: a lightweight CNN designed for mobile and embedded applications.</li>
+<li>EfficientNet: a family of CNNs that use a compound scaling method to improve both accuracy and efficiency.</li>
+</ol>
+<p>These models are often used as a starting point for transfer learning, where a pre-trained model is fine-tuned on a new dataset for a specific task. This can greatly reduce the amount of training data and time needed to achieve high performance on a new task.</p>
+</blockquote>
+<h3 id="经典卷积神经网络-LeNet"><a href="#经典卷积神经网络-LeNet" class="headerlink" title="经典卷积神经网络 LeNet"></a>经典卷积神经网络 LeNet</h3><p>虽然现在看来有一些东西已经过时了，但是它的出现证实了卷积神经网络在图片处理中确实大有益处，且启发了后来了AlexNet</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271120195.png" alt="image-20230327112043139"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271122389.png" alt="image-20230327112201293"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303271122420.png" alt="image-20230327112222332"></p>
@@ -658,7 +673,9 @@ ReLU output shape:	 torch.Size([1, 1000])
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291543100.png" alt="image-20230329154326000"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291538424.png" alt="image-20230329153819273"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303291551165.png" alt="image-20230329155132081"></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">vgg_block</span><span class="token punctuation">(</span>num_convs<span class="token punctuation">,</span> in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<p>VGG11代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># vgg_net       </span>
+<span class="token keyword">def</span> <span class="token function">vgg_block</span><span class="token punctuation">(</span>num_convs<span class="token punctuation">,</span> in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">)</span><span class="token punctuation">:</span>
     layers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_convs<span class="token punctuation">)</span><span class="token punctuation">:</span>
         layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span>
@@ -668,26 +685,27 @@ ReLU output shape:	 torch.Size([1, 1000])
     layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>layers<span class="token punctuation">)</span>
 
+<span class="token keyword">class</span> <span class="token class-name">VGGNet11</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>conv_arch<span class="token punctuation">:</span><span class="token builtin">tuple</span><span class="token punctuation">,</span>in_channels<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>VGGNet11<span class="token punctuation">,</span>self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        layers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> num_conv<span class="token punctuation">,</span>out_channels <span class="token keyword">in</span> conv_arch<span class="token punctuation">:</span>
+            layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>vgg_block<span class="token punctuation">(</span>num_conv<span class="token punctuation">,</span>in_channels<span class="token punctuation">,</span>out_channels<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            in_channels <span class="token operator">=</span> out_channels
 
-<span class="token keyword">class</span> <span class="token class-name">vgg_net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>cfg<span class="token punctuation">:</span><span class="token builtin">tuple</span><span class="token punctuation">,</span>in_channels<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-    <span class="token builtin">super</span><span class="token punctuation">(</span>vgg_net<span class="token punctuation">,</span>self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    layers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> num_conv<span class="token punctuation">,</span>out_channels <span class="token keyword">in</span> cfg<span class="token punctuation">:</span>
-      layers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>vgg_block<span class="token punctuation">(</span>num_conv<span class="token punctuation">,</span>in_channels<span class="token punctuation">,</span>out_channels<span class="token punctuation">)</span><span class="token punctuation">)</span>
-      in_channels <span class="token operator">=</span> out_channels
-    self<span class="token punctuation">.</span>model <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>layers<span class="token punctuation">,</span>
-                  nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                  nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span>in_channels <span class="token operator">*</span> <span class="token number">7</span> <span class="token operator">*</span> <span class="token number">7</span><span class="token punctuation">,</span><span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                  nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span><span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                  nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
-                  <span class="token punctuation">)</span>
-  <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>X<span class="token punctuation">:</span>torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> layer <span class="token keyword">in</span> self<span class="token punctuation">.</span>model<span class="token punctuation">:</span>
-      X<span class="token operator">=</span>layer<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
-      <span class="token keyword">print</span><span class="token punctuation">(</span>layer<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">"output shape：\t"</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> nn<span class="token punctuation">.</span>Softmax<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>layers<span class="token punctuation">,</span>
+                            nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span>in_channels <span class="token operator">*</span> <span class="token number">7</span> <span class="token operator">*</span> <span class="token number">7</span><span class="token punctuation">,</span><span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span><span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>nn<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span><span class="token number">176</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>model<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">checkout_channel</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>X<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> blk <span class="token keyword">in</span> self<span class="token punctuation">.</span>model<span class="token punctuation">:</span>
+            X <span class="token operator">=</span> blk<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>blk<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">'output shape:\t'</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -909,6 +927,67 @@ net <span class="token operator">=</span> nn<span class="token punctuation">.</s
 <p>加入g(x)为一个全连接层，对数据拟合效果比较好，那么它的梯度相应的会比较小，所以越往后，它的梯度越小。</p>
 <p>但是用ResNet后，引入加法，使得后面层的梯度不至于过小。</p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202303311530952.png" alt="image-20230331152953828"></p>
+<p>ResNet18代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Residual</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">,</span>
+                 use_1x1conv<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>conv1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>input_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">,</span>
+                               kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> stride<span class="token operator">=</span>strides<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>conv2 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>num_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">,</span>
+                               kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> use_1x1conv<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>conv3 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>input_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">,</span>
+                                   kernel_size<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> stride<span class="token operator">=</span>strides<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>conv3 <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>bn1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>BatchNorm2d<span class="token punctuation">(</span>num_channels<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>bn2 <span class="token operator">=</span> nn<span class="token punctuation">.</span>BatchNorm2d<span class="token punctuation">(</span>num_channels<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Y <span class="token operator">=</span> F<span class="token punctuation">.</span>relu<span class="token punctuation">(</span>self<span class="token punctuation">.</span>bn1<span class="token punctuation">(</span>self<span class="token punctuation">.</span>conv1<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        Y <span class="token operator">=</span> self<span class="token punctuation">.</span>bn2<span class="token punctuation">(</span>self<span class="token punctuation">.</span>conv2<span class="token punctuation">(</span>Y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>conv3<span class="token punctuation">:</span>
+            X <span class="token operator">=</span> self<span class="token punctuation">.</span>conv3<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+        Y <span class="token operator">+=</span> X
+        <span class="token keyword">return</span> F<span class="token punctuation">.</span>relu<span class="token punctuation">(</span>Y<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">ResNet</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>in_channels<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        b1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                   nn<span class="token punctuation">.</span>BatchNorm2d<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                   nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        b2 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>ResNet<span class="token punctuation">.</span>resnet_block<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> first_block<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        b3 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>ResNet<span class="token punctuation">.</span>resnet_block<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        b4 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>ResNet<span class="token punctuation">.</span>resnet_block<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        b5 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token operator">*</span>ResNet<span class="token punctuation">.</span>resnet_block<span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> <span class="token number">512</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>b1<span class="token punctuation">,</span> b2<span class="token punctuation">,</span> b3<span class="token punctuation">,</span> b4<span class="token punctuation">,</span> b5<span class="token punctuation">,</span>
+                            nn<span class="token punctuation">.</span>AdaptiveAvgPool2d<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            nn<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">resnet_block</span><span class="token punctuation">(</span>input_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">,</span> num_residuals<span class="token punctuation">,</span>
+                    first_block<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        blk <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_residuals<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> <span class="token keyword">not</span> first_block<span class="token punctuation">:</span>
+                blk<span class="token punctuation">.</span>append<span class="token punctuation">(</span>Residual<span class="token punctuation">(</span>input_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">,</span>
+                                    use_1x1conv<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                blk<span class="token punctuation">.</span>append<span class="token punctuation">(</span>Residual<span class="token punctuation">(</span>num_channels<span class="token punctuation">,</span> num_channels<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> blk
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>model<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">checkout_channel</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>X<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> blk <span class="token keyword">in</span> self<span class="token punctuation">.</span>model<span class="token punctuation">:</span>
+            X <span class="token operator">=</span> blk<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>blk<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span><span class="token string">'output shape:\t'</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304011613344.png" alt="image-20230401161329223"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304011606782.png" alt="image-20230401160625637"></p>
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304011607270.png" alt="image-20230401160703174"></p>
@@ -990,7 +1069,26 @@ net <span class="token operator">=</span> nn<span class="token punctuation">.</s
 
 
 <h2 id="Squeeze-Excite-Net-SENet"><a href="#Squeeze-Excite-Net-SENet" class="headerlink" title="Squeeze-Excite Net(SENet)"></a>Squeeze-Excite Net(SENet)</h2><h2 id="ShuffleNet"><a href="#ShuffleNet" class="headerlink" title="ShuffleNet"></a>ShuffleNet</h2><h2 id="CBAM"><a href="#CBAM" class="headerlink" title="CBAM"></a>CBAM</h2><h2 id="深度学习硬件：CPU-和-GPU"><a href="#深度学习硬件：CPU-和-GPU" class="headerlink" title="深度学习硬件：CPU 和 GPU"></a>深度学习硬件：CPU 和 GPU</h2><h2 id="单机多卡并行"><a href="#单机多卡并行" class="headerlink" title="单机多卡并行"></a>单机多卡并行</h2><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304021700238.png" alt="image-20230402170011074"></p>
-<h2 id="分布式训练"><a href="#分布式训练" class="headerlink" title="分布式训练"></a>分布式训练</h2><h2 id="数据增广"><a href="#数据增广" class="headerlink" title="数据增广"></a>数据增广</h2><h2 id="调参总结"><a href="#调参总结" class="headerlink" title="调参总结"></a>调参总结</h2><ol>
+<h2 id="分布式训练"><a href="#分布式训练" class="headerlink" title="分布式训练"></a>分布式训练</h2><h2 id="数据增广"><a href="#数据增广" class="headerlink" title="数据增广"></a>数据增广</h2><p>确定需要什么样的数据增强，可以从后往前推，即分析测试集中的数据可能会是什么样的，然后选择合适的数据增强。可以近似的看做一个正则操作，降低过拟合，甚至有可能测试精度会高于训练精度</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071719791.png" alt="image-20230407171905676"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071719157.png" alt="image-20230407171914054"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071719589.png" alt="image-20230407171922460"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071719336.png" alt="image-20230407171932260"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071720235.png" alt="image-20230407172022141"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071720451.png" alt="image-20230407172029345"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071720605.png" alt="image-20230407172035497"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304071720858.png" alt="image-20230407172042558"></p>
+<h2 id="微调-很重要"><a href="#微调-很重要" class="headerlink" title="微调[很重要]"></a>微调[很重要]</h2><p>pretrained</p>
+<p>迁移学习</p>
+<p>源数据集和目标数据集要类似</p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091459520.png" alt="image-20230409145945281"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091500583.png" alt="image-20230409150005469"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091500761.png" alt="image-20230409150035625"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091500207.png" alt="image-20230409150052077"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091501624.png" alt="image-20230409150112535"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091501805.png" alt="image-20230409150134668"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304091502679.png" alt="image-20230409150208564"></p>
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><h3 id="物体检测和数据集"><a href="#物体检测和数据集" class="headerlink" title="物体检测和数据集"></a>物体检测和数据集</h3><h2 id="调参总结"><a href="#调参总结" class="headerlink" title="调参总结"></a>调参总结</h2><ol>
 <li>batch size对训练集精度的影响比较大，batch size较小，可以更好的拟合训练集，训练精度越大；但是对测试集的精度基本没有影响。</li>
 <li>ReLU()效果确实比Sigmoid要好一些</li>
 </ol>
@@ -1020,8 +1118,16 @@ net <span class="token operator">=</span> nn<span class="token punctuation">.</s
 <li>多gpu训练，时间没变快是一件很常见的事，原因可能有1. data的读取花费大量的时间（有可能出现通讯开销大于计算开销） 2.虽然gpu增多了，但是你的数据批量大小没变，导致性能没有充分利用，要至少保证每个gpu的批量大小和之前单gpu时的批量大小一样，注意这时候测试精度可能会变低，要适当地调整学习率（增大）【batich size 和 lr两个因素控制了测试精度】，数据集多样性不够大的时候，不能用特别大的batch size，3.框架对并行的处理不够好（pytorch）4. 神经网络太小，导致数据并行没有明显优势 5.看看机器有没有别人在用</li>
 <li>模型性能 看计算量（flops）和内存访问的比率，这个比率越高越好。往往参数比较小，算力比较高的模型性能高，比如卷积性能还不错，矩阵乘法也还可以</li>
 <li>关于batch size大小的设置，和数据多样性、算法模型等都是有关的，一般分类的话有$n$个类，那么batch size大小在$10\cdot n$这个量级上</li>
+<li>有时候发现其他的优化算法好像还没有SGD效果好，因为SGD做了很强的正则，有很多噪音在里面。</li>
+<li>工业进行目标检测时，如果数据集小，可以进行迁移学习，把一个在很大数据集上训练好的模型拿过来</li>
+<li>在图像分类任务而言，不用那么的追求高精度，95%已经够用了。工业实际与打比赛的要求确实不一样，工业更多专注数据质量（数据每天都在变化），打比赛是调模型（因为是死数据），工业是85%精度可以部署测试，然后不断增强数据质量，不断喂大量数据，基本3个月-半年后，模型基本可以达到95%以上是没问题的，然后部署生产环境，闭环落地！</li>
 <li></li>
 </ol>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="叶子竞赛"><a href="#叶子竞赛" class="headerlink" title="叶子竞赛"></a>叶子竞赛</h3><p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112205208.png" alt="image-20230411220551065"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112200778.png" alt="image-20230411220021667"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112204613.png" alt="image-20230411220400525"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112217327.png" alt="image-20230411221139960"></p>
+<p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202304112216312.png" alt="image-20230411221627070"></p>
 
                 
             </div>

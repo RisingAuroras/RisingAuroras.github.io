@@ -404,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -459,6 +459,29 @@ X <span class="token operator">+=</span> Y
 
 <p>输出：</p>
 <p><code>True</code></p>
+<h4 id="EarlyStopping"><a href="#EarlyStopping" class="headerlink" title="EarlyStopping"></a>EarlyStopping</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义 EarlyStopping Callback</span>
+<span class="token keyword">class</span> <span class="token class-name">EarlyStopping</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> patience<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> delta<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>patience <span class="token operator">=</span> patience
+        self<span class="token punctuation">.</span>delta <span class="token operator">=</span> delta
+        self<span class="token punctuation">.</span>best_score <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>counter <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>early_stop <span class="token operator">=</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> val_loss<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        score <span class="token operator">=</span> <span class="token operator">-</span>val_loss
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>best_score <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>best_score <span class="token operator">=</span> score
+        <span class="token keyword">elif</span> score <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>best_score <span class="token operator">+</span> self<span class="token punctuation">.</span>delta<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>counter <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>counter <span class="token operator">&gt;=</span> self<span class="token punctuation">.</span>patience<span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>early_stop <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>best_score <span class="token operator">=</span> score
+            self<span class="token punctuation">.</span>counter <span class="token operator">=</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="linux-服务器守护线程——tmux"><a href="#linux-服务器守护线程——tmux" class="headerlink" title="linux 服务器守护线程——tmux"></a>linux 服务器守护线程——tmux</h3><p>$HOME : echo $HOME = ‘/data/kangbaobin’【是Linux中的一个环境变量，表示用户初次登陆时的起始目录名】</p>
 <p>Xshell断开连接后仍保持服务器程序执行</p>
 <p>先安装tmux：</p>
@@ -790,6 +813,8 @@ list2 <span class="token operator">=</span> <span class="token punctuation">[</s
         sleep<span class="token punctuation">(</span><span class="token number">0.05</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/RisingAuroras/giteePagesImgs/master/202301102108700.gif" alt="img"></p>
+<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><h3 id="图像裁剪"><a href="#图像裁剪" class="headerlink" title="图像裁剪"></a>图像裁剪</h3><p>在计算机视觉中，通常将输入图像的大小调整为固定大小以便于模型处理。对于<code>resnet34</code>模型，它的输入尺寸是224x224。因此，我们需要对输入图像进行预处理，将其调整为224x224。但是，在将图像调整为目标大小之前，通常需要进行一些预处理操作来确保输入图像具有相同的特征。</p>
+<p>在上面的示例中，首先将图像大小调整为256x256。这是因为图像通常具有不同的大小和宽高比，我们需要将其调整为统一的大小以确保输入图像具有相同的特征。然后，对调整后的图像进行中心裁剪为224x224，以确保图像的关键特征位于中心位置，这有助于提高模型的准确性。最后，将图像转换为张量并进行归一化，以便于模型进行处理。</p>
 
                 
             </div>
